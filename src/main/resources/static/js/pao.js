@@ -10,13 +10,12 @@ async function loadMatrix(id) {
     const response = await fetch("http://localhost:8080/api/v1/pao/" + id);
     if(response.ok) {
         const matrix = await response.json();
-        console.log(matrix);
 
-        var paoRows = document.getElementById('pao-rows').getElementsByClassName('pao-row');
+        let paoRows = document.getElementById('pao-rows').getElementsByClassName('pao-row');
         for( let rowIndex=0; rowIndex< paoRows.length; rowIndex++ )
         {
 
-        var childDivs = paoRows[rowIndex].getElementsByTagName('div');
+        let childDivs = paoRows[rowIndex].getElementsByTagName('div');
 
         let matrixIndex = -1;
         switch (rowIndex) {
@@ -25,7 +24,7 @@ async function loadMatrix(id) {
             case 2: matrixIndex = "diamonds"; break;
             case 3: matrixIndex = "clubs"; break;
         }
-        var suit = matrix[matrixIndex];
+        let suit = matrix[matrixIndex];
         for( let i=0; i< childDivs.length; i++ )
         {
             childDivs[i].innerHTML = "<img src='" + suit[i].image+"' width='50' height='100' alt=''>";
