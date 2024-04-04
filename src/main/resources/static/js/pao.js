@@ -11,6 +11,27 @@ async function loadMatrix(id) {
     if(response.ok) {
         const matrix = await response.json();
         console.log(matrix);
+
+        var paoRows = document.getElementById('pao-rows').getElementsByClassName('pao-row');
+        for( let rowIndex=0; rowIndex< paoRows.length; rowIndex++ )
+        {
+
+        var childDivs = paoRows[rowIndex].getElementsByTagName('div');
+
+        let matrixIndex = -1;
+        switch (rowIndex) {
+            case 0: matrixIndex = "hearts"; break;
+            case 1: matrixIndex = "spades"; break;
+            case 2: matrixIndex = "diamonds"; break;
+            case 3: matrixIndex = "clubs"; break;
+        }
+        var suit = matrix[matrixIndex];
+        for( let i=0; i< childDivs.length; i++ )
+        {
+            childDivs[i].innerHTML = "<img src='" + suit[i].image+"' width='50' height='100' alt=''>";
+        }
+
+        }
         return matrix;
     }
 

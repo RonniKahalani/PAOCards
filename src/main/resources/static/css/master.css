@@ -6,6 +6,7 @@
 }
 
 .pao-column {
+    display:inline;
     border: black 1px solid;
     width:100px;
     height:20px;
