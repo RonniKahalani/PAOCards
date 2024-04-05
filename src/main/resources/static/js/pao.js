@@ -1,21 +1,44 @@
 "use strict";
 
-async function loadMatrix(id) {
 
-    const template = localStorage.getItem("pao-template");
-    if(template) {
-        document.getElementById("content").innerHTML = template;
+
+function showTab(id) {
+   document.getElementById("pao-matrix").style.display = 'none';
+   document.getElementById("pao-quiz").style.display = 'none';
+   document.getElementById("pao-instructions").style.display = 'none';
+   document.getElementById(id).style.display = 'block';
+}
+
+async function loadQuiz(matrix) {
+
+    const response = await fetch("http://localhost:8080/api/v1/quiz");
+    if(response.ok) {
+        const quiz = await response.json();
+        const cards = quiz["cards"];
+
+        for(let i = 0; i < cards.length; i++) {
+            let card = cards[i];
+            let paoIndex = card.suit.toLowerCase()+"s";
+            let paoItem = matrix[paoIndex];
+            card.pao = paoItem[card.value-1];
+        }
+        localStorage.setItem("quiz", quiz);
     }
+}
+
+
+async function loadMatrix(id) {
 
     const response = await fetch("http://localhost:8080/api/v1/pao/" + id);
     if(response.ok) {
         const matrix = await response.json();
+        localStorage.setItem("matrix", matrix);
 
         let paoRows = document.getElementById('pao-rows').getElementsByClassName('pao-row');
         for( let rowIndex=0; rowIndex< paoRows.length; rowIndex++ )
         {
 
-        let childDivs = paoRows[rowIndex].getElementsByTagName('span');
+        let paoColumns = paoRows[rowIndex].getElementsByClassName('pao-column');
 
         let matrixIndex = -1;
         switch (rowIndex) {
@@ -25,26 +48,27 @@ async function loadMatrix(id) {
             case 3: matrixIndex = "clubs"; break;
         }
         let suit = matrix[matrixIndex];
-        for( let i=0; i< childDivs.length; i++ )
+        for(let i=0; i< paoColumns.length; i++ )
         {
-            childDivs[i].innerHTML = "<img src='" + suit[i].image+"' width='184' height='244' alt=''>";
+            let card = suit[i];
+            let column = paoColumns[i];
+
+            let name = column.getElementsByClassName("pao-name")[0];
+            name.innerHTML = card.name;
+
+            let image = column.getElementsByClassName("pao-image")[0];
+            image.innerHTML = "<img src='" + card.image+"' class='pao-image-tag' alt=''>";
+
+            let action = column.getElementsByClassName("pao-action")[0];
+            action.innerHTML = card.action;
+
+            let object = column.getElementsByClassName("pao-object")[0];
+            object.innerHTML = card.object;
         }
 
         }
+        await loadQuiz(matrix);
         return matrix;
     }
 
 }
-
-/**
- * Load template from file.
- */
-var fileURL = "pao-template.html";
-
-fetch(`${fileURL}`).then(function(response) {
-    response.text().then(function(text) {
-        console.log(text); // output the file content as text
-        // put data in localStorage or sessionStorage here
-        localStorage.setItem("pao-template", text);
-    })
-});

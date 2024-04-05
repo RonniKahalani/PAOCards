@@ -15,15 +15,15 @@ import com.itnerds.paocards.advice.ResourceNotFoundException;
 @RequestMapping("api/v1/pao")
 public class PAOMatrixController {
 
-    private PAOService service;
+    private PAOService paoService;
 
-    public PAOMatrixController(PAOService service) {
-        this.service = service;
+    public PAOMatrixController(PAOService paoService) {
+        this.paoService = paoService;
     }
 
     @GetMapping
     ResponseEntity<HashMap<String, PAOMatrix>> findAll() {
-        HashMap<String, PAOMatrix> all = service.findAll();
+        HashMap<String, PAOMatrix> all = paoService.findAll();
         return ResponseEntity.ok().body(all);
     }
 
@@ -37,8 +37,8 @@ public class PAOMatrixController {
      */
     @GetMapping("/{id}")
     public ResponseEntity<PAOMatrix> find(@PathVariable("id") String id) throws ResourceNotFoundException {
-        Optional<PAOMatrix> item = Optional.of(service.find(id)
-                .orElseThrow(() -> new ResourceNotFoundException("PAO matrix %d not found."+ id)));
+        Optional<PAOMatrix> item = Optional.of(paoService.find(id)
+                .orElseThrow(() -> new ResourceNotFoundException("PAO matrix %s not found.".formatted( id))));
         return ResponseEntity.ok().body(item.get());
     }
 

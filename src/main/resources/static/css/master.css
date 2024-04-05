@@ -1,17 +1,98 @@
+.panel {
+    display: flex;
+    flex-direction: row;
+}
+
+#pao-matrix {
+    display: block;
+}
+
+#pao-quiz {
+    display: none;
+}
+
+#pao-instructions {
+    display: none;
+}
+
+#icon-hearts {
+    color: red;
+    font-size: 40pt;
+    background-color: white;
+    width: 40px;
+}
+#icon-spades {
+    color: black;
+    font-size: 40pt;
+    background-color: white;
+    width: 40px;
+}
+
+#icon-diamonds {
+    color: red;
+    font-size: 40pt;
+    background-color: white;
+    width: 40px;
+}
+
+#icon-clubs {
+    color: black;
+    font-size: 40pt;
+    background-color: white;
+    width: 40px;
+}
+
+#info-hearts {
+    border: 1px solid black;
+    height: 100px;
+    vertical-align: center;
+    display: block;
+}
+
 #pao-rows {
 
 }
 .pao-row {
+    color:white;
+    display:flex;
+    flex-direction: row;
     border: black 1px solid;
     width:100%;
-    height:120px;
-    color:red;
+   /* white-space: nowrap; */
 }
 
+#pao-rows div:nth-child(even) {background: black}
+#pao-rows div:nth-child(odd) {background: red}
+
 .pao-column {
-    display:inline;
-    border: black 1px solid;
-    width:100px;
-    height:20px;
-    color:blue;
+    display:flex;
+    flex-direction: column;
+    color:white;
+    font-family: Arial, serif;
+    font-size: 9pt;
+    text-align: center;
+}
+.pao-column span {
+    border: white 1px solid;
+}
+.pao-name {
+
+}
+
+.pao-image {
+
+
+}
+
+.pao-image-tag {
+    width:112px;
+    height:142px;
+}
+
+.pao-action {
+
+}
+
+.pao-object {
+
 }

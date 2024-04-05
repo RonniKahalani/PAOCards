@@ -12,7 +12,7 @@ import java.util.Optional;
 @Service
 public class PAOService {
 
-    private HashMap<String, PAOMatrix> paoMatrices;
+    private final HashMap<String, PAOMatrix> paoMatrices;
 
     public PAOService() {
 
@@ -88,6 +88,6 @@ public class PAOService {
     }
 
     public Optional<PAOMatrix> find(String id) {
-        return Optional.of(paoMatrices.get(id));
+        return Optional.ofNullable(paoMatrices.get(id));
     }
 }
