@@ -15,7 +15,7 @@ async function loadMatrix(id) {
         for( let rowIndex=0; rowIndex< paoRows.length; rowIndex++ )
         {
 
-        let childDivs = paoRows[rowIndex].getElementsByTagName('div');
+        let childDivs = paoRows[rowIndex].getElementsByTagName('span');
 
         let matrixIndex = -1;
         switch (rowIndex) {
@@ -27,7 +27,7 @@ async function loadMatrix(id) {
         let suit = matrix[matrixIndex];
         for( let i=0; i< childDivs.length; i++ )
         {
-            childDivs[i].innerHTML = "<img src='" + suit[i].image+"' width='50' height='100' alt=''>";
+            childDivs[i].innerHTML = "<img src='" + suit[i].image+"' width='184' height='244' alt=''>";
         }
 
         }
