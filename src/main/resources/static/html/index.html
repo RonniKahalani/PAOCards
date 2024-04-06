@@ -16,36 +16,37 @@
 </head>
 
 <body onload="loadMatrix('default')">
-<div id="content">
-    <header>
-        <div id="panel">
-            <div id="panel-left"><h1>PAO Matrix Cards</h1></div>
-            <div id="panel-center">
-                <ul class="nav nav-pills nav-fill gap-2 p-1 small bg-primary rounded-5 shadow-sm" id="pillNav2"
-                    role="tablist"
-                    style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active rounded-5" id="btn-matrix" data-bs-toggle="tab" type="button"
-                                role="tab" aria-selected="true" onclick="showTab('pao-matrix')">Matrix
-                        </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link rounded-5" id="btn-quiz" data-bs-toggle="tab" type="button" role="tab"
-                                aria-selected="false" onclick="showTab('pao-quiz')">Quiz
-                        </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link rounded-5" id="btn-instructions" data-bs-toggle="tab" type="button"
-                                role="tab"
-                                aria-selected="false" onclick="showTab('pao-instructions')">Instructions
-                        </button>
-                    </li>
-                </ul>
-            </div>
-            <div id="panel-right"></div>
-        </div>
-    </header>
 
+<header>
+    <div id="panel">
+        <div id="panel-left"><h1>PAO Matrix Cards</h1></div>
+        <div id="panel-center">
+            <ul class="nav nav-pills nav-fill gap-2 p-1 small bg-primary rounded-5 shadow-sm" id="pillNav2"
+                role="tablist"
+                style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active rounded-5" id="btn-matrix" data-bs-toggle="tab" type="button"
+                            role="tab" aria-selected="true" onclick="showTab('pao-matrix')">Matrix
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link rounded-5" id="btn-quiz" data-bs-toggle="tab" type="button" role="tab"
+                            aria-selected="false" onclick="showTab('pao-quiz')">Quiz
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link rounded-5" id="btn-instructions" data-bs-toggle="tab" type="button"
+                            role="tab"
+                            aria-selected="false" onclick="showTab('pao-instructions')">Instructions
+                    </button>
+                </li>
+            </ul>
+        </div>
+        <div id="panel-right"></div>
+    </div>
+</header>
+
+<div id="content">
     <div id="pao-quiz">
         Quiz
         <div id="quiz-content">
