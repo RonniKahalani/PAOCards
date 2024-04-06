@@ -21,25 +21,26 @@
         <div id="panel">
             <div id="panel-left"><h1>PAO Matrix Cards</h1></div>
             <div id="panel-center">
-            <ul class="nav nav-pills nav-fill gap-2 p-1 small bg-primary rounded-5 shadow-sm" id="pillNav2"
-                role="tablist"
-                style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active rounded-5" id="btn-matrix" data-bs-toggle="tab" type="button"
-                            role="tab" aria-selected="true" onclick="showTab('pao-matrix')">Matrix
-                    </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link rounded-5" id="btn-quiz" data-bs-toggle="tab" type="button" role="tab"
-                            aria-selected="false" onclick="showTab('pao-quiz')">Quiz
-                    </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link rounded-5" id="btn-instructions" data-bs-toggle="tab" type="button" role="tab"
-                            aria-selected="false" onclick="showTab('pao-instructions')">Instructions
-                    </button>
-                </li>
-            </ul>
+                <ul class="nav nav-pills nav-fill gap-2 p-1 small bg-primary rounded-5 shadow-sm" id="pillNav2"
+                    role="tablist"
+                    style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active rounded-5" id="btn-matrix" data-bs-toggle="tab" type="button"
+                                role="tab" aria-selected="true" onclick="showTab('pao-matrix')">Matrix
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link rounded-5" id="btn-quiz" data-bs-toggle="tab" type="button" role="tab"
+                                aria-selected="false" onclick="showTab('pao-quiz')">Quiz
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link rounded-5" id="btn-instructions" data-bs-toggle="tab" type="button"
+                                role="tab"
+                                aria-selected="false" onclick="showTab('pao-instructions')">Instructions
+                        </button>
+                    </li>
+                </ul>
             </div>
             <div id="panel-right"></div>
         </div>
@@ -48,426 +49,427 @@
     <div id="pao-quiz">
         Quiz
         <div id="quiz-content">
-        <div id="quiz-left">
+            <div id="quiz-left">
 
-            <div>
-                STEP 1<br>
-            To get a new card, click NEXT.<br>
-            Match the PAO properties, below the image.
+                <div>
+                    STEP 1<br>
+                    To get a new card, click NEXT.<br>
+                    Match the PAO properties, below the image.
+                </div>
+                <br>
+                <div>
+                    STEP 2<br>
+                    To see the answers, click REVEAL.<br>
+                    Use the instant reveal, to auto reveal values.
+                </div>
             </div>
-            <br>
-            <div>
-            STEP 2<br>
-            To see the answers, click REVEAL.<br>
-            Use the instant reveal, to auto reveal values.
+
+            <div id="quiz-center">
+                <img id="quiz-image" src="https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-h1.jpg"
+                     alt="">
+                <label for="quiz-select-name" accesskey="n">Name (Alt+N)</label>
+                <select id="quiz-select-name" class="form-select quiz-select-wrong" onchange="quizNameChange(this)">
+                    <option value="">Select Name</option>
+                </select>
+                <label for="quiz-select-action" accesskey="a">Action (Alt+A)</label>
+                <select id="quiz-select-action" class="form-select quiz-select-wrong" onchange="quizActionChange(this)">
+                    <option value="">Select Action</option>
+                </select>
+                <label for="quiz-select-object" accesskey="o">Object (Alt+O)</label>
+                <select id="quiz-select-object" class="form-select quiz-select-wrong" onchange="quizObjectChange(this)">
+                    <option value="">Select Object</option>
+                </select>
+                <label for="quiz-select-card" accesskey="c">Card (Alt+C)</label>
+                <select id="quiz-select-card" class="form-select quiz-select-wrong" onchange="quizCardChange(this)">
+                    <option value="">Select Card</option>
+                </select>
             </div>
-        </div>
 
-        <div id="quiz-center">
-        <img id="quiz-image" src="https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-h1.jpg" alt="">
-        <label for="quiz-select-name" accesskey="n">Name (Alt+N)</label>
-            <select id="quiz-select-name" class="form-select quiz-select-wrong" onchange="quizNameChange(this)">
-            <option value="">Select Name</option>
-        </select>
-        <label for="quiz-select-action" accesskey="a">Action (Alt+A)</label>
-            <select id="quiz-select-action" class="form-select quiz-select-wrong" onchange="quizActionChange(this)">
-            <option value="">Select Action</option>
-        </select>
-        <label for="quiz-select-object" accesskey="o">Object (Alt+O)</label>
-            <select id="quiz-select-object" class="form-select quiz-select-wrong" onchange="quizObjectChange(this)">
-            <option value="">Select Object</option>
-        </select>
-        <label for="quiz-select-card" accesskey="c">Card (Alt+C)</label>
-            <select id="quiz-select-card" class="form-select quiz-select-wrong" onchange="quizCardChange(this)">
-            <option value="">Select Card</option>
-        </select>
+            <div id="quiz-right">
+                <button id="btn-quiz-reveal" class="btn btn-danger">Reveal</button>
+                <button id="btn-quiz-next" class="btn btn-primary" onclick="nextQuizCard()">Next</button>
 
-
-        </div>
-
-        <div id="quiz-right">
-            <button id="btn-quiz-reveal" class="btn btn-danger">Reveal</button>
-            <button id="btn-quiz-next" class="btn btn-primary" onclick="nextQuizCard()">Next</button>
-
-            <section id="stopWatch">
-                <h6>Hour : Minutes : Seconds</h6>
-                <p id="timer"> 00 : 00 : 00 </p>
-                <button id="start" class="btn btn-primary btn-timer">Start</button>
-                <button id="stop" class="btn btn-primary btn-timer">Stop</button>
-                <button id="pause" class="btn btn-primary btn-timer">Pause</button>
-                <button id="continue" class="btn btn-primary btn-timer" hidden>Continue</button>
-                <p id="fulltime" class="fulltime"> </p>
-            </section>
-        </div>
+                <section id="stopWatch">
+                    <h6>Hour : Minutes : Seconds</h6>
+                    <p id="timer"> 00 : 00 : 00 </p>
+                    <button id="start" class="btn btn-primary btn-timer">Start</button>
+                    <button id="stop" class="btn btn-primary btn-timer">Stop</button>
+                    <button id="pause" class="btn btn-primary btn-timer">Pause</button>
+                    <button id="continue" class="btn btn-primary btn-timer" hidden>Continue</button>
+                    <p id="fulltime" class="fulltime"></p>
+                </section>
+            </div>
         </div>
     </div>
 
     <div id="pao-instructions">
         Instructions
-        Learning to master memory palaces and memorize a Person-Action-Object (PAO) matrix might sound like a waist of time, but it will give you the ability to memorize over 17 places, with 3 cards each, in chronological order, which is a cool and valuable skill for your mind.<br><br>
+        Learning to master memory palaces and memorize a Person-Action-Object (PAO) matrix might sound like a waist of
+        time, but it will give you the ability to memorize over 17 places, with 3 cards each, in chronological order,
+        which is a cool and valuable skill for your mind.<br><br>
 
         This version contains:<br>
         <ul>
-        <li>A classic PAO matrix you can use right away and change to better fit your needs.</li>
-        <li>Fully configurable matrix datasets, enabling you to make your own matrix.</li>
+            <li>A classic PAO matrix you can use right away and change to better fit your needs.</li>
+            <li>Fully configurable matrix datasets, enabling you to make your own matrix.</li>
             <li>Randomized memory palace visuals.</li>
             <li>Training with card quizes that helps you exercise.</li>
-        <li>PAO shortcut lists, with extra mental shortcuts.</li>
+            <li>PAO shortcut lists, with extra mental shortcuts.</li>
         </ul>
     </div>
 
     <div id="pao-matrix">
 
-    <div id="pao-rows">
-        <div id="hearts" class="pao-row">
+        <div id="pao-rows">
+            <div id="hearts" class="pao-row">
             <span id="icon-hearts">
                   ♥
             </span>
-        <span id="hearts-ace" class="pao-column">
+                <span id="hearts-ace" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="hearts-two" class="pao-column">
+                <span id="hearts-two" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="hearts-three" class="pao-column">
+                <span id="hearts-three" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="hearts-four" class="pao-column">
+                <span id="hearts-four" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="hearts-five" class="pao-column">
+                <span id="hearts-five" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="hearts-six" class="pao-column">
+                <span id="hearts-six" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="hearts-seven" class="pao-column">
+                <span id="hearts-seven" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="hearts-eight" class="pao-column">
+                <span id="hearts-eight" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="hearts-nine" class="pao-column">
+                <span id="hearts-nine" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="hearts-ten" class="pao-column">
+                <span id="hearts-ten" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="hearts-jack" class="pao-column">
+                <span id="hearts-jack" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="hearts-queen" class="pao-column">
+                <span id="hearts-queen" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="hearts-king" class="pao-column">
+                <span id="hearts-king" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="info-hearts">
+                <span id="info-hearts">
                 LOVE, GREAT, GOOD<br>
                 People who are likable.
             </span>
-        </div>
-        <div id="spades" class="pao-row">
+            </div>
+            <div id="spades" class="pao-row">
             <span id="icon-spades">
                   ♠
             </span>
-        <span id="spades-ace" class="pao-column">
+                <span id="spades-ace" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="spades-two" class="pao-column">
+                <span id="spades-two" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="spades-three" class="pao-column">
+                <span id="spades-three" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="spades-four" class="pao-column">
+                <span id="spades-four" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="spades-five" class="pao-column">
+                <span id="spades-five" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="spades-six" class="pao-column">
+                <span id="spades-six" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="spades-seven" class="pao-column">
+                <span id="spades-seven" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="spades-eight" class="pao-column">
+                <span id="spades-eight" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="spades-nine" class="pao-column">
+                <span id="spades-nine" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="spades-ten" class="pao-column">
+                <span id="spades-ten" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="spades-jack" class="pao-column">
+                <span id="spades-jack" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="spades-queen" class="pao-column">
+                <span id="spades-queen" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="spades-king" class="pao-column">
+                <span id="spades-king" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="info-spades">
+                <span id="info-spades">
                 HUMOROUS, ABSURD<br>
                People who makes you smile or wrinkle your nose.
             </span>
-        </div>
-        <div id="diamonds" class="pao-row">
+            </div>
+            <div id="diamonds" class="pao-row">
             <span id="icon-diamonds">
                   ♦
             </span>
-        <span id="diamonds-ace" class="pao-column">
+                <span id="diamonds-ace" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="diamonds-two" class="pao-column">
+                <span id="diamonds-two" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="diamonds-three" class="pao-column">
+                <span id="diamonds-three" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="diamonds-four" class="pao-column">
+                <span id="diamonds-four" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="diamonds-five" class="pao-column">
+                <span id="diamonds-five" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="diamonds-six" class="pao-column">
+                <span id="diamonds-six" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="diamonds-seven" class="pao-column">
+                <span id="diamonds-seven" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="diamonds-eight" class="pao-column">
+                <span id="diamonds-eight" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="diamonds-nine" class="pao-column">
+                <span id="diamonds-nine" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="diamonds-ten" class="pao-column">
+                <span id="diamonds-ten" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="diamonds-jack" class="pao-column">
+                <span id="diamonds-jack" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="diamonds-queen" class="pao-column">
+                <span id="diamonds-queen" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="diamonds-king" class="pao-column">
+                <span id="diamonds-king" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="info-diamonds">
+                <span id="info-diamonds">
                 RICH, STYLISH, BLING<br>
                People who like to shine.
             </span>
-        </div>
-        <div id="clubs" class="pao-row">
+            </div>
+            <div id="clubs" class="pao-row">
             <span id="icon-clubs">
                   ♣
             </span>
-        <span id="clubs-ace" class="pao-column">
+                <span id="clubs-ace" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="clubs-two" class="pao-column">
+                <span id="clubs-two" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="clubs-three" class="pao-column">
+                <span id="clubs-three" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="clubs-four" class="pao-column">
+                <span id="clubs-four" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="clubs-five" class="pao-column">
+                <span id="clubs-five" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="clubs-six" class="pao-column">
+                <span id="clubs-six" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="clubs-seven" class="pao-column">
+                <span id="clubs-seven" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="clubs-eight" class="pao-column">
+                <span id="clubs-eight" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="clubs-nine" class="pao-column">
+                <span id="clubs-nine" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="clubs-ten" class="pao-column">
+                <span id="clubs-ten" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="clubs-jack" class="pao-column">
+                <span id="clubs-jack" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="clubs-queen" class="pao-column">
+                <span id="clubs-queen" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="clubs-king" class="pao-column">
+                <span id="clubs-king" class="pao-column">
             <span class="pao-name"></span>
             <span class="pao-image"></span>
             <span class="pao-action"></span>
             <span class="pao-object"></span>
         </span>
-            <span id="info-clubs">
+                <span id="info-clubs">
                 COOL, SERIOUS, CRAZY<br>
                People with an itch in the body or brain.
             </span>
+            </div>
         </div>
-    </div>
     </div>
 </div>
 </body>
