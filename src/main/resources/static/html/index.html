@@ -51,7 +51,19 @@
         Quiz
         <div id="quiz-content">
             <div id="quiz-left">
+Tips
+                <ul>
+                    <li>Every odd card is a male.</li>
+                    <li>Every even card is a female.</li>
+                    <li>Card 1 (Ace) and 2 are sport athletes.</li>
+                    <li>Card 3 and 4 are movie stars.</li>
+                    <li>Card 5 and 6 are controversial.</li>
+                    <li>Card 7 and 8 are brains (male) and beauty (female).</li>
+                    <li>Card 9 and 10 are powerful.</li>
+                    <li>Card 11 (Jack) is religious.</li>
+                    <li>Card 12 (Queen) and 13 (King) are celebrities.</li>
 
+                </ul>
                 <div>
                     STEP 1<br>
                     To get a new card, click NEXT.<br>
@@ -69,11 +81,16 @@
                 <img id="quiz-image" src="https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-h1.jpg"
                      alt="">
 
+                <div style="text-align: right">Auto reveal all
+                    <input id="quiz-reveal-all" class="form-check-input quiz-check" type="checkbox" title="Auto reveal all" onchange="checkRevealAll(this)">
+
+                </div>
                 <div class="quiz-label-select">
                 <label for="quiz-select-name" accesskey="n">Name (Alt+N)</label>
                 <select id="quiz-select-name" class="form-select quiz-select-wrong" onchange="quizNameChange(this)">
                     <option value="">Select Name</option>
                 </select>
+                    <input id="quiz-reveal-name" class="form-check-input quiz-check" type="checkbox" title="Auto reveal" onchange="revealName()">
                 </div>
 
                 <div class="quiz-label-select">
@@ -81,6 +98,8 @@
                 <select id="quiz-select-action" class="form-select quiz-select-wrong" onchange="quizActionChange(this)">
                     <option value="">Select Action</option>
                 </select>
+                    <input id="quiz-reveal-action" class="form-check-input quiz-check" type="checkbox" title="Auto reveal" onchange="revealAction()">
+
                 </div>
 
                 <div class="quiz-label-select">
@@ -88,6 +107,8 @@
                 <select id="quiz-select-object" class="form-select quiz-select-wrong" onchange="quizObjectChange(this)">
                     <option value="">Select Object</option>
                 </select>
+                    <input id="quiz-reveal-object" class="form-check-input quiz-check" type="checkbox" title="Auto reveal" onchange="revealObject()">
+
                 </div>
 
                 <div class="quiz-label-select">
@@ -95,6 +116,8 @@
                 <select id="quiz-select-card" class="form-select quiz-select-wrong" onchange="quizCardChange(this)">
                     <option value="">Select Card</option>
                 </select>
+                    <input id="quiz-reveal-card" class="form-check-input quiz-check" type="checkbox" title="Auto reveal" onchange="revealCard()">
+
                 </div>
             </div>
 

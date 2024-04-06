@@ -17,6 +17,12 @@ const quizAction = document.getElementById("quiz-select-action");
 const quizObject = document.getElementById("quiz-select-object");
 const quizCard = document.getElementById("quiz-select-card");
 
+const quizRevealName = document.getElementById("quiz-reveal-name");
+const quizRevealAction = document.getElementById("quiz-reveal-action");
+const quizRevealObject = document.getElementById("quiz-reveal-object");
+const quizRevealCard = document.getElementById("quiz-reveal-card");
+const quizRevealAll = document.getElementById("quiz-reveal-all");
+
 async function loadQuiz(matrix) {
 
     const response = await fetch("http://localhost:8080/api/v1/quiz");
@@ -34,7 +40,7 @@ async function loadQuiz(matrix) {
         let names = quizCards.map(x => x.pao.name).sort();
         let actions = quizCards.map(x => x.pao.action).sort();
         let objects = quizCards.map(x => x.pao.object).sort();
-        let cards = quizCards.map(x => x.name + " of " + x.suit).sort();
+        let cards = quizCards.map(x => x.value + " (" + x.name + ") of " + x.suit).sort(sorter);
 
         setQuizSelectOptions(quizName, names);
         setQuizSelectOptions(quizAction, actions);
@@ -45,6 +51,13 @@ async function loadQuiz(matrix) {
     }
 }
 
+function sorter(a, b) {
+    let x = parseInt(a.split(" ")[0]);
+    let y = parseInt(b.split(" ")[0]);
+    if (x < y) return -1;  // any negative number works
+    if (x > y) return 1;   // any positive number works
+    return 0; // equal values MUST yield zero
+}
 function setQuizSelectOptions(elem, values) {
     for (let i = 0; i<52; i++){
         let opt = document.createElement('option');
@@ -77,7 +90,7 @@ function quizObjectChange(select) {
 
 function quizCardChange(select) {
     let selectValue = select.options[select.selectedIndex].value;
-    let correctValue = quizCards[currentQuizIndex].name + " of " + quizCards[currentQuizIndex].suit;
+    let correctValue = quizCards[currentQuizIndex].value + " (" + quizCards[currentQuizIndex].name + ") of " + quizCards[currentQuizIndex].suit;
 
     setSelectColor(select, selectValue === correctValue);
 }
@@ -98,8 +111,28 @@ function setSelectColor(select, isCorrect) {
 function nextQuizCard() {
     clearSelects();
     quizImage.src =  quizCards[++currentQuizIndex].pao.image;
+    autoReveal();
+
 }
 
+function autoReveal() {
+    if(quizRevealName.checked) revealName();
+    if(quizRevealAction.checked) revealAction();
+    if(quizRevealObject.checked) revealObject();
+    if(quizRevealCard.checked) revealCard();
+}
+
+function checkRevealAll(elem) {
+    quizRevealName.checked = elem.checked;
+    quizRevealAction.checked = elem.checked;
+    quizRevealObject.checked = elem.checked;
+    quizRevealCard.checked = elem.checked;
+    if(elem.checked) {
+        autoReveal();
+    } else {
+       clearSelects();
+    }
+}
 function revealAll() {
     revealName();
     revealAction();
@@ -108,7 +141,8 @@ function revealAll() {
 }
 
 function revealName() {
-    let correctValue = quizCards[currentQuizIndex].pao.name;
+    let card = quizCards[currentQuizIndex];
+    let correctValue = card.pao.name;
     for(let index=1; index < quizName.options.length; index++) {
         if(quizName.options[index].value === correctValue) {
             quizName.selectedIndex = index;
@@ -119,7 +153,8 @@ function revealName() {
 }
 
 function revealAction() {
-    let correctValue = quizCards[currentQuizIndex].pao.action;
+    let card = quizCards[currentQuizIndex];
+    let correctValue = card.pao.action;
     for(let index=1; index < quizName.options.length; index++) {
         if(quizAction.options[index].value === correctValue) {
             quizAction.selectedIndex = index;
@@ -130,7 +165,8 @@ function revealAction() {
 }
 
 function revealObject() {
-    let correctValue = quizCards[currentQuizIndex].pao.object;
+    let card = quizCards[currentQuizIndex];
+    let correctValue = card.pao.object;
     for(let index=1; index < quizName.options.length; index++) {
         if(quizObject.options[index].value === correctValue) {
             quizObject.selectedIndex = index;
@@ -141,7 +177,8 @@ function revealObject() {
 }
 
 function revealCard() {
-    let correctValue = quizCards[currentQuizIndex].name + " of " + quizCards[currentQuizIndex].suit;
+    let card = quizCards[currentQuizIndex];
+    let correctValue = card.value + " (" + card.name + ") of " + card.suit;
     for(let index=1; index < quizCard.options.length; index++) {
         if(quizCard.options[index].value === correctValue) {
             quizCard.selectedIndex = index;

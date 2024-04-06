@@ -41,14 +41,14 @@
 #quiz-content {
     display:flex;
     flex-direction: row;
-    text-align: center;
     width:100%;
     border: 1px solid black;
+    margin:10px;
 }
 
 #quiz-left {
     width:33%;
-    border: 1px solid black;
+    margin:5px;
 }
 
 #quiz-center {
@@ -173,4 +173,8 @@
 
 .pao-object {
 
+}
+
+.quiz-check {
+    margin: 5px;
 }
