@@ -100,6 +100,57 @@ function nextQuizCard() {
     quizImage.src =  quizCards[++currentQuizIndex].pao.image;
 }
 
+function revealAll() {
+    revealName();
+    revealAction();
+    revealObject();
+    revealCard();
+}
+
+function revealName() {
+    let correctValue = quizCards[currentQuizIndex].pao.name;
+    for(let index=1; index < quizName.options.length; index++) {
+        if(quizName.options[index].value === correctValue) {
+            quizName.selectedIndex = index;
+            setSelectColor(quizName, true);
+            break;
+        }
+    }
+}
+
+function revealAction() {
+    let correctValue = quizCards[currentQuizIndex].pao.action;
+    for(let index=1; index < quizName.options.length; index++) {
+        if(quizAction.options[index].value === correctValue) {
+            quizAction.selectedIndex = index;
+            setSelectColor(quizAction, true);
+            break;
+        }
+    }
+}
+
+function revealObject() {
+    let correctValue = quizCards[currentQuizIndex].pao.object;
+    for(let index=1; index < quizName.options.length; index++) {
+        if(quizObject.options[index].value === correctValue) {
+            quizObject.selectedIndex = index;
+            setSelectColor(quizObject, true);
+            break;
+        }
+    }
+}
+
+function revealCard() {
+    let correctValue = quizCards[currentQuizIndex].name + " of " + quizCards[currentQuizIndex].suit;
+    for(let index=1; index < quizCard.options.length; index++) {
+        if(quizCard.options[index].value === correctValue) {
+            quizCard.selectedIndex = index;
+            setSelectColor(quizCard, true);
+            break;
+        }
+    }
+}
+
 function clearSelects() {
     quizName.selectedIndex = 0;
     setSelectColor(quizName, false);

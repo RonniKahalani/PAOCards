@@ -68,26 +68,38 @@
             <div id="quiz-center">
                 <img id="quiz-image" src="https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-h1.jpg"
                      alt="">
+
+                <div class="quiz-label-select">
                 <label for="quiz-select-name" accesskey="n">Name (Alt+N)</label>
                 <select id="quiz-select-name" class="form-select quiz-select-wrong" onchange="quizNameChange(this)">
                     <option value="">Select Name</option>
                 </select>
+                </div>
+
+                <div class="quiz-label-select">
                 <label for="quiz-select-action" accesskey="a">Action (Alt+A)</label>
                 <select id="quiz-select-action" class="form-select quiz-select-wrong" onchange="quizActionChange(this)">
                     <option value="">Select Action</option>
                 </select>
+                </div>
+
+                <div class="quiz-label-select">
                 <label for="quiz-select-object" accesskey="o">Object (Alt+O)</label>
                 <select id="quiz-select-object" class="form-select quiz-select-wrong" onchange="quizObjectChange(this)">
                     <option value="">Select Object</option>
                 </select>
+                </div>
+
+                <div class="quiz-label-select">
                 <label for="quiz-select-card" accesskey="c">Card (Alt+C)</label>
                 <select id="quiz-select-card" class="form-select quiz-select-wrong" onchange="quizCardChange(this)">
                     <option value="">Select Card</option>
                 </select>
+                </div>
             </div>
 
             <div id="quiz-right">
-                <button id="btn-quiz-reveal" class="btn btn-danger">Reveal</button>
+                <button id="btn-quiz-reveal" class="btn btn-danger" onclick="revealAll()">Reveal</button>
                 <button id="btn-quiz-next" class="btn btn-primary" onclick="nextQuizCard()">Next</button>
 
                 <section id="stopWatch">

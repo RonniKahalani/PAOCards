@@ -31,6 +31,13 @@
     height:142px;
 }
 
+.quiz-label-select {
+    display: flex;
+    flex-direction: row;
+}
+.quiz-label-select label {
+    width:100px;
+}
 #quiz-content {
     display:flex;
     flex-direction: row;

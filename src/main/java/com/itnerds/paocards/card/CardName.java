@@ -1,5 +1,8 @@
 package com.itnerds.paocards.card;
 
+/**
+ * Enumerates text versions for the different cards.
+ */
 public enum CardName {
     Ace,
     Two,

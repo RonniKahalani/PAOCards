@@ -10,22 +10,31 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Generates a deck of cards, with no jokers.
+ */
 @Getter
 @Setter
 public class CardDeck {
-    List<Card> cards;
+    private List<Card> cards;
 
+    /**
+     * Initializes a new card deck.
+     */
     public CardDeck() {
         cards = new ArrayList<>();
 
         for(CardSuit suit : CardSuit.values()) {
-            int index = 0;
+            int value = 0;
             for(CardName name : CardName.values()) {
-                cards.add( new Card(suit, name, ++index));
+                cards.add( new Card(suit, name, ++value));
             }
         }
     }
 
+    /**
+     * Shuffles the cards in the deck in random order.
+     */
     public void shuffle() {
         Collections.shuffle(cards);
     }

@@ -4,6 +4,7 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StreamUtils;
 
+import java.io.File;
 import java.nio.charset.Charset;
 import java.util.HashMap;
 import java.util.Optional;
@@ -18,17 +19,15 @@ public class PAOService {
         paoMatrices = new HashMap<>();
 
 
-        final String[] paoPathNames = new String[]{"pao/default.json", "pao/test.json"};
+        final String[] paoPathNames = new String[]{"pao/default.json"};
 
         for(String paoPathName : paoPathNames) {
-            String matrix = StreamUtils.copyToString(new ClassPathResource(paoPathName).getInputStream(), Charset.defaultCharset());
-            paoMatrices.put("default", matrix);
+            String paoMatrix = StreamUtils.copyToString(new ClassPathResource(paoPathName).getInputStream(), Charset.defaultCharset());
+            String fileName = new File(paoPathName).getName();
+            String name = fileName.substring(0, fileName.lastIndexOf("."));
+            paoMatrices.put(name, paoMatrix);
         }
 
-    }
-
-    public HashMap<String, String> findAll() {
-        return paoMatrices;
     }
 
     public Optional<String> find(String name) {
