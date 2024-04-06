@@ -57,6 +57,30 @@
     border: 1px solid black;
 }
 
+#quiz-select-name {
+    color: white;
+}
+
+#quiz-select-action {
+    color: white;
+}
+
+#quiz-select-object {
+    color: white;
+}
+
+#quiz-select-card {
+    color: white;
+}
+
+.quiz-select-wrong {
+    background-color: red;
+}
+
+.quiz-select-correct {
+    background-color: green;
+}
+
 
 #pao-instructions {
     display: none;

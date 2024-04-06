@@ -58,52 +58,62 @@ function quizNameChange(select) {
     let selectValue = select.options[select.selectedIndex].value;
     let correctValue = quizCards[currentQuizIndex].pao.name;
 
-    if( selectValue === correctValue) {
-
-        console.log("YES")
-    } else {
-        console.log("NO")
-    }
+    setSelectColor(select, selectValue === correctValue);
 }
 
 function quizActionChange(select) {
     let selectValue = select.options[select.selectedIndex].value;
     let correctValue = quizCards[currentQuizIndex].pao.action;
 
-    if( selectValue === correctValue) {
-
-        console.log("YES")
-    } else {
-        console.log("NO")
-    }
+    setSelectColor(select, selectValue === correctValue);
 }
 
 function quizObjectChange(select) {
     let selectValue = select.options[select.selectedIndex].value;
     let correctValue = quizCards[currentQuizIndex].pao.object;
 
-    if( selectValue === correctValue) {
-        console.log("YES")
-    } else {
-        console.log("NO")
-    }
+    setSelectColor(select, selectValue === correctValue);
 }
 
 function quizCardChange(select) {
     let selectValue = select.options[select.selectedIndex].value;
     let correctValue = quizCards[currentQuizIndex].name + " of " + quizCards[currentQuizIndex].suit;
 
-    if( selectValue === correctValue) {
-        console.log("YES")
+    setSelectColor(select, selectValue === correctValue);
+}
+
+function setSelectColor(select, isCorrect) {
+    if(isCorrect) {
+        select.classList.remove("quiz-select-wrong");
+        select.classList.add("quiz-select-correct");
+        console.log("CORRECT")
     } else {
-        console.log("NO")
+        select.classList.remove("quiz-select-correct");
+        select.classList.add("quiz-select-wrong");
+        console.log("WRONG")
     }
 }
 
 
 function nextQuizCard() {
+    clearSelects();
     quizImage.src =  quizCards[++currentQuizIndex].pao.image;
 }
+
+function clearSelects() {
+    quizName.selectedIndex = 0;
+    setSelectColor(quizName, false);
+
+    quizAction.selectedIndex = 0;
+    setSelectColor(quizAction, false);
+
+    quizObject.selectedIndex = 0;
+    setSelectColor(quizObject, false);
+
+    quizCard.selectedIndex = 0;
+    setSelectColor(quizCard, false);
+}
+
 async function loadMatrix(id) {
 
     const response = await fetch("http://localhost:8080/api/v1/pao/" + id);

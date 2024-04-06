@@ -49,30 +49,50 @@
     <div id="pao-quiz">
         Quiz
         <div id="quiz-content">
-        <div id="quiz-left">sdfsdfsdfsdfdfsdf</div>
+        <div id="quiz-left">
+
+            <div>
+                STEP 1<br>
+            To get a new card, click NEXT.<br>
+            Match the PAO properties, below the image.
+            </div>
+    <br>
+            <div>
+            STEP 2<br>
+            To see the answers, click REVEAL.<br>
+            Use the instant reveal, to auto reveal values.
+            </div>
+        </div>
 
         <div id="quiz-center">
         <img id="quiz-image" src="https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-h1.jpg" alt="">
-        <label for="quiz-select-name">Name</label>
-            <select id="quiz-select-name" class="form-select" onchange="quizNameChange(this)">
-            <option value="">Select name</option>
+        <label for="quiz-select-name" accesskey="n">Name (Alt+N)</label>
+            <select id="quiz-select-name" class="form-select quiz-select-wrong" onchange="quizNameChange(this)">
+            <option value="">Select Name</option>
         </select>
-        <label for="quiz-select-action">Action</label>
-            <select id="quiz-select-action" class="form-select" onchange="quizActionChange(this)">
-            <option value="">Select action</option>
+        <label for="quiz-select-action" accesskey="a">Action (Alt+A)</label>
+            <select id="quiz-select-action" class="form-select quiz-select-wrong" onchange="quizActionChange(this)">
+            <option value="">Select Action</option>
         </select>
-        <label for="quiz-select-object">Object</label>
-            <select id="quiz-select-object" class="form-select" onchange="quizObjectChange(this)">
-            <option value="">Select object</option>
+        <label for="quiz-select-object" accesskey="o">Object (Alt+O)</label>
+            <select id="quiz-select-object" class="form-select quiz-select-wrong" onchange="quizObjectChange(this)">
+            <option value="">Select Object</option>
         </select>
-        <label for="quiz-select-card">Card</label>
-            <select id="quiz-select-card" class="form-select" onchange="quizCardChange(this)">
-            <option value="">Select card</option>
+        <label for="quiz-select-card" accesskey="c">Card (Alt+C)</label>
+            <select id="quiz-select-card" class="form-select quiz-select-wrong" onchange="quizCardChange(this)">
+            <option value="">Select Card</option>
         </select>
+
+
+        </div>
+
+        <div id="quiz-right">
+            <button id="btn-quiz-reveal" class="btn btn-danger">Reveal</button>
+            <button id="btn-quiz-next" class="btn btn-primary" onclick="nextQuizCard()">Next</button>
 
             <section id="stopWatch">
                 <h6>Hour : Minutes : Seconds</h6>
-                <p id="timer"> 00:00:00 </p>
+                <p id="timer"> 00 : 00 : 00 </p>
                 <button id="start" class="btn btn-primary btn-timer">Start</button>
                 <button id="stop" class="btn btn-primary btn-timer">Stop</button>
                 <button id="pause" class="btn btn-primary btn-timer">Pause</button>
@@ -80,16 +100,21 @@
                 <p id="fulltime" class="fulltime"> </p>
             </section>
         </div>
-
-        <div id="quiz-right">
-            <button id="btn-quiz-reveal" class="btn btn-danger">Reveal</button>
-            <button id="btn-quiz-next" class="btn btn-primary" onclick="nextQuizCard()">Next</button>
-        </div>
         </div>
     </div>
 
     <div id="pao-instructions">
         Instructions
+        Learning to master memory palaces and memorize a Person-Action-Object (PAO) matrix might sound like a waist of time, but it will give you the ability to memorize over 17 places, with 3 cards each, in chronological order, which is a cool and valuable skill for your mind.<br><br>
+
+        This version contains:<br>
+        <ul>
+        <li>A classic PAO matrix you can use right away and change to better fit your needs.</li>
+        <li>Fully configurable matrix datasets, enabling you to make your own matrix.</li>
+            <li>Randomized memory palace visuals.</li>
+            <li>Training with card quizes that helps you exercise.</li>
+        <li>PAO shortcut lists, with extra mental shortcuts.</li>
+        </ul>
     </div>
 
     <div id="pao-matrix">
@@ -265,7 +290,7 @@
             <span class="pao-object"></span>
         </span>
             <span id="info-spades">
-                HUMOUROUS, ABSURD<br>
+                HUMOROUS, ABSURD<br>
                People who makes you smile or wrinkle your nose.
             </span>
         </div>
