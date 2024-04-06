@@ -1,6 +1,21 @@
-.panel {
+#panel {
     display: flex;
     flex-direction: row;
+    width: 100%;
+    border: 1px solid black;
+}
+
+#panel-left {
+    width: 33%;
+}
+
+#panel-center {
+    width: 33%;
+    text-align: center;
+}
+
+#panel-left {
+    width: 33%;
 }
 
 #pao-matrix {
@@ -10,6 +25,38 @@
 #pao-quiz {
     display: none;
 }
+
+#quiz-image {
+    width:112px;
+    height:142px;
+}
+
+#quiz-content {
+    display:flex;
+    flex-direction: row;
+    text-align: center;
+    width:100%;
+    border: 1px solid black;
+}
+
+#quiz-left {
+    width:33%;
+    border: 1px solid black;
+}
+
+#quiz-center {
+    text-align: center;
+    width:33%;
+    display:flex;
+    flex-direction: column;
+    border: 1px solid black;
+}
+
+#quiz-right {
+    width:33%;
+    border: 1px solid black;
+}
+
 
 #pao-instructions {
     display: none;
