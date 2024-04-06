@@ -93,35 +93,23 @@
     display: none;
 }
 
-#icon-hearts {
+.suit-column-red {
     color: red;
     font-size: 40pt;
     background-color: white;
     width: 40px;
-}
-#icon-spades {
-    color: black;
-    font-size: 40pt;
-    background-color: white;
-    width: 40px;
-}
-
-#icon-diamonds {
-    color: red;
-    font-size: 40pt;
-    background-color: white;
-    width: 40px;
-}
-
-#icon-clubs {
-    color: black;
-    font-size: 40pt;
-    background-color: white;
-    width: 40px;
-}
-
-#info-hearts {
     border: 1px solid black;
+}
+
+.suit-column-black {
+    color: black;
+    font-size: 40pt;
+    background-color: white;
+    width: 40px;
+    border: 1px solid black;
+}
+
+.info-column {
     height: 100px;
     vertical-align: center;
     display: block;
@@ -152,6 +140,11 @@
 }
 .pao-column span {
     border: white 1px solid;
+}
+
+.pao-header-column {
+    width:112px;
+    text-align: center;
 }
 .pao-name {
 
