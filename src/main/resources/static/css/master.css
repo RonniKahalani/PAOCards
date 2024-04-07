@@ -15,11 +15,28 @@ body {
     aspect-ratio: 16/9;
 }
 
+#palace {
+    display:none;
+}
+#palace-table {
+    height:auto;
+    margin: auto auto;
+}
+#palace-table th, td {
+    padding: 10px;
+}
+.palace-label {
+    display: inline-block;
+    width: 170px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
 .palace-phrase {
     margin-right:10px;
 }
 .palace-items {
-
+    margin-right:10px;
 }
 .palace-items:before {
     content: "(";
@@ -184,12 +201,6 @@ body {
     margin: auto auto;
 }
 
-.palace-label {
-    display: inline-block;
-    width: 170px;
-    font-weight: bold;
-    white-space: nowrap;
-}
 
 #pao-header {
     display: flex;

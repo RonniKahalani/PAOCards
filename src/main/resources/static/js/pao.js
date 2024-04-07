@@ -4,6 +4,7 @@ function showTab(id) {
    document.getElementById("pao-home").style.display = 'none';
    document.getElementById("pao-matrix").style.display = 'none';
    document.getElementById("pao-quiz").style.display = 'none';
+   document.getElementById("palace").style.display = 'none';
    document.getElementById("pao-instructions").style.display = 'none';
    document.getElementById(id).style.display = 'block';
 }
@@ -75,7 +76,6 @@ function startQuiz() {
     stopTime();
     quiz.style.display = "block";
     quizFront.style.display = "none";
-    createPalace();
     nextQuizCard();
     startWatch();
 }
@@ -108,6 +108,7 @@ async function loadQuiz(matrix) {
         setQuizSelectOptions(quizObject, objects);
         setQuizSelectOptions(quizCard, cards);
 
+        createPalace();
     }
 }
 
