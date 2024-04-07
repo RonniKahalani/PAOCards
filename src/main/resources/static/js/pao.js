@@ -12,16 +12,66 @@ let currentQuizIndex = -1;
 let quizCards = null;
 
 const quizImage = document.getElementById("quiz-image");
-const quizName = document.getElementById("quiz-select-name");
+const quizPerson = document.getElementById("quiz-select-person");
 const quizAction = document.getElementById("quiz-select-action");
 const quizObject = document.getElementById("quiz-select-object");
 const quizCard = document.getElementById("quiz-select-card");
 
-const quizRevealName = document.getElementById("quiz-reveal-name");
+const quizRevealPerson = document.getElementById("quiz-reveal-person");
 const quizRevealAction = document.getElementById("quiz-reveal-action");
 const quizRevealObject = document.getElementById("quiz-reveal-object");
 const quizRevealCard = document.getElementById("quiz-reveal-card");
 const quizRevealAll = document.getElementById("quiz-reveal-all");
+
+const cardCounter = document.getElementById("card-counter");
+
+const quiz = document.getElementById("quiz");
+const quizFront = document.getElementById("quiz-front");
+
+const btnQuizNext = document.getElementById("btn-quiz-next");
+
+function createPalace() {
+    for(let i = 0; i < 52; i++) {
+        let index = i+1;
+        let palaceItem = document.getElementById("palace-item-" + index);
+        let card = quizCards[i];
+
+        palaceItem.innerHTML = getSuitIcon(card.suit) + " " + getCardId(card);
+    }
+}
+
+function getSuitIcon(suit) {
+    switch (suit) {
+        case "Hearts": return "♥";
+        case "Spades": return "♠";
+        case "Diamonds": return "♦";
+        case "Clubs": return "♣";
+    }
+}
+
+function getCardId(card) {
+    let value = card.value;
+    switch (true) {
+        case (value>1 && value < 11): return value;
+        default: return card.name;
+    }
+}
+
+
+
+function startQuiz() {
+    currentQuizIndex = -1;
+    stopTime();
+    quiz.style.display = "block";
+    quizFront.style.display = "none";
+    createPalace();
+    nextQuizCard();
+    startWatch();
+}
+
+function restartQuiz() {
+    startQuiz();
+}
 
 async function loadQuiz(matrix) {
 
@@ -37,17 +87,17 @@ async function loadQuiz(matrix) {
             card.pao = paoItem[card.value-1];
         }
 
-        let names = quizCards.map(x => x.pao.name).sort();
+        let persons = quizCards.map(x => x.pao.person).sort();
         let actions = quizCards.map(x => x.pao.action).sort();
         let objects = quizCards.map(x => x.pao.object).sort();
         let cards = quizCards.map(x => x.value + " (" + x.name + ") of " + x.suit).sort(sorter);
 
-        setQuizSelectOptions(quizName, names);
+        setQuizSelectOptions(quizPerson, persons);
         setQuizSelectOptions(quizAction, actions);
         setQuizSelectOptions(quizObject, objects);
         setQuizSelectOptions(quizCard, cards);
 
-        nextQuizCard();
+//        nextQuizCard();
     }
 }
 
@@ -67,9 +117,9 @@ function setQuizSelectOptions(elem, values) {
     }
 }
 
-function quizNameChange(select) {
+function quizPersonChange(select) {
     let selectValue = select.options[select.selectedIndex].value;
-    let correctValue = quizCards[currentQuizIndex].pao.name;
+    let correctValue = quizCards[currentQuizIndex].pao.person;
 
     setSelectColor(select, selectValue === correctValue);
 }
@@ -112,18 +162,23 @@ function nextQuizCard() {
     clearSelects();
     quizImage.src =  quizCards[++currentQuizIndex].pao.image;
     autoReveal();
+    cardCounter.innerHTML = (currentQuizIndex+1).toString();
+    btnQuizNext.disabled = isQuizDone();
+}
 
+function isQuizDone() {
+    return currentQuizIndex === 51;
 }
 
 function autoReveal() {
-    if(quizRevealName.checked) revealName();
+    if(quizRevealPerson.checked) revealPerson();
     if(quizRevealAction.checked) revealAction();
     if(quizRevealObject.checked) revealObject();
     if(quizRevealCard.checked) revealCard();
 }
 
 function checkRevealAll(elem) {
-    quizRevealName.checked = elem.checked;
+    quizRevealPerson.checked = elem.checked;
     quizRevealAction.checked = elem.checked;
     quizRevealObject.checked = elem.checked;
     quizRevealCard.checked = elem.checked;
@@ -134,19 +189,48 @@ function checkRevealAll(elem) {
     }
 }
 function revealAll() {
-    revealName();
+    revealPerson();
     revealAction();
     revealObject();
     revealCard();
 }
 
-function revealName() {
+function quizCheck(elem) {
+    let item = null;
+    let reveal = null;
+
+    switch (elem) {
+        case quizRevealPerson:
+            item = quizPerson;
+            reveal = revealPerson;
+            break;
+        case quizRevealAction:
+            item = quizAction;
+            reveal = revealAction;
+            break;
+        case quizRevealObject:
+            item = quizObject;
+            reveal = revealObject;
+            break;
+        case quizRevealCard:
+            item = quizCard;
+            reveal = revealCard;
+            break;
+    }
+
+    if(elem.checked) {
+        reveal();
+    } else {
+        clearSelect(item);
+    }
+}
+function revealPerson() {
     let card = quizCards[currentQuizIndex];
-    let correctValue = card.pao.name;
-    for(let index=1; index < quizName.options.length; index++) {
-        if(quizName.options[index].value === correctValue) {
-            quizName.selectedIndex = index;
-            setSelectColor(quizName, true);
+    let correctValue = card.pao.person;
+    for(let index=1; index < quizPerson.options.length; index++) {
+        if(quizPerson.options[index].value === correctValue) {
+            quizPerson.selectedIndex = index;
+            setSelectColor(quizPerson, true);
             break;
         }
     }
@@ -155,7 +239,7 @@ function revealName() {
 function revealAction() {
     let card = quizCards[currentQuizIndex];
     let correctValue = card.pao.action;
-    for(let index=1; index < quizName.options.length; index++) {
+    for(let index=1; index < quizPerson.options.length; index++) {
         if(quizAction.options[index].value === correctValue) {
             quizAction.selectedIndex = index;
             setSelectColor(quizAction, true);
@@ -167,7 +251,7 @@ function revealAction() {
 function revealObject() {
     let card = quizCards[currentQuizIndex];
     let correctValue = card.pao.object;
-    for(let index=1; index < quizName.options.length; index++) {
+    for(let index=1; index < quizPerson.options.length; index++) {
         if(quizObject.options[index].value === correctValue) {
             quizObject.selectedIndex = index;
             setSelectColor(quizObject, true);
@@ -189,17 +273,15 @@ function revealCard() {
 }
 
 function clearSelects() {
-    quizName.selectedIndex = 0;
-    setSelectColor(quizName, false);
+    clearSelect(quizPerson);
+    clearSelect(quizAction);
+    clearSelect(quizObject);
+    clearSelect(quizCard);
+}
 
-    quizAction.selectedIndex = 0;
-    setSelectColor(quizAction, false);
-
-    quizObject.selectedIndex = 0;
-    setSelectColor(quizObject, false);
-
-    quizCard.selectedIndex = 0;
-    setSelectColor(quizCard, false);
+function clearSelect(elem) {
+    elem.selectedIndex = 0;
+    setSelectColor(elem, false);
 }
 
 async function loadMatrix(id) {
@@ -226,8 +308,8 @@ async function loadMatrix(id) {
             let card = suit[i];
             let column = paoColumns[i];
 
-            let name = column.getElementsByClassName("pao-name")[0];
-            name.innerHTML = card.name;
+            let person = column.getElementsByClassName("pao-person")[0];
+            person.innerHTML = card.person;
 
             let image = column.getElementsByClassName("pao-image")[0];
             image.innerHTML = "<img src='" + card.image+"' class='pao-image-tag' alt=''>";

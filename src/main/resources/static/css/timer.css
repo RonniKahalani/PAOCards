@@ -1,4 +1,7 @@
-
+#start,
+#stop {
+    display: none;
+}
 #stopWatch {
     height: auto;
     text-align: center;
@@ -8,27 +11,20 @@
 
 #timer,
 #fulltime {
-    width: 40vw;
+
     height: auto;
-    padding: 20px;
+    padding: 5px;
     font-weight: bold;
-    font-size: 30px;
-    font-family: ubuntu, sans-serif;
-    margin-left: 27vw;
+    font-size: 14pt;
     display: block;
-    border: 1px solid #eee;
-    border-radius: 50px;
     text-align: center;
-    box-shadow: 0 2px 3px #ccc;
-    background-color: white;
-    color: #4caf50;
+    color: black;
 }
 
 .btn-button {
     cursor: pointer;
     font-weight: bold;
     font-size: 15px;
-    font-family: ubuntu, sans-serif;
     outline: none;
     width: 80px;
     padding: 10px 0;

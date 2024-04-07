@@ -29,11 +29,11 @@ function startWatch() {
     gethours = hours < 10 ? "0" + hours + " : " : hours + " : ";
     secs = seconds < 10 ? "0" + seconds : seconds;
 
-    var continueButton = document.getElementById("continue");
+    const continueButton = document.getElementById("continue");
     continueButton.removeAttribute("hidden");
 
     /* display the Count-Up Timer */
-    var x = document.getElementById("timer");
+    const x = document.getElementById("timer");
     x.innerHTML = gethours + mins + secs;
 
     /* call the seconds counter after displaying the Count-Up
@@ -49,47 +49,42 @@ function startTime() {
       and start the Count-Up */
     if (seconds === 0 && minutes === 0 && hours === 0) {
         /* hide the fulltime when the Count-Up is running */
-        var fulltime = document.getElementById("fulltime");
+        const fulltime = document.getElementById("fulltime");
         fulltime.style.display = "none";
-        var showStart = document.getElementById("start");
-        showStart.style.display = "none";
 
         /* call the startWatch( ) function to execute the Count-Up
             whenever the startTime( ) is triggered */
         startWatch();
     }
 }
-var start = document.getElementById("start");
+
+const start = document.getElementById("start");
 start.addEventListener("click", startTime);
 
 /*create a function to stop the time */
 function stopTime() {
     /* check if seconds, minutes and hours are not equal to 0 */
     if (seconds !== 0 || minutes !== 0 || hours !== 0) {
-        var continueButton = document.getElementById("continue");
+        const continueButton = document.getElementById("continue");
         continueButton.setAttribute("hidden", "true");
-        var fulltime = document.getElementById("fulltime");
+        const fulltime = document.getElementById("fulltime");
         fulltime.style.display = "block";
         fulltime.style.color = "#ff4500";
-        var time = gethours + mins + secs;
+        const time = gethours + mins + secs;
         fulltime.innerHTML = "Time Recorded is " + time;
         // reset the Count-Up
         seconds = 0;
         minutes = 0;
         hours = 0;
         secs = "0" + seconds;
-        mins = "0" + minutes + ": ";
-        gethours = "0" + hours + ": ";
+        mins = "0" + minutes + " : ";
+        gethours = "0" + hours + " : ";
 
         /* display the Count-Up Timer after it's been stopped */
         const x = document.getElementById("timer");
         x.innerHTML = gethours + mins + secs;
 
         /* display all Count-Up control buttons */
-        const showStart = document.getElementById("start");
-        showStart.style.display = "inline-block";
-        const showStop = document.getElementById("stop");
-        showStop.style.display = "inline-block";
         const showPause = document.getElementById("pause");
         showPause.style.display = "inline-block";
 
@@ -99,7 +94,7 @@ function stopTime() {
     }
 }
 window.addEventListener("load", function() {
-    var stop = document.getElementById("stop");
+    const stop = document.getElementById("stop");
     stop.addEventListener("click", stopTime);
 });
 /*********** End of Stop Button Operations *********/
@@ -111,17 +106,13 @@ function pauseTime() {
         const x = document.getElementById("timer");
         x.innerHTML = gethours + mins + secs;
 
-        /* display all Count-Up control buttons */
-        const showStop = document.getElementById("stop");
-        showStop.style.display = "inline-block";
-
         /* clear the Count-Up using the setTimeout( )
             return value 'clearTime' as ID */
         clearTimeout(clearTime);
     }
 }
 
-var pause = document.getElementById("pause");
+const pause = document.getElementById("pause");
 pause.addEventListener("click", pauseTime);
 /*********** End of Pause Button Operations *********/
 
@@ -132,9 +123,6 @@ function continueTime() {
         const x = document.getElementById("timer");
         x.innerHTML = gethours + mins + secs;
 
-        /* display all Count-Up control buttons */
-        const showStop = document.getElementById("stop");
-        showStop.style.display = "inline-block";
         /* clear the Count-Up using the setTimeout( )
             return value 'clearTime' as ID.
             call the setTimeout( ) to keep the Count-Up alive ! */
@@ -144,7 +132,7 @@ function continueTime() {
 }
 
 window.addEventListener("load", function() {
-    var cTime = document.getElementById("continue");
+    const cTime = document.getElementById("continue");
     cTime.addEventListener("click", continueTime);
 });
 /*********** End of Continue Button Operations *********/
