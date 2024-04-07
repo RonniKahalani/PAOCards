@@ -133,6 +133,7 @@ function quizPersonChange(select) {
     let correctValue = quizCards[currentQuizIndex].pao.person;
 
     setSelectColor(select, selectValue === correctValue);
+    if(isAllCorrect()) notifyAllCorrect();
 }
 
 function quizActionChange(select) {
@@ -140,6 +141,7 @@ function quizActionChange(select) {
     let correctValue = quizCards[currentQuizIndex].pao.action;
 
     setSelectColor(select, selectValue === correctValue);
+    if(isAllCorrect()) notifyAllCorrect();
 }
 
 function quizObjectChange(select) {
@@ -147,6 +149,7 @@ function quizObjectChange(select) {
     let correctValue = quizCards[currentQuizIndex].pao.object;
 
     setSelectColor(select, selectValue === correctValue);
+    if(isAllCorrect()) notifyAllCorrect();
 }
 
 function quizCardChange(select) {
@@ -154,6 +157,7 @@ function quizCardChange(select) {
     let correctValue = quizCards[currentQuizIndex].value + " (" + quizCards[currentQuizIndex].name + ") of " + quizCards[currentQuizIndex].suit;
 
     setSelectColor(select, selectValue === correctValue);
+    if(isAllCorrect()) notifyAllCorrect();
 }
 
 function setSelectColor(select, isCorrect) {
@@ -177,6 +181,16 @@ function setSelectColor(select, isCorrect) {
     }
 }
 
+function isAllCorrect() {
+    return quizPerson.classList.contains("quiz-select-correct") &&
+        quizAction.classList.contains("quiz-select-correct") &&
+        quizObject.classList.contains("quiz-select-correct") &&
+        quizCard.classList.contains("quiz-select-correct");
+}
+
+function notifyAllCorrect() {
+ // TODO
+}
 
 function nextQuizCard() {
     clearSelects();
