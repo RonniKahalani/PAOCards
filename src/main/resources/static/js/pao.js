@@ -38,6 +38,16 @@ function createPalace() {
         let card = quizCards[i];
 
         palaceItem.innerHTML = getSuitIcon(card.suit) + " " + getCardId(card);
+
+        if(i>0 && (i+1) % 3 === 0) {
+            let palacePhrase = document.getElementById("palace-phrase-" + ((i+1)/3));
+            palacePhrase.innerHTML = quizCards[i-2].pao.person + ", " + quizCards[i-1].pao.action + ", " + quizCards[i].pao.object;
+        }
+
+        if(i === 51) {
+            let palacePhrase = document.getElementById("palace-phrase-18");
+            palacePhrase.innerHTML = quizCards[i].pao.person;
+        }
     }
 }
 
