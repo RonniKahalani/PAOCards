@@ -20,7 +20,7 @@
 
 <header>
     <div id="panel">
-        <div id="panel-left"><h1>PAO Matrix Quiz</h1></div>
+        <div id="panel-left"><span id="panel-title">PAO Matrix Quiz</span></div>
         <div id="panel-center">
             <ul class="nav nav-pills nav-fill gap-2 p-1 small bg-primary rounded-5 shadow-sm" id="pillNav2"
                 role="tablist"
@@ -84,7 +84,7 @@
                     <div class="quiz-label-select">
                         <select id="quiz-select-person" class="form-select"
                                 onchange="quizPersonChange(this)" accesskey="p">
-                            <option value="">Select Person</option>
+                            <option value="">Select Person (Alt+P)</option>
                         </select>
                         <input id="quiz-reveal-person" class="form-check-input quiz-check" type="checkbox"
                                title="Auto reveal" onchange="quizCheck(this)">
@@ -93,7 +93,7 @@
                     <div class="quiz-label-select">
                         <select id="quiz-select-action" class="form-select"
                                 onchange="quizActionChange(this)" accesskey="a">
-                            <option value="">Select Action</option>
+                            <option value="">Select Action (Alt+A)</option>
                         </select>
                         <input id="quiz-reveal-action" class="form-check-input quiz-check" type="checkbox"
                                title="Auto reveal" onchange="quizCheck(this)">
@@ -103,7 +103,7 @@
                     <div class="quiz-label-select">
                         <select id="quiz-select-object" class="form-select"
                                 onchange="quizObjectChange(this)" accesskey="o">
-                            <option value="">Select Object</option>
+                            <option value="">Select Object (Alt+O)</option>
                         </select>
                         <input id="quiz-reveal-object" class="form-check-input quiz-check" type="checkbox"
                                title="Auto reveal" onchange="quizCheck(this)">
@@ -113,7 +113,7 @@
                     <div class="quiz-label-select">
                         <select id="quiz-select-card" class="form-select"
                                 onchange="quizCardChange(this)" accesskey="c">
-                            <option value="">Select Card</option>
+                            <option value="">Select Card (Alt+C)</option>
                         </select>
                         <input id="quiz-reveal-card" class="form-check-input quiz-check" type="checkbox"
                                title="Auto reveal" onchange="quizCheck(this)">

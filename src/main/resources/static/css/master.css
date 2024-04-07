@@ -25,9 +25,15 @@ body {
     display: flex;
     flex-direction: row;
     width: 100%;
+    background-color: black;
     border: 1px solid black;
+    padding: 5px;
 }
 
+#panel-title {
+    font-size: 20pt;
+    color:white;
+}
 #panel-left {
     width: 33%;
 }
@@ -104,15 +110,19 @@ body {
 }
 
 #quiz-select-person {
+    margin: 5px;
 }
 
 #quiz-select-action {
+    margin: 5px;
 }
 
 #quiz-select-object {
+    margin: 5px;
 }
 
 #quiz-select-card {
+    margin: 5px;
 }
 
 .quiz-select-neutral {
@@ -132,6 +142,7 @@ body {
 
 #pao-instructions {
     display: none;
+    margin: 10px;
 }
 
 .suit-column {
