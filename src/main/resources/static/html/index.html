@@ -56,7 +56,8 @@
     <div id="pao-home">
         <iframe id=bg-video
                 src="https://www.youtube.com/embed/OApSOU7NIAw?si=3TqiLNDF62ySMG5j&autoplay=1&mute=1&controls=0&loop=1&start=59"
-                frameBorder=0 allowFullScreen allow=autoplay /></iframe>
+                frameBorder=0 allowFullScreen allow=autoplay/>
+        </iframe>
     </div>
     <div id="pao-quiz">
 
@@ -126,17 +127,20 @@
 
                     <br>
                     <div id="quiz-button-group">
-                    <button id="btn-quiz-restart" class="btn btn-primary" onclick="restartQuiz()" accesskey="s">Start
-                        Over
-                    </button>
-                    <button id="btn-quiz-reveal" class="btn btn-danger" onclick="revealAll()" accesskey="r">Reveal All
-                    </button>
-                    <button id="btn-quiz-next" class="btn btn-primary" onclick="nextQuizCard()" accesskey="n">Next
-                    </button>
-                    <br><br>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#palaceModal"
-                            accesskey="m">Memory Palace
-                    </button>
+                        <button id="btn-quiz-restart" class="btn btn-primary" onclick="restartQuiz()" accesskey="s">
+                            Start
+                            Over
+                        </button>
+                        <button id="btn-quiz-reveal" class="btn btn-danger" onclick="revealAll()" accesskey="r">Reveal
+                            All
+                        </button>
+                        <button id="btn-quiz-next" class="btn btn-primary" onclick="nextQuizCard()" accesskey="n">Next
+                        </button>
+                        <br><br>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#palaceModal"
+                                accesskey="m">Memory Palace
+                        </button>
                     </div>
                 </div>
                 <p id="fulltime" class="fulltime"></p>
@@ -619,143 +623,179 @@
                         <div>
                             <span class="palace-label">01. Parking Lot</span>
                             <span id="palace-phrase-1" class="palace-phrase"></span>
-                            (<span id="palace-item-1" class="palace-item"></span>
+                            <span class="palace-items">
+                            <span id="palace-item-1" class="palace-item"></span>
                             <span id="palace-item-2" class="palace-item"></span>
-                            <span id="palace-item-3" class="palace-item"></span>)
+                            <span id="palace-item-3" class="palace-item"></span>
+                            </span>
                         </div>
 
                         <div>
                             <span class="palace-label">02. Front Door</span>
                             <span id="palace-phrase-2" class="palace-phrase"></span>
-                            (<span id="palace-item-4" class="palace-item"></span>
+                            <span class="palace-items">
+                            <span id="palace-item-4" class="palace-item"></span>
                             <span id="palace-item-5" class="palace-item"></span>
-                            <span id="palace-item-6"> class="palace-item"</span>)
+                            <span id="palace-item-6"> class="palace-item"</span>
+                            </span>
                         </div>
 
                         <div>
                             <span class="palace-label">03. Hall</span>
                             <span id="palace-phrase-3" class="palace-phrase"></span>
-                            (<span id="palace-item-7" class="palace-item"></span>
+                            <span class="palace-items">
+                            <span id="palace-item-7" class="palace-item"></span>
                             <span id="palace-item-8" class="palace-item"></span>
-                            <span id="palace-item-9" class="palace-item"></span>)
+                            <span id="palace-item-9" class="palace-item"></span>
+                            </span>
                         </div>
 
                         <div>
                             <span class="palace-label">04. Kitchen</span>
                             <span id="palace-phrase-4" class="palace-phrase"></span>
-                            (<span id="palace-item-10" class="palace-item"></span>
+                            <span class="palace-items">
+                            <span id="palace-item-10" class="palace-item"></span>
                             <span id="palace-item-11" class="palace-item"></span>
-                            <span id="palace-item-12" class="palace-item"></span>)
+                            <span id="palace-item-12" class="palace-item"></span>
+                            </span>
                         </div>
 
                         <div>
                             <span class="palace-label">05. Living Room</span>
                             <span id="palace-phrase-5" class="palace-phrase"></span>
-                            (<span id="palace-item-13" class="palace-item"></span>
+                            <span class="palace-items">
+                            <span id="palace-item-13" class="palace-item"></span>
                             <span id="palace-item-14" class="palace-item"></span>
-                            <span id="palace-item-15" class="palace-item"></span>)
+                            <span id="palace-item-15" class="palace-item"></span>
+                            </span>
                         </div>
 
                         <div>
                             <span class="palace-label">06. Patio</span>
                             <span id="palace-phrase-6" class="palace-phrase"></span>
-                            (<span id="palace-item-16" class="palace-item"></span>
+                            <span class="palace-items">
+                            <span id="palace-item-16" class="palace-item"></span>
                             <span id="palace-item-17" class="palace-item"></span>
-                            <span id="palace-item-18" class="palace-item"></span>)
+                            <span id="palace-item-18" class="palace-item"></span>
+                            </span>
                         </div>
 
                         <div>
                             <span class="palace-label">07. Garden</span>
                             <span id="palace-phrase-7" class="palace-phrase"></span>
-                            (<span id="palace-item-19" class="palace-item"></span>
+                            <span class="palace-items">
+                            <span id="palace-item-19" class="palace-item"></span>
                             <span id="palace-item-20" class="palace-item"></span>
-                            <span id="palace-item-21" class="palace-item"></span>)
+                            <span id="palace-item-21" class="palace-item"></span>
+                            </span>
                         </div>
 
                         <div>
                             <span class="palace-label">08. Stairway</span>
                             <span id="palace-phrase-8" class="palace-phrase"></span>
-                            (<span id="palace-item-22" class="palace-item"></span>
+                            <span class="palace-items">
+                            <span id="palace-item-22" class="palace-item"></span>
                             <span id="palace-item-23" class="palace-item"></span>
-                            <span id="palace-item-24" class="palace-item"></span>)
+                            <span id="palace-item-24" class="palace-item"></span>
+                            </span>
                         </div>
 
                         <div>
                             <span class="palace-label">09. Parent Room</span>
                             <span id="palace-phrase-9" class="palace-phrase"></span>
-                            (<span id="palace-item-25" class="palace-item"></span>
+                            <span class="palace-items">
+                            <span id="palace-item-25" class="palace-item"></span>
                             <span id="palace-item-26" class="palace-item"></span>
-                            <span id="palace-item-27" class="palace-item"></span>)
+                            <span id="palace-item-27" class="palace-item"></span>
+                            </span>
                         </div>
 
                         <div>
                             <span class="palace-label">10. Sibling Room</span>
                             <span id="palace-phrase-10" class="palace-phrase"></span>
-                            (<span id="palace-item-28" class="palace-item"></span>
+                            <span class="palace-items">
+                            <span id="palace-item-28" class="palace-item"></span>
                             <span id="palace-item-29" class="palace-item"></span>
-                            <span id="palace-item-30" class="palace-item"></span>)
+                            <span id="palace-item-30" class="palace-item"></span>
+                            </span>
                         </div>
 
                         <div>
                             <span class="palace-label">11. Teenage Room</span>
                             <span id="palace-phrase-11" class="palace-phrase"></span>
-                            (<span id="palace-item-31" class="palace-item"></span>
+                            <span class="palace-items">
+                            <span id="palace-item-31" class="palace-item"></span>
                             <span id="palace-item-32" class="palace-item"></span>
-                            <span id="palace-item-33" class="palace-item"></span>)
+                            <span id="palace-item-33" class="palace-item"></span>
+                            </span>
                         </div>
 
                         <div>
                             <span class="palace-label">12. Bathroom</span>
                             <span id="palace-phrase-12" class="palace-phrase"></span>
-                            (<span id="palace-item-34" class="palace-item"></span>
+                            <span class="palace-items">
+                            <span id="palace-item-34" class="palace-item"></span>
                             <span id="palace-item-35" class="palace-item"></span>
-                            <span id="palace-item-36" class="palace-item"></span>)
+                            <span id="palace-item-36" class="palace-item"></span>
+                            </span>
                         </div>
 
                         <div>
                             <span class="palace-label">13. Attic</span>
                             <span id="palace-phrase-13" class="palace-phrase"></span>
-                            (<span id="palace-item-37" class="palace-item"></span>
+                            <span class="palace-items">
+                            <span id="palace-item-37" class="palace-item"></span>
                             <span id="palace-item-38" class="palace-item"></span>
-                            <span id="palace-item-39" class="palace-item"></span>)
+                            <span id="palace-item-39" class="palace-item"></span>
+                            </span>
                         </div>
 
                         <div>
                             <span class="palace-label">14. Roof</span>
                             <span id="palace-phrase-14" class="palace-phrase"></span>
-                            (<span id="palace-item-40" class="palace-item"></span>
+                            <span class="palace-items">
+                            <span id="palace-item-40" class="palace-item"></span>
                             <span id="palace-item-41" class="palace-item"></span>
-                            <span id="palace-item-42" class="palace-item"></span>)
+                            <span id="palace-item-42" class="palace-item"></span>
+                            </span>
                         </div>
 
                         <div>
                             <span class="palace-label">15. Chimney</span>
                             <span id="palace-phrase-15" class="palace-phrase"></span>
-                            (<span id="palace-item-43" class="palace-item"></span>
+                            <span class="palace-items">
+                            <span id="palace-item-43" class="palace-item"></span>
                             <span id="palace-item-44" class="palace-item"></span>
-                            <span id="palace-item-45" class="palace-item"></span>)
+                            <span id="palace-item-45" class="palace-item"></span>
+                            </span>
                         </div>
 
                         <div>
                             <span class="palace-label">16. Sky</span>
                             <span id="palace-phrase-16" class="palace-phrase"></span>
-                            (<span id="palace-item-46" class="palace-item"></span>
+                            <span class="palace-items">
+                            <span id="palace-item-46" class="palace-item"></span>
                             <span id="palace-item-47" class="palace-item"></span>
-                            <span id="palace-item-48" class="palace-item"></span>)
+                            <span id="palace-item-48" class="palace-item"></span>
+                            </span>
                         </div>
 
                         <div>
                             <span class="palace-label">17. Moon</span>
                             <span id="palace-phrase-17" class="palace-phrase"></span>
-                            (<span id="palace-item-49" class="palace-item"></span>
+                            <span class="palace-items">
+                            <span id="palace-item-49" class="palace-item"></span>
                             <span id="palace-item-50" class="palace-item"></span>
-                            <span id="palace-item-51" class="palace-item"></span>)
+                            <span id="palace-item-51" class="palace-item"></span>
+                            </span>
                         </div>
 
                         <div>
                             <span class="palace-label">18. Last Card</span>
                             <span id="palace-phrase-18" class="palace-phrase"></span>
-                            (<span id="palace-item-52" class="palace-item"></span>)
+                            <span class="palace-items">
+                            <span id="palace-item-52" class="palace-item"></span>
+                            </span>
                         </div>
                     </div>
                 </div>
