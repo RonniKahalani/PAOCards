@@ -4,7 +4,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>PAO Matrix</title>
+    <title>PAO Matrix Quiz</title>
 
     <link media="all" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/master.css">
@@ -20,14 +20,19 @@
 
 <header>
     <div id="panel">
-        <div id="panel-left"><h1>PAO Matrix Cards</h1></div>
+        <div id="panel-left"><h1>PAO Matrix Quiz</h1></div>
         <div id="panel-center">
             <ul class="nav nav-pills nav-fill gap-2 p-1 small bg-primary rounded-5 shadow-sm" id="pillNav2"
                 role="tablist"
                 style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link active rounded-5" id="btn-matrix" data-bs-toggle="tab" type="button"
-                            role="tab" aria-selected="true" onclick="showTab('pao-matrix')">Matrix
+                    <button class="nav-link active rounded-5" id="btn-home" data-bs-toggle="tab" type="button"
+                            role="tab" aria-selected="true" onclick="showTab('pao-home')">Home
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link rounded-5" id="btn-matrix" data-bs-toggle="tab" type="button"
+                            role="tab" aria-selected="false" onclick="showTab('pao-matrix')">Matrix
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
@@ -48,6 +53,11 @@
 </header>
 
 <div id="content">
+    <div id="pao-home">
+        <iframe id=bg-video
+                src="https://www.youtube.com/embed/OApSOU7NIAw?si=3TqiLNDF62ySMG5j&autoplay=1&mute=1&controls=0&loop=1&start=59"
+                frameBorder=0 allowFullScreen allow=autoplay /></iframe>
+    </div>
     <div id="pao-quiz">
 
         <div id="quiz-content">
@@ -72,7 +82,7 @@
                         <span id="card-counter">1</span> of 52
                     </div>
                     <div class="quiz-label-select">
-                        <select id="quiz-select-person" class="form-select quiz-select-wrong"
+                        <select id="quiz-select-person" class="form-select"
                                 onchange="quizPersonChange(this)" accesskey="p">
                             <option value="">Select Person</option>
                         </select>
@@ -81,7 +91,7 @@
                     </div>
 
                     <div class="quiz-label-select">
-                        <select id="quiz-select-action" class="form-select quiz-select-wrong"
+                        <select id="quiz-select-action" class="form-select"
                                 onchange="quizActionChange(this)" accesskey="a">
                             <option value="">Select Action</option>
                         </select>
@@ -91,7 +101,7 @@
                     </div>
 
                     <div class="quiz-label-select">
-                        <select id="quiz-select-object" class="form-select quiz-select-wrong"
+                        <select id="quiz-select-object" class="form-select"
                                 onchange="quizObjectChange(this)" accesskey="o">
                             <option value="">Select Object</option>
                         </select>
@@ -101,7 +111,7 @@
                     </div>
 
                     <div class="quiz-label-select">
-                        <select id="quiz-select-card" class="form-select quiz-select-wrong"
+                        <select id="quiz-select-card" class="form-select"
                                 onchange="quizCardChange(this)" accesskey="c">
                             <option value="">Select Card</option>
                         </select>

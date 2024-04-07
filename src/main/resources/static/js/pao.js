@@ -1,6 +1,7 @@
 "use strict";
 
 function showTab(id) {
+   document.getElementById("pao-home").style.display = 'none';
    document.getElementById("pao-matrix").style.display = 'none';
    document.getElementById("pao-quiz").style.display = 'none';
    document.getElementById("pao-instructions").style.display = 'none';
@@ -97,7 +98,6 @@ async function loadQuiz(matrix) {
         setQuizSelectOptions(quizObject, objects);
         setQuizSelectOptions(quizCard, cards);
 
-//        nextQuizCard();
     }
 }
 
@@ -146,11 +146,20 @@ function quizCardChange(select) {
 }
 
 function setSelectColor(select, isCorrect) {
+    if(select.selectedIndex === 0) {
+        select.classList.remove("quiz-select-wrong");
+        select.classList.remove("quiz-select-correct");
+        select.classList.add("quiz-select-neutral");
+        return;
+    }
+
     if(isCorrect) {
+        select.classList.remove("quiz-select-neutral");
         select.classList.remove("quiz-select-wrong");
         select.classList.add("quiz-select-correct");
         console.log("CORRECT")
     } else {
+        select.classList.remove("quiz-select-neutral");
         select.classList.remove("quiz-select-correct");
         select.classList.add("quiz-select-wrong");
         console.log("WRONG")
@@ -281,7 +290,9 @@ function clearSelects() {
 
 function clearSelect(elem) {
     elem.selectedIndex = 0;
-    setSelectColor(elem, false);
+    elem.classList.remove("quiz-select-wrong");
+    elem.classList.remove("quiz-select-correct");
+    elem.classList.add("quiz-select-neutral");
 }
 
 async function loadMatrix(id) {

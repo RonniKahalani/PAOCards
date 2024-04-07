@@ -2,6 +2,21 @@ body {
     font-family: Tahoma, sans-serif;
 }
 
+#bg-video {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    mask-image: linear-gradient(to top, transparent 0%, black 50%, transparent 100%);
+    user-select: none;
+    pointer-events: none;
+    filter: grayscale(0.8);
+    aspect-ratio: 16/9;
+}
+
+
+
 #quiz-button-group {
 
 }
@@ -35,7 +50,7 @@ body {
 }
 
 #pao-matrix {
-    display: block;
+    display: none;
 }
 
 #pao-quiz {
@@ -48,6 +63,7 @@ body {
 }
 
 #quiz-front {
+    height: auto;
     margin: auto auto;
 }
 
@@ -88,27 +104,29 @@ body {
 }
 
 #quiz-select-person {
-    color: white;
 }
 
 #quiz-select-action {
-    color: white;
 }
 
 #quiz-select-object {
-    color: white;
 }
 
 #quiz-select-card {
-    color: white;
 }
 
+.quiz-select-neutral {
+    background-color: white;
+    color:black;
+}
 .quiz-select-wrong {
     background-color: red;
+    color: white;
 }
 
 .quiz-select-correct {
     background-color: green;
+    color: white;
 }
 
 
