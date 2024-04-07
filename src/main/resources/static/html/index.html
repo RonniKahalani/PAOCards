@@ -115,17 +115,19 @@
                     </div>
 
                     <br>
+                    <div id="quiz-button-group">
+                    <button id="btn-quiz-restart" class="btn btn-primary" onclick="restartQuiz()" accesskey="s">Start
+                        Over
+                    </button>
                     <button id="btn-quiz-reveal" class="btn btn-danger" onclick="revealAll()" accesskey="r">Reveal All
                     </button>
                     <button id="btn-quiz-next" class="btn btn-primary" onclick="nextQuizCard()" accesskey="n">Next
                     </button>
-                    <button id="btn-quiz-restart" class="btn btn-primary" onclick="restartQuiz()" accesskey="s">Start
-                        Over
-                    </button><br>
+                    <br><br>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#palaceModal"
-                            accesskey="t">Memory Palace
+                            accesskey="m">Memory Palace
                     </button>
-
+                    </div>
                 </div>
                 <p id="fulltime" class="fulltime"></p>
                 <div id="quiz-front">
@@ -569,6 +571,8 @@
                         <li>Select Card List (Alt+C)</li>
                         <li>Reveal All (Alt+R)</li>
                         <li>Next Card (Alt+N)</li>
+                        <li>Start Over (Alt+S)</li>
+                        <li>Memory Palace (Alt+M)</li>
                     </ul>
                     <div>
                         STEP 1<br>

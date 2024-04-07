@@ -2,6 +2,10 @@ body {
     font-family: Tahoma, sans-serif;
 }
 
+#quiz-button-group {
+
+}
+
 #panel {
     display: flex;
     flex-direction: row;
