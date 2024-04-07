@@ -17,10 +17,9 @@ body {
 
 .palace-phrase {
     margin-right:10px;
-    width:300px;
 }
 .palace-items {
-    text-align:right;
+
 }
 .palace-items:before {
     content: "(";
