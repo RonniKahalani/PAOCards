@@ -32,24 +32,43 @@ const quizFront = document.getElementById("quiz-front");
 
 const btnQuizNext = document.getElementById("btn-quiz-next");
 
-function createPalace() {
-    for(let i = 0; i < 52; i++) {
-        let index = i+1;
-        let palaceItem = document.getElementById("palace-item-" + index);
-        let card = quizCards[i];
+function createPalace(palace) {
 
-        palaceItem.innerHTML = getSuitIcon(card.suit) + " " + getCardId(card);
+        let palaceLabel = null;
+        let palaceInfo = null;
+        let palaceImage = null;
+        let palaceItem = null;
+        let card = null;
+        let palacePhrase = null;
 
-        if(i>0 && (i+1) % 3 === 0) {
-            let palacePhrase = document.getElementById("palace-phrase-" + ((i+1)/3));
-            palacePhrase.innerHTML = quizCards[i-2].pao.person + ", " + quizCards[i-1].pao.action + ", " + quizCards[i].pao.object;
+        for (let i = 0; i < 52; i++) {
+            let index = i + 1;
+/*
+            palaceImage = document.getElementById("palace-image-" + index);
+            palaceImage.innerHTML = "<img src='" + palace[i].image + "' alt=''>";
+
+            palaceLabel = document.getElementById("palace-label-" + index);
+            palaceLabel.innerHTML = (i + 1) + ". " + palace[i].label;
+
+            palaceInfo = document.getElementById("palace-info-" + index);
+            palaceInfo.innerHTML = palace[i].info;
+*/
+            palaceItem = document.getElementById("palace-item-" + index);
+            card = quizCards[i];
+
+            palaceItem.innerHTML = getSuitIcon(card.suit) + " " + getCardId(card);
+
+            if (i > 0 && (i + 1) % 3 === 0) {
+                palacePhrase = document.getElementById("palace-phrase-" + ((i + 1) / 3));
+                palacePhrase.innerHTML = quizCards[i - 2].pao.person + ",<br>" + quizCards[i - 1].pao.action + ",<br>" + quizCards[i].pao.object;
+            }
+
+            if (i === 51) {
+                palacePhrase = document.getElementById("palace-phrase-18");
+                palacePhrase.innerHTML = quizCards[i].pao.person;
+            }
+
         }
-
-        if(i === 51) {
-            let palacePhrase = document.getElementById("palace-phrase-18");
-            palacePhrase.innerHTML = quizCards[i].pao.person;
-        }
-    }
 }
 
 function getSuitIcon(suit) {
@@ -84,33 +103,7 @@ function restartQuiz() {
     startQuiz();
 }
 
-async function loadQuiz(matrix) {
 
-    const response = await fetch("http://localhost:8080/api/v1/quiz");
-    if(response.ok) {
-        const quiz = await response.json();
-        quizCards = quiz["cards"];
-
-        for(let i = 0; i < quizCards.length; i++) {
-            let card = quizCards[i];
-            let paoIndex = card.suit.toLowerCase();
-            let paoItem = matrix[paoIndex];
-            card.pao = paoItem[card.value-1];
-        }
-
-        let persons = quizCards.map(x => x.pao.person).sort();
-        let actions = quizCards.map(x => x.pao.action).sort();
-        let objects = quizCards.map(x => x.pao.object).sort();
-        let cards = quizCards.map(x => x.value + " (" + x.name + ") of " + x.suit).sort(sorter);
-
-        setQuizSelectOptions(quizPerson, persons);
-        setQuizSelectOptions(quizAction, actions);
-        setQuizSelectOptions(quizObject, objects);
-        setQuizSelectOptions(quizCard, cards);
-
-        createPalace();
-    }
-}
 
 function sorter(a, b) {
     let x = parseInt(a.split(" ")[0]);
@@ -189,7 +182,7 @@ function isAllCorrect() {
 }
 
 function notifyAllCorrect() {
- // TODO
+    $.notify("Congratulation! You just completed the " + (currentQuizIndex+1) + " quiz question. Click the next button.",{position:"bottom right",className:"success"});
 }
 
 function nextQuizCard() {
@@ -320,6 +313,38 @@ function clearSelect(elem) {
     elem.classList.add("quiz-select-neutral");
 }
 
+async function loadData() {
+    await loadQuiz(await loadMatrix("default"));
+    createPalace(await loadPalace("default"));
+}
+
+async function loadQuiz(matrix) {
+
+    const response = await fetch("http://localhost:8080/api/v1/quiz");
+    if(response.ok) {
+        const quiz = await response.json();
+
+        quizCards = quiz["cards"];
+
+        for(let i = 0; i < quizCards.length; i++) {
+            let card = quizCards[i];
+            let paoIndex = card.suit.toLowerCase();
+            let paoItem = matrix[paoIndex];
+            card.pao = paoItem[card.value-1];
+        }
+
+        let persons = quizCards.map(x => x.pao.person).sort();
+        let actions = quizCards.map(x => x.pao.action).sort();
+        let objects = quizCards.map(x => x.pao.object).sort();
+        let cards = quizCards.map(x => x.value + " (" + x.name + ") of " + x.suit).sort(sorter);
+
+        setQuizSelectOptions(quizPerson, persons);
+        setQuizSelectOptions(quizAction, actions);
+        setQuizSelectOptions(quizObject, objects);
+        setQuizSelectOptions(quizCard, cards);
+    }
+}
+
 async function loadMatrix(id) {
 
     const response = await fetch("http://localhost:8080/api/v1/pao/" + id);
@@ -358,8 +383,16 @@ async function loadMatrix(id) {
         }
 
         }
-        await loadQuiz(matrix);
         return matrix;
     }
+}
+
+async function loadPalace(name) {
+
+    const response = await fetch("http://localhost:8080/api/v1/palace/" + name);
+    if(response.ok) {
+        return await response.json();
+    }
+
 
 }

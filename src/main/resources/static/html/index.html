@@ -7,19 +7,17 @@
     <title>PAO Matrix Quiz</title>
 
     <link media="all" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-
     <link rel="stylesheet" href="../css/master.css">
     <link rel="stylesheet" href="../css/timer.css">
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.tutorialjinni.com/notify/0.4.2/notify.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-notify/0.2.0/js/bootstrap-notify.min.js"></script>
     <script defer src="../js/pao.js"></script>
     <script defer src="../js/timer.js"></script>
 </head>
 
-<body onload="loadMatrix('default')">
+<body onload="loadData()">
 
 <header>
     <div id="panel">
@@ -612,172 +610,303 @@
     </div>
 
 
-                    <div id="palace">
-                        <table id="palace-table">
-                            <tr><th>Location</th><th>Phrase</th><th>Card 1</th><th>Card 2</th><th>Card 3</th></tr>
-                        <tr>
-                            <td class="palace-label">01. Parking Lot</td>
-                            <td id="palace-image-1" class="palace-image"></td>
-                            <td id="palace-phrase-1" class="palace-phrase"></td>
-                            <td id="palace-item-1" class="palace-item"></td>
-                            <td id="palace-item-2" class="palace-item"></td>
-                            <td id="palace-item-3" class="palace-item"></td>
-                        </tr>
+    <div id="palace">
+        <table id="palace-table">
+            <tr>
+                <th>Storyline</th>
+                <th></th>
+                <th>Loci sentence</th>
+            </tr>
 
-                        <tr>
-                            <td class="palace-label">02. Front Door</td>
-                            <td id="palace-image-2" class="palace-image"></td>
-                            <td id="palace-phrase-2" class="palace-phrase"></td>
-                            <td id="palace-item-4" class="palace-item"></td>
-                            <td id="palace-item-5" class="palace-item"></td>
-                            <td id="palace-item-6" class="palace-item"> </td>
-                        </tr>
-
-                        <tr>
-                            <td class="palace-label">03. Hall</td>
-                            <td id="palace-image-3" class="palace-image"></td>
-                            <td id="palace-phrase-3" class="palace-phrase"></td>
-                            <td id="palace-item-7" class="palace-item"></td>
-                            <td id="palace-item-8" class="palace-item"></td>
-                            <td id="palace-item-9" class="palace-item"></td>
-                        </tr>
-
-                        <tr>
-                            <td class="palace-label">04. Kitchen</td>
-                            <td id="palace-image-4" class="palace-image"></td>
-                            <td id="palace-phrase-4" class="palace-phrase"></td>
-                            <td id="palace-item-10" class="palace-item"></td>
-                            <td id="palace-item-11" class="palace-item"></td>
-                            <td id="palace-item-12" class="palace-item"></td>
-                        </tr>
-
-                        <tr>
-                            <td class="palace-label">05. Living Room</td>
-                            <td id="palace-image-5" class="palace-image"></td>
-                            <td id="palace-phrase-5" class="palace-phrase"></td>
-                            <td id="palace-item-13" class="palace-item"></td>
-                            <td id="palace-item-14" class="palace-item"></td>
-                            <td id="palace-item-15" class="palace-item"></td>
-                        </tr>
-
-                        <tr>
-                            <td class="palace-label">06. Patio</td>
-                            <td id="palace-image-6" class="palace-image"></td>
-                            <td id="palace-phrase-6" class="palace-phrase"></td>
-                            <td id="palace-item-16" class="palace-item"></td>
-                            <td id="palace-item-17" class="palace-item"></td>
-                            <td id="palace-item-18" class="palace-item"></td>
-                        </tr>
-
-                        <tr>
-                            <td class="palace-label">07. Garden</td>
-                            <td id="palace-phrase-7" class="palace-phrase"></td>
-                            <td id="palace-image-7" class="palace-image"></td>
-                            <td id="palace-item-19" class="palace-item"></td>
-                            <td id="palace-item-20" class="palace-item"></td>
-                            <td id="palace-item-21" class="palace-item"></td>
-                        </tr>
-
-                        <tr>
-                            <td class="palace-label">08. Stairway</td>
-                            <td id="palace-image-8" class="palace-image"></td>
-                            <td id="palace-phrase-8" class="palace-phrase"></td>
-                            <td id="palace-item-22" class="palace-item"></td>
-                            <td id="palace-item-23" class="palace-item"></td>
-                            <td id="palace-item-24" class="palace-item"></td>
-                        </tr>
-
-                        <tr>
-                            <td class="palace-label">09. Parent Room</td>
-                            <td id="palace-image-9" class="palace-image"></td>
-                            <td id="palace-phrase-9" class="palace-phrase"></td>
-                            <td id="palace-item-25" class="palace-item"></td>
-                            <td id="palace-item-26" class="palace-item"></td>
-                            <td id="palace-item-27" class="palace-item"></td>
-                        </tr>
-
-                        <tr>
-                            <td class="palace-label">10. Sibling Room</td>
-                            <td id="palace-image-10" class="palace-image"></td>
-                            <td id="palace-phrase-10" class="palace-phrase"></td>
-                            <td id="palace-item-28" class="palace-item"></td>
-                            <td id="palace-item-29" class="palace-item"></td>
-                            <td id="palace-item-30" class="palace-item"></td>
-                        </tr>
-
-                        <tr>
-                            <td class="palace-label">11. Teenage Room</td>
-                            <td id="palace-image-11" class="palace-image"></td>
-                            <td id="palace-phrase-11" class="palace-phrase"></td>
-                            <td id="palace-item-31" class="palace-item"></td>
-                            <td id="palace-item-32" class="palace-item"></td>
-                            <td id="palace-item-33" class="palace-item"></td>
-                        </tr>
-
-                        <tr>
-                            <td class="palace-label">12. Bathroom</td>
-                            <td id="palace-image-12" class="palace-image"></td>
-                            <td id="palace-phrase-12" class="palace-phrase"></td>
-                            <td id="palace-item-34" class="palace-item"></td>
-                            <td id="palace-item-35" class="palace-item"></td>
-                            <td id="palace-item-36" class="palace-item"></td>
-                        </tr>
-
-                        <tr>
-                            <td class="palace-label">13. Attic</td>
-                            <td id="palace-image-13" class="palace-image"></td>
-                            <td id="palace-phrase-13" class="palace-phrase"></td>
-                            <td id="palace-item-37" class="palace-item"></td>
-                            <td id="palace-item-38" class="palace-item"></td>
-                            <td id="palace-item-39" class="palace-item"></td>
-                        </tr>
-
-                        <tr>
-                            <td class="palace-label">14. Roof</td>
-                            <td id="palace-image-14" class="palace-image"></td>
-                            <td id="palace-phrase-14" class="palace-phrase"></td>
-                            <td id="palace-item-40" class="palace-item"></td>
-                            <td id="palace-item-41" class="palace-item"></td>
-                            <td id="palace-item-42" class="palace-item"></td>
-                        </tr>
-
-                        <tr>
-                            <td class="palace-label">15. Chimney</td>
-                            <td id="palace-image-15" class="palace-image"></td>
-                            <td id="palace-phrase-15" class="palace-phrase"></td>
-                            <td id="palace-item-43" class="palace-item"></td>
-                            <td id="palace-item-44" class="palace-item"></td>
-                            <td id="palace-item-45" class="palace-item"></td>
-                        </tr>
-
-                        <tr>
-                            <td class="palace-label">16. Sky</td>
-                            <td id="palace-image-16" class="palace-image"></td>
-                            <td id="palace-phrase-16" class="palace-phrase"></td>
-                            <td id="palace-item-46" class="palace-item"></td>
-                            <td id="palace-item-47" class="palace-item"></td>
-                            <td id="palace-item-48" class="palace-item"></td>
-                        </tr>
-
-                        <tr>
-                            <td class="palace-label">17. Moon</td>
-                            <td id="palace-image-17" class="palace-image"></td>
-                            <td id="palace-phrase-17" class="palace-phrase"></td>
-                            <td id="palace-item-49" class="palace-item"></td>
-                            <td id="palace-item-50" class="palace-item"></td>
-                            <td id="palace-item-51" class="palace-item"></td>
-                        </tr>
-
-                        <tr>
-                            <td class="palace-label">18. Last Card</td>
-                            <td id="palace-image-18" class="palace-image"></td>
-                            <td id="palace-phrase-18" class="palace-phrase"></td>
-                            <td id="palace-item-52" class="palace-item"></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        </table>
+            <tr>
+                <td><div id="palace-info-1" class="palace-info"></div></td>
+                <td>
+                <div id="palace-label-1" class="palace-label">1. Parking lot</div>
+                <div id="palace-image-1" class="palace-image">
+                    <img src="https://learningisliving.dk/wp-content/uploads/2021/11/pao-loci-1.jpg" alt="">
+                </div>
+                    <div class="palace-items">
+                        <span id="palace-item-1" class="palace-item"></span>
+                        <span id="palace-item-2" class="palace-item"></span>
+                        <span id="palace-item-3" class="palace-item"></span>
                     </div>
+                </td>
+                <td><div id="palace-phrase-1" class="palace-phrase"></div></td>
+            </tr>
+
+            <tr>
+                <td><div id="palace-info-2" class="palace-info"></div></td>
+                <td>
+                    <div id="palace-label-2" class="palace-label">2. Front door</div>
+                    <div id="palace-image-2" class="palace-image">
+                        <img src="https://learningisliving.dk/wp-content/uploads/2021/11/pao-loci-2.jpg" alt="">
+                    </div>
+                    <div class="palace-items">
+                        <span id="palace-item-4" class="palace-item"></span>
+                        <span id="palace-item-5" class="palace-item"></span>
+                        <span id="palace-item-6" class="palace-item"></span>
+                    </div>
+                </td>
+                <td><div id="palace-phrase-2" class="palace-phrase"></div></td>
+            </tr>
+
+            <tr>
+                <td><div id="palace-info-3" class="palace-info"></div></td>
+                <td>
+                    <div id="palace-label-3" class="palace-label">3. Hall</div>
+                    <div id="palace-image-3" class="palace-image">
+                        <img src="https://learningisliving.dk/wp-content/uploads/2021/11/pao-loci-3.jpg" alt="">
+                    </div>
+                    <div class="palace-items">
+                        <span id="palace-item-7" class="palace-item"></span>
+                        <span id="palace-item-8" class="palace-item"></span>
+                        <span id="palace-item-9" class="palace-item"></span>
+                    </div>
+                </td>
+                <td><div id="palace-phrase-3" class="palace-phrase"></div></td>
+            </tr>
+
+            <tr>
+                <td><div id="palace-info-4" class="palace-info"></div></td>
+                <td>
+                    <div id="palace-label-4" class="palace-label">4. Kitchen</div>
+                    <div id="palace-image-4" class="palace-image">
+                        <img src="https://learningisliving.dk/wp-content/uploads/2021/11/pao-loci-4.jpg" alt="">
+                    </div>
+                    <div class="palace-items">
+                        <span id="palace-item-10" class="palace-item"></span>
+                        <span id="palace-item-11" class="palace-item"></span>
+                        <span id="palace-item-12" class="palace-item"></span>
+                    </div>
+                </td>
+                <td><div id="palace-phrase-4" class="palace-phrase"></div></td>
+            </tr>
+
+            <tr>
+                <td><div id="palace-info-5" class="palace-info"></div></td>
+                <td>
+                    <div id="palace-label-5" class="palace-label">5. Living room</div>
+                    <div id="palace-image-5" class="palace-image">
+                        <img src="https://learningisliving.dk/wp-content/uploads/2021/11/pao-loci-5.jpg" alt="">
+                    </div>
+                    <div class="palace-items">
+                        <span id="palace-item-13" class="palace-item"></span>
+                        <span id="palace-item-14" class="palace-item"></span>
+                        <span id="palace-item-15" class="palace-item"></span>
+                    </div>
+                </td>
+                <td><div id="palace-phrase-5" class="palace-phrase"></div></td>
+            </tr>
+
+            <tr>
+                <td><div id="palace-info-6" class="palace-info"></div></td>
+                <td>
+                    <div id="palace-label-6" class="palace-label">6. Patio</div>
+                    <div id="palace-image-6" class="palace-image">
+                        <img src="https://learningisliving.dk/wp-content/uploads/2021/11/pao-loci-6.jpg" alt="">
+                    </div>
+                    <div class="palace-items">
+                        <span id="palace-item-16" class="palace-item"></span>
+                        <span id="palace-item-17" class="palace-item"></span>
+                        <span id="palace-item-18" class="palace-item"></span>
+                    </div>
+                </td>
+                <td><div id="palace-phrase-6" class="palace-phrase"></div></td>
+            </tr>
+
+            <tr>
+                <td><div id="palace-info-7" class="palace-info"></div></td>
+                <td>
+                    <div id="palace-label-7" class="palace-label">7. Garden</div>
+                    <div id="palace-image-7" class="palace-image">
+                        <img src="https://learningisliving.dk/wp-content/uploads/2021/11/pao-loci-7.jpg" alt="">
+                    </div>
+                    <div class="palace-items">
+                        <span id="palace-item-19" class="palace-item"></span>
+                        <span id="palace-item-20" class="palace-item"></span>
+                        <span id="palace-item-21" class="palace-item"></span>
+                    </div>
+                </td>
+                <td><div id="palace-phrase-7" class="palace-phrase"></div></td>
+            </tr>
+
+            <tr>
+                <td><div id="palace-info-8" class="palace-info"></div></td>
+                <td>
+                    <div id="palace-label-8" class="palace-label">8. Stairway</div>
+                    <div id="palace-image-8" class="palace-image">
+                        <img src="https://learningisliving.dk/wp-content/uploads/2021/11/pao-loci-8.jpg" alt="">
+                    </div>
+                    <div class="palace-items">
+                        <span id="palace-item-22" class="palace-item"></span>
+                        <span id="palace-item-23" class="palace-item"></span>
+                        <span id="palace-item-24" class="palace-item"></span>
+                    </div>
+                </td>
+                <td><div id="palace-phrase-8" class="palace-phrase"></div></td>
+            </tr>
+
+            <tr>
+                <td><div id="palace-info-9" class="palace-info"></div></td>
+                <td>
+                    <div id="palace-label-9" class="palace-label">9. Master bedroom</div>
+                    <div id="palace-image-9" class="palace-image">
+                        <img src="https://learningisliving.dk/wp-content/uploads/2021/11/pao-loci-9.jpg" alt="">
+                    </div>
+                    <div class="palace-items">
+                        <span id="palace-item-25" class="palace-item"></span>
+                        <span id="palace-item-26" class="palace-item"></span>
+                        <span id="palace-item-27" class="palace-item"></span>
+                    </div>
+                </td>
+                <td><div id="palace-phrase-9" class="palace-phrase"></div></td>
+            </tr>
+
+            <tr>
+                <td><div id="palace-info-10" class="palace-info"></div></td>
+                <td>
+                    <div id="palace-label-10" class="palace-label">10. Nursery</div>
+                    <div id="palace-image-10" class="palace-image">
+                        <img src="https://learningisliving.dk/wp-content/uploads/2021/11/pao-loci-10.jpg" alt="">
+                    </div>
+                    <div class="palace-items">
+                        <span id="palace-item-28" class="palace-item"></span>
+                        <span id="palace-item-29" class="palace-item"></span>
+                        <span id="palace-item-30" class="palace-item"></span>
+                    </div>
+                </td>
+                <td><div id="palace-phrase-10" class="palace-phrase"></div></td>
+            </tr>
+
+            <tr>
+                <td><div id="palace-info-11" class="palace-info"></div></td>
+                <td>
+                    <div id="palace-label-11" class="palace-label">11. Kids room</div>
+                    <div id="palace-image-11" class="palace-image">
+                        <img src="https://learningisliving.dk/wp-content/uploads/2021/11/pao-loci-11.jpg" alt="">
+                    </div>
+                    <div class="palace-items">
+                        <span id="palace-item-31" class="palace-item"></span>
+                        <span id="palace-item-32" class="palace-item"></span>
+                        <span id="palace-item-33" class="palace-item"></span>
+                    </div>
+                </td>
+                <td><div id="palace-phrase-11" class="palace-phrase"></div></td>
+            </tr>
+
+            <tr>
+                <td><div id="palace-info-12" class="palace-info"></div></td>
+                <td>
+                    <div id="palace-label-12" class="palace-label">12. Bathroom</div>
+                    <div id="palace-image-12" class="palace-image">
+                        <img src="https://learningisliving.dk/wp-content/uploads/2021/11/pao-loci-12.jpg" alt="">
+                    </div>
+                    <div class="palace-items">
+                        <span id="palace-item-34" class="palace-item"></span>
+                        <span id="palace-item-35" class="palace-item"></span>
+                        <span id="palace-item-36" class="palace-item"></span>
+                    </div>
+                </td>
+                <td><div id="palace-phrase-12" class="palace-phrase"></div></td>
+            </tr>
+
+            <tr>
+                <td><div id="palace-info-13" class="palace-info"></div></td>
+                <td>
+                    <div id="palace-label-13" class="palace-label">13. Attic</div>
+                    <div id="palace-image-13" class="palace-image">
+                        <img src="https://learningisliving.dk/wp-content/uploads/2021/11/pao-loci-13.jpg" alt="">
+                    </div>
+                    <div class="palace-items">
+                        <span id="palace-item-37" class="palace-item"></span>
+                        <span id="palace-item-38" class="palace-item"></span>
+                        <span id="palace-item-39" class="palace-item"></span>
+                    </div>
+                </td>
+                <td><div id="palace-phrase-13" class="palace-phrase"></div></td>
+            </tr>
+
+            <tr>
+                <td><div id="palace-info-14" class="palace-info"></div></td>
+                <td>
+                    <div id="palace-label-14" class="palace-label">14. Roof</div>
+                    <div id="palace-image-14" class="palace-image">
+                        <img src="https://learningisliving.dk/wp-content/uploads/2021/11/pao-loci-14.jpg" alt="">
+                    </div>
+                    <div class="palace-items">
+                        <span id="palace-item-40" class="palace-item"></span>
+                        <span id="palace-item-41" class="palace-item"></span>
+                        <span id="palace-item-42" class="palace-item"></span>
+                    </div>
+                </td>
+                <td><div id="palace-phrase-14" class="palace-phrase"></div></td>
+            </tr>
+
+            <tr>
+                <td><div id="palace-info-15" class="palace-info"></div></td>
+                <td>
+                    <div id="palace-label-15" class="palace-label">15. Chimney</div>
+                    <div id="palace-image-15" class="palace-image">
+                        <img src="https://learningisliving.dk/wp-content/uploads/2021/11/pao-loci-15.jpg" alt="">
+                    </div>
+                    <div class="palace-items">
+                        <span id="palace-item-43" class="palace-item"></span>
+                        <span id="palace-item-44" class="palace-item"></span>
+                        <span id="palace-item-45" class="palace-item"></span>
+                    </div>
+                </td>
+                <td><div id="palace-phrase-15" class="palace-phrase"></div></td>
+            </tr>
+
+            <tr>
+                <td><div id="palace-info-16" class="palace-info"></div></td>
+                <td>
+                    <div id="palace-label-16" class="palace-label">16. Sky</div>
+                    <div id="palace-image-16" class="palace-image">
+                        <img src="https://learningisliving.dk/wp-content/uploads/2021/11/pao-loci-16.jpg" alt="">
+                    </div>
+                    <div class="palace-items">
+                        <span id="palace-item-46" class="palace-item"></span>
+                        <span id="palace-item-47" class="palace-item"></span>
+                        <span id="palace-item-48" class="palace-item"></span>
+                    </div>
+                </td>
+                <td><div id="palace-phrase-16" class="palace-phrase"></div></td>
+            </tr>
+
+            <tr>
+                <td><div id="palace-info-17" class="palace-info"></div></td>
+                <td>
+                    <div id="palace-label-17" class="palace-label">17. Moon</div>
+                    <div id="palace-image-17" class="palace-image">
+                        <img src="https://learningisliving.dk/wp-content/uploads/2021/11/pao-loci-17.jpg" alt="">
+                    </div>
+                    <div class="palace-items">
+                        <span id="palace-item-49" class="palace-item"></span>
+                        <span id="palace-item-50" class="palace-item"></span>
+                        <span id="palace-item-51" class="palace-item"></span>
+                    </div>
+                </td>
+                <td><div id="palace-phrase-17" class="palace-phrase"></div></td>
+            </tr>
+
+            <tr>
+                <td><div id="palace-info-18" class="palace-info"></div></td>
+                <td>
+                    <div id="palace-label-18" class="palace-label">18. Last card</div>
+                    <div id="palace-image-18" class="palace-image">
+                        <img src="https://vinc.gumlet.io/gallery/blog/bicycle-playing-cards1-637281713517182040.jpg?w=1000&dpr=1" alt="">
+                    </div>
+                    <div class="palace-items">
+                        <span id="palace-item-52" class="palace-item"></span>
+                    </div>
+                </td>
+                <td><div id="palace-phrase-18" class="palace-phrase"></div></td>
+            </tr>
+
+        </table>
+    </div>
 </div>
+<button onclick="createPalace()">Create</button>
 </body>
 </html>
