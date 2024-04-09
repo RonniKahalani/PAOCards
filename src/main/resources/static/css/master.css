@@ -191,6 +191,7 @@ body {
     background-color: white;
     width: 40px;
     border: 1px solid black;
+    text-align: center;
 }
 
 .suit-column-black {
@@ -199,6 +200,7 @@ body {
     background-color: white;
     width: 40px;
     border: 1px solid black;
+    text-align: center;
 }
 
 .info-column {

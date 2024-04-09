@@ -91,13 +91,14 @@ function getCardId(card) {
 
 
 function startQuiz() {
-    $.notify("Cool! Lets go.",{position:"bottom right",className:"success"});
     currentQuizIndex = -1;
     stopTime();
     quiz.style.display = "block";
     quizFront.style.display = "none";
     nextQuizCard();
     startWatch();
+    $.notify("Cool! Lets go.",{position:"bottom right",className:"success"});
+
 }
 
 function restartQuiz() {
