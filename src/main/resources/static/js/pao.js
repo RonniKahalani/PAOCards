@@ -56,7 +56,7 @@ function createPalace(palace) {
             palaceItem = document.getElementById("palace-item-" + index);
             card = quizCards[i];
 
-            palaceItem.innerHTML = getSuitIcon(card.suit) + " " + getCardId(card);
+            palaceItem.innerHTML = "<img src='../svg/cards/" +getCardId(card).toLowerCase() +"_of_"+ card.suit.toLowerCase() +".svg' class='card' alt=''>";
 
             if (i > 0 && (i + 1) % 3 === 0) {
                 palacePhrase = document.getElementById("palace-phrase-" + ((i + 1) / 3));
@@ -83,7 +83,7 @@ function getSuitIcon(suit) {
 function getCardId(card) {
     let value = card.value;
     switch (true) {
-        case (value>1 && value < 11): return value;
+        case (value>1 && value < 11): return value + "";
         default: return card.name;
     }
 }

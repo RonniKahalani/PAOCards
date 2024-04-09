@@ -39,17 +39,12 @@ body {
 }
 
 .palace-phrase {
-    margin-right:10px;
+
 }
 .palace-items {
-    margin-right:10px;
+    text-align: center;
 }
-.palace-items:before {
-    content: "(";
-}
-.palace-items:after {
-    content: ")";
-}
+
 .palace-item {
 
 }
@@ -181,6 +176,11 @@ body {
     margin: 10px;
 }
 
+.card {
+    width:80px;
+    display: inline;
+    margin: 5px;
+}
 .suit-column {
     width: 40px;
 }
