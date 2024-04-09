@@ -60,7 +60,7 @@ function createPalace(palace) {
 
             if (i > 0 && (i + 1) % 3 === 0) {
                 palacePhrase = document.getElementById("palace-phrase-" + ((i + 1) / 3));
-                palacePhrase.innerHTML = quizCards[i - 2].pao.person + ",<br>" + quizCards[i - 1].pao.action + ",<br>" + quizCards[i].pao.object;
+                palacePhrase.innerHTML = quizCards[i - 2].pao.person + ", " + quizCards[i - 1].pao.action + ", " + quizCards[i].pao.object;
             }
 
             if (i === 51) {
