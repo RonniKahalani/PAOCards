@@ -107,12 +107,14 @@ function restartQuiz() {
 
 
 
-function sorter(a, b) {
-    let x = parseInt(a.split(" ")[0]);
-    let y = parseInt(b.split(" ")[0]);
+function cardNameSorter(a, b) {
+    let as = a.split(" ");
+    let bs = b.split(" ");
+    let x = parseInt(as[0]);
+    let y = parseInt(bs[0]);
     if (x < y) return -1;  // any negative number works
     if (x > y) return 1;   // any positive number works
-    return 0; // equal values MUST yield zero
+    return (as[3] < bs[3]) ? -1 : 1; // equal values MUST yield zero
 }
 function setQuizSelectOptions(elem, values) {
     for (let i = 0; i<52; i++){
@@ -338,7 +340,7 @@ async function loadQuiz(matrix) {
         let persons = quizCards.map(x => x.pao.person).sort();
         let actions = quizCards.map(x => x.pao.action).sort();
         let objects = quizCards.map(x => x.pao.object).sort();
-        let cards = quizCards.map(x => x.value + " (" + x.name + ") of " + x.suit).sort(sorter);
+        let cards = quizCards.map(x => x.value + " (" + x.name + ") of " + x.suit).sort(cardNameSorter);
 
         setQuizSelectOptions(quizPerson, persons);
         setQuizSelectOptions(quizAction, actions);
