@@ -43,20 +43,22 @@ function createPalace(palace) {
 
         for (let i = 0; i < 52; i++) {
             let index = i + 1;
-/*
-            palaceImage = document.getElementById("palace-image-" + index);
-            palaceImage.innerHTML = "<img src='" + palace[i].image + "' alt=''>";
+            /*
+            let currentPalaceEntry = palace[i];
 
             palaceLabel = document.getElementById("palace-label-" + index);
-            palaceLabel.innerHTML = (i + 1) + ". " + palace[i].label;
+            palaceLabel.innerHTML = (i + 1) + ". " + currentPalaceEntry.label;
 
             palaceInfo = document.getElementById("palace-info-" + index);
-            palaceInfo.innerHTML = palace[i].info;
+            palaceInfo.innerHTML = currentPalaceEntry.info;
+
+            palaceImage = document.getElementById("palace-image-" + index);
+            palaceImage.innerHTML = "<img src='" + currentPalaceEntry.image + "' alt=''>";
 */
             palaceItem = document.getElementById("palace-item-" + index);
             card = quizCards[i];
 
-            palaceItem.innerHTML = "<img src='../svg/cards/" +getCardId(card).toLowerCase() +"_of_"+ card.suit.toLowerCase() +".svg' class='card' alt=''>";
+            palaceItem.innerHTML = "<img src='svg/cards/" +getCardId(card).toLowerCase() +"_of_"+ card.suit.toLowerCase() +".svg' class='card' alt=''>";
 
             if (i > 0 && (i + 1) % 3 === 0) {
                 palacePhrase = document.getElementById("palace-phrase-" + ((i + 1) / 3));
@@ -319,7 +321,8 @@ function clearSelect(elem) {
 
 async function loadData() {
     await loadQuiz(await loadMatrix("default"));
-    createPalace(await loadPalace("default"));
+    let palace = await loadPalace("default");
+    createPalace(palace);
 }
 
 async function loadQuiz(matrix) {
