@@ -2,6 +2,10 @@ body {
     font-family: Tahoma, sans-serif;
 }
 
+header {
+    position: sticky; top: 0;
+    z-index: 1;
+}
 #bg-video {
     position: absolute;
     z-index: -1;
