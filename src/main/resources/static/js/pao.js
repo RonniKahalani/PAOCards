@@ -335,6 +335,7 @@ async function loadData() {
 
 async function shuffleDeck() {
     shuffle(quizCards);
+    createPalace(currentPalace);
     restartQuiz();
 }
 
