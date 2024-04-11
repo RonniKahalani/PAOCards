@@ -320,37 +320,68 @@ function clearSelect(elem) {
     elem.classList.add("quiz-select-neutral");
 }
 
+let currentMatrix = null;
+let currentQuiz = null;
+let currentPalace = null;
+
 async function loadData() {
-    await loadQuiz(await loadMatrix("default"));
-    let palace = await loadPalace("default");
-    createPalace(palace);
+
+    currentMatrix = await loadMatrix("default");
+    currentQuiz = await loadQuiz();
+    createQuiz(currentMatrix);
+    currentPalace = await loadPalace("default");
+    createPalace(currentPalace);
 }
 
-async function loadQuiz(matrix) {
+async function shuffleDeck() {
+    shuffle(quizCards);
+    restartQuiz();
+}
+
+function shuffle(array) {
+    let currentIndex = array.length;
+
+    // While there remain elements to shuffle...
+    while (currentIndex != 0) {
+
+        // Pick a remaining element...
+        let randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        // And swap it with the current element.
+        [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+    }
+}
+
+async function loadQuiz() {
 
     const response = await fetch("http://localhost:8080/api/v1/quiz");
     if(response.ok) {
-        const quiz = await response.json();
-
-        quizCards = quiz["cards"];
-
-        for(let i = 0; i < quizCards.length; i++) {
-            let card = quizCards[i];
-            let paoIndex = card.suit.toLowerCase();
-            let paoItem = matrix[paoIndex];
-            card.pao = paoItem[card.value-1];
-        }
-
-        let persons = quizCards.map(x => x.pao.person).sort();
-        let actions = quizCards.map(x => x.pao.action).sort();
-        let objects = quizCards.map(x => x.pao.object).sort();
-        let cards = quizCards.map(x => x.value + " (" + x.name + ") of " + x.suit).sort(cardNameSorter);
-
-        setQuizSelectOptions(quizPerson, persons);
-        setQuizSelectOptions(quizAction, actions);
-        setQuizSelectOptions(quizObject, objects);
-        setQuizSelectOptions(quizCard, cards);
+        currentQuiz = await response.json();
+        quizCards = currentQuiz["cards"];
+        return currentQuiz;
     }
+}
+
+function createQuiz(matrix) {
+
+    for(let i = 0; i < quizCards.length; i++) {
+        let card = quizCards[i];
+        let paoIndex = card.suit.toLowerCase();
+        let paoItem = matrix[paoIndex];
+        card.pao = paoItem[card.value-1];
+    }
+
+    let persons = quizCards.map(x => x.pao.person).sort();
+    let actions = quizCards.map(x => x.pao.action).sort();
+    let objects = quizCards.map(x => x.pao.object).sort();
+    let cards = quizCards.map(x => x.value + " (" + x.name + ") of " + x.suit).sort(cardNameSorter);
+
+    setQuizSelectOptions(quizPerson, persons);
+    setQuizSelectOptions(quizAction, actions);
+    setQuizSelectOptions(quizObject, objects);
+    setQuizSelectOptions(quizCard, cards);
 }
 
 async function loadMatrix(id) {
