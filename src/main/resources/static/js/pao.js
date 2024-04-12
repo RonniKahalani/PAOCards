@@ -33,7 +33,7 @@ const quizFront = document.getElementById("quiz-front");
 
 const btnQuizNext = document.getElementById("btn-quiz-next");
 
-function createPalace(palace) {
+function renderPalace(palace) {
 
         let palaceLabel = null;
         let palaceInfo = null;
@@ -327,15 +327,18 @@ let currentPalace = null;
 async function loadData() {
 
     currentMatrix = await loadMatrix("default");
+    renderMatrix(currentMatrix);
+
     currentQuiz = await loadQuiz();
-    createQuiz(currentMatrix);
+    renderQuiz(currentMatrix);
+
     currentPalace = await loadPalace("default");
-    createPalace(currentPalace);
+    renderPalace(currentPalace);
 }
 
 async function shuffleDeck() {
     shuffle(quizCards);
-    createPalace(currentPalace);
+    renderPalace(currentPalace);
     restartQuiz();
 }
 
@@ -355,17 +358,7 @@ function shuffle(array) {
     }
 }
 
-async function loadQuiz() {
-
-    const response = await fetch("http://localhost:8080/api/v1/quiz");
-    if(response.ok) {
-        currentQuiz = await response.json();
-        quizCards = currentQuiz["cards"];
-        return currentQuiz;
-    }
-}
-
-function createQuiz(matrix) {
+function renderQuiz(matrix) {
 
     for(let i = 0; i < quizCards.length; i++) {
         let card = quizCards[i];
@@ -385,27 +378,30 @@ function createQuiz(matrix) {
     setQuizSelectOptions(quizCard, cards);
 }
 
-async function loadMatrix(id) {
+function renderMatrix(matrix) {
 
-    const response = await fetch("http://localhost:8080/api/v1/pao/" + id);
-    if(response.ok) {
-        const matrix = await response.json();
-
-        let paoRows = document.getElementById('pao-rows').getElementsByClassName('pao-row');
-        for( let rowIndex=0; rowIndex< paoRows.length; rowIndex++ ) {
+    let paoRows = document.getElementById('pao-rows').getElementsByClassName('pao-row');
+    for( let rowIndex=0; rowIndex< paoRows.length; rowIndex++ ) {
 
         let paoColumns = paoRows[rowIndex].getElementsByClassName('pao-column');
 
         let matrixIndex = -1;
         switch (rowIndex) {
-            case 0: matrixIndex = "hearts"; break;
-            case 1: matrixIndex = "spades"; break;
-            case 2: matrixIndex = "diamonds"; break;
-            case 3: matrixIndex = "clubs"; break;
+            case 0:
+                matrixIndex = "hearts";
+                break;
+            case 1:
+                matrixIndex = "spades";
+                break;
+            case 2:
+                matrixIndex = "diamonds";
+                break;
+            case 3:
+                matrixIndex = "clubs";
+                break;
         }
         let suit = matrix[matrixIndex];
-        for(let i=0; i< paoColumns.length; i++ )
-        {
+        for (let i = 0; i < paoColumns.length; i++) {
             let card = suit[i];
             let column = paoColumns[i];
 
@@ -413,7 +409,7 @@ async function loadMatrix(id) {
             person.innerHTML = card.person;
 
             let image = column.getElementsByClassName("pao-image")[0];
-            image.innerHTML = "<img src='" + card.image+"' class='pao-image-tag' alt=''>";
+            image.innerHTML = "<img src='" + card.image + "' class='pao-image-tag' alt=''>";
 
             let action = column.getElementsByClassName("pao-action")[0];
             action.innerHTML = card.action;
@@ -421,9 +417,24 @@ async function loadMatrix(id) {
             let object = column.getElementsByClassName("pao-object")[0];
             object.innerHTML = card.object;
         }
+    }
+}
 
-        }
-        return matrix;
+async function loadMatrix(id) {
+
+    const response = await fetch("http://localhost:8080/api/v1/pao/" + id);
+    if(response.ok) {
+        return await response.json();
+    }
+}
+
+async function loadQuiz() {
+
+    const response = await fetch("http://localhost:8080/api/v1/quiz");
+    if(response.ok) {
+        currentQuiz = await response.json();
+        quizCards = currentQuiz["cards"];
+        return currentQuiz;
     }
 }
 
@@ -433,6 +444,4 @@ async function loadPalace(name) {
     if(response.ok) {
         return await response.json();
     }
-
-
 }
