@@ -1,5 +1,6 @@
 "use strict";
 
+//export default { loadData, restartQuiz, nextQuizCard, startQuiz, checkRevealAll, revealAll, shuffleDeck}
 
 function showTab(id) {
    document.getElementById("pao-home").style.display = 'none';
@@ -100,7 +101,7 @@ function startQuiz() {
     quizFront.style.display = "none";
     nextQuizCard();
     startWatch();
-    $.notify("Cool! Lets go.",{position:"bottom right",className:"success"});
+    //$.notify("Cool! Lets go.",{position:"bottom right",className:"success"});
 
 }
 
@@ -189,7 +190,7 @@ function isAllCorrect() {
 }
 
 function notifyAllCorrect() {
-    $.notify("Congratulation! You just completed the " + (currentQuizIndex+1) + " quiz question. Click the next button.",{position:"bottom right",className:"success"});
+    //$.notify("Congratulation! You just completed the " + (currentQuizIndex+1) + " quiz question. Click the next button.",{position:"bottom right",className:"success"});
 }
 
 function nextQuizCard() {
@@ -342,8 +343,8 @@ async function shuffleDeck() {
     restartQuiz();
 }
 
-function shuffle(array) {
-    let currentIndex = array.length;
+function shuffle(deck) {
+    let currentIndex = deck.length;
 
     // While there remain elements to shuffle...
     while (currentIndex !== 0) {
@@ -353,8 +354,8 @@ function shuffle(array) {
         currentIndex--;
 
         // And swap it with the current element.
-        [array[currentIndex], array[randomIndex]] = [
-            array[randomIndex], array[currentIndex]];
+        [deck[currentIndex], deck[randomIndex]] = [
+            deck[randomIndex], deck[currentIndex]];
     }
 }
 
