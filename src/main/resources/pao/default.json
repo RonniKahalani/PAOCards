@@ -4,79 +4,105 @@
             "person": "A. Schwartenegger",
             "action": "Bench press",
             "object": "Barbell",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-h1.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-h1.jpg",
+            "name": "Ace",
+            "value": 1
         },
         {
             "person": "Flojo",
             "action": "Breaks nail on",
             "object": "Gold medal",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-h2.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-h2.jpg",
+            "name": "Two",
+            "value": 2
         },
         {
             "person": "Tom Hanks",
             "action": "Runs through",
             "object": "Forest",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-h3.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-h3.jpg",
+            "name": "Three",
+            "value":3
         },
         {
             "person": "Scarlett Johansson",
             "action": "Drinks with",
             "object": "Bill Murray",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-h4.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-h4.jpg",
+            "name": "Four",
+            "value":4
         },
         {
             "person": "Julian Assange",
             "action": "Vanishes into",
             "object": "Puff of smoke",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-h5.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-h5.jpg",
+            "name": "Five",
+            "value":5
         },
         {
             "person": "Taylor Swift",
             "action": "Offended by",
             "object": "Kanye West",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-h6.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-h6.jpg",
+            "name": "Six",
+            "value":6
         },
         {
             "person": "Albert Einstein",
             "action": "Fly light speed to",
             "object": "Shiny star",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-h7.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-h7.jpg",
+            "name": "Seven",
+            "value":7
         },
         {
             "person": "Pamala Andersen",
             "action": "Saves drowning",
             "object": "Child",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-h8.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-h8.jpg",
+            "name": "Eight",
+            "value":8
         },
         {
             "person": "Steve Jobs",
             "action": "Use LSD and invent",
             "object": "iPad",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-h9.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-h9.jpg",
+            "name": "Nine",
+            "value":9
         },
         {
             "person": "JK Rowling",
             "action": "Writes story about",
             "object": "Harry Potter",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-h10.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-h10.jpg",
+            "name": "Ten",
+            "value":10
         },
         {
             "person": "Jesus Christ",
             "action": "Walks on",
             "object": "Puddle",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-h11.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-h11.jpg",
+            "name": "Jack",
+            "value":11
         },
         {
             "person": "Michelle Obama",
             "action": "Star-jumps on",
             "object": "White House lawn",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-h12.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-h12.jpg",
+            "name": "Queen",
+            "value":12
         },
         {
             "person": "Barack Obama",
             "action": "Fly-swatting",
             "object": "Buzzing fly",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-h13.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-h13.jpg",
+            "name": "King",
+            "value":13
         }
     ],
     "clubs": [
@@ -84,79 +110,105 @@
             "person": "Usain Bolt",
             "action": "Chases",
             "object": "Cheetah",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-s1.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-s1.jpg",
+            "name": "Ace",
+            "value":1
         },
         {
             "person": "Annika Sorenstam",
             "action": "Puts",
             "object": "Golf ball",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-s2.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-s2.jpg",
+            "name": "Two",
+            "value":2
         },
         {
             "person": "Ben Stiller",
             "action": "Polygraphed by",
             "object": "Robert De Niro",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-s3.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-s3.jpg",
+            "name": "Three",
+            "value":3
         },
         {
             "person": "June Carter",
             "action": "Plays guitar with",
             "object": "Johnny Cash",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-s4.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-s4.jpg",
+            "name": "Four",
+            "value":4
         },
         {
             "person": "Osama Bin Laden",
             "action": "Records video with",
             "object": "Suicide bomber",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-s5.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-s5.jpg",
+            "name": "Five",
+            "value":5
         },
         {
             "person": "Lady Gaga",
             "action": "Wears meat for",
             "object": "Paparazzi",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-s6.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-s6.jpg",
+            "name": "Six",
+            "value":6
         },
         {
             "person": "Stephen Hawking",
             "action": "Sounds robotic in",
             "object": "Wheelchair",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-s7.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-s7.jpg",
+            "name": "Seven",
+            "value":7
         },
         {
             "person": "Naomi Campbell",
             "action": "Beats maid with",
             "object": "Handbag",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-s8.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-s8.jpg",
+            "name": "Eight",
+            "value":8
         },
         {
             "person": "Kevin Rose",
             "action": "Drinks",
             "object": "Tea",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-s9.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-s9.jpg",
+            "name": "Nine",
+            "value":9
         },
         {
             "person": "Sarah Palin",
             "action": "Riffle-shoots",
             "object": "Moose",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-s10.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-s10.jpg",
+            "name": "Ten",
+            "value":10
         },
         {
             "person": "Dalai Lama",
             "action": "Prays to",
             "object": "Buddha",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-s11.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-s11.jpg",
+            "name": "Jack",
+            "value":11
         },
         {
             "person": "Victoria Beckham",
             "action": "Does makeup in",
             "object": "Mirror",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-s12.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-s12.jpg",
+            "name": "Queen",
+            "value":12
         },
         {
             "person": "David Beckham",
             "action": "Kicks",
             "object": "Football",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-s13.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-s13.jpg",
+            "name": "King",
+            "value":13
         }
     ],
     "diamonds": [
@@ -164,79 +216,105 @@
             "person": "Michael Jordan",
             "action": "Slam dunks",
             "object": "Basketball",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-d1.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-d1.jpg",
+            "name": "Ace",
+            "value":1
         },
         {
             "person": "Caroline Wozniacki",
             "action": "Grand slams",
             "object": "Enrique Iglesias",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-d2.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-d2.jpg",
+            "name": "Two",
+            "value":2
         },
         {
             "person": "George Clooney",
             "action": "Smokes",
             "object": "Cigarette",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-d3.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-d3.jpg",
+            "name": "Three",
+            "value":3
         },
         {
             "person": "Julia Roberts",
             "action": "Tongue kisses",
             "object": "Richard Gere",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-d4.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-d4.jpg",
+            "name": "Four",
+            "value":4
         },
         {
             "person": "Joseph Stalin",
             "action": "Tells joke to",
             "object": "Bear",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-d5.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-d5.jpg",
+            "name": "Five",
+            "value":5
         },
         {
             "person": "Madonna",
             "action": "Dances with",
             "object": "Ghettoblaster",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-d6.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-d6.jpg",
+            "name": "Six",
+            "value":6
         },
         {
             "person": "Isaac Newton",
             "action": "Hit on head by",
             "object": "Apple",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-d7.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-d7.jpg",
+            "name": "Seven",
+            "value":7
         },
         {
             "person": "Marylin Monroe",
             "action": "Flutter over",
             "object": "Subway vent",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-d8.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-d8.jpg",
+            "name": "Eight",
+            "value":8
         },
         {
             "person": "Bill Gates",
             "action": "Furiously reboot",
             "object": "Crashed PC",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-d9.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-d9.jpg",
+            "name": "Nine",
+            "value":9
         },
         {
             "person": "Oprah Winfrey",
             "action": "Interviews",
             "object": "Couch",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-d10.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-d10.jpg",
+            "name": "Ten",
+            "value":10
         },
         {
             "person": "Zeus",
             "action": "Throws",
             "object": "Lighting bolt",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-d11.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-d11.jpg",
+            "name": "Jack",
+            "value":11
         },
         {
             "person": "Princess Kate",
             "action": "In white before",
             "object": "Church",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-d12.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-d12.jpg",
+            "name": "Queen",
+            "value":12
         },
         {
             "person": "Prince William",
             "action": "Save people from",
             "object": "Sea",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-d13.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-d13.jpg",
+            "name": "King",
+            "value":13
         }
     ],
     "spades": [
@@ -244,79 +322,105 @@
             "person": "Mohammad Ali",
             "action": "Knocks out",
             "object": "Butterfly",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-c1.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-c1.jpg",
+            "name": "Ace",
+            "value":1
         },
         {
             "person": "Serena Williams",
             "action": "Raises",
             "object": "Trophy",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-c2.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-c2.jpg",
+            "name": "Two",
+            "value":2
         },
         {
             "person": "Jack Sparrow",
             "action": "Steals back",
             "object": "Black pearl",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-c3.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-c3.jpg",
+            "name": "Three",
+            "value":3
         },
         {
             "person": "Lara Croft",
             "action": "Karate kicks",
             "object": "Ancient tomb",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-c4.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-c4.jpg",
+            "name": "Four",
+            "value":4
         },
         {
             "person": "Adolf Hitler",
             "action": "Goose-steps Into",
             "object": "Bunker",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-c5.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-c5.jpg",
+            "name": "Five",
+            "value":5
         },
         {
             "person": "Rihanna",
             "action": "Uses umbrella for",
             "object": "Rainstorm",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-c6.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-c6.jpg",
+            "name": "Six",
+            "value":6
         },
         {
             "person": "Thomas Edison",
             "action": "Screws In",
             "object": "Light bulb",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-c7.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-c7.jpg",
+            "name": "Seven",
+            "value":7
         },
         {
             "person": "Medusa",
             "action": "Turns Into",
             "object": "Stone",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-c8.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-c8.jpg",
+            "name": "Eight",
+            "value":8
         },
         {
             "person": "Mark Zuckerberg",
             "action": "Unfriends",
             "object": "Best friend",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-c9.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-c9.jpg",
+            "name": "Nine",
+            "value":9
         },
         {
             "person": "Hillary Clinton",
             "action": "Smacks",
             "object": "Monica Lewinsky",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-c10.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-c10.jpg",
+            "name": "Ten",
+            "value":10
         },
         {
             "person": "Pope John-Paul II",
             "action": "Forgives",
             "object": "Devil",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-c11.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-c11.jpg",
+            "name": "Jack",
+            "value":11
         },
         {
             "person": "Beyonce",
             "action": "Power dances on",
             "object": "Beach",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-c12.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-c12.jpg",
+            "name": "Queen",
+            "value":12
         },
         {
             "person": "Jay-Z",
             "action": "Raps into",
             "object": "Microphone",
-            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-c13.jpg"
+            "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-c13.jpg",
+            "name": "King",
+            "value":13
         }
     ]
 }

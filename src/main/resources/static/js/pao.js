@@ -72,12 +72,12 @@ function renderPalace(palace) {
             palaceInfo.innerHTML = currentPalaceEntry.info;
 
             palaceImage = document.getElementById("palace-image-" + index);
-            palaceImage.innerHTML = "<img src='" + currentPalaceEntry.image + "' alt=''>";
+            palaceImage.src = "<img src='" + currentPalaceEntry.image + "' alt=''>";
 */
             palaceItem = document.getElementById("palace-item-" + index);
             card = quizCards[i];
 
-            palaceItem.innerHTML = "<img src='svg/cards/" +getCardId(card).toLowerCase() +"_of_"+ card.suit.toLowerCase() +".svg' class='card' alt=''>";
+            palaceItem.innerHTML = "<img src='" + getSVGCardImageUrl(getCardId(card), card.suit) + "' class='card' alt=''>";
 
             if (i > 0 && (i + 1) % 3 === 0) {
                 palacePhrase = document.getElementById("palace-phrase-" + ((i + 1) / 3));
@@ -90,6 +90,10 @@ function renderPalace(palace) {
             }
 
         }
+}
+
+function getSVGCardImageUrl(cardId, suit) {
+    return "svg/cards/" +cardId.toLowerCase() +"_of_"+ suit.toLowerCase() +".svg";
 }
 
 function getSuitIcon(suit) {
@@ -427,7 +431,14 @@ function renderMatrix(matrix) {
             person.innerHTML = card.person;
 
             let image = column.getElementsByClassName("pao-image")[0];
-            image.innerHTML = "<img src='" + card.image + "' class='pao-image-tag' alt=''>";
+            image.src = card.image;
+            let cardId = getCardId( card);
+            image.addEventListener('mouseover', function(){
+                image.src = getSVGCardImageUrl( cardId,matrixIndex);
+            })
+            image.addEventListener('mouseout', function(){
+                image.src = card.image;
+            })
 
             let action = column.getElementsByClassName("pao-action")[0];
             action.innerHTML = card.action;
