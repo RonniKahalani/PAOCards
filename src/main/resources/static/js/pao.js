@@ -34,6 +34,20 @@ const quizFront = document.getElementById("quiz-front");
 
 const btnQuizNext = document.getElementById("btn-quiz-next");
 
+let currentLociIndex = 1;
+
+function prevLoci() {
+    document.getElementById("palace-loci-" + currentLociIndex).style.display = "none";
+    currentLociIndex = (currentLociIndex === 1) ? 18 : currentLociIndex - 1;
+    document.getElementById("palace-loci-" + currentLociIndex).style.display = "block";
+}
+
+function nextLoci() {
+    document.getElementById("palace-loci-" + currentLociIndex).style.display = "none";
+    currentLociIndex = (currentLociIndex === 18) ? 1 : currentLociIndex + 1;
+
+    document.getElementById("palace-loci-" + currentLociIndex).style.display = "block";
+}
 function renderPalace(palace) {
 
         let palaceLabel = null;
@@ -42,6 +56,9 @@ function renderPalace(palace) {
         let palaceItem = null;
         let card = null;
         let palacePhrase = null;
+
+        currentLociIndex = 1;
+        document.getElementById("palace-loci-" + currentLociIndex).style.display = "block";
 
         for (let i = 0; i < 52; i++) {
             let index = i + 1;

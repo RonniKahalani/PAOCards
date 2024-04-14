@@ -18,7 +18,9 @@ header {
     filter: grayscale(0.8);
     aspect-ratio: 16/9;
 }
-
+.palace-loci {
+    display: none;
+}
 #palace {
     display:none;
 }
