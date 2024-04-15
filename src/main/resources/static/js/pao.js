@@ -48,6 +48,7 @@ function nextLoci() {
 
     document.getElementById("palace-loci-" + currentLociIndex).style.display = "block";
 }
+
 function renderPalace(palace) {
 
         let palaceLabel = null;
