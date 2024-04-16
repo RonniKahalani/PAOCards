@@ -33,15 +33,25 @@ const quiz = document.getElementById("quiz");
 const quizFront = document.getElementById("quiz-front");
 
 const btnQuizNext = document.getElementById("btn-quiz-next");
+const btnQuizPrev = document.getElementById("btn-quiz-prev");
 
 let currentLociIndex = 1;
+let currentMatrix = null;
+let currentQuiz = null;
+let currentPalace = null;
 
+/**
+ * Navigates to the previous palace loci. If we're currently at the first loci it navigates to the last loci.
+ */
 function prevLoci() {
     document.getElementById("palace-loci-" + currentLociIndex).style.display = "none";
     currentLociIndex = (currentLociIndex === 1) ? 18 : currentLociIndex - 1;
     document.getElementById("palace-loci-" + currentLociIndex).style.display = "block";
 }
 
+/**
+ * Navigates to the next palace loci. If we're currently at the last loci it navigates to the first loci.
+ */
 function nextLoci() {
     document.getElementById("palace-loci-" + currentLociIndex).style.display = "none";
     currentLociIndex = (currentLociIndex === 18) ? 1 : currentLociIndex + 1;
@@ -49,6 +59,10 @@ function nextLoci() {
     document.getElementById("palace-loci-" + currentLociIndex).style.display = "block";
 }
 
+/**
+ * Renders the palace.
+ * @param palace
+ */
 function renderPalace(palace) {
 
     let palaceLabel = null;
@@ -93,10 +107,21 @@ function renderPalace(palace) {
     }
 }
 
+/**
+ * Returns the path to the given SVG card image.
+ * @param cardId
+ * @param suit
+ * @returns {string}
+ */
 function getSVGCardImageUrl(cardId, suit) {
     return "svg/cards/" + cardId.toLowerCase() + "_of_" + suit.toLowerCase() + ".svg";
 }
 
+/**
+ * Returns a text-/char-based icon for a given suit.
+ * @param suit
+ * @returns {string}
+ */
 function getSuitIcon(suit) {
     switch (suit) {
         case "Hearts":
@@ -110,6 +135,11 @@ function getSuitIcon(suit) {
     }
 }
 
+/**
+ * Returns the text-based id/name of a given card (ACE,2...10, Jack, Queen, King).
+ * @param card
+ * @returns {*|string}
+ */
 function getCardId(card) {
     let value = card.value;
     switch (true) {
@@ -120,7 +150,9 @@ function getCardId(card) {
     }
 }
 
-
+/**
+ * Starts the quiz.
+ */
 function startQuiz() {
     currentQuizIndex = -1;
     stopTime();
@@ -132,11 +164,19 @@ function startQuiz() {
 
 }
 
+/**
+ * Restarts the quiz.
+ */
 function restartQuiz() {
     startQuiz();
 }
 
-
+/**
+ * Comparator function used for sorting cards.
+ * @param a
+ * @param b
+ * @returns {number|number}
+ */
 function cardNameSorter(a, b) {
     let as = a.split(" ");
     let bs = b.split(" ");
@@ -147,6 +187,11 @@ function cardNameSorter(a, b) {
     return (as[3] < bs[3]) ? -1 : 1; // equal values MUST yield zero
 }
 
+/**
+ * Set options to a given select element.
+ * @param elem
+ * @param values
+ */
 function setQuizSelectOptions(elem, values) {
     for (let i = 0; i < 52; i++) {
         let opt = document.createElement('option');
@@ -156,6 +201,10 @@ function setQuizSelectOptions(elem, values) {
     }
 }
 
+/**
+ * Handles a selection in the person select.
+ * @param select
+ */
 function quizPersonChange(select) {
     let selectValue = select.options[select.selectedIndex].value;
     let correctValue = quizCards[currentQuizIndex].pao.person;
@@ -164,6 +213,10 @@ function quizPersonChange(select) {
     if (isAllCorrect()) notifyAllCorrect();
 }
 
+/**
+ * Handles a selection in the action select.
+ * @param select
+ */
 function quizActionChange(select) {
     let selectValue = select.options[select.selectedIndex].value;
     let correctValue = quizCards[currentQuizIndex].pao.action;
@@ -172,6 +225,10 @@ function quizActionChange(select) {
     if (isAllCorrect()) notifyAllCorrect();
 }
 
+/**
+ * Handles a selection in the object select.
+ * @param select
+ */
 function quizObjectChange(select) {
     let selectValue = select.options[select.selectedIndex].value;
     let correctValue = quizCards[currentQuizIndex].pao.object;
@@ -180,6 +237,10 @@ function quizObjectChange(select) {
     if (isAllCorrect()) notifyAllCorrect();
 }
 
+/**
+ * Handles a selection in the card select.
+ * @param select
+ */
 function quizCardChange(select) {
     let selectValue = select.options[select.selectedIndex].value;
     let correctValue = quizCards[currentQuizIndex].value + " (" + quizCards[currentQuizIndex].name + ") of " + quizCards[currentQuizIndex].suit;
@@ -188,6 +249,11 @@ function quizCardChange(select) {
     if (isAllCorrect()) notifyAllCorrect();
 }
 
+/**
+ * Sets a select background color based on if it is a correct value, wrong value or the first neutral entry.
+ * @param select
+ * @param isCorrect
+ */
 function setSelectColor(select, isCorrect) {
     if (select.selectedIndex === 0) {
         select.classList.remove("quiz-select-wrong");
@@ -209,6 +275,10 @@ function setSelectColor(select, isCorrect) {
     }
 }
 
+/**
+ * Returns true if all quiz select values are correct.
+ * @returns {boolean}
+ */
 function isAllCorrect() {
     return quizPerson.classList.contains("quiz-select-correct") &&
         quizAction.classList.contains("quiz-select-correct") &&
@@ -216,22 +286,49 @@ function isAllCorrect() {
         quizCard.classList.contains("quiz-select-correct");
 }
 
+/**
+ * Notify if all quiz select values are correct.
+ */
 function notifyAllCorrect() {
     //$.notify("Congratulation! You just completed the " + (currentQuizIndex+1) + " quiz question. Click the next button.",{position:"bottom right",className:"success"});
 }
 
+/**
+ * Navigates to the previous quiz card.
+ */
+function prevQuizCard() {
+    clearSelects();
+    currentQuizIndex = currentQuizIndex > 0 ? currentQuizIndex - 1: 51;
+    quizImage.src = quizCards[currentQuizIndex].pao.image;
+    autoReveal();
+    cardCounter.innerHTML = (currentQuizIndex + 1).toString();
+    btnQuizPrev.disabled = isQuizDone();
+}
+
+/**
+ * Navigates to the next quiz card.
+ */
 function nextQuizCard() {
     clearSelects();
-    quizImage.src = quizCards[++currentQuizIndex].pao.image;
+    currentQuizIndex = currentQuizIndex < 51 ? currentQuizIndex + 1: 0;
+    quizImage.src = quizCards[currentQuizIndex].pao.image;
     autoReveal();
     cardCounter.innerHTML = (currentQuizIndex + 1).toString();
     btnQuizNext.disabled = isQuizDone();
 }
 
+/**
+ * Returns true if the quiz is done.
+ * TODO: Should instead validate that all cards has been answered correctly.
+ * @returns {boolean}
+ */
 function isQuizDone() {
     return currentQuizIndex === 51;
 }
 
+/**
+ * Checks to see which selects should be revealed automatically.
+ */
 function autoReveal() {
     if (quizRevealPerson.checked) revealPerson();
     if (quizRevealAction.checked) revealAction();
@@ -239,6 +336,10 @@ function autoReveal() {
     if (quizRevealCard.checked) revealCard();
 }
 
+/**
+ * Toggles checking all the select checkboxes.
+ * @param elem
+ */
 function checkRevealAll(elem) {
     quizRevealPerson.checked = elem.checked;
     quizRevealAction.checked = elem.checked;
@@ -251,6 +352,9 @@ function checkRevealAll(elem) {
     }
 }
 
+/**
+ * Reveals al the selects.
+ */
 function revealAll() {
     revealPerson();
     revealAction();
@@ -258,6 +362,10 @@ function revealAll() {
     revealCard();
 }
 
+/**
+ * Handles a single select reveal checkbox.
+ * @param elem
+ */
 function quizCheck(elem) {
     let item = null;
     let reveal = null;
@@ -288,6 +396,9 @@ function quizCheck(elem) {
     }
 }
 
+/**
+ * Reveals the person select value.
+ */
 function revealPerson() {
     let card = quizCards[currentQuizIndex];
     let correctValue = card.pao.person;
@@ -300,6 +411,9 @@ function revealPerson() {
     }
 }
 
+/**
+ * Reveals the action select value.
+ */
 function revealAction() {
     let card = quizCards[currentQuizIndex];
     let correctValue = card.pao.action;
@@ -312,6 +426,9 @@ function revealAction() {
     }
 }
 
+/**
+ * Reveals the object select value.
+ */
 function revealObject() {
     let card = quizCards[currentQuizIndex];
     let correctValue = card.pao.object;
@@ -324,6 +441,9 @@ function revealObject() {
     }
 }
 
+/**
+ * Reveals the card select value.
+ */
 function revealCard() {
     let card = quizCards[currentQuizIndex];
     let correctValue = card.value + " (" + card.name + ") of " + card.suit;
@@ -336,6 +456,9 @@ function revealCard() {
     }
 }
 
+/**
+ * Clears/resets all the selects.
+ */
 function clearSelects() {
     clearSelect(quizPerson);
     clearSelect(quizAction);
@@ -343,6 +466,10 @@ function clearSelects() {
     clearSelect(quizCard);
 }
 
+/**
+ * Clears/resets a single select.
+ * @param elem
+ */
 function clearSelect(elem) {
     elem.selectedIndex = 0;
     elem.classList.remove("quiz-select-wrong");
@@ -350,9 +477,6 @@ function clearSelect(elem) {
     elem.classList.add("quiz-select-neutral");
 }
 
-let currentMatrix = null;
-let currentQuiz = null;
-let currentPalace = null;
 
 async function loadData() {
 
