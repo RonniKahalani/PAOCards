@@ -3,12 +3,12 @@
 //export default { loadData, restartQuiz, nextQuizCard, startQuiz, checkRevealAll, revealAll, shuffleDeck}
 
 function showTab(id) {
-   document.getElementById("pao-home").style.display = 'none';
-   document.getElementById("pao-matrix").style.display = 'none';
-   document.getElementById("pao-quiz").style.display = 'none';
-   document.getElementById("palace").style.display = 'none';
-   document.getElementById("pao-instructions").style.display = 'none';
-   document.getElementById(id).style.display = 'block';
+    document.getElementById("pao-home").style.display = 'none';
+    document.getElementById("pao-matrix").style.display = 'none';
+    document.getElementById("pao-quiz").style.display = 'none';
+    document.getElementById("palace").style.display = 'none';
+    document.getElementById("pao-instructions").style.display = 'none';
+    document.getElementById(id).style.display = 'block';
 }
 
 let currentQuizIndex = -1;
@@ -51,69 +51,74 @@ function nextLoci() {
 
 function renderPalace(palace) {
 
-        let palaceLabel = null;
-        let palaceInfo = null;
-        let palaceImage = null;
-        let palaceItem = null;
-        let card = null;
-        let palacePhrase = null;
+    let palaceLabel = null;
+    let palaceInfo = null;
+    let palaceImage = null;
+    let palaceItem = null;
+    let card = null;
+    let palacePhrase = null;
 
-        currentLociIndex = 1;
-        document.getElementById("palace-loci-" + currentLociIndex).style.display = "block";
+    currentLociIndex = 1;
+    document.getElementById("palace-loci-" + currentLociIndex).style.display = "block";
 
-        for (let i = 0; i < 52; i++) {
-            let index = i + 1;
-            /*
-            let currentPalaceEntry = palace[i];
+    for (let i = 0; i < 52; i++) {
+        let index = i + 1;
+        /*
+        let currentPalaceEntry = palace[i];
 
-            palaceLabel = document.getElementById("palace-label-" + index);
-            palaceLabel.innerHTML = (i + 1) + ". " + currentPalaceEntry.label;
+        palaceLabel = document.getElementById("palace-label-" + index);
+        palaceLabel.innerHTML = (i + 1) + ". " + currentPalaceEntry.label;
 
-            palaceInfo = document.getElementById("palace-info-" + index);
-            palaceInfo.innerHTML = currentPalaceEntry.info;
+        palaceInfo = document.getElementById("palace-info-" + index);
+        palaceInfo.innerHTML = currentPalaceEntry.info;
 
-            palaceImage = document.getElementById("palace-image-" + index);
-            palaceImage.src = "<img src='" + currentPalaceEntry.image + "' alt=''>";
+        palaceImage = document.getElementById("palace-image-" + index);
+        palaceImage.src = "<img src='" + currentPalaceEntry.image + "' alt=''>";
 */
-            palaceItem = document.getElementById("palace-item-" + index);
-            card = quizCards[i];
+        palaceItem = document.getElementById("palace-item-" + index);
+        card = quizCards[i];
 
-            palaceItem.innerHTML = "<img src='" + getSVGCardImageUrl(getCardId(card), card.suit) + "' class='card' alt=''>";
+        palaceItem.innerHTML = "<img src='" + getSVGCardImageUrl(getCardId(card), card.suit) + "' class='card' alt=''>";
 
-            if (i > 0 && (i + 1) % 3 === 0) {
-                palacePhrase = document.getElementById("palace-phrase-" + ((i + 1) / 3));
-                palacePhrase.innerHTML = quizCards[i - 2].pao.person + ", " + quizCards[i - 1].pao.action + ", " + quizCards[i].pao.object;
-            }
-
-            if (i === 51) {
-                palacePhrase = document.getElementById("palace-phrase-18");
-                palacePhrase.innerHTML = quizCards[i].pao.person;
-            }
-
+        if (i > 0 && (i + 1) % 3 === 0) {
+            palacePhrase = document.getElementById("palace-phrase-" + ((i + 1) / 3));
+            palacePhrase.innerHTML = quizCards[i - 2].pao.person + ", " + quizCards[i - 1].pao.action + ", " + quizCards[i].pao.object;
         }
+
+        if (i === 51) {
+            palacePhrase = document.getElementById("palace-phrase-18");
+            palacePhrase.innerHTML = quizCards[i].pao.person;
+        }
+
+    }
 }
 
 function getSVGCardImageUrl(cardId, suit) {
-    return "svg/cards/" +cardId.toLowerCase() +"_of_"+ suit.toLowerCase() +".svg";
+    return "svg/cards/" + cardId.toLowerCase() + "_of_" + suit.toLowerCase() + ".svg";
 }
 
 function getSuitIcon(suit) {
     switch (suit) {
-        case "Hearts": return "♥";
-        case "Spades": return "♠";
-        case "Diamonds": return "♦";
-        case "Clubs": return "♣";
+        case "Hearts":
+            return "♥";
+        case "Spades":
+            return "♠";
+        case "Diamonds":
+            return "♦";
+        case "Clubs":
+            return "♣";
     }
 }
 
 function getCardId(card) {
     let value = card.value;
     switch (true) {
-        case (value>1 && value < 11): return value + "";
-        default: return card.name;
+        case (value > 1 && value < 11):
+            return value + "";
+        default:
+            return card.name;
     }
 }
-
 
 
 function startQuiz() {
@@ -132,7 +137,6 @@ function restartQuiz() {
 }
 
 
-
 function cardNameSorter(a, b) {
     let as = a.split(" ");
     let bs = b.split(" ");
@@ -142,8 +146,9 @@ function cardNameSorter(a, b) {
     if (x > y) return 1;   // any positive number works
     return (as[3] < bs[3]) ? -1 : 1; // equal values MUST yield zero
 }
+
 function setQuizSelectOptions(elem, values) {
-    for (let i = 0; i<52; i++){
+    for (let i = 0; i < 52; i++) {
         let opt = document.createElement('option');
         opt.value = values[i];
         opt.innerHTML = values[i];
@@ -156,7 +161,7 @@ function quizPersonChange(select) {
     let correctValue = quizCards[currentQuizIndex].pao.person;
 
     setSelectColor(select, selectValue === correctValue);
-    if(isAllCorrect()) notifyAllCorrect();
+    if (isAllCorrect()) notifyAllCorrect();
 }
 
 function quizActionChange(select) {
@@ -164,7 +169,7 @@ function quizActionChange(select) {
     let correctValue = quizCards[currentQuizIndex].pao.action;
 
     setSelectColor(select, selectValue === correctValue);
-    if(isAllCorrect()) notifyAllCorrect();
+    if (isAllCorrect()) notifyAllCorrect();
 }
 
 function quizObjectChange(select) {
@@ -172,7 +177,7 @@ function quizObjectChange(select) {
     let correctValue = quizCards[currentQuizIndex].pao.object;
 
     setSelectColor(select, selectValue === correctValue);
-    if(isAllCorrect()) notifyAllCorrect();
+    if (isAllCorrect()) notifyAllCorrect();
 }
 
 function quizCardChange(select) {
@@ -180,18 +185,18 @@ function quizCardChange(select) {
     let correctValue = quizCards[currentQuizIndex].value + " (" + quizCards[currentQuizIndex].name + ") of " + quizCards[currentQuizIndex].suit;
 
     setSelectColor(select, selectValue === correctValue);
-    if(isAllCorrect()) notifyAllCorrect();
+    if (isAllCorrect()) notifyAllCorrect();
 }
 
 function setSelectColor(select, isCorrect) {
-    if(select.selectedIndex === 0) {
+    if (select.selectedIndex === 0) {
         select.classList.remove("quiz-select-wrong");
         select.classList.remove("quiz-select-correct");
         select.classList.add("quiz-select-neutral");
         return;
     }
 
-    if(isCorrect) {
+    if (isCorrect) {
         select.classList.remove("quiz-select-neutral");
         select.classList.remove("quiz-select-wrong");
         select.classList.add("quiz-select-correct");
@@ -217,9 +222,9 @@ function notifyAllCorrect() {
 
 function nextQuizCard() {
     clearSelects();
-    quizImage.src =  quizCards[++currentQuizIndex].pao.image;
+    quizImage.src = quizCards[++currentQuizIndex].pao.image;
     autoReveal();
-    cardCounter.innerHTML = (currentQuizIndex+1).toString();
+    cardCounter.innerHTML = (currentQuizIndex + 1).toString();
     btnQuizNext.disabled = isQuizDone();
 }
 
@@ -228,10 +233,10 @@ function isQuizDone() {
 }
 
 function autoReveal() {
-    if(quizRevealPerson.checked) revealPerson();
-    if(quizRevealAction.checked) revealAction();
-    if(quizRevealObject.checked) revealObject();
-    if(quizRevealCard.checked) revealCard();
+    if (quizRevealPerson.checked) revealPerson();
+    if (quizRevealAction.checked) revealAction();
+    if (quizRevealObject.checked) revealObject();
+    if (quizRevealCard.checked) revealCard();
 }
 
 function checkRevealAll(elem) {
@@ -239,12 +244,13 @@ function checkRevealAll(elem) {
     quizRevealAction.checked = elem.checked;
     quizRevealObject.checked = elem.checked;
     quizRevealCard.checked = elem.checked;
-    if(elem.checked) {
+    if (elem.checked) {
         autoReveal();
     } else {
-       clearSelects();
+        clearSelects();
     }
 }
+
 function revealAll() {
     revealPerson();
     revealAction();
@@ -275,17 +281,18 @@ function quizCheck(elem) {
             break;
     }
 
-    if(elem.checked) {
+    if (elem.checked) {
         reveal();
     } else {
         clearSelect(item);
     }
 }
+
 function revealPerson() {
     let card = quizCards[currentQuizIndex];
     let correctValue = card.pao.person;
-    for(let index=1; index < quizPerson.options.length; index++) {
-        if(quizPerson.options[index].value === correctValue) {
+    for (let index = 1; index < quizPerson.options.length; index++) {
+        if (quizPerson.options[index].value === correctValue) {
             quizPerson.selectedIndex = index;
             setSelectColor(quizPerson, true);
             break;
@@ -296,8 +303,8 @@ function revealPerson() {
 function revealAction() {
     let card = quizCards[currentQuizIndex];
     let correctValue = card.pao.action;
-    for(let index=1; index < quizPerson.options.length; index++) {
-        if(quizAction.options[index].value === correctValue) {
+    for (let index = 1; index < quizPerson.options.length; index++) {
+        if (quizAction.options[index].value === correctValue) {
             quizAction.selectedIndex = index;
             setSelectColor(quizAction, true);
             break;
@@ -308,8 +315,8 @@ function revealAction() {
 function revealObject() {
     let card = quizCards[currentQuizIndex];
     let correctValue = card.pao.object;
-    for(let index=1; index < quizPerson.options.length; index++) {
-        if(quizObject.options[index].value === correctValue) {
+    for (let index = 1; index < quizPerson.options.length; index++) {
+        if (quizObject.options[index].value === correctValue) {
             quizObject.selectedIndex = index;
             setSelectColor(quizObject, true);
             break;
@@ -320,8 +327,8 @@ function revealObject() {
 function revealCard() {
     let card = quizCards[currentQuizIndex];
     let correctValue = card.value + " (" + card.name + ") of " + card.suit;
-    for(let index=1; index < quizCard.options.length; index++) {
-        if(quizCard.options[index].value === correctValue) {
+    for (let index = 1; index < quizCard.options.length; index++) {
+        if (quizCard.options[index].value === correctValue) {
             quizCard.selectedIndex = index;
             setSelectColor(quizCard, true);
             break;
@@ -383,11 +390,11 @@ function shuffle(deck) {
 
 function renderQuiz(matrix) {
 
-    for(let i = 0; i < quizCards.length; i++) {
+    for (let i = 0; i < quizCards.length; i++) {
         let card = quizCards[i];
         let paoIndex = card.suit.toLowerCase();
         let paoItem = matrix[paoIndex];
-        card.pao = paoItem[card.value-1];
+        card.pao = paoItem[card.value - 1];
     }
 
     let persons = quizCards.map(x => x.pao.person).sort();
@@ -404,7 +411,7 @@ function renderQuiz(matrix) {
 function renderMatrix(matrix) {
 
     let paoRows = document.getElementById('pao-rows').getElementsByClassName('pao-row');
-    for( let rowIndex=0; rowIndex< paoRows.length; rowIndex++ ) {
+    for (let rowIndex = 0; rowIndex < paoRows.length; rowIndex++) {
 
         let paoColumns = paoRows[rowIndex].getElementsByClassName('pao-column');
 
@@ -433,11 +440,11 @@ function renderMatrix(matrix) {
 
             let image = column.getElementsByClassName("pao-image")[0];
             image.src = card.image;
-            let cardId = getCardId( card);
-            image.addEventListener('mouseover', function(){
-                image.src = getSVGCardImageUrl( cardId,matrixIndex);
+            let cardId = getCardId(card);
+            image.addEventListener('mouseover', function () {
+                image.src = getSVGCardImageUrl(cardId, matrixIndex);
             })
-            image.addEventListener('mouseout', function(){
+            image.addEventListener('mouseout', function () {
                 image.src = card.image;
             })
 
@@ -453,7 +460,7 @@ function renderMatrix(matrix) {
 async function loadMatrix(id) {
 
     const response = await fetch("http://localhost:8080/api/v1/pao/" + id);
-    if(response.ok) {
+    if (response.ok) {
         return await response.json();
     }
 }
@@ -461,7 +468,7 @@ async function loadMatrix(id) {
 async function loadQuiz() {
 
     const response = await fetch("http://localhost:8080/api/v1/quiz");
-    if(response.ok) {
+    if (response.ok) {
         currentQuiz = await response.json();
         quizCards = currentQuiz["cards"];
         return currentQuiz;
@@ -471,7 +478,20 @@ async function loadQuiz() {
 async function loadPalace(name) {
 
     const response = await fetch("http://localhost:8080/api/v1/palace/" + name);
-    if(response.ok) {
+    if (response.ok) {
         return await response.json();
     }
 }
+
+/*
+var video = document.querySelector('#bg-video');
+
+function toggleVideo() {
+    if (video.playing) {
+        video.pause() // will bring the video to a halt
+        video.currentTime = 0; // brings it back to the beginning
+    } else {
+        video.play();
+    }
+}
+*/
