@@ -6,7 +6,7 @@ import {TabHandler} from "./tab.js";
 
 const matrix = new Matrix();
 const quiz = new Quiz(matrix);
-const tab = new TabHandler();
+const tabHandler = new TabHandler();
 
 window.addEventListener('DOMContentLoaded',start);
 function start() {
@@ -18,22 +18,22 @@ function setupEvents() {
 
 function setupTabEvents() {
     document.getElementById("btn-home").addEventListener('click',()=>{
-        tab.showTab("pao-home");
+        tabHandler.showTab("pao-home");
     });
 
     document.getElementById("btn-matrix").addEventListener('click',()=>{
-        tab.showTab("pao-matrix");
+        tabHandler.showTab("pao-matrix");
     });
 
     document.getElementById("btn-quiz").addEventListener('click',()=>{
-        tab.showTab("pao-quiz");
+        tabHandler.showTab("pao-quiz");
     });
 
     document.getElementById("btn-palace").addEventListener('click',()=>{
-        tab.showTab("pao-palace");
+        tabHandler.showTab("pao-palace");
     });
 
     document.getElementById("btn-instructions").addEventListener('click',()=>{
-        tab.showTab("pao-instructions");
+        tabHandler.showTab("pao-instructions");
     });
 }
