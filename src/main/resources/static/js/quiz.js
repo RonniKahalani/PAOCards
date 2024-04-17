@@ -87,6 +87,16 @@ export class Quiz {
             this.revealAll();
         });
 
+        this.btnPrevLoci = document.getElementById("btn-prev-loci");
+        this.btnPrevLoci.addEventListener('click',()=>{
+            this.prevLoci();
+        });
+
+        this.btnNextLoci = document.getElementById("btn-next-loci");
+        this.btnNextLoci.addEventListener('click',()=>{
+            this.nextLoci();
+        });
+
         this.cardCounter = document.getElementById("card-counter");
         this.currentQuiz = null;
         this.currentPalace = null;
@@ -99,6 +109,7 @@ export class Quiz {
         this.quizCards = this.currentQuiz["cards"];
         this.currentPalace = await this.loadPalace("default");
         this.renderQuiz();
+        this.renderPalace(this.currentPalace);
 
     }
     async loadQuiz() {
@@ -526,6 +537,21 @@ export class Quiz {
         }
     }
 
+    prevLoci() {
+        document.getElementById("palace-loci-" + this.currentLociIndex).style.display = "none";
+        this.currentLociIndex = (this.currentLociIndex === 1) ? 18 : this.currentLociIndex - 1;
+        document.getElementById("palace-loci-" + this.currentLociIndex).style.display = "block";
+    }
+
+    /**
+     * Navigates to the next palace loci. If we're currently at the last loci it navigates to the first loci.
+     */
+    nextLoci() {
+        document.getElementById("palace-loci-" + this.currentLociIndex).style.display = "none";
+        this.currentLociIndex = (this.currentLociIndex === 18) ? 1 : this.currentLociIndex + 1;
+
+        document.getElementById("palace-loci-" + this.currentLociIndex).style.display = "block";
+    }
 
 
 }

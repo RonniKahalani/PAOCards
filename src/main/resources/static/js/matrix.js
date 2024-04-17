@@ -36,6 +36,8 @@ export class Matrix {
                     break;
             }
             let suit = this.currentMatrix[matrixIndex];
+            let svgFunc = this.cardUtil.getSVGCardImageUrl;
+
             for (let i = 0; i < paoColumns.length; i++) {
                 let card = suit[i];
                 let column = paoColumns[i];
@@ -46,8 +48,9 @@ export class Matrix {
                 let image = column.getElementsByClassName("pao-image")[0];
                 image.src = card.image;
                 let cardId = this.cardUtil.getCardId(card);
+
                 image.addEventListener('mouseover', function () {
-                    image.src = this.cardUtil.getSVGCardImageUrl(cardId, matrixIndex);
+                    image.src = svgFunc(cardId, matrixIndex);
                 })
                 image.addEventListener('mouseout', function () {
                     image.src = card.image;
