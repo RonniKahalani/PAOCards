@@ -1,7 +1,12 @@
-#start,
-#stop {
+#btn-continue {
     display: none;
+    text-align: center;
 }
+
+#btn-pause {
+    text-align: center;
+}
+
 #stopWatch {
     height: auto;
     text-align: center;

@@ -60,8 +60,8 @@ export class Timer {
 
         if (this.seconds !== 0 || this.minutes !== 0 || this.hours !== 0) {
 
-            this.btnContinue.style.display = "block";
-            this.fulltime.style.display = "block";
+            this.btnContinue.style.display = "inline-block";
+            this.fulltime.style.display = "inline-block";
             this.fulltime.style.color = "#ff4500";
             this.fulltime.innerHTML = "Time Recorded is " + this.gethours + this.mins + this.secs;
 
@@ -82,7 +82,7 @@ export class Timer {
         if (this.seconds !== 0 || this.minutes !== 0 || this.hours !== 0) {
             this.writeTime();
             clearTimeout(this.clearTime);
-            this.btnContinue.style.display = 'block';
+            this.btnContinue.style.display = 'inline-block';
             this.btnPause.style.display = "none";
         }
     }
@@ -95,7 +95,7 @@ export class Timer {
                 this.startWatch()
             }, 1000);
             this.btnContinue.style.display = "none";
-            this.btnPause.style.display = "block";
+            this.btnPause.style.display = "inline-block";
 
         }
     }
