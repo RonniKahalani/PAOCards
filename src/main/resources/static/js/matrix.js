@@ -1,9 +1,11 @@
-"user strict";
+"use strict";
+
+import {CardUtil} from "./card-util.js";
 
 export class Matrix {
     constructor() {
         this.currentMatrix = null;
-
+        this.cardUtil = new CardUtil();
     }
 
     async load(id) {
@@ -43,9 +45,9 @@ export class Matrix {
 
                 let image = column.getElementsByClassName("pao-image")[0];
                 image.src = card.image;
-                let cardId = getCardId(card);
+                let cardId = this.cardUtil.getCardId(card);
                 image.addEventListener('mouseover', function () {
-                    image.src = getSVGCardImageUrl(cardId, matrixIndex);
+                    image.src = this.cardUtil.getSVGCardImageUrl(cardId, matrixIndex);
                 })
                 image.addEventListener('mouseout', function () {
                     image.src = card.image;

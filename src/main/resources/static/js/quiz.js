@@ -1,27 +1,91 @@
 "use strict";
 
+import {CardUtil} from "./card-util.js";
+
 export class Quiz {
 
     constructor(matrix) {
         this.matrix = matrix;
+        this.cardUtil = new CardUtil();
 
         this.quizImage = document.getElementById("quiz-image");
+
         this.quizPerson = document.getElementById("quiz-select-person");
+        this.quizPerson.addEventListener('change',()=>{
+            this.quizPersonChange(this.quizPerson);
+        });
+
         this.quizAction = document.getElementById("quiz-select-action");
+        this.quizAction.addEventListener('change',()=>{
+            this.quizActionChange(this.quizAction);
+        });
+
         this.quizObject = document.getElementById("quiz-select-object");
+        this.quizObject.addEventListener('change',()=>{
+            this.quizObjectChange(this.quizObject);
+        });
+
         this.quizCard = document.getElementById("quiz-select-card");
+        this.quizCard.addEventListener('change',()=>{
+            this.quizCardChange(this.quizCard);
+        });
 
         this.quizRevealPerson = document.getElementById("quiz-reveal-person");
+        this.quizRevealPerson.addEventListener('change',()=>{
+            this.quizCheck(this.quizRevealPerson);
+        });
+
         this.quizRevealAction = document.getElementById("quiz-reveal-action");
+        this.quizRevealAction.addEventListener('change',()=>{
+            this.quizCheck(this.quizRevealAction);
+        });
+
         this.quizRevealObject = document.getElementById("quiz-reveal-object");
+        this.quizRevealObject.addEventListener('change',()=>{
+            this.quizCheck(this.quizRevealObject);
+        });
+
         this.quizRevealCard = document.getElementById("quiz-reveal-card");
+        this.quizRevealCard.addEventListener('change',()=>{
+            this.quizCheck(this.quizRevealCard);
+        });
+
         this.quizRevealAll = document.getElementById("quiz-reveal-all");
+        this.quizRevealAll.addEventListener('change',()=>{
+            this.checkRevealAll(this.quizRevealAll);
+        });
 
         this.quiz = document.getElementById("quiz");
         this.quizFront = document.getElementById("quiz-front");
 
+        document.getElementById("quiz-start").addEventListener('click',()=>{
+            this.startQuiz();
+        });
+
         this.btnQuizNext = document.getElementById("btn-quiz-next");
+        this.btnQuizNext.addEventListener('click',()=>{
+            this.nextQuizCard();
+        });
+
         this.btnQuizPrev = document.getElementById("btn-quiz-prev");
+        this.btnQuizPrev.addEventListener('click',()=>{
+            this.prevQuizCard();
+        });
+
+        this.btnQuizRestart = document.getElementById("btn-quiz-restart");
+        this.btnQuizRestart.addEventListener('click',()=>{
+            this.restartQuiz();
+        });
+
+        this.btnQuizShuffleDeck = document.getElementById("btn-quiz-shuffle-deck");
+        this.btnQuizShuffleDeck.addEventListener('click',()=>{
+            this.shuffleDeck();
+        });
+
+        this.btnQuizReveal = document.getElementById("btn-quiz-reveal");
+        this.btnQuizReveal.addEventListener('click',()=>{
+            this.revealAll();
+        });
 
         this.cardCounter = document.getElementById("card-counter");
         this.currentQuiz = null;
@@ -31,9 +95,10 @@ export class Quiz {
     }
 
     async load() {
-        this.currentQuiz = await loadQuiz();
+        this.currentQuiz = await this.loadQuiz();
         this.quizCards = this.currentQuiz["cards"];
-        this.currentPalace = await loadPalace("default");
+        this.currentPalace = await this.loadPalace("default");
+        this.renderQuiz();
 
     }
     async loadQuiz() {
@@ -63,7 +128,7 @@ export class Quiz {
         let persons = this.quizCards.map(x => x.pao.person).sort();
         let actions = this.quizCards.map(x => x.pao.action).sort();
         let objects = this.quizCards.map(x => x.pao.object).sort();
-        let cards = this.quizCards.map(x => x.value + " (" + x.name + ") of " + x.suit).sort(cardNameSorter);
+        let cards = this.quizCards.map(x => x.value + " (" + x.name + ") of " + x.suit).sort(this.cardNameSorter);
 
         this.setQuizSelectOptions(this.quizPerson, persons);
         this.setQuizSelectOptions(this.quizAction, actions);
@@ -232,7 +297,7 @@ export class Quiz {
         this.quizImage.src = this.quizCards[this.currentQuizIndex].pao.image;
         this.autoReveal();
         this.cardCounter.innerHTML = (this.currentQuizIndex + 1).toString();
-        this.btnQuizNext.disabled = isQuizDone();
+        this.btnQuizNext.disabled = this.isQuizDone();
     }
 
     /**
@@ -308,7 +373,7 @@ export class Quiz {
         }
 
         if (elem.checked) {
-            this.reveal();
+            reveal();
         } else {
             this.clearSelect(item);
         }
@@ -338,7 +403,7 @@ export class Quiz {
         for (let index = 1; index < this.quizPerson.options.length; index++) {
             if (this.quizAction.options[index].value === correctValue) {
                 this.quizAction.selectedIndex = index;
-                this.setSelectColor(quizAction, true);
+                this.setSelectColor(this.quizAction, true);
                 break;
             }
         }
@@ -395,10 +460,10 @@ export class Quiz {
         elem.classList.add("quiz-select-neutral");
     }
 
-    async shuffleDeck() {
+    shuffleDeck() {
         this.shuffle(this.quizCards);
         this.renderPalace(this.currentPalace);
-        this.restart();
+        this.restartQuiz();
     }
 
     shuffle(deck) {
@@ -446,7 +511,7 @@ export class Quiz {
             palaceItem = document.getElementById("palace-item-" + index);
             card = this.quizCards[i];
 
-            palaceItem.innerHTML = "<img src='" + this.getSVGCardImageUrl(this.getCardId(card), card.suit) + "' class='card' alt=''>";
+            palaceItem.innerHTML = "<img src='" + this.cardUtil.getSVGCardImageUrl(this.cardUtil.getCardId(card), card.suit) + "' class='card' alt=''>";
 
             if (i > 0 && (i + 1) % 3 === 0) {
                 palacePhrase = document.getElementById("palace-phrase-" + ((i + 1) / 3));
@@ -461,18 +526,6 @@ export class Quiz {
         }
     }
 
-    getSVGCardImageUrl(cardId, suit) {
-        return "svg/cards/" + cardId.toLowerCase() + "_of_" + suit.toLowerCase() + ".svg";
-    }
 
-    getCardId(card) {
-        let value = card.value;
-        switch (true) {
-            case (value > 1 && value < 11):
-                return value + "";
-            default:
-                return card.name;
-        }
-    }
 
 }

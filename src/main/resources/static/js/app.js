@@ -4,17 +4,34 @@ import {Matrix} from "./matrix.js";
 import {Quiz} from "./quiz.js";
 import {TabHandler} from "./tab.js";
 
-const matrix = new Matrix();
-const quiz = new Quiz(matrix);
+
+
 const tabHandler = new TabHandler();
 
 window.addEventListener('DOMContentLoaded',start);
-function start() {
+
+async function start() {
+    const matrix = new Matrix();
+    await matrix.load("default");
+    const quiz = new Quiz(matrix.currentMatrix);
+    await quiz.load();
      setupEvents();
 }
 function setupEvents() {
     setupTabEvents();
+    setMatrixEvents();
+    setupChatEvents();
 }
+
+function setMatrixEvents() {
+
+}
+
+function setupChatEvents() {
+
+
+}
+
 
 function setupTabEvents() {
     document.getElementById("btn-home").addEventListener('click',()=>{

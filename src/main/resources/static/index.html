@@ -95,8 +95,7 @@
                         <span id="card-counter">1</span> of 52
                     </div>
                     <div class="quiz-label-select">
-                        <select id="quiz-select-person" class="form-select"
-                                onchange="quizPersonChange(this)" accesskey="p">
+                        <select id="quiz-select-person" class="form-select" accesskey="p">
                             <option value="">Select Person (Alt+P)</option>
                         </select>
                         <input id="quiz-reveal-person" class="form-check-input quiz-check" type="checkbox"
@@ -104,33 +103,27 @@
                     </div>
 
                     <div class="quiz-label-select">
-                        <select id="quiz-select-action" class="form-select"
-                                onchange="quizActionChange(this)" accesskey="a">
+                        <select id="quiz-select-action" class="form-select" accesskey="a">
                             <option value="">Select Action (Alt+A)</option>
                         </select>
                         <input id="quiz-reveal-action" class="form-check-input quiz-check" type="checkbox"
                                title="Auto reveal" onchange="quizCheck(this)">
-
                     </div>
 
                     <div class="quiz-label-select">
-                        <select id="quiz-select-object" class="form-select"
-                                onchange="quizObjectChange(this)" accesskey="o">
+                        <select id="quiz-select-object" class="form-select" accesskey="o">
                             <option value="">Select Object (Alt+O)</option>
                         </select>
                         <input id="quiz-reveal-object" class="form-check-input quiz-check" type="checkbox"
                                title="Auto reveal" onchange="quizCheck(this)">
-
                     </div>
 
                     <div class="quiz-label-select">
-                        <select id="quiz-select-card" class="form-select"
-                                onchange="quizCardChange(this)" accesskey="c">
+                        <select id="quiz-select-card" class="form-select" accesskey="c">
                             <option value="">Select Card (Alt+C)</option>
                         </select>
                         <input id="quiz-reveal-card" class="form-check-input quiz-check" type="checkbox"
                                title="Auto reveal" onchange="quizCheck(this)">
-
                     </div>
                     <div style="text-align: right">Auto reveal all
                         <input id="quiz-reveal-all" class="form-check-input quiz-check" type="checkbox"
@@ -143,7 +136,7 @@
                             Start
                             Over
                         </button>
-                        <button id="btn-quiz-new-deck" class="btn btn-primary" onclick="shuffleDeck()" accesskey="d" title="Shortcut (Alt-D)">
+                        <button id="btn-quiz-shuffle-deck" class="btn btn-primary" onclick="shuffleDeck()" accesskey="d" title="Shortcut (Alt-D)">
                             New Deck
                         </button>
                         <button id="btn-quiz-reveal" class="btn btn-danger" onclick="revealAll()" accesskey="r" title="Shortcut (Alt-R)">Reveal
@@ -159,7 +152,7 @@
                 <div id="quiz-front">
                     <h3>PAO Matrix Quiz</h3>
                     <p>Test your matrix memory.</p>
-                    <button class="btn btn-primary" onclick="startQuiz()" accesskey="s">Start Quiz</button>
+                    <button id="quiz-start" class="btn btn-primary" accesskey="s">Start Quiz</button>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tipModal"
                             accesskey="t">Tips
                     </button>
