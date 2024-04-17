@@ -39,6 +39,7 @@ export class Timer {
         this.secs = this.seconds < 10 ? "0" + this.seconds : this.seconds;
 
         this.btnContinue.style.display = "none";
+        this.btnPause.style.display = "inline-block";
         this.writeTime();
         this.seconds++;
 
