@@ -19,7 +19,6 @@
     <script src="jquery-ui-1.13.2/jquery-ui.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
     <script defer src="js/app.js" type="module"></script>
-    <script defer src="js/timer.js"></script>
 </head>
 
 <body>
@@ -82,10 +81,8 @@
 
                 <div id="quiz">
                     <div id="stopWatch">
-                        <button id="start" class="btn btn-primary btn-sm btn-timer">Start</button>
-                        <button id="stop" class="btn btn-primary btn-sm btn-timer">Stop</button>
-                        <button id="pause" class="btn btn-primary btn-sm btn-timer">Pause</button>
-                        <button id="continue" class="btn btn-primary btn-sm btn-timer" hidden>Continue</button>
+                        <button id="btn-pause" class="btn btn-primary btn-sm btn-timer">Pause</button>
+                        <button id="btn-continue" class="btn btn-primary btn-sm btn-timer" hidden>Continue</button>
                         <div id="timer"> 00 : 00 : 00</div>
                     </div>
 
@@ -99,7 +96,7 @@
                             <option value="">Select Person (Alt+P)</option>
                         </select>
                         <input id="quiz-reveal-person" class="form-check-input quiz-check" type="checkbox"
-                               title="Auto reveal" onchange="quizCheck(this)">
+                               title="Auto reveal">
                     </div>
 
                     <div class="quiz-label-select">
@@ -107,7 +104,7 @@
                             <option value="">Select Action (Alt+A)</option>
                         </select>
                         <input id="quiz-reveal-action" class="form-check-input quiz-check" type="checkbox"
-                               title="Auto reveal" onchange="quizCheck(this)">
+                               title="Auto reveal">
                     </div>
 
                     <div class="quiz-label-select">
@@ -115,7 +112,7 @@
                             <option value="">Select Object (Alt+O)</option>
                         </select>
                         <input id="quiz-reveal-object" class="form-check-input quiz-check" type="checkbox"
-                               title="Auto reveal" onchange="quizCheck(this)">
+                               title="Auto reveal">
                     </div>
 
                     <div class="quiz-label-select">
@@ -123,27 +120,27 @@
                             <option value="">Select Card (Alt+C)</option>
                         </select>
                         <input id="quiz-reveal-card" class="form-check-input quiz-check" type="checkbox"
-                               title="Auto reveal" onchange="quizCheck(this)">
+                               title="Auto reveal">
                     </div>
                     <div style="text-align: right">Auto reveal all
                         <input id="quiz-reveal-all" class="form-check-input quiz-check" type="checkbox"
-                               title="Auto reveal all" onchange="checkRevealAll(this)">
+                               title="Auto reveal all">
                     </div>
 
                     <br>
                     <div id="quiz-button-group">
-                        <button id="btn-quiz-restart" class="btn btn-primary" onclick="restartQuiz()" accesskey="s" title="Shortcut (Alt-S)">
+                        <button id="btn-quiz-restart" class="btn btn-primary" accesskey="s" title="Shortcut (Alt-S)">
                             Start
                             Over
                         </button>
-                        <button id="btn-quiz-shuffle-deck" class="btn btn-primary" onclick="shuffleDeck()" accesskey="d" title="Shortcut (Alt-D)">
+                        <button id="btn-quiz-shuffle-deck" class="btn btn-primary" accesskey="d" title="Shortcut (Alt-D)">
                             New Deck
                         </button>
-                        <button id="btn-quiz-reveal" class="btn btn-danger" onclick="revealAll()" accesskey="r" title="Shortcut (Alt-R)">Reveal
+                        <button id="btn-quiz-reveal" class="btn btn-danger" accesskey="r" title="Shortcut (Alt-R)">Reveal
                             All
                         </button>
-                        <button id="btn-quiz-prev" class="btn btn-primary" onclick="prevQuizCard()" accesskey="p" title="Shortcut (Alt-P)">Prev
-                        </button> <button id="btn-quiz-next" class="btn btn-primary" onclick="nextQuizCard()" accesskey="n" title="Shortcut (Alt-N)">Next
+                        <button id="btn-quiz-prev" class="btn btn-primary" accesskey="p" title="Shortcut (Alt-P)">Prev
+                        </button> <button id="btn-quiz-next" class="btn btn-primary" accesskey="n" title="Shortcut (Alt-N)">Next
                         </button>
 
                     </div>

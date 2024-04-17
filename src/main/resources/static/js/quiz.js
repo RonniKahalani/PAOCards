@@ -1,6 +1,7 @@
 "use strict";
 
 import {CardUtil} from "./card-util.js";
+import {Timer} from "./timer.js";
 
 export class Quiz {
 
@@ -102,6 +103,7 @@ export class Quiz {
         this.currentPalace = null;
         this.currentLociIndex = 1;
 
+        this.timer = new Timer();
     }
 
     async load() {
@@ -149,11 +151,11 @@ export class Quiz {
 
     startQuiz() {
         this.currentQuizIndex = -1;
-        stopTime();
+        this.timer.stopTime();
         this.quiz.style.display = "block";
         this.quizFront.style.display = "none";
         this.nextQuizCard();
-        startWatch();
+        this.timer.startWatch();
         //$.notify("Cool! Lets go.",{position:"bottom right",className:"success"});
 
     }
