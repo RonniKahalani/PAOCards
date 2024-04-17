@@ -302,7 +302,7 @@ function prevQuizCard() {
     quizImage.src = quizCards[currentQuizIndex].pao.image;
     autoReveal();
     cardCounter.innerHTML = (currentQuizIndex + 1).toString();
-    btnQuizPrev.disabled = isQuizDone();
+    //btnQuizPrev.disabled = isQuizDone();
 }
 
 /**
@@ -314,7 +314,7 @@ function nextQuizCard() {
     quizImage.src = quizCards[currentQuizIndex].pao.image;
     autoReveal();
     cardCounter.innerHTML = (currentQuizIndex + 1).toString();
-    btnQuizNext.disabled = isQuizDone();
+    //btnQuizNext.disabled = isQuizDone();
 }
 
 /**
@@ -323,7 +323,7 @@ function nextQuizCard() {
  * @returns {boolean}
  */
 function isQuizDone() {
-    return currentQuizIndex === 51;
+    return false;
 }
 
 /**
