@@ -1,18 +1,36 @@
 "use strict";
 
+/**
+ * Handles the matrix feature.
+ */
 import {CardUtil} from "./card-util.js";
 
+/**
+ * The matrix feature.
+ */
 export class Matrix {
+
+    /**
+     * Constructor.
+     */
     constructor() {
         this.currentMatrix = null;
         this.cardUtil = new CardUtil();
     }
 
+    /**
+     * Loads and renders the matrix.
+     * @param id
+     * @returns {Promise<void>}
+     */
     async load(id) {
         this.currentMatrix = await this.loadMatrix(id);
         this.renderMatrix();
     }
 
+    /**
+     * Renders the matrix interface.
+     */
     renderMatrix() {
 
         let paoRows = document.getElementById('pao-rows').getElementsByClassName('pao-row');
@@ -65,6 +83,11 @@ export class Matrix {
         }
     }
 
+    /**
+     * Loads the matrix from its REST endpoint.
+     * @param id
+     * @returns {Promise<any>}
+     */
     async loadMatrix(id) {
 
         const response = await fetch("http://localhost:8080/api/v1/pao/" + id);
@@ -72,5 +95,4 @@ export class Matrix {
             return await response.json();
         }
     }
-
 }

@@ -1,10 +1,20 @@
 "use strict";
 
+/**
+ * Handles the quiz and palace features.
+ */
 import {CardUtil} from "./card-util.js";
 import {Timer} from "./timer.js";
 
+/**
+ * The quiz feature.
+ */
 export class Quiz {
 
+    /**
+     * Constructor.
+     * @param matrix
+     */
     constructor(matrix) {
         this.matrix = matrix;
         this.cardUtil = new CardUtil();
@@ -106,6 +116,10 @@ export class Quiz {
         this.timer = new Timer();
     }
 
+    /**
+     * Loads and initializes the quiz.
+     * @returns {Promise<void>}
+     */
     async load() {
         this.currentQuiz = await this.loadQuiz();
         this.quizCards = this.currentQuiz["cards"];
@@ -114,6 +128,11 @@ export class Quiz {
         this.renderPalace(this.currentPalace);
 
     }
+
+    /**
+     * Load the quiz from its REST endpoint.
+     * @returns {Promise<any>}
+     */
     async loadQuiz() {
         const response = await fetch("http://localhost:8080/api/v1/quiz");
         if(response.ok) {
@@ -121,6 +140,11 @@ export class Quiz {
         }
     }
 
+    /**
+     * Loads the palace from its REST endpoint.
+     * @param name
+     * @returns {Promise<any>}
+     */
     async loadPalace(name) {
 
         const response = await fetch("http://localhost:8080/api/v1/palace/" + name);
@@ -129,6 +153,9 @@ export class Quiz {
         }
     }
 
+    /**
+     * Renders the quiz interface.
+     */
     renderQuiz() {
 
         for (let i = 0; i < this.quizCards.length; i++) {
@@ -149,6 +176,9 @@ export class Quiz {
         this.setQuizSelectOptions(this.quizCard, cards);
     }
 
+    /**
+     * Starts the quiz.
+     */
     startQuiz() {
         this.currentQuizIndex = -1;
         this.timer.stopTime();
@@ -473,12 +503,19 @@ export class Quiz {
         elem.classList.add("quiz-select-neutral");
     }
 
+    /**
+     * Shuffles the quiz card deck and updates the palace.
+     */
     shuffleDeck() {
         this.shuffle(this.quizCards);
         this.renderPalace(this.currentPalace);
         this.restartQuiz();
     }
 
+    /**
+     * Shuffles a card deck.
+     * @param deck
+     */
     shuffle(deck) {
         let currentIndex = deck.length;
 
@@ -495,6 +532,10 @@ export class Quiz {
         }
     }
 
+    /**
+     * Renders the palace interface.
+     * @param palace
+     */
     renderPalace(palace) {
 
         let palaceLabel = null;
@@ -539,6 +580,9 @@ export class Quiz {
         }
     }
 
+    /**
+     * Navigates to the previous palace loci.
+     */
     prevLoci() {
         document.getElementById("palace-loci-" + this.currentLociIndex).style.display = "none";
         this.currentLociIndex = (this.currentLociIndex === 1) ? 18 : this.currentLociIndex - 1;
@@ -546,7 +590,7 @@ export class Quiz {
     }
 
     /**
-     * Navigates to the next palace loci. If we're currently at the last loci it navigates to the first loci.
+     * Navigates to the next palace loci.
      */
     nextLoci() {
         document.getElementById("palace-loci-" + this.currentLociIndex).style.display = "none";
@@ -554,6 +598,4 @@ export class Quiz {
 
         document.getElementById("palace-loci-" + this.currentLociIndex).style.display = "block";
     }
-
-
 }

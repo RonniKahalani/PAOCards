@@ -1,7 +1,13 @@
 "use strict";
 
+/**
+ * Handles a timer.
+ */
 export class Timer {
 
+    /**
+     * Constructor.
+     */
     constructor() {
         this.clearTime = null;
         this.seconds = 0;
@@ -20,7 +26,9 @@ export class Timer {
         this.btnPause.addEventListener("click", () => {this.pauseTime()});
     }
 
-
+    /**
+     * Starts the timer watch interface.
+     */
     startWatch() {
         if (this.seconds === 60) {
             this.seconds = 0;
@@ -49,6 +57,9 @@ export class Timer {
         }, 1000);
     }
 
+    /**
+     * Starts the timer.
+     */
     startTime() {
         if (this.seconds === 0 && this.minutes === 0 && this.hours === 0) {
             this.fulltime.style.display = "none";
@@ -56,7 +67,9 @@ export class Timer {
         }
     }
 
-
+    /**
+     * Stops the timer.
+     */
     stopTime() {
 
         if (this.seconds !== 0 || this.minutes !== 0 || this.hours !== 0) {
@@ -79,6 +92,9 @@ export class Timer {
         }
     }
 
+    /**
+     * Pauses the timer.
+     */
     pauseTime() {
         if (this.seconds !== 0 || this.minutes !== 0 || this.hours !== 0) {
             this.writeTime();
@@ -88,6 +104,9 @@ export class Timer {
         }
     }
 
+    /**
+     * Continues the timer.
+     */
     continueTime() {
         if (this.seconds !== 0 || this.minutes !== 0 || this.hours !== 0) {
             this.writeTime();
@@ -101,6 +120,9 @@ export class Timer {
         }
     }
 
+    /**
+     * Writes the timer info to the interface.
+     */
     writeTime() {
         document.getElementById("timer").innerHTML = this.gethours.toString() + this.mins.toString() + this.secs.toString();
     }
