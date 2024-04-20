@@ -533,17 +533,27 @@ export class Quiz {
     }
 
     /**
+     * Hides all palace loci.
+     */
+    hideAllLoci() {
+        for(let index =1; index<19; index++) {
+            document.getElementById("palace-loci-" + index).style.display = "none";
+        }
+    }
+
+    /**
      * Renders the palace interface.
      * @param palace
      */
     renderPalace(palace) {
 
         let palaceLabel = null;
-        let palaceInfo = null;
         let palaceImage = null;
         let palaceItem = null;
         let card = null;
         let palacePhrase = null;
+
+        this.hideAllLoci();
 
         this.currentLociIndex = 1;
         document.getElementById("palace-loci-" + this.currentLociIndex).style.display = "block";
