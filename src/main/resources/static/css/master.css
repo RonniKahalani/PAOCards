@@ -28,7 +28,7 @@ header {
 #palace {
     display:none;
 }
-.palace-image img {
+.palace-image {
     width: 300px;
     height:200px;
 }

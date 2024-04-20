@@ -550,18 +550,18 @@ export class Quiz {
 
         for (let i = 0; i < 52; i++) {
             let index = i + 1;
-            /*
+
             let currentPalaceEntry = palace[i];
 
-            palaceLabel = document.getElementById("palace-label-" + index);
-            palaceLabel.innerHTML = (i + 1) + ". " + currentPalaceEntry.label;
+            try {
+                palaceLabel = document.getElementById("palace-label-" + index);
+                palaceLabel.innerHTML = (i + 1) + ". " + currentPalaceEntry.label;
 
-            palaceInfo = document.getElementById("palace-info-" + index);
-            palaceInfo.innerHTML = currentPalaceEntry.info;
-
-            palaceImage = document.getElementById("palace-image-" + index);
-            palaceImage.src = "<img src='" + currentPalaceEntry.image + "' alt=''>";
-    */
+                palaceImage = document.getElementById("palace-image-" + index);
+                palaceImage.src = currentPalaceEntry.image;
+            } catch (e) {
+                console.log("Weird happened");
+            }
             palaceItem = document.getElementById("palace-item-" + index);
             card = this.quizCards[i];
 
