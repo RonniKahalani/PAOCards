@@ -42,10 +42,7 @@ header {
     width: 33%;
 }
 .palace-label {
-    display: inline-block;
-    width: 170px;
     font-weight: bold;
-    white-space: nowrap;
     margin:5px;
 }
 

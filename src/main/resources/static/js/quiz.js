@@ -560,7 +560,7 @@ export class Quiz {
                 palaceImage = document.getElementById("palace-image-" + index);
                 palaceImage.src = currentPalaceEntry.image;
             } catch (e) {
-                console.log("Weird happened");
+                // console.log("Weird happened after the 6th item");
             }
             palaceItem = document.getElementById("palace-item-" + index);
             card = this.quizCards[i];
