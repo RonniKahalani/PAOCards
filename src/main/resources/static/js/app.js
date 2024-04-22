@@ -15,11 +15,20 @@ window.addEventListener('DOMContentLoaded', start);
  * @returns {Promise<void>}
  */
 async function start() {
+
     const matrix = new Matrix();
-    await matrix.load("default");
-    const quiz = new Quiz(matrix.currentMatrix);
-    await quiz.load();
-    setupEvents();
+    try {
+        await matrix.load("default");
+        const quiz = new Quiz(matrix.currentMatrix);
+        await quiz.load();
+        setupEvents();
+    } catch (e) {
+        showError("An error occurred.", e);
+    }
+}
+
+function showError(msg, status) {
+    alert(msg + "\nReason: " + status.toString());
 }
 
 /**

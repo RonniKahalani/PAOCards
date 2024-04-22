@@ -304,3 +304,6 @@ header {
 }
 
 
+#error-msg {
+    display: none;
+}

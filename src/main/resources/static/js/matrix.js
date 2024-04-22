@@ -89,10 +89,13 @@ export class Matrix {
      * @returns {Promise<any>}
      */
     async loadMatrix(id) {
-
-        const response = await fetch("http://localhost:8080/api/v1/pao/" + id);
-        if (response.ok) {
-            return await response.json();
+        try {
+            const response = await fetch("http://localhost:8080/api/v1/pao/" + id);
+            if (response.ok) {
+                return await response.json();
+            }
+        } catch (e) {
+            throw new Error("Failed to fetch matrix data");
         }
     }
 }
