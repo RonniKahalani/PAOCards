@@ -118,13 +118,24 @@ header {
     margin: 5px;
 }
 
-.quiz-label-select {
+.quiz-select-div {
     display: flex;
     flex-direction: row;
+    vertical-align: middle;
 }
-.quiz-label-select label {
+
+.quiz-label {
     width:100px;
 }
+
+.quiz-select {
+
+}
+
+.quiz-check {
+    margin: 5px;
+}
+
 #quiz-content {
     display:flex;
     flex-direction: row;
@@ -292,6 +303,4 @@ header {
 
 }
 
-.quiz-check {
-    margin: 5px;
-}
+
