@@ -18,6 +18,7 @@ export class Quiz {
     constructor(matrix) {
         this.matrix = matrix;
         this.cardUtil = new CardUtil();
+        this.progress = [52];
 
         this.quizImage = document.getElementById("quiz-image");
 
@@ -314,10 +315,17 @@ export class Quiz {
      * @returns {boolean}
      */
     isAllCorrect() {
-        return this.quizPerson.classList.contains("quiz-select-correct") &&
-            this.quizAction.classList.contains("quiz-select-correct") &&
-            this.quizObject.classList.contains("quiz-select-correct") &&
-            this.quizCard.classList.contains("quiz-select-correct");
+
+        const entry = {};
+        entry.person = this.quizPerson.classList.contains("quiz-select-correct");
+        entry.action = this.quizAction.classList.contains("quiz-select-correct");
+        entry.object = this.quizObject.classList.contains("quiz-select-correct");
+        entry.card = this.quizCard.classList.contains("quiz-select-correct");
+        entry.correct = entry.person && entry.action && entry.object && entry.card;
+
+        this.progress[this.currentQuizIndex] = entry;
+
+        return entry.correct;
     }
 
     /**
