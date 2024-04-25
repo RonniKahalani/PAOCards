@@ -245,7 +245,7 @@ export class Quiz {
         let correctValue = this.quizCards[this.currentQuizIndex].pao.person;
 
         this.setSelectColor(select, selectValue === correctValue);
-        if (this.isAllSelectsCorrect()) this.notifyAllSelectsCorrect();
+        this.updateCorrectEntries();
     }
 
     /**
@@ -257,7 +257,7 @@ export class Quiz {
         let correctValue = this.quizCards[this.currentQuizIndex].pao.action;
 
         this.setSelectColor(select, selectValue === correctValue);
-        if (this.isAllSelectsCorrect()) this.notifyAllSelectsCorrect();
+        this.updateCorrectEntries();
     }
 
     /**
@@ -269,7 +269,7 @@ export class Quiz {
         let correctValue = this.quizCards[this.currentQuizIndex].pao.object;
 
         this.setSelectColor(select, selectValue === correctValue);
-        if (this.isAllSelectsCorrect()) this.notifyAllSelectsCorrect();
+        this.updateCorrectEntries();
     }
 
     /**
@@ -281,9 +281,12 @@ export class Quiz {
         let correctValue = this.quizCards[this.currentQuizIndex].value + " (" + this.quizCards[this.currentQuizIndex].name + ") of " + this.quizCards[this.currentQuizIndex].suit;
 
         this.setSelectColor(select, selectValue === correctValue);
-        if (this.isAllSelectsCorrect()) this.notifyAllSelectsCorrect();
+        this.updateCorrectEntries();
     }
 
+    updateCorrectEntries() {
+        if (this.isAllSelectsCorrect()) this.notifyAllSelectsCorrect();
+    }
     /**
      * Sets a select background color based on if it is a correct value, wrong value or the first neutral entry.
      * @param select
@@ -347,9 +350,12 @@ export class Quiz {
         $("#toast-all-selects-correct").toast("show");
     }
 
+    /**
+     * Updates the quiz progress.
+     */
     updateProgressValues() {
 
-        if (typeof this.progress[this.currentQuizIndex] !== 'undefined') {
+        if (typeof this.progress[this.currentQuizIndex] !== undefined) {
             const progressEntry = this.progress[this.currentQuizIndex];
 
             this.quizPerson.selectedIndex = progressEntry.person.index;
@@ -467,7 +473,7 @@ export class Quiz {
         }
 
         if (elem.checked) {
-            reveal();
+            reveal(this);
         } else {
             this.clearSelect(item);
         }
@@ -476,13 +482,16 @@ export class Quiz {
     /**
      * Reveals the person select value.
      */
-    revealPerson() {
-        let card = this.quizCards[this.currentQuizIndex];
+    revealPerson(target) {
+        if(target === undefined) {
+            target = this;
+        }
+        let card = target.quizCards[target.currentQuizIndex];
         let correctValue = card.pao.person;
-        for (let index = 1; index < this.quizPerson.options.length; index++) {
-            if (this.quizPerson.options[index].value === correctValue) {
-                this.quizPerson.selectedIndex = index;
-                this.setSelectColor(this.quizPerson, true);
+        for (let index = 1; index < target.quizPerson.options.length; index++) {
+            if (target.quizPerson.options[index].value === correctValue) {
+                target.quizPerson.selectedIndex = index;
+                target.setSelectColor(target.quizPerson, true);
                 break;
             }
         }
@@ -491,13 +500,16 @@ export class Quiz {
     /**
      * Reveals the action select value.
      */
-    revealAction() {
-        let card = this.quizCards[this.currentQuizIndex];
+    revealAction(target) {
+        if(target === undefined) {
+            target = this;
+        }
+        let card = target.quizCards[target.currentQuizIndex];
         let correctValue = card.pao.action;
-        for (let index = 1; index < this.quizPerson.options.length; index++) {
-            if (this.quizAction.options[index].value === correctValue) {
-                this.quizAction.selectedIndex = index;
-                this.setSelectColor(this.quizAction, true);
+        for (let index = 1; index < target.quizPerson.options.length; index++) {
+            if (target.quizAction.options[index].value === correctValue) {
+                target.quizAction.selectedIndex = index;
+                target.setSelectColor(target.quizAction, true);
                 break;
             }
         }
@@ -506,13 +518,16 @@ export class Quiz {
     /**
      * Reveals the object select value.
      */
-    revealObject() {
-        let card = this.quizCards[this.currentQuizIndex];
+    revealObject(target) {
+        if(target === undefined) {
+            target = this;
+        }
+        let card = target.quizCards[target.currentQuizIndex];
         let correctValue = card.pao.object;
-        for (let index = 1; index < this.quizPerson.options.length; index++) {
-            if (this.quizObject.options[index].value === correctValue) {
-                this.quizObject.selectedIndex = index;
-                this.setSelectColor(this.quizObject, true);
+        for (let index = 1; index < target.quizPerson.options.length; index++) {
+            if (target.quizObject.options[index].value === correctValue) {
+                target.quizObject.selectedIndex = index;
+                target.setSelectColor(target.quizObject, true);
                 break;
             }
         }
@@ -521,13 +536,16 @@ export class Quiz {
     /**
      * Reveals the card select value.
      */
-    revealCard() {
-        let card = this.quizCards[this.currentQuizIndex];
+    revealCard(target) {
+        if(target === undefined) {
+            target = this;
+        }
+        let card = target.quizCards[target.currentQuizIndex];
         let correctValue = card.value + " (" + card.name + ") of " + card.suit;
-        for (let index = 1; index < this.quizCard.options.length; index++) {
-            if (this.quizCard.options[index].value === correctValue) {
-                this.quizCard.selectedIndex = index;
-                this.setSelectColor(this.quizCard, true);
+        for (let index = 1; index < target.quizCard.options.length; index++) {
+            if (target.quizCard.options[index].value === correctValue) {
+                target.quizCard.selectedIndex = index;
+                target.setSelectColor(target.quizCard, true);
                 break;
             }
         }
