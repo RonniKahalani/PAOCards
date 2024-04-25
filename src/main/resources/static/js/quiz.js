@@ -355,8 +355,8 @@ export class Quiz {
      */
     updateProgressValues() {
 
-        if (this.progress[this.currentQuizIndex] !== undefined) {
-            const progressEntry = this.progress[this.currentQuizIndex];
+        const progressEntry = this.progress[this.currentQuizIndex];
+        if (progressEntry !== undefined) {
 
             this.quizPerson.selectedIndex = progressEntry.person.index;
             this.quizPersonChange(this.quizPerson);
