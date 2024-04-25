@@ -376,10 +376,10 @@ export class Quiz {
 
         this.currentQuizIndex = this.currentQuizIndex > 0 ? this.currentQuizIndex - 1 : 51;
         this.quizImage.src = this.quizCards[this.currentQuizIndex].pao.image;
-        this.autoReveal();
         this.cardCounter.innerHTML = (this.currentQuizIndex + 1).toString();
         //this.btnQuizPrev.disabled = this.isQuizDone();
         this.updateProgressValues();
+        this.autoReveal();
     }
 
     /**
@@ -388,10 +388,10 @@ export class Quiz {
     nextQuizCard() {
         this.currentQuizIndex = this.currentQuizIndex < 51 ? this.currentQuizIndex + 1 : 0;
         this.quizImage.src = this.quizCards[this.currentQuizIndex].pao.image;
-        this.autoReveal();
         this.cardCounter.innerHTML = (this.currentQuizIndex + 1).toString();
         //this.btnQuizNext.disabled = this.isQuizDone();
         this.updateProgressValues();
+        this.autoReveal();
     }
 
     /**
