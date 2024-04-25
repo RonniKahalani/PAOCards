@@ -6,7 +6,7 @@
 export class CardUtil {
 
     /**
-     * Returns a SVG card image.
+     * Returns a card image in SVG format.
      * @param cardId
      * @param suit
      * @returns {string}
