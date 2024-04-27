@@ -67,7 +67,7 @@ export class Quiz {
             this.checkRevealAll(this.quizRevealAll);
         });
 
-        this.quiz = document.getElementById("quiz");
+        this.quizFeature = document.getElementById("quiz-feature");
         this.quizFront = document.getElementById("quiz-front");
 
         document.getElementById("quiz-start").addEventListener('click', () => {
@@ -191,12 +191,12 @@ export class Quiz {
     startQuiz() {
         this.currentQuizIndex = -1;
         this.timer.stopTime();
-        this.quiz.style.display = "block";
+        this.quizFeature.style.display = "block";
         this.quizFront.style.display = "none";
         this.nextQuizCard();
         this.timer.startWatch();
-        //$.notify("Cool! Lets go.",{position:"bottom right",className:"success"});
 
+        this.notify("toast-quiz-start");
     }
 
     /**
@@ -284,10 +284,18 @@ export class Quiz {
         this.updateAnswerValues();
     }
 
+    /**
+     * Updates the current select values into the current answer.
+     */
     updateAnswerValues() {
         this.updateCurrentAnswer();
-        if (this.isCurrentAnswerCorrect()) this.notifyCurrentAnswerCorrect();
+        if(this.isAllAnswersCorrect()) {
+            this.notifyAllAnswersCorrect();
+        } else if (this.isCurrentAnswerCorrect()) {
+            this.notifyCurrentAnswerCorrect();
+        }
     }
+
     /**
      * Sets a select background color based on if it is a correct value, wrong value or the first neutral entry.
      * @param select
@@ -718,5 +726,11 @@ export class Quiz {
         this.currentLociIndex = (this.currentLociIndex === 18) ? 1 : this.currentLociIndex + 1;
 
         document.getElementById("palace-loci-" + this.currentLociIndex).style.display = "block";
+    }
+
+    completeQuiz() {
+        for(let index=0; index < 52; index++) {
+            this.answers[index] = {"correct": true};
+        }
     }
 }
