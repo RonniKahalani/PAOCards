@@ -16,6 +16,8 @@ export class Quiz {
      * @param matrix
      */
     constructor(matrix) {
+        this.BASE_ENDPOINT = "http://localhost:8080/api/v1/";
+
         this.matrix = matrix;
         this.cardUtil = new CardUtil();
         this.answers = [];
@@ -135,7 +137,7 @@ export class Quiz {
      */
     async loadQuiz() {
         try {
-            const response = await fetch("http://localhost:8080/api/v1/quiz");
+            const response = await fetch(this.BASE_ENDPOINT + "quiz");
             if (response.ok) {
                 return await response.json();
             }
@@ -152,7 +154,7 @@ export class Quiz {
      */
     async loadPalace(name) {
         try {
-            const response = await fetch("http://localhost:8080/api/v1/palace/" + name);
+            const response = await fetch(this.BASE_ENDPOINT + "palace/" + name);
             if (response.ok) {
                 return await response.json();
             }
@@ -382,14 +384,14 @@ export class Quiz {
      * Notifies current quiz answer is correct.
      */
     notifyCurrentAnswerCorrect() {
-        this.notify("#toast-current-answer-correct");
+        this.notify("toast-current-answer-correct");
     }
 
     /**
      * Notifies all quiz answers are correct.
      */
     notifyAllAnswersCorrect() {
-        this.notify("#toast-all-answers-correct");
+        this.notify("toast-all-answers-correct");
     }
 
     /**
@@ -397,7 +399,7 @@ export class Quiz {
      * @param id
      */
     notify(id) {
-        $(id).toast("show");
+        $("#" + id).toast("show");
     }
 
     /**
@@ -728,9 +730,4 @@ export class Quiz {
         document.getElementById("palace-loci-" + this.currentLociIndex).style.display = "block";
     }
 
-    completeQuiz() {
-        for(let index=0; index < 52; index++) {
-            this.answers[index] = {"correct": true};
-        }
-    }
 }

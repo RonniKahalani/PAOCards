@@ -14,6 +14,8 @@ export class Matrix {
      * Constructor.
      */
     constructor() {
+        this.BASE_ENDPOINT = "http://localhost:8080/api/v1/";
+
         this.currentMatrix = null;
         this.cardUtil = new CardUtil();
     }
@@ -90,7 +92,7 @@ export class Matrix {
      */
     async loadMatrix(id) {
         try {
-            const response = await fetch("http://localhost:8080/api/v1/pao/" + id);
+            const response = await fetch(this.BASE_ENDPOINT + "pao/" + id);
             if (response.ok) {
                 return await response.json();
             }
