@@ -82,7 +82,7 @@
     <div id="pao-home">
         <iframe id=bg-video
                 src="https://www.youtube.com/embed/OApSOU7NIAw?si=3TqiLNDF62ySMG5j&autoplay=1&mute=1&controls=0&loop=1&start=59"
-                frameBorder=0 allowFullScreen allow=autoplay/>
+                allowFullScreen allow=autoplay/>
         </iframe>
         <!-- <button onclick="toggleVideo()"></button> -->
     </div>
@@ -892,14 +892,24 @@
     </div>
 </div>
 
-
-<div class="toast" id="toast-all-selects-correct">
+<!-- Notifications -->
+<div class="toast" id="toast-current-answer-correct">
     <div class="toast-header">
-        <strong class="me-auto"><i class="bi-gift-fill"></i> Quiz item solved!</strong>
+        <strong class="me-auto"><i class="bi-gift-fill"></i>Current quiz answer correct!</strong>
         <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
     </div>
     <div class="toast-body">
-        Well done, you solved this quiz entry!
+        Well done, you solved the current quiz answer!
+    </div>
+</div>
+
+<div class="toast" id="toast-all-answers-correct">
+    <div class="toast-header">
+        <strong class="me-auto"><i class="bi-gift-fill"></i> All quiz answers correct!</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+        Well done, you solved all the quiz answers!
     </div>
 </div>
 </body>

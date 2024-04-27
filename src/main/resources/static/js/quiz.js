@@ -18,7 +18,7 @@ export class Quiz {
     constructor(matrix) {
         this.matrix = matrix;
         this.cardUtil = new CardUtil();
-        this.progress = [];
+        this.answers = [];
 
         this.quizImage = document.getElementById("quiz-image");
 
@@ -245,7 +245,7 @@ export class Quiz {
         let correctValue = this.quizCards[this.currentQuizIndex].pao.person;
 
         this.setSelectColor(select, selectValue === correctValue);
-        this.updateCorrectEntries();
+        this.updateAnswerValues();
     }
 
     /**
@@ -257,7 +257,7 @@ export class Quiz {
         let correctValue = this.quizCards[this.currentQuizIndex].pao.action;
 
         this.setSelectColor(select, selectValue === correctValue);
-        this.updateCorrectEntries();
+        this.updateAnswerValues();
     }
 
     /**
@@ -269,7 +269,7 @@ export class Quiz {
         let correctValue = this.quizCards[this.currentQuizIndex].pao.object;
 
         this.setSelectColor(select, selectValue === correctValue);
-        this.updateCorrectEntries();
+        this.updateAnswerValues();
     }
 
     /**
@@ -281,11 +281,12 @@ export class Quiz {
         let correctValue = this.quizCards[this.currentQuizIndex].value + " (" + this.quizCards[this.currentQuizIndex].name + ") of " + this.quizCards[this.currentQuizIndex].suit;
 
         this.setSelectColor(select, selectValue === correctValue);
-        this.updateCorrectEntries();
+        this.updateAnswerValues();
     }
 
-    updateCorrectEntries() {
-        if (this.isAllSelectsCorrect()) this.notifyAllSelectsCorrect();
+    updateAnswerValues() {
+        this.updateCurrentAnswer();
+        if (this.isCurrentAnswerCorrect()) this.notifyCurrentAnswerCorrect();
     }
     /**
      * Sets a select background color based on if it is a correct value, wrong value or the first neutral entry.
@@ -317,57 +318,98 @@ export class Quiz {
      * Returns true if all quiz select values are correct.
      * @returns {boolean}
      */
-    isAllSelectsCorrect() {
+    updateCurrentAnswer() {
 
-        const entry = {};
-        entry.person = {
+        const answer = {};
+        answer.person = {
             "correct": this.quizPerson.classList.contains("quiz-select-correct"),
             "index": this.quizPerson.selectedIndex
         };
-        entry.action = {
+        answer.action = {
             "correct": this.quizAction.classList.contains("quiz-select-correct"),
             "index": this.quizAction.selectedIndex
         };
-        entry.object = {
+        answer.object = {
             "correct": this.quizObject.classList.contains("quiz-select-correct"),
             "index": this.quizObject.selectedIndex
         };
-        entry.card = {
+        answer.card = {
             "correct": this.quizCard.classList.contains("quiz-select-correct"),
             "index": this.quizCard.selectedIndex
         };
-        entry.correct = entry.person.correct && entry.action.correct && entry.object.correct && entry.card.correct;
+        answer.correct = answer.person.correct && answer.action.correct && answer.object.correct && answer.card.correct;
 
-        this.progress[this.currentQuizIndex] = entry;
-
-        return entry.correct;
+        this.answers[this.currentQuizIndex] = answer;
     }
 
     /**
-     * Notify if all quiz select values are correct.
+     * Returns true if all quiz select values are correct.
+     * @returns {boolean}
      */
-    notifyAllSelectsCorrect() {
-        $("#toast-all-selects-correct").toast("show");
+    isCurrentAnswerCorrect() {
+        const answer = this.answers[this.currentQuizIndex];
+        if (answer !== undefined) {
+
+            return this.answers[this.currentQuizIndex].correct;
+        }
+        return false;
     }
 
     /**
-     * Updates the quiz progress.
+     * Checks if all quiz answers are correct.
+     * @returns {boolean}
      */
-    updateProgressValues() {
+    isAllAnswersCorrect() {
+        let isAllCorrect = false;
 
-        const progressEntry = this.progress[this.currentQuizIndex];
-        if (progressEntry !== undefined) {
+        for(let entry of this.answers) {
+            isAllCorrect = entry.correct;
+            if(!isAllCorrect) return false;
+        }
 
-            this.quizPerson.selectedIndex = progressEntry.person.index;
+        return true;
+    }
+
+    /**
+     * Notifies current quiz answer is correct.
+     */
+    notifyCurrentAnswerCorrect() {
+        this.notify("#toast-current-answer-correct");
+    }
+
+    /**
+     * Notifies all quiz answers are correct.
+     */
+    notifyAllAnswersCorrect() {
+        this.notify("#toast-all-answers-correct");
+    }
+
+    /**
+     * Notifies a specific message.
+     * @param id
+     */
+    notify(id) {
+        $(id).toast("show");
+    }
+
+    /**
+     * Updates the current quiz select values.
+     */
+    updateSelectValues() {
+
+        const answer = this.answers[this.currentQuizIndex];
+        if (answer !== undefined) {
+
+            this.quizPerson.selectedIndex = answer.person.index;
             this.quizPersonChange(this.quizPerson);
 
-            this.quizAction.selectedIndex = progressEntry.action.index;
+            this.quizAction.selectedIndex = answer.action.index;
             this.quizActionChange(this.quizAction);
 
-            this.quizObject.selectedIndex = progressEntry.object.index;
+            this.quizObject.selectedIndex = answer.object.index;
             this.quizObjectChange(this.quizObject);
 
-            this.quizCard.selectedIndex = progressEntry.card.index;
+            this.quizCard.selectedIndex = answer.card.index;
             this.quizCardChange(this.quizCard);
 
         } else {
@@ -384,7 +426,7 @@ export class Quiz {
         this.quizImage.src = this.quizCards[this.currentQuizIndex].pao.image;
         this.cardCounter.innerHTML = (this.currentQuizIndex + 1).toString();
         //this.btnQuizPrev.disabled = this.isQuizDone();
-        this.updateProgressValues();
+        this.updateSelectValues();
         this.autoReveal();
     }
 
@@ -396,7 +438,7 @@ export class Quiz {
         this.quizImage.src = this.quizCards[this.currentQuizIndex].pao.image;
         this.cardCounter.innerHTML = (this.currentQuizIndex + 1).toString();
         //this.btnQuizNext.disabled = this.isQuizDone();
-        this.updateProgressValues();
+        this.updateSelectValues();
         this.autoReveal();
     }
 
