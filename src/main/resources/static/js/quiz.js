@@ -715,19 +715,22 @@ export class Quiz {
      * Navigates to the previous palace loci.
      */
     prevLoci() {
-        document.getElementById("palace-loci-" + this.currentLociIndex).style.display = "none";
+        this.setPalaceLoci(this.currentLociIndex, false);
         this.currentLociIndex = (this.currentLociIndex === 1) ? 18 : this.currentLociIndex - 1;
-        document.getElementById("palace-loci-" + this.currentLociIndex).style.display = "block";
+        this.setPalaceLoci(this.currentLociIndex, true);
     }
 
     /**
      * Navigates to the next palace loci.
      */
     nextLoci() {
-        document.getElementById("palace-loci-" + this.currentLociIndex).style.display = "none";
+        this.setPalaceLoci(this.currentLociIndex, false);
         this.currentLociIndex = (this.currentLociIndex === 18) ? 1 : this.currentLociIndex + 1;
-
-        document.getElementById("palace-loci-" + this.currentLociIndex).style.display = "block";
+        this.setPalaceLoci(this.currentLociIndex, true);
     }
 
+    setPalaceLoci(index, visible) {
+        const displayStyle = visible ? "block" : "none";
+        return document.getElementById("palace-loci-" + index).style.display = displayStyle;
+    }
 }
