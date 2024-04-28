@@ -715,18 +715,18 @@ export class Quiz {
      * Navigates to the previous palace loci.
      */
     prevLoci() {
-        this.setPalaceLoci(this.currentLociIndex, false);
+        this.setLoci(this.currentLociIndex, false);
         this.currentLociIndex = (this.currentLociIndex === 1) ? 18 : this.currentLociIndex - 1;
-        this.setPalaceLoci(this.currentLociIndex, true);
+        this.setLoci(this.currentLociIndex, true);
     }
 
     /**
      * Navigates to the next palace loci.
      */
     nextLoci() {
-        this.setPalaceLoci(this.currentLociIndex, false);
+        this.setLoci(this.currentLociIndex, false);
         this.currentLociIndex = (this.currentLociIndex === 18) ? 1 : this.currentLociIndex + 1;
-        this.setPalaceLoci(this.currentLociIndex, true);
+        this.setLoci(this.currentLociIndex, true);
     }
 
     /**
@@ -735,7 +735,7 @@ export class Quiz {
      * @param visible
      * @returns {string}
      */
-    setPalaceLoci(index, visible) {
+    setLoci(index, visible) {
         const displayStyle = visible ? "block" : "none";
         return document.getElementById("palace-loci-" + index).style.display = displayStyle;
     }
