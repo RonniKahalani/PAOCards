@@ -729,6 +729,12 @@ export class Quiz {
         this.setPalaceLoci(this.currentLociIndex, true);
     }
 
+    /**
+     * Set the visibility of a palace loci based on its index.
+     * @param index
+     * @param visible
+     * @returns {string}
+     */
     setPalaceLoci(index, visible) {
         const displayStyle = visible ? "block" : "none";
         return document.getElementById("palace-loci-" + index).style.display = displayStyle;
