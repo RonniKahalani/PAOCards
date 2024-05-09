@@ -305,20 +305,17 @@ export class Quiz {
      */
     setSelectColor(select, isCorrect) {
         if (select.selectedIndex === 0) {
-            select.classList.remove("quiz-select-wrong");
-            select.classList.remove("quiz-select-correct");
+            select.classList.remove("quiz-select-wrong", "quiz-select-correct");
             select.classList.add("quiz-select-neutral");
             return;
         }
 
         if (isCorrect) {
-            select.classList.remove("quiz-select-neutral");
-            select.classList.remove("quiz-select-wrong");
+            select.classList.remove("quiz-select-neutral", "quiz-select-wrong");
             select.classList.add("quiz-select-correct");
             console.log("CORRECT")
         } else {
-            select.classList.remove("quiz-select-neutral");
-            select.classList.remove("quiz-select-correct");
+            select.classList.remove("quiz-select-neutral", "quiz-select-correct");
             select.classList.add("quiz-select-wrong");
             console.log("WRONG")
         }
@@ -435,9 +432,12 @@ export class Quiz {
         this.currentQuizIndex = this.currentQuizIndex > 0 ? this.currentQuizIndex - 1 : 51;
         this.quizImage.src = this.quizCards[this.currentQuizIndex].pao.image;
         this.cardCounter.innerHTML = (this.currentQuizIndex + 1).toString();
-        //this.btnQuizPrev.disabled = this.isQuizDone();
         this.updateSelectValues();
         this.autoReveal();
+
+        if(this.isQuizDone()) {
+            this.notify("toast-quiz-done");
+        }
     }
 
     /**
@@ -447,9 +447,12 @@ export class Quiz {
         this.currentQuizIndex = this.currentQuizIndex < 51 ? this.currentQuizIndex + 1 : 0;
         this.quizImage.src = this.quizCards[this.currentQuizIndex].pao.image;
         this.cardCounter.innerHTML = (this.currentQuizIndex + 1).toString();
-        //this.btnQuizNext.disabled = this.isQuizDone();
         this.updateSelectValues();
         this.autoReveal();
+
+        if(this.isQuizDone()) {
+            this.notify("toast-quiz-done");
+        }
     }
 
     /**
@@ -458,7 +461,11 @@ export class Quiz {
      * @returns {boolean}
      */
     isQuizDone() {
-        return this.currentQuizIndex === 51;
+        if(this.answers.length < 18) {
+            return false;
+        }
+
+        return this.answers.every(v => v.correct === true);
     }
 
     /**
@@ -619,8 +626,7 @@ export class Quiz {
      */
     clearSelect(elem) {
         elem.selectedIndex = 0;
-        elem.classList.remove("quiz-select-wrong");
-        elem.classList.remove("quiz-select-correct");
+        elem.classList.remove("quiz-select-wrong", "quiz-select-correct");
         elem.classList.add("quiz-select-neutral");
     }
 
@@ -681,7 +687,6 @@ export class Quiz {
 
         for (let i = 0; i < 52; i++) {
             let index = i + 1;
-
             let currentPalaceEntry = palace[i];
 
             try {
@@ -707,7 +712,6 @@ export class Quiz {
                 palacePhrase = document.getElementById("palace-phrase-18");
                 palacePhrase.innerHTML = this.quizCards[i].pao.person;
             }
-
         }
     }
 
@@ -715,28 +719,42 @@ export class Quiz {
      * Navigates to the previous palace loci.
      */
     prevLoci() {
-        this.setLoci(this.currentLociIndex, false);
+        this.hideLoci(this.currentLociIndex);
         this.currentLociIndex = (this.currentLociIndex === 1) ? 18 : this.currentLociIndex - 1;
-        this.setLoci(this.currentLociIndex, true);
+        this.showLoci(this.currentLociIndex);
     }
 
     /**
      * Navigates to the next palace loci.
      */
     nextLoci() {
-        this.setLoci(this.currentLociIndex, false);
+        this.hideLoci(this.currentLociIndex);
         this.currentLociIndex = (this.currentLociIndex === 18) ? 1 : this.currentLociIndex + 1;
-        this.setLoci(this.currentLociIndex, true);
+        this.showLoci(this.currentLociIndex);
     }
 
     /**
      * Set the visibility of a palace loci based on its index.
      * @param index
      * @param visible
-     * @returns {string}
      */
     setLoci(index, visible) {
-        const displayStyle = visible ? "block" : "none";
-        return document.getElementById("palace-loci-" + index).style.display = displayStyle;
+        document.getElementById("palace-loci-" + index).style.display = visible ? "block" : "none";
+    }
+
+    /**
+     * Hides a given loci.
+     * @param index
+     */
+    hideLoci(index) {
+        this.setLoci(index, false);
+    }
+
+    /**
+     * Shows a given loci.
+     * @param index
+     */
+    showLoci(index) {
+        this.setLoci(index, true);
     }
 }
