@@ -430,10 +430,7 @@ export class Quiz {
     prevQuizCard() {
         this.currentQuizIndex = this.currentQuizIndex > 0 ? this.currentQuizIndex - 1 : 51;
         this.quizImage.src = this.quizCards[this.currentQuizIndex].pao.image;
-        this.cardCounter.innerHTML = (this.currentQuizIndex + 1).toString();
-        this.updateSelectValues();
-        this.autoReveal();
-        this.checkQuizDone();
+        this.updateQuiz();
     }
 
     /**
@@ -442,6 +439,10 @@ export class Quiz {
     nextQuizCard() {
         this.currentQuizIndex = this.currentQuizIndex < 51 ? this.currentQuizIndex + 1 : 0;
         this.quizImage.src = this.quizCards[this.currentQuizIndex].pao.image;
+        this.updateQuiz();
+    }
+
+    updateQuiz() {
         this.cardCounter.innerHTML = (this.currentQuizIndex + 1).toString();
         this.updateSelectValues();
         this.autoReveal();
