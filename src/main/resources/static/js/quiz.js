@@ -428,16 +428,12 @@ export class Quiz {
      * Navigates to the previous quiz card.
      */
     prevQuizCard() {
-
         this.currentQuizIndex = this.currentQuizIndex > 0 ? this.currentQuizIndex - 1 : 51;
         this.quizImage.src = this.quizCards[this.currentQuizIndex].pao.image;
         this.cardCounter.innerHTML = (this.currentQuizIndex + 1).toString();
         this.updateSelectValues();
         this.autoReveal();
-
-        if(this.isQuizDone()) {
-            this.notify("toast-quiz-done");
-        }
+        this.checkQuizDone();
     }
 
     /**
@@ -449,12 +445,14 @@ export class Quiz {
         this.cardCounter.innerHTML = (this.currentQuizIndex + 1).toString();
         this.updateSelectValues();
         this.autoReveal();
+        this.checkQuizDone();
+    }
 
+    checkQuizDone() {
         if(this.isQuizDone()) {
             this.notify("toast-quiz-done");
         }
     }
-
     /**
      * Returns true if the quiz is done.
      * TODO: Should instead validate that all cards has been answered correctly.
