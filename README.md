@@ -14,8 +14,7 @@ It consists of the following components:
 - Memory Palace interface.
 
 ## PAO Matrix
-<img src="https://i0.wp.com/learningisliving.dk/wp-content/uploads/2018/11/quiz-learning-cards.png" alt="PAO Matrix">
-<sup>Click image to view details.</sup>
+<img src="https://i0.wp.com/learningisliving.dk/wp-content/uploads/2018/11/quiz-learning-cards.png" alt="PAO Matrix"><sup>Click image to view details.</sup>
 
 ## PAO Quiz
 <img src="https://learningisliving.dk/wp-content/uploads/2025/10/paocards-quiz.png" alt="Quiz">
