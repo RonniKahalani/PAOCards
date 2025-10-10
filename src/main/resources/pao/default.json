@@ -352,7 +352,7 @@
         },
         {
             "person": "Adolf Hitler",
-            "action": "Goose-steps Into",
+            "action": "Goose-steps into",
             "object": "Bunker",
             "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-c5.jpg",
             "name": "Five",
@@ -368,7 +368,7 @@
         },
         {
             "person": "Thomas Edison",
-            "action": "Screws In",
+            "action": "Screws in",
             "object": "Light bulb",
             "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-classic-c7.jpg",
             "name": "Seven",
