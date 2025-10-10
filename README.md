@@ -4,7 +4,7 @@
 
 This memory technique is used in the World Memory Championships, where you quickly browse through a random shuffled deck of cards and recall the cards in chronological order.
 
-This web app is used to train this memory techniaue and expand your capacity to memorize a full deck of cards, chronologically.
+This web app is used to train this memory technique and expand your capacity to memorize a full deck of cards, chronologically.
 
 ## Why?
 You might think, "Why would I want to spend my precious time on trying to memorize a random deck of playing cards, chronologically?"
