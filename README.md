@@ -24,7 +24,7 @@ It consists of the following components:
 - Person = Victoria Beckham
 - Action = Applies makeup in front of
 - Object = Mirror
-- Card = Queen of Spades (Q&spades;)
+- Card = Queen of Clubs (Q&clubs;)
 
 ## PAO Memory Palace
 <p>The Memory Palace interface helps you train and navigate your memory palace, which holds 52 cards, in 17 locations, each holding the next 3 cards, with one last card left.</p>
