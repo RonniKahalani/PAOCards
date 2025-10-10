@@ -40,7 +40,8 @@ It consists of the following components:
 ## PAO Quiz
 <p>The Quiz interface helps you train your PAO Matrix memory speed and correctness, by prompting you to recall the Person, Action & Object values for a given card.</p>
 <img width="100%" src="https://learningisliving.dk/wp-content/uploads/2025/10/paocards-quiz.png" alt="Quiz">
-<p>So the correct answers are</p>
+<p>The random card is represented by a visuel image of the person behind the card. This helps you cards associated PAO values.</p>
+<p>So the correct answers, in this case, are</p>
 
 - Person = Victoria Beckham
 - Action = Applies makeup in front of
