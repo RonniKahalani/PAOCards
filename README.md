@@ -25,4 +25,4 @@ It consists of the following components:
 [Link to blog on PAO Matrix](https://learningisliving.dk/2018/03/25/remember-carddeck/)
 
 ## Technology
-This web app is build with Java Spring Boot.
+This web app is build with Spring Boot, Java, JavaScript, HTML, CSS, Bootstrap, JSON...
