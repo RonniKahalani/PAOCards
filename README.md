@@ -13,7 +13,7 @@ It consists of the following components:
 - Quiz interface with randomized card decks.
 - Memory Palace interface.
 
-## PAO Matrix Example
+## PAO Matrix
 <img src="https://i0.wp.com/learningisliving.dk/wp-content/uploads/2018/11/quiz-learning-cards.png" alt="PAO Matrix">
 <sub>Click image to view details.</sub>
 
