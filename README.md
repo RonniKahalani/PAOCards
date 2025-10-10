@@ -4,8 +4,7 @@
 
 This memory technique is used in the World Memory Championships, where you quickly browse through a random shuffled deck of cards and recall the cards in chronological order.
 
-This web app is used for training your memory capacity to memorize a full deck of cards, chronologically, using a memory palace, with 17 locations, each holding 3 cards.
-If you're "normal", you can master this skill in a few weeks, but you have to be disciplined, persistent and focus on memorizing the PAO Matrix.
+This web app is used to train this memory techniaue and expand your capacity to memorize a full deck of cards, chronologically.
 
 ## Components
 It consists of the following components:
@@ -14,13 +13,22 @@ It consists of the following components:
 - Memory Palace interface.
 
 ## PAO Matrix
-<img src="https://i0.wp.com/learningisliving.dk/wp-content/uploads/2018/11/quiz-learning-cards.png" alt="PAO Matrix"><sup>Click image to view details.</sup>
+<p>If you're "normal", you can master this skill in a few weeks, but you have to be disciplined, persistent and focus on memorizing the PAO Matrix.</p>
+<img width="100%" src="https://learningisliving.dk/wp-content/uploads/2025/10/paocards-matrix.png" alt="PAO Matrix"><sup>Click image to view details.</sup>
 
 ## PAO Quiz
-<img src="https://learningisliving.dk/wp-content/uploads/2025/10/paocards-quiz.png" alt="Quiz">
+<p>The Quiz interface helps you train your PAO Matrix memory speed and correctness, by prompting you to recall the Person, Action & Object values for a given card.</p>
+<img width="100%" src="https://learningisliving.dk/wp-content/uploads/2025/10/paocards-quiz.png" alt="Quiz">
+<p>So the correct answers are</p>
+
+- Person = Victoria Beckham
+- Action = Applies makeup in front of
+- Object = Mirror
+- Card = Queen of Spades (Q&spades;)
 
 ## PAO Memory Palace
-<img src="https://learningisliving.dk/wp-content/uploads/2025/10/paocards-palace.png" alt="Quiz">
+<p>The Memory Palace interface helps you train and navigate your memory palace, which holds 52 cards, in 17 locations, each holding the next 3 cards, with one last card left.</p>
+<img width="100%" src="https://learningisliving.dk/wp-content/uploads/2025/10/paocards-palace.png" alt="Quiz">
 
 ## More Information
 To get more in-depth understanding of how this memory technique works, check this out: [Introduction to the PAO Matrix technique](https://learningisliving.dk/2018/03/25/remember-carddeck/).
