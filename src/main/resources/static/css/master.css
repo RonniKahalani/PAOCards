@@ -180,7 +180,7 @@ header {
     color:black;
 }
 .quiz-select-wrong {
-    background-color: red;
+    background-color: #DF0000;
     color: white;
 }
 
@@ -205,7 +205,7 @@ header {
 }
 
 .suit-column-red {
-    color: red;
+    color: #DF0000;
     font-size: 40pt;
     background-color: white;
     width: 40px;
@@ -241,6 +241,17 @@ header {
     border-left: white 1px solid;
     border-top: white 1px solid;
     border-right: white 1px solid;
+    text-transform: uppercase;
+    background-color: #333333;
+}
+.pao-type-column-half {
+    width:112px;
+    text-align: center;
+    border-left: white 1px solid;
+    border-top: white 1px solid;
+    border-right: white 1px solid;
+    text-transform: uppercase;
+    background-color: #333333;
 }
 #pao-header {
     display: flex;
@@ -256,6 +267,8 @@ header {
     border-left: white 1px solid;
     border-top: white 1px solid;
     border-right: white 1px solid;
+    text-transform: uppercase;
+    background-color: #333333;
 }
 
 #pao-rows {
@@ -271,7 +284,7 @@ header {
 }
 
 #pao-rows div:nth-child(even) {background: black}
-#pao-rows div:nth-child(odd) {background: red}
+#pao-rows div:nth-child(odd) {background: #DF0000}
 
 .pao-column {
     display:flex;
