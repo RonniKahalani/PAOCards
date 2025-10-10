@@ -2,9 +2,9 @@
 <a href="https://www.youtube.com/watch?v=OApSOU7NIAw" target="_blank"><img src="https://learningisliving.dk/wp-content/uploads/2025/10/paocards-front-page.png" alt="Click to view YouTube of Memory Championship"></a>
 <sup>Click image to view YouTube of this Memory Championship.</sup>
 
-This memory technique is used in the World Memory Championships, where you quickly browse through a random shuffled deck of cards and recall the cards in chronological order.
+This memory technique is used by the participants in the World Memory Championships, where you quickly browse through a random shuffled deck of cards and recall the cards in chronological order.
 
-This web app is used to train this memory technique and expand your capacity to memorize a full deck of cards, chronologically.
+This web app helps train this memory technique and expand your capacity to memorize a full deck of cards, chronologically.
 
 ## Why?
 You might think, "Why would I want to spend my precious time on trying to memorize a random deck of playing cards, chronologically?"
