@@ -6,6 +6,27 @@ This memory technique is used in the World Memory Championships, where you quick
 
 This web app is used to train this memory techniaue and expand your capacity to memorize a full deck of cards, chronologically.
 
+## Why?
+You might think, "Why would I want to spend my precious time on trying to memorize a random deck of playing cards, chronologically?"
+
+Because memorizing playing cards,
+
+- is the best memory exercise ever.
+- will improve your overall memory functions.
+- makes you good at memorizing long lists, via memory palaces.
+- develops killer abilities with memorizing and managing abstractions.
+- improves your imagination.
+- makes you more mentally agile.
+- helps with language learning.
+- improves your critical thinking.
+- is a cool party stunt and a legitimate sport.
+- is a transferable skill.
+- will give you untold waves of accomplishment and self-esteem.
+- makes you excel at card games like bridge, poker and blackjack.
+- But most importantly, mastering this memory skill, makes you the champion of your own mind, because you managed to force your brain to learn something new and complex, which will benefit you in the future.
+
+I would guess that you can master this technique, in about a few weeks, if you put some effort into it. Trust yourself, you can do it and you'll get a major kick and self-esteem out of it.
+
 ## Components
 It consists of the following components:
 - PAO (Person-Action-Object) Matrix.
@@ -29,9 +50,13 @@ It consists of the following components:
 ## PAO Memory Palace
 <p>The Memory Palace interface helps you train and navigate your memory palace, which holds 52 cards, in 17 locations, each holding the next 3 cards, with one last card left.</p>
 <img width="100%" src="https://learningisliving.dk/wp-content/uploads/2025/10/paocards-palace.png" alt="Quiz">
-<p>Each location defines a crazy sentence, by combining the person value of the first card, the action value of the second card and the object value of the third card.</p>
-<p>So the sentence = "Victoria Beckham - Breaks nail on - Cigarette" represents (Q&clubs;) - (2&hearts;) - (3&diams;)</p>
-<p>The second (Flojo), Cigarette (George Clooney) (George Clooney)</p>
+
+Each location defines a weird memorable sentence, from its three cards, that you should take a second and visualize in your mind, by combining:<br>
+- the person value of the first card = Victoria Beckham<br>
+- the action value of the second card = Breaks nail on<br>
+- the object value of the third card = Cigarette<br>
+
+<p>So the sentence = "Victoria Beckham - Breaks nail on - Cigarette" represents Q&clubs; - 2&hearts; - 3&diams;</p>
 
 ## More Information
 To get more in-depth understanding of how this memory technique works, check this out: [Introduction to the PAO Matrix technique](https://learningisliving.dk/2018/03/25/remember-carddeck/).
