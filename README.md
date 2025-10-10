@@ -34,4 +34,5 @@ Free code use under the open-source software MIT license. Enjoy.
 
 ## Contact Info
 Website: https://learningisliving.dk
+
 LinkedIn: https://www.linkedin.com/in/kahalani/
