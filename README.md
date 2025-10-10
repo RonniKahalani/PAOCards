@@ -23,7 +23,8 @@ Because memorizing playing cards,
 - is a transferable skill.
 - will give you untold waves of accomplishment and self-esteem.
 - makes you excel at card games like bridge, poker and blackjack.
-- But most importantly, mastering this memory skill, makes you the champion of your own mind, because you managed to force your brain to learn something new and complex, which will benefit you in the future.
+
+But most importantly, mastering this memory skill, makes you the champion of your own mind, because you managed to force your brain to learn something new and complex, which will benefit you in the future.
 
 I would guess that you can master this technique, in about a few weeks, if you put some effort into it. Trust yourself, you can do it and you'll get a major kick and self-esteem out of it.
 
