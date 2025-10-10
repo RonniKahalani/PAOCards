@@ -47,7 +47,7 @@ It consists of the following components:
 - Person = Victoria Beckham
 - Action = Applies makeup in front of
 - Object = Mirror
-- Card = Queen of Clubs (Q&clubs;)
+- Card = Queen of Clubs = Q&clubs;
 
 ## PAO Memory Palace
 <p>The Memory Palace interface helps you train and navigate your memory palace, which holds 52 cards, in 17 locations, each holding the next 3 cards, with one last card left.</p>
@@ -59,6 +59,19 @@ Each location defines a weird memorable sentence, from its three cards, that you
 - the object value of the third card = Cigarette<br>
 
 <p>So the sentence = "Victoria Beckham - Breaks nail on - Cigarette" represents Q&clubs; - 2&hearts; - 3&diams;</p>
+
+### Reversing the thought process
+Imagine your done going through all the cards and recal the first location sentence, like the one above "Victoria Beckham - Breaks nail on - Cigarette".
+
+#### First card (Victoria Beckham):
+- A celebrity, so she is in the (12, 13) columns in the matrix. She is a female = even number = 12 = "Queen".
+- Belongs to the COOL, SERIOUS, CRAZY category, which is CLUBS (&clubs;),
+ Q&clubs;
+
+#### Second card (Breaks nail on):
+- You remember Flojo is a female athlete runner, so she is in the (1,2) athlete columns in the matrix. She is female = even number = 2.
+- Belongs to the LOVABLE, GREAT, GOOD category, which is HEARTS (&hearts;).
+ 2&hearts;
 
 ## More Information
 To get more in-depth understanding of how this memory technique works, check this out: [Introduction to the PAO Matrix technique](https://learningisliving.dk/2018/03/25/remember-carddeck/).
