@@ -26,5 +26,12 @@ It consists of the following components:
 ## More Information
 To get more in-depth understanding of how this memory technique works, check this out: [Blog about the PAO Card Matrix](https://learningisliving.dk/2018/03/25/remember-carddeck/)
 
-## Technology
+## Technologies
 This web app is build with Spring Boot, Java, JavaScript, HTML, CSS, Bootstrap, JSON...
+
+## License
+Free code use under the open-source software MIT license. Enjoy.
+
+## Contact Info
+Website: https://learningisliving.dk
+LinkedIn: https://www.linkedin.com/in/kahalani/
