@@ -1,5 +1,7 @@
 # PAO Matrix
-<a href="https://www.youtube.com/watch?v=OApSOU7NIAw" target="_blank"><img src="https://learningisliving.dk/wp-content/uploads/2025/10/paocards-front-page.png" alt="PAO Cards Front Page"></a>
+<a href="https://www.youtube.com/watch?v=OApSOU7NIAw" target="_blank"><img src="https://learningisliving.dk/wp-content/uploads/2025/10/paocards-front-page.png" alt="Click to view YouTube of Memory Championship"></a>
+<sub>Click image to view a YouTube of the Memory Championship.</sub>
+
 This web app is used for training your memory capacity to memorize a full deck of cards, chronologically, using a memory palace, with 17 locations, each holding 3 cards.
 
 This memory technique is used by participants in the World Memory Championships when browsing through a random shuffled card deck and recalling the cards in a chronological order.
