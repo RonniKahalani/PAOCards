@@ -64,14 +64,21 @@ Each location defines a weird memorable sentence, from its three cards, that you
 Imagine your done going through all the cards and recal the first location sentence, like the one above "Victoria Beckham - Breaks nail on - Cigarette".
 
 #### First card (Victoria Beckham):
-- A celebrity, so she is in the (12, 13) columns in the matrix. She is a female = even number = 12 = "Queen".
-- Belongs to the COOL, SERIOUS, CRAZY category, which is CLUBS (&clubs;),
- Q&clubs;
+- A celebrity = matrix columns (12, 13). She is a female = even number = 12 = "Queen".
+- In the COOL, SERIOUS, CRAZY category = CLUBS (&clubs;).
+- Card = Q&clubs;
 
 #### Second card (Breaks nail on):
-- You remember Flojo is a female athlete runner, so she is in the (1,2) athlete columns in the matrix. She is female = even number = 2.
-- Belongs to the LOVABLE, GREAT, GOOD category, which is HEARTS (&hearts;).
- 2&hearts;
+- You remember Flojo is a female olympic athlete runner with long colorful nails.
+- An athlete = matrix columns (1, 2). She is female = even number = 2.
+- In the LOVABLE, GREAT, GOOD category = HEARTS (&hearts;).
+- Card = 2&hearts;
+
+#### Third card (Cigarette):
+- You remember George Clooney, the moviestar, smokes a cigarette.
+- A moviestar = matrix columns (3, 4). He is male = odd number = 3.
+- In the RICH, STYLISH, BLING category = DIAMONDS (&diams;).
+- Card = 3&diams;
 
 ## More Information
 To get more in-depth understanding of how this memory technique works, check this out: [Introduction to the PAO Matrix technique](https://learningisliving.dk/2018/03/25/remember-carddeck/).
