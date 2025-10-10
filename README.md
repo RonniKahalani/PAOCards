@@ -22,7 +22,9 @@ It consists of the following components:
 ## PAO Memory Palace
 <img src="https://learningisliving.dk/wp-content/uploads/2025/10/paocards-palace.png" alt="Quiz">
 
-[Link to blog on PAO Matrix](https://learningisliving.dk/2018/03/25/remember-carddeck/)
+## More Information
+If you want more in-depth understanding of how this memory technique works, check out the link below.
+[Blog about the PAO Card Matrix](https://learningisliving.dk/2018/03/25/remember-carddeck/)
 
 ## Technology
 This web app is build with Spring Boot, Java, JavaScript, HTML, CSS, Bootstrap, JSON...
