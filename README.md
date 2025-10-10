@@ -29,6 +29,9 @@ It consists of the following components:
 ## PAO Memory Palace
 <p>The Memory Palace interface helps you train and navigate your memory palace, which holds 52 cards, in 17 locations, each holding the next 3 cards, with one last card left.</p>
 <img width="100%" src="https://learningisliving.dk/wp-content/uploads/2025/10/paocards-palace.png" alt="Quiz">
+<p>Each location defines a crazy sentence, by combining the person value of the first card, the action value of the second card and the object value of the third card.</p>
+<p>So the sentence = "Victoria Beckham - Breaks nail on - Cigarette" represents (Q&clubs;) - (2&hearts;) - (3&diams;)</p>
+<p>The second (Flojo), Cigarette (George Clooney) (George Clooney)</p>
 
 ## More Information
 To get more in-depth understanding of how this memory technique works, check this out: [Introduction to the PAO Matrix technique](https://learningisliving.dk/2018/03/25/remember-carddeck/).
