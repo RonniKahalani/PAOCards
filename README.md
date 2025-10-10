@@ -14,11 +14,17 @@ It consists of the following components:
 
 ## PAO Matrix
 <p>If you're "normal", you can master this skill in a few weeks, but you have to be disciplined, persistent and focus on memorizing the PAO Matrix.</p>
-<img width="100%" src="https://i0.wp.com/learningisliving.dk/wp-content/uploads/2018/11/quiz-learning-cards.png" alt="PAO Matrix"><sup>Click image to view details.</sup>
+<img width="100%" src="https://learningisliving.dk/wp-content/uploads/2025/10/paocards-matrix.png" alt="PAO Matrix"><sup>Click image to view details.</sup>
 
 ## PAO Quiz
 <p>The Quiz interface helps you train your PAO Matrix memory speed and correctness, by prompting you to recall the Person, Action & Object values for a given card.</p>
 <img width="100%" src="https://learningisliving.dk/wp-content/uploads/2025/10/paocards-quiz.png" alt="Quiz">
+<p>So the correct answers are</p>
+
+- Person = Victoria Beckham
+- Action = Applies makeup in front of
+- Object = Mirror
+- Card = Queen of Spades (Q&spades;)
 
 ## PAO Memory Palace
 <p>The Memory Palace interface helps you train and navigate your memory palace, which holds 52 cards, in 17 locations, each holding the next 3 cards, with one last card left.</p>
