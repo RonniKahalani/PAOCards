@@ -4,7 +4,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>PAO Matrix Quiz</title>
+    <title>PAO Matrix</title>
     <link
             rel="icon"
             type="image/x-icon"
@@ -41,7 +41,7 @@
 <div class="mask"></div>
 <header>
     <div id="panel">
-        <div id="panel-left"><span id="panel-title">PAO Matrix Quiz</span></div>
+        <div id="panel-left"><span id="panel-title">PAO Matrix Technique</span></div>
         <div id="panel-center">
             <ul class="nav nav-pills nav-fill gap-2 p-1 small bg-primary rounded-5 shadow-sm" id="pillNav2"
                 role="tablist"
@@ -96,84 +96,92 @@
             <div id="quiz-center">
 
                 <div id="quiz-feature">
-                    <div id="stopWatch">
-                        <button id="btn-pause" class="btn btn-primary btn-sm btn-timer">Pause</button>
-                        <button id="btn-continue" class="btn btn-primary btn-sm btn-timer">Continue</button>
-                        <div id="timer">00 : 00 : 00</div>
+                    <div id="card-counter-content">
+                        Card <span id="card-counter">1</span> of 52
                     </div>
 
                     <img id="quiz-image" src=""
-                         alt="">
-                    <div id="card-counter-content">
-                        <span id="card-counter">1</span> of 52
-                    </div>
-                    <div class="quiz-select-div">
-                        <label for="quiz-select-person" class="quiz-label">Person</label>
-                        <select id="quiz-select-person" class="quiz-select form-select" accesskey="p">
-                            <option value="">Select Person (Alt+P)</option>
-                        </select>
-                        <input id="quiz-reveal-person" class="form-check-input quiz-check" type="checkbox"
-                               title="Auto reveal">
+                         alt="Quiz image">
+                    <div id="stopWatch">
+                        <div id="timer">00 : 00 : 00</div>
+                        <button id="btn-pause" class="btn btn-primary btn-sm btn-timer">Pause</button>
+                        <button id="btn-continue" class="btn btn-primary btn-sm btn-timer">Continue</button>
                     </div>
 
-                    <div class="quiz-select-div">
-                        <label for="quiz-select-action" class="quiz-label">Action</label>
-                        <select id="quiz-select-action" class="quiz-select form-select" accesskey="a">
-                            <option value="">Select Action (Alt+A)</option>
-                        </select>
-                        <input id="quiz-reveal-action" class="form-check-input quiz-check" type="checkbox"
-                               title="Auto reveal">
+                    <div id="quiz-input">
+                        <div id="quiz-question">Select the PAO values and card matching this image.</div>
+                        <div class="quiz-select-div">
+                            <label for="quiz-select-person" class="quiz-label">Person</label>
+                            <select id="quiz-select-person" class="quiz-select form-select" accesskey="p">
+                                <option value="">Select Person (Alt+P)</option>
+                            </select>
+                            <input id="quiz-reveal-person" class="form-check-input quiz-check" type="checkbox"
+                                   title="Auto reveal">
+                        </div>
+
+                        <div class="quiz-select-div">
+                            <label for="quiz-select-action" class="quiz-label">Action</label>
+                            <select id="quiz-select-action" class="quiz-select form-select" accesskey="a">
+                                <option value="">Select Action (Alt+A)</option>
+                            </select>
+                            <input id="quiz-reveal-action" class="form-check-input quiz-check" type="checkbox"
+                                   title="Auto reveal">
+                        </div>
+
+                        <div class="quiz-select-div">
+                            <label for="quiz-select-object" class="quiz-label">Object</label>
+                            <select id="quiz-select-object" class="quiz-select form-select" accesskey="o">
+                                <option value="">Select Object (Alt+O)</option>
+                            </select>
+                            <input id="quiz-reveal-object" class="form-check-input quiz-check" type="checkbox"
+                                   title="Auto reveal">
+                        </div>
+
+                        <div class="quiz-select-div">
+                            <label for="quiz-select-card" class="quiz-label">Card</label>
+                            <select id="quiz-select-card" class="quiz-select form-select" accesskey="c">
+                                <option value="">Select Card (Alt+C)</option>
+                            </select>
+                            <input id="quiz-reveal-card" class="form-check-input quiz-check" type="checkbox"
+                                   title="Auto reveal">
+                        </div>
+                        <div style="text-align: right"><label id="label-quiz-reveal-all" for="quiz-reveal-all">Auto reveal all</label>
+                            <input id="quiz-reveal-all" class="form-check-input quiz-check" type="checkbox"
+                                   title="Auto reveal all">
+                        </div>
+                        <br>
+                        <div id="quiz-button-group">
+                            <button id="btn-quiz-restart" class="btn btn-primary btn-sm" accesskey="s"
+                                    title="Shortcut (Alt-S)">
+                                Start
+                                Over
+                            </button>
+                            <button id="btn-quiz-shuffle-deck" class="btn btn-primary btn-sm" accesskey="d"
+                                    title="Shortcut (Alt-D)">
+                                New Deck
+                            </button>
+                            <button id="btn-quiz-reveal" class="btn btn-danger btn-sm" accesskey="r"
+                                    title="Shortcut (Alt-R)">
+                                Reveal
+                                All
+                            </button>
+                            <button id="btn-quiz-prev" class="btn btn-primary btn-sm" accesskey="p"
+                                    title="Shortcut (Alt-P)">Prev
+                            </button>
+                            <button id="btn-quiz-next" class="btn btn-primary btn-sm" accesskey="n"
+                                    title="Shortcut (Alt-N)">Next
+                            </button>
+                        </div>
                     </div>
 
-                    <div class="quiz-select-div">
-                        <label for="quiz-select-object" class="quiz-label">Object</label>
-                        <select id="quiz-select-object" class="quiz-select form-select" accesskey="o">
-                            <option value="">Select Object (Alt+O)</option>
-                        </select>
-                        <input id="quiz-reveal-object" class="form-check-input quiz-check" type="checkbox"
-                               title="Auto reveal">
-                    </div>
-
-                    <div class="quiz-select-div">
-                        <label for="quiz-select-card" class="quiz-label">Card</label>
-                        <select id="quiz-select-card" class="quiz-select form-select" accesskey="c">
-                            <option value="">Select Card (Alt+C)</option>
-                        </select>
-                        <input id="quiz-reveal-card" class="form-check-input quiz-check" type="checkbox"
-                               title="Auto reveal">
-                    </div>
-                    <div style="text-align: right">Auto reveal all
-                        <input id="quiz-reveal-all" class="form-check-input quiz-check" type="checkbox"
-                               title="Auto reveal all">
-                    </div>
-
-                    <br>
-                    <div id="quiz-button-group">
-                        <button id="btn-quiz-restart" class="btn btn-primary" accesskey="s" title="Shortcut (Alt-S)">
-                            Start
-                            Over
-                        </button>
-                        <button id="btn-quiz-shuffle-deck" class="btn btn-primary" accesskey="d"
-                                title="Shortcut (Alt-D)">
-                            New Deck
-                        </button>
-                        <button id="btn-quiz-reveal" class="btn btn-danger" accesskey="r" title="Shortcut (Alt-R)">
-                            Reveal
-                            All
-                        </button>
-                        <button id="btn-quiz-prev" class="btn btn-primary" accesskey="p" title="Shortcut (Alt-P)">Prev
-                        </button>
-                        <button id="btn-quiz-next" class="btn btn-primary" accesskey="n" title="Shortcut (Alt-N)">Next
-                        </button>
-
-                    </div>
                 </div>
                 <p id="fulltime" class="fulltime"></p>
                 <div id="quiz-front">
                     <h3>PAO Matrix Quiz</h3>
                     <p>Test your matrix memory.</p>
-                    <button id="quiz-start" class="btn btn-primary" accesskey="s">Start Quiz</button>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tipModal"
+                    <button id="quiz-start" class="btn btn-primary btn-sm" accesskey="s">Start Quiz</button>
+                    <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                            data-bs-target="#tipModal"
                             accesskey="t">Tips
                     </button>
 
@@ -205,35 +213,33 @@
 
     <div id="pao-matrix">
         <div id="pao-types">
-            <span class="suit-column"></span>
-            <span class="pao-type-column">Sport athletes</span>
-            <span class="pao-type-column">Movie stars</span>
-            <span class="pao-type-column">Controversial</span>
-            <span class="pao-type-column">Brain & Beauty</span>
-            <span class="pao-type-column">Powerful</span>
-            <span class="pao-type-column-half">Religious</span>
-            <span class="pao-type-column">Celebrity</span>
+            <span class="pao-type-column pao-type-color1">Sport athletes</span>
+            <span class="pao-type-column pao-type-color2">Movie stars</span>
+            <span class="pao-type-column pao-type-color3">Controversial</span>
+            <span class="pao-type-column pao-type-color4">Brain & Beauty</span>
+            <span class="pao-type-column pao-type-color5">Powerful</span>
+            <span class="pao-type-column-half pao-type-color6">Religious</span>
+            <span class="pao-type-column pao-type-color7">Celebrity</span>
         </div>
 
         <div id="pao-header">
-            <span class="suit-column"></span>
-            <span class="pao-header-column">Ace</span>
-            <span class="pao-header-column">2</span>
-            <span class="pao-header-column">3</span>
-            <span class="pao-header-column">4</span>
-            <span class="pao-header-column">5</span>
-            <span class="pao-header-column">6</span>
-            <span class="pao-header-column">7</span>
-            <span class="pao-header-column">8</span>
-            <span class="pao-header-column">9</span>
-            <span class="pao-header-column">10</span>
-            <span class="pao-header-column">Jack</span>
-            <span class="pao-header-column">Queen</span>
-            <span class="pao-header-column">King</span>
+            <span class="pao-header-column pao-type-color1">Ace</span>
+            <span class="pao-header-column pao-type-color1">2</span>
+            <span class="pao-header-column pao-type-color2">3</span>
+            <span class="pao-header-column pao-type-color2">4</span>
+            <span class="pao-header-column pao-type-color3">5</span>
+            <span class="pao-header-column pao-type-color3">6</span>
+            <span class="pao-header-column pao-type-color4">7</span>
+            <span class="pao-header-column pao-type-color4">8</span>
+            <span class="pao-header-column pao-type-color5">9</span>
+            <span class="pao-header-column pao-type-color5">10</span>
+            <span class="pao-header-column pao-type-color6">Jack</span>
+            <span class="pao-header-column pao-type-color7">Queen</span>
+            <span class="pao-header-column pao-type-color7">King</span>
         </div>
         <div id="pao-rows">
             <div id="hearts" class="pao-row">
-                <span class="suit-column-red">♥</span>
+
 
                 <span id="hearts-ace" class="pao-column">
                     <span class="pao-person"></span>
@@ -313,10 +319,12 @@
                     <span class="pao-action"></span>
                     <span class="pao-object"></span>
                 </span>
-                <span class="info-column">LOVABLE, GREAT, GOOD</span>
+                <div class="info-column">
+                    <span class="suit-heart"><i class="bi bi-suit-heart-fill"></i></span>
+                    <div>LOVABLE, GREAT, GOOD</div>
+                </div>
             </div>
             <div id="spades" class="pao-row">
-                <span class="suit-column-black">♠</span>
 
                 <span id="spades-ace" class="pao-column">
                     <span class="pao-person"></span>
@@ -396,10 +404,12 @@
                     <span class="pao-action"></span>
                     <span class="pao-object"></span>
                 </span>
-                <span class="info-column">HUMOROUS, ABSURD</span>
+                <div class="info-column">
+                    <span class="suit-spade"><i class="bi bi-suit-spade-fill"></i></span>
+                    <div>HUMOROUS, ABSURD</div>
+                </div>
             </div>
             <div id="diamonds" class="pao-row">
-                <span class="suit-column-red">♦</span>
 
                 <span id="diamonds-ace" class="pao-column">
                     <span class="pao-person"></span>
@@ -479,10 +489,12 @@
                     <span class="pao-action"></span>
                     <span class="pao-object"></span>
                 </span>
-                <span class="info-column">RICH, STYLISH, BLING</span>
+                <div class="info-column">
+                    <span class="suit-diamond"><i class="bi bi-suit-diamond-fill"></i></span>
+                    <div>RICH, STYLISH, BLING</div>
+                </div>
             </div>
             <div id="clubs" class="pao-row">
-                <span class="suit-column-black">♣</span>
 
                 <span id="clubs-ace" class="pao-column">
                     <span class="pao-person"></span>
@@ -562,7 +574,10 @@
                     <span class="pao-action"></span>
                     <span class="pao-object"></span>
                 </span>
-                <span class="info-column">COOL, SERIOUS, CRAZY</span>
+                <div class="info-column">
+                    <span class="suit-spade"><i class="bi bi-suit-spade-fill"></i></span>
+                    <div>COOL, SERIOUS, CRAZY</div>
+                </div>
             </div>
         </div>
     </div>
@@ -619,7 +634,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
@@ -862,8 +877,8 @@
             </tr>
             <tr>
                 <td>
-                    <button id="btn-prev-loci" class="btn btn-primary" accesskey="p">Prev</button>
-                    <button id="btn-next-loci" type="button" class="btn btn-primary" accesskey="n">Next</button>
+                    <button id="btn-prev-loci" class="btn btn-primary btn-sm" accesskey="p">Prev</button>
+                    <button id="btn-next-loci" type="button" class="btn btn-primary btn-sm" accesskey="n">Next</button>
                 </td>
             </tr>
         </table>

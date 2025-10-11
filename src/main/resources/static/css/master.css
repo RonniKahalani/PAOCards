@@ -1,5 +1,7 @@
 body {
     font-family: Tahoma, sans-serif;
+    color: white;
+    background-color: black;
 }
 
 header {
@@ -17,6 +19,34 @@ header {
     pointer-events: none;
     filter: grayscale(0.8);
     aspect-ratio: 16/9;
+}
+
+.pao-type-color1 {
+    background-color: #4A4EAA;
+}
+
+.pao-type-color2 {
+    background-color: #2A8C82;
+}
+
+.pao-type-color3 {
+    background-color: #D6726A;
+}
+
+.pao-type-color4 {
+    background-color: #5E6B7A;
+}
+
+.pao-type-color5 {
+    background-color: #C29A4B;
+}
+
+.pao-type-color6 {
+    background-color: #8A5A83;
+}
+
+.pao-type-color7 {
+    background-color: #7F9BDB;
 }
 
 #pao-palace {
@@ -60,13 +90,13 @@ header {
 
 }
 
+#tipModal {
+    color: black;
+}
 #panel {
     display: flex;
     flex-direction: row;
     width: 100%;
-    background-color: black;
-    border: 1px solid black;
-    padding: 5px;
 }
 
 #panel-title {
@@ -84,6 +114,10 @@ header {
 
 #panel-left {
     width: 33%;
+}
+
+#content {
+    margin: 20px;
 }
 
 #card-counter-content {
@@ -115,7 +149,11 @@ header {
 #quiz-image {
     width:224px;
     height:284px;
-    margin: 5px;
+    border-radius: 5%;
+    border-bottom: 1px solid #2f363c;
+    border-right: 1px solid #2f363c;
+    border-left: 1px solid gray;
+    border-top: 1px solid gray;
 }
 
 .quiz-select-div {
@@ -140,12 +178,10 @@ header {
     display:flex;
     flex-direction: row;
     width:100%;
-    margin:10px;
 }
 
 #quiz-left {
     width:33%;
-    margin:5px;
 }
 
 #quiz-center {
@@ -209,7 +245,7 @@ header {
     font-size: 40pt;
     background-color: white;
     width: 40px;
-    border: 1px solid black;
+    border: 1px solid #2f363c;
     text-align: center;
 }
 
@@ -218,7 +254,7 @@ header {
     font-size: 40pt;
     background-color: white;
     width: 40px;
-    border: 1px solid black;
+    border: 1px solid #2f363c;
     text-align: center;
 }
 
@@ -226,6 +262,16 @@ header {
     text-align: center;
     display: block;
     margin: auto auto;
+}
+
+.toast-header {
+    background-color: #1f262c;
+    color: white;
+    border-bottom: 1px solid #2f363c;
+}
+
+.toast-body {
+    color: black;
 }
 
 #pao-types {
@@ -238,20 +284,14 @@ header {
 .pao-type-column {
     width:224px;
     text-align: center;
-    border-left: white 1px solid;
-    border-top: white 1px solid;
-    border-right: white 1px solid;
+    border: 1px solid #2f363c;
     text-transform: uppercase;
-    background-color: #333333;
 }
 .pao-type-column-half {
     width:112px;
     text-align: center;
-    border-left: white 1px solid;
-    border-top: white 1px solid;
-    border-right: white 1px solid;
+    border: 1px solid #2f363c;
     text-transform: uppercase;
-    background-color: #333333;
 }
 #pao-header {
     display: flex;
@@ -264,11 +304,8 @@ header {
 .pao-header-column {
     width:112px;
     text-align: center;
-    border-left: white 1px solid;
-    border-top: white 1px solid;
-    border-right: white 1px solid;
+    border: 1px solid #2f363c;
     text-transform: uppercase;
-    background-color: #333333;
 }
 
 #pao-rows {
@@ -279,12 +316,10 @@ header {
     color:white;
     display:flex;
     flex-direction: row;
-    border: black 1px solid;
-    width:100%;
 }
 
-#pao-rows div:nth-child(even) {background: black}
-#pao-rows div:nth-child(odd) {background: #DF0000}
+#pao-rows > div:nth-child(even) {background: black}
+#pao-rows > div:nth-child(odd) {background: #DF0000}
 
 .pao-column {
     display:flex;
@@ -296,7 +331,7 @@ header {
     white-space: nowrap;
 }
 .pao-column span {
-    border: white 1px solid;
+    border: #2f363c 1px solid;
 }
 
 .pao-person {
@@ -319,4 +354,58 @@ header {
 
 #error-msg {
     display: none;
+}
+
+#quiz-input {
+    border: 1px solid #2f363c;
+    padding: 10px;
+    border-radius: 5%;
+    background-color: #1f262c;
+}
+
+#quiz-question {
+    margin: 5px;
+    padding-bottom: 10px;
+}
+
+#label-quiz-reveal-all {
+    cursor: pointer;
+}
+
+.suit-heart {
+    color: #DF0000;
+    font-size: 2.5em;
+    background-color: white;
+    border-radius: 10%;
+    padding: 5px;
+    border: 1px solid #2f363c;
+    box-shadow: #2b2b2b 2px 2px 5px;
+}
+
+.suit-diamond {
+    color: #DF0000;
+    font-size: 2.5em;
+    background-color: white;
+    border-radius: 10%;
+    padding: 5px;
+    border: 1px solid #2f363c;
+    box-shadow: #2b2b2b 2px 2px 5px;
+}
+.suit-club {
+    color: black;
+    font-size: 2.5em;
+    background-color: white;
+    border-radius: 10%;
+    padding: 5px;
+    border: 1px solid #2f363c;
+    box-shadow: #2b2b2b 2px 2px 5px;
+}
+.suit-spade {
+    color: black;
+    font-size: 2.5em;
+    background-color: white;
+    border-radius: 10%;
+    padding: 5px;
+    border: 1px solid #2f363c;
+    box-shadow: #2b2b2b 2px 2px 5px;
 }
