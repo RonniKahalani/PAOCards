@@ -572,3 +572,28 @@ header {
 #panel-right {
     width: 33%;
 }
+
+.suit-heart {
+    font-size: 15pt;
+    color:#DF0000;
+    background-color: white;
+}
+.suit-spade {
+    font-size: 15pt;
+    color:black;
+    background-color: white;
+}
+.suit-diamond {
+    font-size: 15pt;
+    color:#DF0000;
+    background-color: white;
+}
+.suit-club {
+    font-size: 15pt;
+    color:black;
+    background-color: white;
+}
+
+.markup-blue {
+    color: dodgerblue;
+}
