@@ -40,7 +40,7 @@ It consists of the following components:
 
 ## PAO Quiz
 <p>The Quiz interface helps you train your PAO Matrix memory speed and correctness, by prompting you to recall the Person, Action & Object values for a given card.</p>
-<img width="100%" src="https://learningisliving.dk/wp-content/uploads/2025/10/paocards-quiz.png" alt="Quiz">
+<img width="100%" src="src/main/resources/doc/quiz.png" alt="Quiz">
 <p>The random card is represented by a visuel image of the person behind the card. This helps you cards associated PAO values.</p>
 <p>So the correct answers, in this case, are</p>
 
@@ -51,7 +51,7 @@ It consists of the following components:
 
 ## PAO Memory Palace
 <p>The Memory Palace interface helps you train and navigate your memory palace, which holds 52 cards, in 17 locations, each holding the next 3 cards, with one last card left.</p>
-<img width="100%" src="https://learningisliving.dk/wp-content/uploads/2025/10/paocards-palace.png" alt="Quiz">
+<img width="100%" src="src/main/resources/doc/memory-palace.png" alt="Memory Palace">
 
 Each location defines a weird memorable sentence, from its three cards, that you should take a second and visualize in your mind, by combining:<br>
 - the person value of the first card = Victoria Beckham<br>
