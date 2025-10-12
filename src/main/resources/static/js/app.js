@@ -52,7 +52,13 @@ async function start() {
     }
 }
 
+/**
+ * Shows an error message.
+ * @param msg the message
+ * @param status the status
+ */
 function showError(msg, status) {
+    console.error(msg, status);
     alert(msg + "\nReason: " + status.toString());
 }
 

@@ -725,7 +725,7 @@ export class Quiz {
             palaceItem = document.getElementById("palace-item-" + index);
             card = this.quizCards[i];
 
-            palaceItem.innerHTML = "<img src='" + this.cardUtil.getSVGCardImageUrl(this.cardUtil.getCardId(card), card.suit) + "' class='card' alt=''>";
+            palaceItem.innerHTML = "<img src='" + this.cardUtil.getSVGCardImageUrl(card.pao) + "' class='card' alt=''>";
 
             if (i > 0 && (i + 1) % 3 === 0) {
                 palacePhrase = document.getElementById("palace-phrase-" + ((i + 1) / 3));

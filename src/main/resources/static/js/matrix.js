@@ -55,56 +55,47 @@ export class Matrix {
         this.renderMatrix();
     }
 
+    toggleCardInfo(card) {
+        const elem = document.getElementById('card-info');
+        if (elem.style.display === 'none' || elem.style.display === '') {
+            elem.onclick = () => elem.style.display = 'none';
+            elem.getElementsByClassName("pao-info-person")[0].innerHTML = card.person;
+            elem.getElementsByClassName("pao-info-action")[0].innerHTML = card.action;
+            elem.getElementsByClassName("pao-info-object")[0].innerHTML = card.object;
+            elem.getElementsByClassName("pao-info-card")[0].src = this.cardUtil.getSVGCardImageUrl(card)
+            elem.getElementsByClassName("pao-info-image")[0].src = card.image;
+
+            elem.getElementsByClassName("pao-info-description")[0].innerHTML = card.description;
+            elem.style.display = 'block';
+        } else {
+            elem.style.display = 'none';
+        }
+    }
+
     /**
      * Renders the matrix interface.
      */
     renderMatrix() {
+        let suits = ["hearts", "spades", "diamonds", "clubs"];
+        for (let rowIndex = 0; rowIndex < suits.length; rowIndex++) {
+            for (let columnIndex = 0; columnIndex < 13; columnIndex++) {
 
-        let paoRows = document.getElementById('pao-rows').getElementsByClassName('pao-row');
-        for (let rowIndex = 0; rowIndex < paoRows.length; rowIndex++) {
-
-            let paoColumns = paoRows[rowIndex].getElementsByClassName('pao-column');
-
-            let matrixIndex = -1;
-            switch (rowIndex) {
-                case 0:
-                    matrixIndex = "hearts";
-                    break;
-                case 1:
-                    matrixIndex = "spades";
-                    break;
-                case 2:
-                    matrixIndex = "diamonds";
-                    break;
-                case 3:
-                    matrixIndex = "clubs";
-                    break;
-            }
-            let suit = this.currentMatrix[matrixIndex];
-            let svgFunc = this.cardUtil.getSVGCardImageUrl;
-
-            for (let i = 0; i < paoColumns.length; i++) {
-                let card = suit[i];
-                let column = paoColumns[i];
-
-                let person = column.getElementsByClassName("pao-person")[0];
+                let card = this.currentMatrix[suits[rowIndex]][columnIndex];
+                let elem = document.getElementById(suits[rowIndex] + "-" + (columnIndex + 1));
+                let person = elem.getElementsByClassName("pao-person")[0];
                 person.innerHTML = card.person;
 
-                let image = column.getElementsByClassName("pao-image")[0];
+                let image = elem.getElementsByClassName("pao-image")[0];
                 image.src = card.image;
-                let cardId = this.cardUtil.getCardId(card);
 
-                image.addEventListener('mouseover', function () {
-                    image.src = svgFunc(cardId, matrixIndex);
-                })
-                image.addEventListener('mouseout', function () {
-                    image.src = card.image;
-                })
+                image.onmouseover = () => image.src = this.cardUtil.getSVGCardImageUrl(card);
+                image.onmouseout = () => image.src = card.image;
+                image.onclick = () => this.toggleCardInfo(card);
 
-                let action = column.getElementsByClassName("pao-action")[0];
+                let action = elem.getElementsByClassName("pao-action")[0];
                 action.innerHTML = card.action;
 
-                let object = column.getElementsByClassName("pao-object")[0];
+                let object = elem.getElementsByClassName("pao-object")[0];
                 object.innerHTML = card.object;
             }
         }
