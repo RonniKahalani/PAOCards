@@ -66,6 +66,11 @@ header {
 .palace-image {
     width: 600px;
     height: 400px;
+    border-top: 1px solid #2f363c;
+    border-left: 1px solid #2f363c;
+    border-bottom: 1px solid gray;
+    border-right: 1px solid gray;
+    border-radius: 5%;
 }
 
 #palace-table {
@@ -80,15 +85,21 @@ header {
 }
 
 .palace-label {
-    font-weight: bold;
+    font-size: 15pt;
     margin: 5px;
 }
 
 .palace-phrase {
-
+    font-size: 25pt;
 }
 
 .palace-items {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top:50%;
+    margin: auto auto;
+    z-index: 800;
     text-align: center;
 }
 
@@ -161,11 +172,11 @@ header {
 #quiz-image {
     width: 224px;
     height: 284px;
+    border-top: 1px solid #2f363c;
+    border-left: 1px solid #2f363c;
+    border-bottom: 1px solid gray;
+    border-right: 1px solid gray;
     border-radius: 5%;
-    border-bottom: 1px solid #2f363c;
-    border-right: 1px solid #2f363c;
-    border-left: 1px solid gray;
-    border-top: 1px solid gray;
 }
 
 .quiz-select-div {
@@ -550,4 +561,10 @@ header {
     width: 224px;
     font-size: 8pt;
     text-transform: uppercase;
+}
+
+.palace-info {
+    font-size: 15pt;
+    text-align: center;
+    margin: 5px;
 }
