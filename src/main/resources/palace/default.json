@@ -1,92 +1,92 @@
 [
   {
     "label": "Parking lot",
-    "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-loci-1.jpg",
+    "image": "/img/classic/loci1.jpg",
     "info": ""
   },
   {
     "label": "Front door",
-    "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-loci-2.jpg",
+    "image": "/img/classic/loci2.jpg",
     "info": ""
   },
   {
     "label": "Hall",
-    "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-loci-3.jpg",
+    "image": "/img/classic/loci3.jpg",
     "info": ""
   },
   {
     "label": "Kitchen",
-    "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-loci-4.jpg",
+    "image": "/img/classic/loci4.jpg",
     "info": ""
   },
   {
     "label": "Living room",
-    "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-loci-5.jpg",
+    "image": "/img/classic/loci5.jpg",
     "info": ""
   },
   {
     "label": "Patio",
-    "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-loci-6.jpg",
+    "image": "/img/classic/loci6.jpg",
     "info": ""
   },
   {
     "label": "Garden",
-    "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-loci-7.jpg",
+    "image": "/img/classic/loci7.jpg",
     "info": ""
   },
   {
     "label": "Stairway",
-    "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-loci-8.jpg",
+    "image": "/img/classic/loci8.jpg",
     "info": ""
   },
   {
     "label": "Master bedroom",
-    "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-loci-9.jpg",
+    "image": "/img/classic/loci9.jpg",
     "info": ""
   },
   {
     "label": "Nursery",
-    "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-loci-10.jpg",
+    "image": "/img/classic/loci10.jpg",
     "info": ""
   },
   {
     "label": "Kids bedroom",
-    "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-loci-11.jpg",
+    "image": "/img/classic/loci11.jpg",
     "info": ""
   },
   {
     "label": "Bathroom",
-    "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-loci-12.jpg",
+    "image": "/img/classic/loci12.jpg",
     "info": ""
   },
   {
     "label": "Attic",
-    "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-loci-13.jpg",
+    "image": "/img/classic/loci13.jpg",
     "info": ""
   },
   {
     "label": "Roof",
-    "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-loci-14.jpg",
+    "image": "/img/classic/loci14.jpg",
     "info": ""
   },
   {
     "label": "Chimney",
-    "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-loci-15.jpg",
+    "image": "/img/classic/loci15.jpg",
     "info": ""
   },
   {
     "label": "Sky",
-    "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-loci-16.jpg",
+    "image": "/img/classic/loci16.jpg",
     "info": ""
   },
   {
     "label": "Moon",
-    "image": "https://learningisliving.dk/wp-content/uploads/2021/11/pao-loci-17.jpg",
+    "image": "/img/classic/loci17.jpg",
     "info": ""
   },
   {
     "label": "Last card",
-    "image": "https://vinc.gumlet.io/gallery/blog/bicycle-playing-cards1-637281713517182040.jpg?w=1000&dpr=1",
+    "image": "/img/classic/last.jpg",
     "info": ""
   }
 ]
