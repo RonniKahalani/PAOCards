@@ -2,91 +2,91 @@
   {
     "label": "Parking lot",
     "image": "/img/classic/loci1.jpg",
-    "info": ""
+    "info": "Arriving at the parking lot of your house, you see these 3 cards on the ground."
   },
   {
     "label": "Front door",
     "image": "/img/classic/loci2.jpg",
-    "info": ""
+    "info": "On the front door, you see these 3 cards."
   },
   {
     "label": "Hall",
     "image": "/img/classic/loci3.jpg",
-    "info": ""
+    "info": "In the hall, you see these 3 cards."
   },
   {
     "label": "Kitchen",
     "image": "/img/classic/loci4.jpg",
-    "info": ""
+    "info": "In the kitchen sink, you see these 3 cards."
   },
   {
     "label": "Living room",
     "image": "/img/classic/loci5.jpg",
-    "info": ""
+    "info": "Passing the living room, you see these 3 cards on the couch."
   },
   {
     "label": "Patio",
     "image": "/img/classic/loci6.jpg",
-    "info": ""
+    "info": "At the patio table, you see these 3 cards."
   },
   {
     "label": "Garden",
     "image": "/img/classic/loci7.jpg",
-    "info": ""
+    "info": "You walk through the garden and see these 3 cards on the bench."
   },
   {
     "label": "Stairway",
     "image": "/img/classic/loci8.jpg",
-    "info": ""
+    "info": "Going up the stairs, you see these 3 cards on the steps."
   },
   {
     "label": "Master bedroom",
     "image": "/img/classic/loci9.jpg",
-    "info": ""
+    "info": "In the master bedroom, you see these 3 cards on the bed."
   },
   {
     "label": "Nursery",
     "image": "/img/classic/loci10.jpg",
-    "info": ""
+    "info": "Checking the baby in the nursery, you see these 3 cards on the changing table."
   },
   {
     "label": "Kids bedroom",
     "image": "/img/classic/loci11.jpg",
-    "info": ""
+    "info": "Greeting the kids bedroom, you see these 3 cards on the desk."
   },
   {
     "label": "Bathroom",
     "image": "/img/classic/loci12.jpg",
-    "info": ""
+    "info": "Ready for a shower in the bathroom, you see these 3 cards on the sink."
   },
   {
     "label": "Attic",
     "image": "/img/classic/loci13.jpg",
-    "info": ""
+    "info": "Your hear a noise in the attic, you go up and see these 3 cards on the floor."
   },
   {
     "label": "Roof",
     "image": "/img/classic/loci14.jpg",
-    "info": ""
+    "info": "Someone is on the roof, you open a window and see these 3 cards."
   },
   {
     "label": "Chimney",
     "image": "/img/classic/loci15.jpg",
-    "info": ""
+    "info": "Climbing up the chimney, you see these 3 cards."
   },
   {
     "label": "Sky",
     "image": "/img/classic/loci16.jpg",
-    "info": ""
+    "info": "You look up at the sky and see these 3 cards."
   },
   {
     "label": "Moon",
     "image": "/img/classic/loci17.jpg",
-    "info": ""
+    "info": "Turning to the moon, you see these 3 cards."
   },
   {
     "label": "Last card",
     "image": "/img/classic/last.jpg",
-    "info": ""
+    "info": "The last card is here. Tada!"
   }
 ]

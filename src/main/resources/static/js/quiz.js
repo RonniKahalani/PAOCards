@@ -700,6 +700,7 @@ export class Quiz {
 
         let palaceLabel = null;
         let palaceImage = null;
+        let palaceInfo = null;
         let palaceItem = null;
         let card = null;
         let palacePhrase = null;
@@ -719,6 +720,11 @@ export class Quiz {
 
                 palaceImage = document.getElementById("palace-image-" + index);
                 palaceImage.src = currentPalaceEntry.image;
+
+                palaceInfo = document.getElementById("palace-info-" + index);
+                palaceInfo.innerHTML = currentPalaceEntry.info;
+
+
             } catch (e) {
                 // console.log("Weird happened after the 6th item");
             }
