@@ -35,6 +35,9 @@ import {TabHandler} from "./tab.js";
 const tabHandler = new TabHandler();
 window.addEventListener('DOMContentLoaded', start);
 
+const btnFullscreen = document.getElementById("btn-fullscreen");
+btnFullscreen.onclick = () => toggleFullscreenMode();
+
 /**
  * Starts the app.
  * @returns {Promise<void>}
@@ -92,4 +95,16 @@ function setupTabEvents() {
     document.getElementById("btn-instructions").addEventListener('click', () => {
         tabHandler.showTab("pao-instructions");
     });
+}
+/**
+ * Toggles fullscreen mode.
+ */
+function toggleFullscreenMode() {
+    if(!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch((err) => {
+            alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+        });
+    } else {
+        document.exitFullscreen().then(r => console.log());
+    }
 }
