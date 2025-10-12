@@ -568,3 +568,7 @@ header {
     text-align: center;
     margin: 5px;
 }
+
+#panel-right {
+    width: 33%;
+}
