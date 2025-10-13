@@ -121,7 +121,6 @@ export class Quiz {
         } else {
             elem.style.border = "0";
         }
-
     }
     /**
      * Loads and initializes the quiz.
@@ -703,6 +702,7 @@ export class Quiz {
                 const quizAction = this.quizCards[i - 1].pao.action.toLowerCase();
                 const quizObject = this.quizCards[i].pao.object;
 
+                // Set a 3 colored phrase.
                 document.getElementById(`palace-phrase-${id}`).innerHTML = `<span class="phrase-color1">${quizPerson}</<span> <span class="phrase-color2">${quizAction}</span> <span class="phrase-color3">${quizObject}</span>`;
             }
 

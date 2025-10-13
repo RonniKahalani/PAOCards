@@ -56,17 +56,30 @@ export class Matrix {
         this.renderMatrix();
     }
 
+    /**
+     * Opens the card info display.
+     * @param card
+     */
+    openCardInfo(card) {
+        const elem = document.getElementById('card-info');
+        elem.onclick = () => elem.style.display = 'none';
+        elem.getElementsByClassName("pao-info-person")[0].innerHTML = card.person;
+        elem.getElementsByClassName("pao-info-action")[0].innerHTML = card.action;
+        elem.getElementsByClassName("pao-info-object")[0].innerHTML = card.object.charAt(0).toUpperCase() + card.object.slice(1)
+        elem.getElementsByClassName("pao-info-card")[0].src = this.cardUtil.getSVGCardImageUrl(card)
+        elem.getElementsByClassName("pao-info-image")[0].src = card.image;
+        elem.getElementsByClassName("pao-info-description")[0].innerHTML = card.description;
+        elem.style.display = 'block';
+    }
+
+    /**
+     * Toggles the card info display.
+     * @param card
+     */
     toggleCardInfo(card) {
         const elem = document.getElementById('card-info');
         if (elem.style.display === 'none' || elem.style.display === '') {
-            elem.onclick = () => elem.style.display = 'none';
-            elem.getElementsByClassName("pao-info-person")[0].innerHTML = card.person;
-            elem.getElementsByClassName("pao-info-action")[0].innerHTML = card.action;
-            elem.getElementsByClassName("pao-info-object")[0].innerHTML = card.object;
-            elem.getElementsByClassName("pao-info-card")[0].src = this.cardUtil.getSVGCardImageUrl(card)
-            elem.getElementsByClassName("pao-info-image")[0].src = card.image;
-            elem.getElementsByClassName("pao-info-description")[0].innerHTML = card.description;
-            elem.style.display = 'block';
+            this.openCardInfo(card);
         } else {
             elem.style.display = 'none';
         }
@@ -92,7 +105,7 @@ export class Matrix {
                 image.src = card.image;
                 image.onmouseover = () => image.src = this.cardUtil.getSVGCardImageUrl(card);
                 image.onmouseout = () => image.src = card.image;
-                image.onclick = () => this.toggleCardInfo(card);
+                image.onclick = () => this.openCardInfo(card);
             }
         }
     }

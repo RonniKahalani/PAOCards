@@ -78,23 +78,36 @@
 
 <div id="content">
     <div id="pao-home">
-        <div id="home-message-1" class="rounded-5">
-            <p>Wow! Did you see that?!</p>
-            <p>He memorized the deck of cards in less than 13 seconds!</p>
-        </div>
-        <div id="home-message-2" class="rounded-5">
-            <p>Yeah... He is using a memory technique.</p>
-            <p>It's called the PAO Matrix and Memory Palace technique.</p>
-            <p>Memorizing 17 locations, with 3 cards in each location.</p>
-        </div>
-        <div id="home-message-3" class="rounded-5">
-            <p>I wish I could do that...</p>
-            <p>But I have a hard time remembering names and faces.</p>
-            <p>Even worse, I jut forgot where I put my keys!</p>
-        </div>
-        <div id="home-message-4" class="rounded-5">
-            <p>Well, now you've got this app, so start training!</p>
-            <p>You can do it! Every one can do it!</p>
+
+        <div class="chat-messages">
+            <div class="row">
+                <div class="home-message-x rounded-5">
+                    <p>Wow! Did you see that?!</p>
+                    <p>He memorized the deck of cards in less than 13 seconds!</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm"></div>
+                <div class="home-message-y rounded-5">
+                    <p>Yeah... He's using memory techniques like PAO Matrix and Memory Palaces.</p>
+                    <p>Memorizing 17 locations with 3 cards in each location, together forming a weird memorable
+                        phrase.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="home-message-x rounded-5">
+                    <p>I wish I could do that too...</p>
+                    <p>But I have a hard time remembering names and faces.</p>
+                    <p>Even worse, I just forgot where I put my keys!</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm"></div>
+                <div class="home-message-y rounded-5">
+                    <p>Well, you've got this app, so start training! <i class="bi bi-emoji-smile"></i></p>
+                    <p>YOU CAN DO IT!</p>
+                </div>
+            </div>
         </div>
         <iframe id=bg-video
                 src="https://www.youtube.com/embed/OApSOU7NIAw?si=3TqiLNDF62ySMG5j&autoplay=1&mute=1&controls=0&loop=1&start=59"
@@ -942,6 +955,13 @@
 
 
     <div id="pao-palace">
+        <div class="palace-navigation">
+            <button id="btn-prev-loci" class="btn btn-primary" title="Previous"><i
+                    class="bi bi-chevron-double-left"></i></button>
+            <button id="btn-next-loci" type="button" class="btn btn-primary"
+                    title="Next"><i class="bi bi-chevron-double-right"></i>
+            </button>
+        </div>
 
         <table id="palace-table">
             <tr id="palace-loci-1" class="palace-loci">
@@ -1214,12 +1234,7 @@
             </tr>
             <tr>
                 <td>
-                    <button id="btn-prev-loci" class="btn btn-primary btn-sm" title="Previous"><i
-                            class="bi bi-chevron-double-left"></i></button>
                     <button id="btn-reveal-loci-cards" class="btn btn-danger btn-sm">Reveal Cards</button>
-                    <button id="btn-next-loci" type="button" class="btn btn-primary btn-sm"
-                            title="Next"><i class="bi bi-chevron-double-right"></i>
-                    </button>
                 </td>
             </tr>
         </table>
@@ -1290,6 +1305,8 @@
     </div>
     <hr>
     <div class="pao-info-description p-2"></div>
+    <hr>
+    <div class="text-center">Click this dialog to close it.</div>
 </div>
 
 </body>
