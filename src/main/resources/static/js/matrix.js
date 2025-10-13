@@ -40,6 +40,7 @@ export class Matrix {
      */
     constructor() {
         this.BASE_ENDPOINT = "http://localhost:8080/api/v1/";
+        this.SUITS = ["hearts", "spades", "diamonds", "clubs"];
 
         this.currentMatrix = null;
         this.cardUtil = new CardUtil();
@@ -64,7 +65,6 @@ export class Matrix {
             elem.getElementsByClassName("pao-info-object")[0].innerHTML = card.object;
             elem.getElementsByClassName("pao-info-card")[0].src = this.cardUtil.getSVGCardImageUrl(card)
             elem.getElementsByClassName("pao-info-image")[0].src = card.image;
-
             elem.getElementsByClassName("pao-info-description")[0].innerHTML = card.description;
             elem.style.display = 'block';
         } else {
@@ -76,27 +76,23 @@ export class Matrix {
      * Renders the matrix interface.
      */
     renderMatrix() {
-        let suits = ["hearts", "spades", "diamonds", "clubs"];
+
+        const suits = this.SUITS;
         for (let rowIndex = 0; rowIndex < suits.length; rowIndex++) {
             for (let columnIndex = 0; columnIndex < 13; columnIndex++) {
 
-                let card = this.currentMatrix[suits[rowIndex]][columnIndex];
-                let elem = document.getElementById(suits[rowIndex] + "-" + (columnIndex + 1));
-                let person = elem.getElementsByClassName("pao-person")[0];
-                person.innerHTML = card.person;
+                const suit = suits[rowIndex];
+                let card = this.currentMatrix[suit][columnIndex];
+                let elem = document.getElementById(suit + "-" + (columnIndex + 1));
+                elem.getElementsByClassName("pao-person")[0].innerHTML = card.person;
+                elem.getElementsByClassName("pao-action")[0].innerHTML = card.action;
+                elem.getElementsByClassName("pao-object")[0].innerHTML = card.object;
 
                 let image = elem.getElementsByClassName("pao-image")[0];
                 image.src = card.image;
-
                 image.onmouseover = () => image.src = this.cardUtil.getSVGCardImageUrl(card);
                 image.onmouseout = () => image.src = card.image;
                 image.onclick = () => this.toggleCardInfo(card);
-
-                let action = elem.getElementsByClassName("pao-action")[0];
-                action.innerHTML = card.action;
-
-                let object = elem.getElementsByClassName("pao-object")[0];
-                object.innerHTML = card.object;
             }
         }
     }

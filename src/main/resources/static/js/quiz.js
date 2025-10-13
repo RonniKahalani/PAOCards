@@ -131,7 +131,7 @@ export class Quiz {
      */
     async loadQuiz() {
         try {
-            const response = await fetch(this.BASE_ENDPOINT + "quiz");
+            const response = await fetch(`${this.BASE_ENDPOINT}quiz`);
             if (response.ok) {
                 return await response.json();
             }
@@ -148,7 +148,7 @@ export class Quiz {
      */
     async loadPalace(name) {
         try {
-            const response = await fetch(this.BASE_ENDPOINT + "palace/" + name);
+            const response = await fetch(`${this.BASE_ENDPOINT}palace/${name}`);
             if (response.ok) {
                 return await response.json();
             }
@@ -173,7 +173,7 @@ export class Quiz {
         let persons = this.quizCards.map(x => x.pao.person).sort();
         let actions = this.quizCards.map(x => x.pao.action).sort();
         let objects = this.quizCards.map(x => x.pao.object).sort();
-        let cards = this.quizCards.map(x => x.value + " (" + x.name + ") of " + x.suit).sort(this.cardNameSorter);
+        let cards = this.quizCards.map(x => `${x.value} (${x.name}) of ${x.suit}`).sort(this.cardNameSorter);
 
         this.setQuizSelectOptions(this.quizPerson, persons);
         this.setQuizSelectOptions(this.quizAction, actions);
@@ -274,7 +274,9 @@ export class Quiz {
      */
     quizCardChange(select) {
         let selectValue = select.options[select.selectedIndex].value;
-        let correctValue = this.quizCards[this.currentQuizIndex].value + " (" + this.quizCards[this.currentQuizIndex].name + ") of " + this.quizCards[this.currentQuizIndex].suit;
+
+        const correctCard = this.quizCards[this.currentQuizIndex];
+        let correctValue = `${correctCard.value} (${correctCard.name}) of ${correctCard.suit}`;
 
         this.setSelectColor(select, selectValue === correctValue);
         this.updateAnswerValues();
@@ -593,7 +595,7 @@ export class Quiz {
             target = this;
         }
         let card = target.quizCards[target.currentQuizIndex];
-        let correctValue = card.value + " (" + card.name + ") of " + card.suit;
+        let correctValue = `${card.value} (${card.name}) of ${card.suit}`;
         for (let index = 1; index < target.quizCard.options.length; index++) {
             if (target.quizCard.options[index].value === correctValue) {
                 target.quizCard.selectedIndex = index;
@@ -685,7 +687,7 @@ export class Quiz {
 
             try {
                 palaceLabel = document.getElementById("palace-label-" + index);
-                palaceLabel.innerHTML = currentPalaceEntry.label + " (" + index + " of 17)";
+                palaceLabel.innerHTML = `${currentPalaceEntry.label} (${index} of 17)`;
 
                 palaceImage = document.getElementById("palace-image-" + index);
                 palaceImage.src = currentPalaceEntry.image;
@@ -703,12 +705,12 @@ export class Quiz {
             palaceItem.innerHTML = `<img src="${this.cardUtil.getSVGCardImageUrl(card.pao)}" class="card" alt="">`;
 
             if (i > 0 && (i + 1) % 3 === 0) {
-                palacePhrase = document.getElementById("palace-phrase-" + ((i + 1) / 3));
-                const elem1 = this.quizCards[i - 2].pao.person;
-                const elem2 = this.quizCards[i - 1].pao.action.toLowerCase();
-                const elem3 = this.quizCards[i].pao.object.toLowerCase();
-
-                palacePhrase.innerHTML = `<span style="color:#4A4A4A">${elem1}</<span> <span style="color:#FFC107">${elem2}</span> <span style="color:#0052CC">${elem3}</span>`;
+                const id = (i + 1) / 3;
+                palacePhrase = document.getElementById(`palace-phrase-${id}`);
+                const quizPerson = this.quizCards[i - 2].pao.person;
+                const quizAction = this.quizCards[i - 1].pao.action.toLowerCase();
+                const quizObject = this.quizCards[i].pao.object.toLowerCase();
+                palacePhrase.innerHTML = `<span class="phrase-color1">${quizPerson}</<span> <span class="phrase-color2">${quizAction}</span> <span class="phrase-color3">${quizObject}</span>`;
             }
 
             if (i === 51) {

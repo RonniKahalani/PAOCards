@@ -45,10 +45,12 @@ export class Timer {
         this.fulltime = document.getElementById("fulltime");
 
         this.btnContinue = document.getElementById("btn-continue");
-        this.btnContinue.addEventListener("click", () => {this.continueTime()});
+        this.btnContinue.onclick = () => this.continueTime();
 
         this.btnPause = document.getElementById("btn-pause");
-        this.btnPause.addEventListener("click", () => {this.pauseTime()});
+        this.btnPause.onclick = () => this.pauseTime();
+
+        this. timerElem = document.getElementById("timer")
     }
 
     /**
@@ -60,7 +62,7 @@ export class Timer {
             this.minutes++;
         }
 
-        this.mins = this.minutes < 10 ? "0" + this.minutes + " : " : this.minutes + " : ";
+        this.mins = (this.minutes < 10) ? `0${this.minutes} :` : `${this.minutes} : `;
         /* check if minutes is equal to 60 and add a +1
           to hours set minutes to 0 */
         if (this.minutes === 60) {
@@ -68,7 +70,7 @@ export class Timer {
             this.hours++;
         }
 
-        this.gethours = this.hours < 10 ? "0" + this.hours + " : " : this.hours + " : ";
+        this.gethours = this.hours < 10 ? `0${this.hours} : ` : `${this.hours} : `;
         this.secs = this.seconds < 10 ? "0" + this.seconds : this.seconds;
 
         this.btnContinue.style.display = "none";
@@ -107,9 +109,9 @@ export class Timer {
             this.seconds = 0;
             this.minutes = 0;
             this.hours = 0;
-            this.secs = "0" + this.seconds;
-            this.mins = "0" + this.minutes + " : ";
-            this.gethours = "0" + this.hours + " : ";
+            this.secs = `0${this.seconds}`;
+            this.mins = `0${this.minutes} : `;
+            this.gethours = `0${this.hours} : `;
 
             this.writeTime();
             this.btnPause.style.display = "none";
@@ -149,6 +151,6 @@ export class Timer {
      * Writes the timer info to the interface.
      */
     writeTime() {
-        document.getElementById("timer").innerHTML = this.gethours.toString() + this.mins.toString() + this.secs.toString();
+        this.timerElem.innerHTML = `${this.gethours.toString()}${this.mins.toString()}${this.secs.toString()}`;
     }
 }

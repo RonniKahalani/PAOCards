@@ -139,7 +139,6 @@ header {
 }
 
 #card-counter-content {
-    font-weight: bold;
     font-size: 14pt;
 }
 
@@ -160,8 +159,8 @@ header {
 }
 
 #quiz-front {
-    height: auto;
-    margin: auto auto;
+    text-align: center;
+    margin-top: 200px;
 }
 
 #quiz-image {
@@ -595,4 +594,14 @@ header {
 
 #btn-fullscreen {
     cursor: pointer;
+}
+
+.phrase-color1 {
+    color: #4A4A4A;
+}
+.phrase-color2 {
+    color: #FFC107;
+}
+.phrase-color3 {
+    color: #0052CC;
 }
