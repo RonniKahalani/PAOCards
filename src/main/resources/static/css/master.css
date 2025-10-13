@@ -95,11 +95,6 @@ header {
 
 .palace-items {
     display: none;
-    position: absolute;
-    left: 50%;
-    top:50%;
-    margin: auto auto;
-    z-index: 800;
     text-align: center;
 }
 
@@ -385,8 +380,8 @@ header {
     cursor: pointer;
     border-top: 1px solid #2f363c;
     border-left: 1px solid #2f363c;
-    border-right: 1px solid gray;
     border-bottom: 1px solid gray;
+    border-right: 1px solid gray;
 }
 
 .pao-action {
@@ -530,9 +525,9 @@ header {
     height: 284px;
     text-align: center;
     border-top: 1px solid #2f363c;
-    border-right: 1px solid #2f363c;
-    border-left: 1px solid gray;
+    border-left: 1px solid #2f363c;
     border-bottom: 1px solid gray;
+    border-right: 1px solid gray;
     border-radius: 5%;
 }
 
@@ -540,9 +535,9 @@ header {
     height: 284px;
     text-align: center;
     border-top: 1px solid #2f363c;
-    border-right: 1px solid #2f363c;
-    border-left: 1px solid gray;
+    border-left: 1px solid #2f363c;
     border-bottom: 1px solid gray;
+    border-right: 1px solid gray;
     border-radius: 5%;
 }
 
