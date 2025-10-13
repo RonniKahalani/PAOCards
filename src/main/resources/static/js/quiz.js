@@ -59,7 +59,7 @@ export class Quiz {
         this.quizObject.onchange = () => this.quizObjectChange(this.quizObject);
 
         this.quizCard = document.getElementById("quiz-select-card");
-        this.quizCard.onchange =  () => this.quizCardChange(this.quizCard);
+        this.quizCard.onchange = () => this.quizCardChange(this.quizCard);
 
         this.quizRevealPerson = document.getElementById("quiz-reveal-person");
         this.quizRevealPerson.onchange = () => this.quizCheck(this.quizRevealPerson);
@@ -80,30 +80,14 @@ export class Quiz {
         this.quizFront = document.getElementById("quiz-front");
 
         document.getElementById("quiz-start").onclick = () => this.startQuiz();
-
-        this.btnQuizNext = document.getElementById("btn-quiz-next");
-        this.btnQuizNext.onclick = () => this.nextQuizCard();
-
-        this.btnQuizPrev = document.getElementById("btn-quiz-prev");
-        this.btnQuizPrev.onclick = () => this.prevQuizCard();
-
-        this.btnQuizRestart = document.getElementById("btn-quiz-restart");
-        this.btnQuizRestart.onclick = () => this.restartQuiz();
-
-        this.btnQuizShuffleDeck = document.getElementById("btn-quiz-shuffle-deck");
-        this.btnQuizShuffleDeck.onclick = () => this.shuffleDeck();
-
-        this.btnQuizReveal = document.getElementById("btn-quiz-reveal");
-        this.btnQuizReveal.onclick = () => this.revealAll();
-
-        this.btnPrevLoci = document.getElementById("btn-prev-loci");
-        this.btnPrevLoci.onclick =  () => this.prevLoci();
-
-        this.btnRevealLociCards = document.getElementById("btn-reveal-loci-cards");
-        this.btnRevealLociCards.onclick = () => this.revealLociCards();
-
-        this.btnNextLoci = document.getElementById("btn-next-loci");
-        this.btnNextLoci.onclick = () => this.nextLoci();
+        document.getElementById("btn-quiz-next").onclick = () => this.nextQuizCard();
+        document.getElementById("btn-quiz-prev").onclick = () => this.prevQuizCard();
+        document.getElementById("btn-quiz-restart").onclick = () => this.restartQuiz();
+        document.getElementById("btn-quiz-shuffle-deck").onclick = () => this.shuffleDeck();
+        document.getElementById("btn-quiz-reveal").onclick = () => this.revealAll();
+        document.getElementById("btn-prev-loci").onclick = () => this.prevLoci();
+        document.getElementById("btn-reveal-loci-cards").onclick = () => this.revealLociCards();
+        document.getElementById("btn-next-loci").onclick = () => this.nextLoci();
 
         this.cardCounter = document.getElementById("card-counter");
         this.currentQuiz = null;
@@ -138,7 +122,6 @@ export class Quiz {
         } catch (e) {
             throw new Error("Failed to fetch quiz data.");
         }
-
     }
 
     /**
@@ -155,7 +138,6 @@ export class Quiz {
         } catch (e) {
             throw new Error("Failed to fetch palace data.");
         }
-
     }
 
     /**
@@ -287,7 +269,7 @@ export class Quiz {
      */
     updateAnswerValues() {
         this.updateCurrentAnswer();
-        if(this.isAllAnswersCorrect()) {
+        if (this.isAllAnswersCorrect()) {
             this.notifyAllAnswersCorrect();
         } else if (this.isCurrentAnswerCorrect()) {
             this.notifyCurrentAnswerCorrect();
@@ -365,9 +347,9 @@ export class Quiz {
     isAllAnswersCorrect() {
         let isAllCorrect = false;
 
-        for(let entry of this.answers) {
+        for (let entry of this.answers) {
             isAllCorrect = entry.correct;
-            if(!isAllCorrect) return false;
+            if (!isAllCorrect) return false;
         }
 
         return true;
@@ -446,17 +428,18 @@ export class Quiz {
     }
 
     checkQuizDone() {
-        if(this.isQuizDone()) {
+        if (this.isQuizDone()) {
             this.notify("toast-quiz-done");
         }
     }
+
     /**
      * Returns true if the quiz is done.
      * TODO: Should instead validate that all cards has been answered correctly.
      * @returns {boolean}
      */
     isQuizDone() {
-        if(this.answers.length < 18) {
+        if (this.answers.length < 18) {
             return false;
         }
 
@@ -537,7 +520,7 @@ export class Quiz {
      * Reveals the person select value.
      */
     revealPerson(target) {
-        if(target === undefined) {
+        if (target === undefined) {
             target = this;
         }
         let card = target.quizCards[target.currentQuizIndex];
@@ -555,7 +538,7 @@ export class Quiz {
      * Reveals the action select value.
      */
     revealAction(target) {
-        if(target === undefined) {
+        if (target === undefined) {
             target = this;
         }
         let card = target.quizCards[target.currentQuizIndex];
@@ -573,7 +556,7 @@ export class Quiz {
      * Reveals the object select value.
      */
     revealObject(target) {
-        if(target === undefined) {
+        if (target === undefined) {
             target = this;
         }
         let card = target.quizCards[target.currentQuizIndex];
@@ -591,7 +574,7 @@ export class Quiz {
      * Reveals the card select value.
      */
     revealCard(target) {
-        if(target === undefined) {
+        if (target === undefined) {
             target = this;
         }
         let card = target.quizCards[target.currentQuizIndex];
@@ -669,13 +652,6 @@ export class Quiz {
      */
     renderPalace(palace) {
 
-        let palaceLabel = null;
-        let palaceImage = null;
-        let palaceInfo = null;
-        let palaceItem = null;
-        let card = null;
-        let palacePhrase = null;
-
         this.hideAllLoci();
 
         this.currentLociIndex = 1;
@@ -686,36 +662,26 @@ export class Quiz {
             let currentPalaceEntry = palace[i];
 
             try {
-                palaceLabel = document.getElementById("palace-label-" + index);
-                palaceLabel.innerHTML = `${currentPalaceEntry.label} (${index} of 17)`;
-
-                palaceImage = document.getElementById("palace-image-" + index);
-                palaceImage.src = currentPalaceEntry.image;
-
-                palaceInfo = document.getElementById("palace-info-" + index);
-                palaceInfo.innerHTML = currentPalaceEntry.info;
-
-
+                document.getElementById("palace-label-" + index).innerHTML = `${currentPalaceEntry.label} (${index} of 17)`;
+                document.getElementById("palace-image-" + index).src = currentPalaceEntry.image;
+                document.getElementById("palace-info-" + index).innerHTML = currentPalaceEntry.info;
             } catch (e) {
-                // console.log("Weird happened after the 6th item");
+                // HACK! console.log("Weird things happened after the 6th item");
             }
-            palaceItem = document.getElementById("palace-item-" + index);
-            card = this.quizCards[i];
 
-            palaceItem.innerHTML = `<img src="${this.cardUtil.getSVGCardImageUrl(card.pao)}" class="card" alt="">`;
+            document.getElementById("palace-item-" + index).innerHTML = `<img src="${this.cardUtil.getSVGCardImageUrl(this.quizCards[i].pao)}" class="card" alt="">`;
 
             if (i > 0 && (i + 1) % 3 === 0) {
                 const id = (i + 1) / 3;
-                palacePhrase = document.getElementById(`palace-phrase-${id}`);
                 const quizPerson = this.quizCards[i - 2].pao.person;
                 const quizAction = this.quizCards[i - 1].pao.action.toLowerCase();
                 const quizObject = this.quizCards[i].pao.object.toLowerCase();
-                palacePhrase.innerHTML = `<span class="phrase-color1">${quizPerson}</<span> <span class="phrase-color2">${quizAction}</span> <span class="phrase-color3">${quizObject}</span>`;
+
+                document.getElementById(`palace-phrase-${id}`).innerHTML = `<span class="phrase-color1">${quizPerson}</<span> <span class="phrase-color2">${quizAction}</span> <span class="phrase-color3">${quizObject}</span>`;
             }
 
             if (i === 51) {
-                palacePhrase = document.getElementById("palace-phrase-18");
-                palacePhrase.innerHTML = this.quizCards[i].pao.person;
+                document.getElementById("palace-phrase-18").innerHTML = this.quizCards[i].pao.person;
             }
         }
     }
