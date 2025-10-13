@@ -35,7 +35,8 @@ It consists of the following components:
 
 ## PAO Matrix
 <p>If you're "normal", you can master this skill in a few weeks, but you have to be disciplined, persistent and focus on memorizing the PAO Matrix.</p>
-<img style="width:100%" src="src/main/resources/doc/matrix.jpg" alt="PAO Matrix"><sup>Click image to enlarge.</sup>
+<img style="width:100%" src="src/main/resources/doc/matrix.jpg" alt="PAO Matrix">
+<sup>Click image to enlarge.</sup>
 
 ## PAO Quiz
 <p>The Quiz interface helps you train your PAO Matrix memory speed and correctness, by prompting you to recall the Person, Action & Object values for a given card.</p>
