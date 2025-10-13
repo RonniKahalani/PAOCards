@@ -51,30 +51,48 @@ export class Quiz {
 
         this.quizPerson = document.getElementById("quiz-select-person");
         this.quizPerson.onchange = () => this.quizPersonChange(this.quizPerson);
+        this.quizPerson.onfocus = () => this.quizFocusChange(this.quizPerson);
+        this.quizPerson.onblur = () => this.quizFocusChange(this.quizPerson);
 
         this.quizAction = document.getElementById("quiz-select-action");
         this.quizAction.onchange = () => this.quizActionChange(this.quizAction);
+        this.quizAction.onfocus = () => this.quizFocusChange(this.quizAction);
+        this.quizAction.onblur = () => this.quizFocusChange(this.quizAction);
 
         this.quizObject = document.getElementById("quiz-select-object");
         this.quizObject.onchange = () => this.quizObjectChange(this.quizObject);
+        this.quizObject.onfocus = () => this.quizFocusChange(this.quizObject);
+        this.quizObject.onblur = () => this.quizFocusChange(this.quizObject);
 
         this.quizCard = document.getElementById("quiz-select-card");
         this.quizCard.onchange = () => this.quizCardChange(this.quizCard);
+        this.quizCard.onfocus = () => this.quizFocusChange(this.quizCard);
+        this.quizCard.onblur = () => this.quizFocusChange(this.quizCard);
 
         this.quizRevealPerson = document.getElementById("quiz-reveal-person");
         this.quizRevealPerson.onchange = () => this.quizCheck(this.quizRevealPerson);
+        this.quizRevealPerson.onfocus = () => this.quizFocusChange(this.quizRevealPerson);
+        this.quizRevealPerson.onblur = () => this.quizFocusChange(this.quizRevealPerson);
 
         this.quizRevealAction = document.getElementById("quiz-reveal-action");
         this.quizRevealAction.onchange = () => this.quizCheck(this.quizRevealAction);
+        this.quizRevealAction.onfocus = () => this.quizFocusChange(this.quizRevealAction);
+        this.quizRevealAction.onblur = () => this.quizFocusChange(this.quizRevealAction);
 
         this.quizRevealObject = document.getElementById("quiz-reveal-object");
         this.quizRevealObject.onchange = () => this.quizCheck(this.quizRevealObject);
+        this.quizRevealObject.onfocus = () => this.quizFocusChange(this.quizRevealObject);
+        this.quizRevealObject.onblur = () => this.quizFocusChange(this.quizRevealObject);
 
         this.quizRevealCard = document.getElementById("quiz-reveal-card");
         this.quizRevealCard.onchange = () => this.quizCheck(this.quizRevealCard);
+        this.quizRevealCard.onfocus = () => this.quizFocusChange(this.quizRevealCard);
+        this.quizRevealCard.onblur = () => this.quizFocusChange(this.quizRevealCard);
 
         this.quizRevealAll = document.getElementById("quiz-reveal-all");
         this.quizRevealAll.onchange = () => this.checkRevealAll(this.quizRevealAll);
+        this.quizRevealAll.onfocus = () => this.quizFocusChange(this.quizRevealAll);
+        this.quizRevealAll.onblur = () => this.quizFocusChange(this.quizRevealAll);
 
         this.quizFeature = document.getElementById("quiz-feature");
         this.quizFront = document.getElementById("quiz-front");
@@ -97,6 +115,14 @@ export class Quiz {
         this.timer = new Timer();
     }
 
+    quizFocusChange(elem) {
+        if(elem === document.activeElement) {
+            elem.style.border = "3px solid #00FF00";
+        } else {
+            elem.style.border = "0";
+        }
+
+    }
     /**
      * Loads and initializes the quiz.
      * @returns {Promise<void>}
@@ -675,7 +701,7 @@ export class Quiz {
                 const id = (i + 1) / 3;
                 const quizPerson = this.quizCards[i - 2].pao.person;
                 const quizAction = this.quizCards[i - 1].pao.action.toLowerCase();
-                const quizObject = this.quizCards[i].pao.object.toLowerCase();
+                const quizObject = this.quizCards[i].pao.object;
 
                 document.getElementById(`palace-phrase-${id}`).innerHTML = `<span class="phrase-color1">${quizPerson}</<span> <span class="phrase-color2">${quizAction}</span> <span class="phrase-color3">${quizObject}</span>`;
             }

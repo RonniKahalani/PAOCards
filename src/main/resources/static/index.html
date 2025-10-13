@@ -71,13 +71,31 @@
             </ul>
         </div>
         <div id="panel-right" class="row text-end p-2" style="vertical-align: middle">
-            <i id="btn-fullscreen" class="bi bi-fullscreen"></i>
+            <i id="btn-fullscreen" class="bi bi-fullscreen mt-2" title="Toggle Full Screen Mode"></i>
         </div>
     </div>
 </header>
 
 <div id="content">
     <div id="pao-home">
+        <div id="home-message-1" class="rounded-5">
+            <p>Wow! Did you see that?!</p>
+            <p>He memorized the deck of cards in less than 13 seconds!</p>
+        </div>
+        <div id="home-message-2" class="rounded-5">
+            <p>Yeah... He is using a memory technique.</p>
+            <p>It's called the PAO Matrix and Memory Palace technique.</p>
+            <p>Memorizing 17 locations, with 3 cards in each location.</p>
+        </div>
+        <div id="home-message-3" class="rounded-5">
+            <p>I wish I could do that...</p>
+            <p>But I have a hard time remembering names and faces.</p>
+            <p>Even worse, I jut forgot where I put my keys!</p>
+        </div>
+        <div id="home-message-4" class="rounded-5">
+            <p>Well, now you've got this app, so start training!</p>
+            <p>You can do it! Every one can do it!</p>
+        </div>
         <iframe id=bg-video
                 src="https://www.youtube.com/embed/OApSOU7NIAw?si=3TqiLNDF62ySMG5j&autoplay=1&mute=1&controls=0&loop=1&start=59"
                 allowFullScreen allow=autoplay/>
@@ -94,19 +112,30 @@
             <div id="quiz-center">
 
                 <div id="quiz-feature">
-                    <div id="card-counter-content">
-                        Card <span id="card-counter">1</span> of 52
-                    </div>
-
-                    <img id="quiz-image" src=""
-                         alt="Quiz image">
-                    <div id="stopWatch">
-                        <div id="timer">00 : 00 : 00</div>
-                        <button id="btn-pause" class="btn btn-primary btn-sm btn-timer">Pause</button>
-                        <button id="btn-continue" class="btn btn-primary btn-sm btn-timer">Continue</button>
-                    </div>
-
                     <div id="quiz-input">
+                        <div id="card-counter-content">
+                            Card <span id="card-counter">1</span> of 52
+                        </div>
+
+                        <img id="quiz-image" src=""
+                             alt="Quiz image">
+                        <div id="stopWatch" class="row">
+                            <div id="timer" class="col-12">00 : 00 : 00</div>
+                            <div>
+                                <button id="btn-quiz-prev" class="btn btn-primary btn-sm"
+                                        title="Previous"><i class="bi bi-chevron-double-left"></i>
+                                </button>
+
+                                <button id="btn-pause" class="btn btn-success btn-sm btn-timer" title="Pause"><i
+                                        class="bi bi-pause-fill"></i></button>
+                                <button id="btn-continue" class="btn btn-danger btn-sm btn-timer" title="Continue"><i
+                                        class="bi bi-play-fill"></i></button>
+                                <button id="btn-quiz-next" class="btn btn-primary btn-sm" accesskey="n"
+                                        title="Next (Alt-N)"><i class="bi bi-chevron-double-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
                         <div id="quiz-question">Select the matching PAO values and card.</div>
                         <div class="quiz-select-div">
                             <label for="quiz-select-person" class="quiz-label">Person</label>
@@ -151,24 +180,18 @@
                         <br>
                         <div id="quiz-button-group">
                             <button id="btn-quiz-restart" class="btn btn-primary btn-sm" accesskey="s"
-                                    title="Shortcut (Alt-S)">
+                                    title="Start Over (Alt-S)">
                                 Start
                                 Over
                             </button>
                             <button id="btn-quiz-shuffle-deck" class="btn btn-primary btn-sm" accesskey="d"
-                                    title="Shortcut (Alt-D)">
-                                New Deck
+                                    title="New Deck">
+                                New Deck (Alt+D)
                             </button>
                             <button id="btn-quiz-reveal" class="btn btn-danger btn-sm" accesskey="r"
-                                    title="Shortcut (Alt-R)">
+                                    title="Reveal All (Alt-R)">
                                 Reveal
                                 All
-                            </button>
-                            <button id="btn-quiz-prev" class="btn btn-primary btn-sm" accesskey="p"
-                                    title="Shortcut (Alt-P)">Prev
-                            </button>
-                            <button id="btn-quiz-next" class="btn btn-primary btn-sm" accesskey="n"
-                                    title="Shortcut (Alt-N)">Next
                             </button>
                         </div>
                     </div>
@@ -178,12 +201,11 @@
                 <div id="quiz-front">
                     <h3>PAO Matrix Quiz</h3>
                     <p>Are you ready to Test your matrix memory.</p>
-                    <button id="quiz-start" class="btn btn-primary btn-sm" accesskey="s">Start Quiz</button>
+                    <button id="quiz-start" class="btn btn-primary btn-sm">Start Quiz</button>
                 </div>
             </div>
 
             <div id="quiz-right">
-
 
             </div>
         </div>
@@ -226,13 +248,14 @@
                     <h4>Suits</h4>
 
                     <div><i class="bi bi-suit-heart-fill suit-heart"></i> People who are likable.</div>
-                    <div><i class="bi bi-suit-spade-fill suit-spade"></i> People who makes you smile or wrinkle your
+                    <div><i class="bi bi-suit-spade-fill suit-spade"></i> People who makes you smile weirdly or wrinkle
+                        your
                         nose.
                     </div>
-                    <div><i class="bi bi-suit-diamond-fill suit-diamond"></i> People who like to shine.</div>
+                    <div><i class="bi bi-suit-diamond-fill suit-diamond"></i> People who likes bling and shiny luxury.
+                    </div>
                     <div><i class="bi bi-suit-club-fill suit-club"></i> People with an itch in the body or brain.
                     </div>
-
                 </div>
 
                 <div class="col-6">
@@ -262,7 +285,7 @@
                 </div>
 
                 <div class="col-6">
-                    <h4>Shortcuts</h4>
+                    <h4>Quiz Shortcuts</h4>
                     <ul>
                         <li><span class="markup-blue">Alt+P</span> Select Person</li>
                         <li><span class="markup-blue">Alt+A</span> Select Action</li>
@@ -271,7 +294,8 @@
                         <li><span class="markup-blue">Alt+R</span> Reveal All</li>
                         <li><span class="markup-blue">Alt+N</span> Next Card</li>
                         <li><span class="markup-blue">Alt+S</span> Start Over</li>
-                        <li><span class="markup-blue">Alt+M</span> Memory Palace</li>
+                        <li><span class="markup-blue">Alt+D</span> New Deck</li>
+
                     </ul>
                 </div>
 
@@ -1190,9 +1214,11 @@
             </tr>
             <tr>
                 <td>
-                    <button id="btn-prev-loci" class="btn btn-primary btn-sm" accesskey="p">Prev</button>
-                    <button id="btn-reveal-loci-cards" class="btn btn-danger btn-sm" accesskey="r">Reveal Cards</button>
-                    <button id="btn-next-loci" type="button" class="btn btn-primary btn-sm" accesskey="n">Next
+                    <button id="btn-prev-loci" class="btn btn-primary btn-sm" title="Previous"><i
+                            class="bi bi-chevron-double-left"></i></button>
+                    <button id="btn-reveal-loci-cards" class="btn btn-danger btn-sm">Reveal Cards</button>
+                    <button id="btn-next-loci" type="button" class="btn btn-primary btn-sm"
+                            title="Next"><i class="bi bi-chevron-double-right"></i>
                     </button>
                 </td>
             </tr>

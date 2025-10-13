@@ -7,7 +7,7 @@
   {
     "label": "Front door",
     "image": "/img/classic/loci2.jpg",
-    "info": "At the front door you see a new doormat with the message."
+    "info": "At the front door you see a poster lying on the doormat with the message."
   },
   {
     "label": "Hall",
@@ -22,7 +22,7 @@
   {
     "label": "Living room",
     "image": "/img/classic/loci5.jpg",
-    "info": "Full and content you lay down on the sofa and switch on the television only to hear this message on full  volume."
+    "info": "Full and content you lay down on the sofa and switch on the television only to hear this message on full volume."
   },
   {
     "label": "Patio",
@@ -47,7 +47,7 @@
   {
     "label": "Nursery",
     "image": "/img/classic/loci10.jpg",
-    "info": "While checking the baby in the nursery you see these 3 cards on the changing table."
+    "info": "While checking the baby in the nursery you see this message on the changing table."
   },
   {
     "label": "Kids bedroom",
@@ -57,7 +57,7 @@
   {
     "label": "Bathroom",
     "image": "/img/classic/loci12.jpg",
-    "info": "You go to the bathroom ready for a shower, but you see this on the floor."
+    "info": "You go to the bathroom ready for a shower, but you see this message on the floor."
   },
   {
     "label": "Attic",
@@ -72,7 +72,7 @@
   {
     "label": "Chimney",
     "image": "/img/classic/loci15.jpg",
-    "info": "Climbing up the chimney, you see this smoke signal message."
+    "info": "Climbing up the chimney you see this smoke signal message."
   },
   {
     "label": "Sky",

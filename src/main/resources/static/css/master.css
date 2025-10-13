@@ -67,11 +67,6 @@ header {
 .palace-image {
     width: 600px;
     height: 400px;
-    border-top: 1px solid #2f363c;
-    border-left: 1px solid #2f363c;
-    border-bottom: 1px solid gray;
-    border-right: 1px solid gray;
-    border-radius: 5%;
 }
 
 #palace-table {
@@ -167,11 +162,6 @@ header {
 #quiz-image {
     width: 224px;
     height: 284px;
-    border-top: 1px solid #2f363c;
-    border-left: 1px solid #2f363c;
-    border-bottom: 1px solid gray;
-    border-right: 1px solid gray;
-    border-radius: 5%;
 }
 
 .quiz-select-div {
@@ -262,27 +252,6 @@ header {
 
 .card-black {
     background-color: #000000;
-}
-
-.suit-column {
-    width: 40px;
-}
-
-.suit-column-red {
-    position: absolute;
-    left: 100px;
-    font-size: 40pt;
-    color: #DF0000;
-    z-index: 900;
-}
-
-.suit-column-black {
-    color: black;
-    font-size: 40pt;
-    background-color: white;
-    width: 40px;
-    border: 1px solid #2f363c;
-    text-align: center;
 }
 
 .info-column {
@@ -378,10 +347,7 @@ header {
     width: 112px;
     height: 142px;
     cursor: pointer;
-    border-top: 1px solid #2f363c;
-    border-left: 1px solid #2f363c;
-    border-bottom: 1px solid gray;
-    border-right: 1px solid gray;
+    border-radius: 0;
 }
 
 .pao-action {
@@ -524,21 +490,11 @@ header {
     width: 224px;
     height: 284px;
     text-align: center;
-    border-top: 1px solid #2f363c;
-    border-left: 1px solid #2f363c;
-    border-bottom: 1px solid gray;
-    border-right: 1px solid gray;
-    border-radius: 5%;
 }
 
 .pao-info-card {
     height: 284px;
     text-align: center;
-    border-top: 1px solid #2f363c;
-    border-left: 1px solid #2f363c;
-    border-bottom: 1px solid gray;
-    border-right: 1px solid gray;
-    border-radius: 5%;
 }
 
 .pao-info-description {
@@ -559,9 +515,11 @@ header {
 }
 
 .palace-info {
+    width: 600px;
     font-size: 15pt;
     text-align: center;
-    margin: 5px;
+    margin: 10px auto;
+    padding: 5px;
 }
 
 #panel-right {
@@ -570,22 +528,25 @@ header {
 
 .suit-heart {
     font-size: 15pt;
-    color:#DF0000;
+    color: #DF0000;
     background-color: white;
 }
+
 .suit-spade {
     font-size: 15pt;
-    color:black;
+    color: black;
     background-color: white;
 }
+
 .suit-diamond {
     font-size: 15pt;
-    color:#DF0000;
+    color: #DF0000;
     background-color: white;
 }
+
 .suit-club {
     font-size: 15pt;
-    color:black;
+    color: black;
     background-color: white;
 }
 
@@ -600,9 +561,71 @@ header {
 .phrase-color1 {
     color: #4A4A4A;
 }
+
 .phrase-color2 {
     color: #FFC107;
 }
+
 .phrase-color3 {
     color: #0052CC;
+}
+
+#home-message-1 {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    background-color: #0d6efd;
+    margin: 75px 10px;
+    padding: 20px;
+     opacity: 85%;
+    border: 1px solid #2f363c;
+    box-shadow: #2f363c 5px 5px 5px;
+}
+
+#home-message-2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: forestgreen;
+    margin-top: 200px;
+    padding: 20px;
+    opacity: 85%;
+    box-shadow: #2f363c 5px 5px 5px;
+}
+
+#home-message-3 {
+    position: absolute;
+    bottom: 200px;
+    left: 0;
+    background-color: #0d6efd;
+    padding: 20px;
+    opacity: 85%;
+    box-shadow: #2f363c 5px 5px 5px;
+}
+
+#home-message-4 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: forestgreen;
+    padding: 20px;
+    opacity: 85%;
+    box-shadow: #2f363c 5px 5px 5px;
+}
+
+.pao-info-image,
+.pao-info-card,
+.pao-image,
+.palace-image,
+#quiz-image,
+#home-message-1,
+#home-message-2,
+#home-message-3,
+#home-message-4,
+.border-default{
+    border-top: 1px solid #2f363c;
+    border-left: 1px solid #2f363c;
+    border-bottom: 1px solid gray;
+    border-right: 1px solid gray;
+    border-radius: 5%;
 }
