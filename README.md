@@ -1,9 +1,9 @@
 # PAO Matrix Technique
 <a href="https://www.youtube.com/watch?v=OApSOU7NIAw" target="_blank"><img src="src/main/resources/doc/paocards-front-page.png" alt="Click to view YouTube of Memory Championship"></a><sup>Click image to view YouTube of this Memory Championship.</sup>
 
-This memory technique is used by the participants in the World Memory Championships, where you quickly browse through a random shuffled deck of cards and recall the cards in chronological order.
+This memory technique is used by participants in the World Memory Championships, where you quickly browse through a random shuffled deck of cards, memorizing and recalling the cards in chronological order.
 
-This web app helps train this memory technique and expand your capacity to memorize a full deck of cards, chronologically.
+This web app helps train this memory technique and will expand your capacity to memorize a full deck of cards, chronologically.
 
 ## Why?
 You might think, "Why would I want to spend my precious time on trying to memorize a random deck of playing cards, chronologically?"
@@ -28,10 +28,10 @@ But most importantly, mastering this memory skill, makes you the champion of you
 I would guess that you can master this technique, in about a few weeks, if you put some effort into it. Trust yourself, you can do it and you'll get a major kick and self-esteem out of it.
 
 ## Components
-It consists of the following components:
-- PAO (Person-Action-Object) Matrix.
-- Quiz interface with randomized card decks.
-- Memory Palace interface.
+It consists of the following main components:
+- PAO Matrix.
+- Quiz.
+- Memory Palace.
 
 ## PAO Matrix
 <p>If you're "normal", you can master this skill in a few weeks, but you have to be disciplined, persistent and focus on memorizing the PAO Matrix.</p>
