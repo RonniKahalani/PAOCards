@@ -1,7 +1,6 @@
 # PAO Matrix Technique
 <a href="https://www.youtube.com/watch?v=OApSOU7NIAw" target="_blank"><img src="src/main/resources/doc/paocards-front-page.png" alt="Click to view YouTube of Memory Championship"></a><sup>Click image to view YouTube of this Memory Championship.</sup>
 
-<i class="bi bi-suit-heart-fill suit-heart"></i>
 This memory technique is used by the participants in the World Memory Championships, where you quickly browse through a random shuffled deck of cards and recall the cards in chronological order.
 
 This web app helps train this memory technique and expand your capacity to memorize a full deck of cards, chronologically.
