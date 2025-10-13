@@ -63,5 +63,4 @@ public class CardDeck {
     public void shuffle() {
         Collections.shuffle(cards);
     }
-
 }

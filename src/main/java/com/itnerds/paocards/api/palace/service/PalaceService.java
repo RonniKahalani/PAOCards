@@ -34,16 +34,21 @@ import java.nio.charset.Charset;
 import java.util.HashMap;
 import java.util.Optional;
 
+/**
+ * Service for managing palaces.
+ */
 @Service
 public class PalaceService {
 
     private final HashMap<String, String> palaces;
 
+    /**
+     * Constructor
+     * @throws Exception if the palace cannot be loaded.
+     */
     public PalaceService() throws Exception {
 
         palaces = new HashMap<>();
-
-
         final String[] palacePathNames = new String[]{"palace/default.json"};
 
         for(String palacePathName : palacePathNames) {
@@ -52,9 +57,13 @@ public class PalaceService {
             String name = fileName.substring(0, fileName.lastIndexOf("."));
             palaces.put(name, palace);
         }
-
     }
 
+    /**
+     * Finds a palace by name.
+     * @param name the palace name.
+     * @return the palace if found, otherwise empty.
+     */
     public Optional<String> find(String name) {
         return Optional.ofNullable(palaces.get(name));
     }

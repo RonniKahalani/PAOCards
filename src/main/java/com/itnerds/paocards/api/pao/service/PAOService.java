@@ -34,15 +34,21 @@ import java.nio.charset.Charset;
 import java.util.HashMap;
 import java.util.Optional;
 
+/**
+ * Service for managing PAO matrices.
+ */
 @Service
 public class PAOService {
 
     private final HashMap<String, String> paoMatrices;
 
+    /**
+     * Constructor
+     * @throws Exception if the PAO matrix cannot be loaded.
+     */
     public PAOService() throws Exception {
 
         paoMatrices = new HashMap<>();
-
 
         final String[] paoPathNames = new String[]{"pao/default.json"};
 
@@ -52,9 +58,13 @@ public class PAOService {
             String name = fileName.substring(0, fileName.lastIndexOf("."));
             paoMatrices.put(name, paoMatrix);
         }
-
     }
 
+    /**
+     * Finds a PAO matrix by name.
+     * @param name the PAO matrix name.
+     * @return an Optional containing the PAO matrix if found, otherwise an empty Optional.
+     */
     public Optional<String> find(String name) {
         return Optional.ofNullable(paoMatrices.get(name));
     }

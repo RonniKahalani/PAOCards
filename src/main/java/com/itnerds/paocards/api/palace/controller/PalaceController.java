@@ -32,16 +32,30 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
+/**
+ * Controller for managing palaces.
+ */
 @CrossOrigin // Allow all domain origins.
 @RestController
 @RequestMapping("api/v1/palace")
 public class PalaceController {
+
     final private PalaceService palaceService;
 
+    /**
+     * Constructor
+     * @param palaceService handling the palace logic.
+     */
     public PalaceController(PalaceService palaceService) {
         this.palaceService = palaceService;
     }
 
+    /**
+     * Returns a palace by id.
+     * @param id the palace id.
+     * @return the palace.
+     * @throws ResourceNotFoundException if the palace is not found.
+     */
     @GetMapping("/{id}")
     public ResponseEntity<String> find(@PathVariable("id") String id) throws ResourceNotFoundException {
         Optional<String> item = Optional.of(palaceService.find(id)

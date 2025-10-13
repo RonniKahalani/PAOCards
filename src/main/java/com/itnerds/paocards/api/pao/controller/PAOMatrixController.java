@@ -32,6 +32,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
+/**
+ * Controller for managing PAO matrices.
+ */
 @CrossOrigin // Allow all domain origins.
 @RestController
 @RequestMapping("api/v1/pao")
@@ -39,10 +42,20 @@ public class PAOMatrixController {
 
     final private PAOService paoService;
 
+    /**
+     * Constructor
+     * @param paoService handling the PAO matrix logic.
+     */
     public PAOMatrixController(PAOService paoService) {
         this.paoService = paoService;
     }
 
+    /**
+     * Returns a PAO matrix by id.
+     * @param id the PAO matrix id.
+     * @return the PAO matrix.
+     * @throws ResourceNotFoundException if the PAO matrix is not found.
+     */
     @GetMapping("/{id}")
     public ResponseEntity<String> find(@PathVariable("id") String id) throws ResourceNotFoundException {
         Optional<String> item = Optional.of(paoService.find(id)

@@ -44,10 +44,19 @@ public class QuizController {
 
     private final QuizService quizService;
 
+    /**
+     * Constructor
+     * @param quizService handling the quiz logic.
+     */
     public QuizController(QuizService quizService) {
         this.quizService = quizService;
     }
 
+    /**
+     * Returns a shuffled deck of cards.
+     * @return the shuffled deck of cards.
+     * @throws ResourceNotFoundException if the deck of cards is not found.
+     */
     @GetMapping()
     public ResponseEntity<CardDeck> cards() throws ResourceNotFoundException {
         Optional<CardDeck> item = Optional.of(quizService.cards()

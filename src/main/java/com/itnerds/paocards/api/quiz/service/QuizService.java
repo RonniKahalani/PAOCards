@@ -38,7 +38,8 @@ import java.util.Optional;
 public class QuizService {
 
     /**
-     * @return a new shuffled deck of cards.
+     * Returns a shuffled deck of cards.
+     * @return the shuffled deck of cards.
      */
     public Optional<CardDeck> cards() {
         CardDeck deck = new CardDeck();
