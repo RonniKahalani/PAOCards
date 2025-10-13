@@ -36,12 +36,12 @@ It consists of the following components:
 
 ## PAO Matrix
 <p>If you're "normal", you can master this skill in a few weeks, but you have to be disciplined, persistent and focus on memorizing the PAO Matrix.</p>
-<img width="100%" src="src/main/resources/doc/matrix.jpg" alt="PAO Matrix"><sup>Click image to enlarge.</sup>
+<img style="width:100%" src="src/main/resources/doc/matrix.jpg" alt="PAO Matrix"><sup>Click image to enlarge.</sup>
 
 ## PAO Quiz
 <p>The Quiz interface helps you train your PAO Matrix memory speed and correctness, by prompting you to recall the Person, Action & Object values for a given card.</p>
-<img width="100%" src="src/main/resources/doc/quiz.png" alt="Quiz">
-<p>The random card is represented by a visuel image of the person behind the card. This helps you cards associated PAO values.</p>
+<img style="width:100%" src="src/main/resources/doc/quiz.png" alt="Quiz">
+<p>The random card is represented by a visual image of the person behind the card. This helps you cards associated PAO values.</p>
 <p>So the correct answers, in this case, are</p>
 
 - Person = Victoria Beckham
@@ -51,7 +51,7 @@ It consists of the following components:
 
 ## PAO Memory Palace
 <p>The Memory Palace interface helps you train and navigate your memory palace, which holds 52 cards, in 17 locations, each holding the next 3 cards, with one last card left.</p>
-<img width="100%" src="src/main/resources/doc/memory-palace.png" alt="Memory Palace">
+<img style="width:100%" src="src/main/resources/doc/memory-palace.png" alt="Memory Palace">
 
 Each location defines a weird memorable sentence, from its three cards, that you should take a second and visualize in your mind, by combining:<br>
 - the person value of the first card = Victoria Beckham<br>
@@ -61,23 +61,23 @@ Each location defines a weird memorable sentence, from its three cards, that you
 <p>So the sentence = "Victoria Beckham - Breaks nail on - Cigarette" represents Q&clubs; - 2&hearts; - 3&diams;</p>
 
 ### Reversing the thought process
-Imagine your done going through all the cards and recal the first location sentence, like the one above "Victoria Beckham - Breaks nail on - Cigarette".
+Imagine you're done going through all the cards and recall the first location sentence, like the one above "Victoria Beckham - Breaks nail on - Cigarette".
 
 #### First card (Victoria Beckham):
 - A celebrity = matrix columns (12, 13). She is a female = even number = 12 = "Queen".
-- In the COOL, SERIOUS, CRAZY category = CLUBS (&clubs;).
+- In the COOL, SERIOUS, CRAZY category = CLUBS = &clubs;.
 - Card = Q&clubs;
 
 #### Second card (Breaks nail on):
 - You remember Flojo is a female olympic athlete runner with long colorful nails.
 - An athlete = matrix columns (1, 2). She is female = even number = 2.
-- In the LOVABLE, GREAT, GOOD category = HEARTS (&hearts;).
+- In the LOVABLE, GREAT, GOOD category = HEARTS = &hearts;.
 - Card = 2&hearts;
 
 #### Third card (Cigarette):
-- You remember George Clooney, the moviestar, smokes a cigarette.
-- A moviestar = matrix columns (3, 4). He is male = odd number = 3.
-- In the RICH, STYLISH, BLING category = DIAMONDS (&diams;).
+- You remember George Clooney, the movie star, smokes a cigarette.
+- A movie star = matrix columns (3, 4). He is male = odd number = 3.
+- In the RICH, STYLISH, BLING category = DIAMONDS = &diams;.
 - Card = 3&diams;
 
 ## More Information
