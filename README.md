@@ -56,7 +56,7 @@ Each location defines a weird memorable sentence, from its three cards, that you
 - action value of the second card = star-jumps on<br>
 - object value of the third card = suicide bomber<br>
 
-<p>So the sentence = "Steve Jobs - star-jumps on - suicide bomber" represents 9 of Hearts - Queen of Hearts - 3 of Clubs.</p>
+<p>So the sentence = "Steve Jobs - star-jumps on - suicide bomber" represents 9 of Hearts - Queen of Hearts - 5 of Clubs.</p>
 
 ### Reversing the thought process
 Imagine you're done going through all the cards and recall the first location sentence, like the one above "Victoria Beckham - Breaks nail on - Cigarette".
@@ -68,7 +68,7 @@ Imagine you're done going through all the cards and recall the first location se
 
 #### Second card (star-jumps on):
 - You remember Michelle Obama does the star-jumping. She's female celebrity.
-- A celebrity = matrix columns (12, 13). She is female = even number = 12.
+- A celebrity = matrix columns (12, 13). She is female = even number = 12 (Queen).
 - In the lovable category / suit = Hearts.
 - Card = Queen of Hearts.
 
@@ -76,7 +76,7 @@ Imagine you're done going through all the cards and recall the first location se
 - You remember the controversial Bin Laden doing a video of a suicide bomber.
 - A controversial = matrix columns (5, 6). He is male = odd number = 5.
 - In the weird category / suit = Clubs.
-- Card = 3 of Clubs.
+- Card = 5 of Clubs.
 
 ## More Information
 To get more in-depth understanding of how this memory technique works, check this out: [Introduction to the PAO Matrix technique](https://learningisliving.dk/2018/03/25/remember-carddeck/).
