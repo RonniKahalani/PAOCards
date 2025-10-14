@@ -51,10 +51,10 @@ It consists of the following main components:
 <p>The Memory Palace interface helps you train and navigate your memory palace, which holds 52 cards, in 17 locations, each holding the next 3 cards, with one last card left.</p>
 <img style="width:100%" src="src/main/resources/doc/memory-palace.png" alt="Memory Palace">
 
-Each location defines a weird memorable sentence, from its three cards, that you should take a second and visualize in your mind, by combining:<br>
-- the person value of the first card = Steve Jobs<br>
-- the action value of the second card = star-jumps on<br>
-- the object value of the third card = suicide bomber<br>
+Each location defines a weird memorable sentence, from its three cards, that you should take a second and visualize in your mind, by combining the:<br>
+- person value of the first card = Steve Jobs<br>
+- action value of the second card = star-jumps on<br>
+- object value of the third card = suicide bomber<br>
 
 <p>So the sentence = "Steve Jobs - star-jumps on - suicide bomber" represents 9&hearts; - Q&hearts; - 3&clubs;</p>
 
