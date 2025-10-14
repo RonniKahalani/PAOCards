@@ -56,10 +56,10 @@ Each location defines a weird memorable sentence, from its three cards, that you
 - action value of the second card = star-jumps on<br>
 - object value of the third card = suicide bomber<br>
 
-<p>So the sentence "Steve Jobs - star-jumps on - suicide bomber" = 9 of Hearts, Queen of Hearts and 5 of Clubs.</p>
-
 ### Reversing the thought process
-Imagine you're done going through all the cards and recall the first location sentence, like the one above "Steve Jobs - star-jumps on - suicide bomber".
+Imagine you're done going through all the cards and recall the first location sentence, like the one above
+
+"Steve Jobs - star-jumps on - suicide bomber".
 
 #### First card (Steve Jobs):
 - A powerful person = matrix columns (9, 10). He is a male = odd number = 9.
@@ -77,6 +77,8 @@ Imagine you're done going through all the cards and recall the first location se
 - A controversial = matrix columns (5, 6). He is male = odd number = 5.
 - In the weird category / suit = Clubs.
 - Card = 5 of Clubs.
+
+<p>So the result = (9 of Hearts), (Queen of Hearts) and (5 of Clubs).</p>
 
 ## More Information
 To get more in-depth understanding of how this memory technique works, check this out: [Introduction to the PAO Matrix technique](https://learningisliving.dk/2018/03/25/remember-carddeck/).
