@@ -32,13 +32,13 @@
 </head>
 
 <body>
-<div class="mask"></div>
 <header>
-    <div id="panel">
-        <div id="panel-left" class="p-2">
-            <span id="panel-title">PAO Card Matrix</span>
+
+    <div id="panel" class="row">
+        <div id="panel-left" class="col-4 p-2">
+            <span id="panel-title">PAO Matrix Trainer</span>
         </div>
-        <div id="panel-center" class="p-2">
+        <div id="panel-center" class="col-4 p-2">
             <ul class="nav nav-pills nav-fill gap-2 p-1 small bg-primary rounded-5 shadow-sm" id="pillNav2"
                 role="tablist"
                 style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
@@ -70,13 +70,15 @@
                 </li>
             </ul>
         </div>
-        <div id="panel-right" class="row text-end p-2" style="vertical-align: middle">
+
+        <div id="panel-right" class="row text-end col-4 p-2">
             <i id="btn-fullscreen" class="bi bi-fullscreen mt-2" title="Toggle Full Screen Mode"></i>
         </div>
     </div>
 </header>
 
 <div id="content">
+    <!-- Home -->
     <div id="pao-home">
 
         <div class="chat-messages">
@@ -109,6 +111,22 @@
                 </div>
             </div>
         </div>
+        <section id="section-do-it" class="section">
+            <div class="section-info">
+                <h2 class="section-title">You can do it too!</h2>
+                <p class="section-message">The hardest part of acquiring this skill is the lack of self-confidence. Most are capable of
+                    mastering this skill, but don't believe they can do it.</p>
+            </div>
+        </section>
+        <section id="section-neurons" class="section">
+            <div class="section-info">
+                <h2 class="section-title">You can do it too!</h2>
+                <p class="section-message">The hardest part of acquiring this skill is the lack of self-confidence. Most are capable of
+                    mastering this skill, but don't believe they can do it.</p>
+            </div>
+        </section>
+
+        <!-- Background video -->
         <iframe id=bg-video
                 src="https://www.youtube.com/embed/OApSOU7NIAw?si=3TqiLNDF62ySMG5j&autoplay=1&mute=1&controls=0&loop=1&start=59"
                 allowFullScreen allow=autoplay/>
@@ -910,281 +928,243 @@
             </button>
         </div>
 
-        <table id="palace-table">
+        <div id="palace-entries">
 
-            <tr id="palace-loci-1" class="palace-loci">
-                <td>
-                    <div id="palace-label-1" class="palace-label"></div>
-                    <img id="palace-image-1" class="palace-image" src="" alt="">
-                    <div id="palace-info-1" class="palace-info"></div>
+            <div id="palace-loci-1" class="palace-loci">
+                <div id="palace-label-1" class="palace-label"></div>
+                <img id="palace-image-1" class="palace-image" src="" alt="">
+                <div id="palace-info-1" class="palace-info"></div>
 
-                    <div class="palace-items">
-                        <span id="palace-item-1" class="palace-item"></span>
-                        <span id="palace-item-2" class="palace-item"></span>
-                        <span id="palace-item-3" class="palace-item"></span>
-                    </div>
-                    <div id="palace-phrase-1" class="palace-phrase"></div>
-                </td>
-            </tr>
+                <div class="palace-items">
+                    <span id="palace-item-1" class="palace-item"></span>
+                    <span id="palace-item-2" class="palace-item"></span>
+                    <span id="palace-item-3" class="palace-item"></span>
+                </div>
+                <div id="palace-phrase-1" class="palace-phrase"></div>
+            </div>
 
-            <tr id="palace-loci-2" class="palace-loci">
-                <td>
-                    <div id="palace-label-2" class="palace-label"></div>
-                    <img id="palace-image-2" class="palace-image" src="" alt="">
-                    <div id="palace-info-2" class="palace-info"></div>
+            <div id="palace-loci-2" class="palace-loci">
+                <div id="palace-label-2" class="palace-label"></div>
+                <img id="palace-image-2" class="palace-image" src="" alt="">
+                <div id="palace-info-2" class="palace-info"></div>
 
-                    <div class="palace-items">
-                        <span id="palace-item-4" class="palace-item"></span>
-                        <span id="palace-item-5" class="palace-item"></span>
-                        <span id="palace-item-6" class="palace-item"></span>
-                    </div>
-                    <div id="palace-phrase-2" class="palace-phrase"></div>
-                </td>
-            </tr>
+                <div class="palace-items">
+                    <span id="palace-item-4" class="palace-item"></span>
+                    <span id="palace-item-5" class="palace-item"></span>
+                    <span id="palace-item-6" class="palace-item"></span>
+                </div>
+                <div id="palace-phrase-2" class="palace-phrase"></div>
+            </div>
 
-            <tr id="palace-loci-3" class="palace-loci">
-                <td>
-                    <div id="palace-label-3" class="palace-label"></div>
-                    <img id="palace-image-3" class="palace-image" src="" alt="">
-                    <div id="palace-info-3" class="palace-info"></div>
+            <div id="palace-loci-3" class="palace-loci">
+                <div id="palace-label-3" class="palace-label"></div>
+                <img id="palace-image-3" class="palace-image" src="" alt="">
+                <div id="palace-info-3" class="palace-info"></div>
 
-                    <div class="palace-items">
-                        <span id="palace-item-7" class="palace-item"></span>
-                        <span id="palace-item-8" class="palace-item"></span>
-                        <span id="palace-item-9" class="palace-item"></span>
-                    </div>
-                    <div id="palace-phrase-3" class="palace-phrase"></div>
-                </td>
-            </tr>
+                <div class="palace-items">
+                    <span id="palace-item-7" class="palace-item"></span>
+                    <span id="palace-item-8" class="palace-item"></span>
+                    <span id="palace-item-9" class="palace-item"></span>
+                </div>
+                <div id="palace-phrase-3" class="palace-phrase"></div>
+            </div>
 
-            <tr id="palace-loci-4" class="palace-loci">
-                <td>
-                    <div id="palace-label-4" class="palace-label"></div>
-                    <img id="palace-image-4" class="palace-image" src="" alt="">
-                    <div id="palace-info-4" class="palace-info"></div>
+            <div id="palace-loci-4" class="palace-loci">
+                <div id="palace-label-4" class="palace-label"></div>
+                <img id="palace-image-4" class="palace-image" src="" alt="">
+                <div id="palace-info-4" class="palace-info"></div>
 
-                    <div class="palace-items">
-                        <span id="palace-item-10" class="palace-item"></span>
-                        <span id="palace-item-11" class="palace-item"></span>
-                        <span id="palace-item-12" class="palace-item"></span>
-                    </div>
-                    <div id="palace-phrase-4" class="palace-phrase"></div>
-                </td>
-            </tr>
+                <div class="palace-items">
+                    <span id="palace-item-10" class="palace-item"></span>
+                    <span id="palace-item-11" class="palace-item"></span>
+                    <span id="palace-item-12" class="palace-item"></span>
+                </div>
+                <div id="palace-phrase-4" class="palace-phrase"></div>
+            </div>
 
-            <tr id="palace-loci-5" class="palace-loci">
-                <td>
-                    <div id="palace-label-5" class="palace-label"></div>
-                    <img id="palace-image-5" class="palace-image" src="" alt="">
-                    <div id="palace-info-5" class="palace-info"></div>
+            <div id="palace-loci-5" class="palace-loci">
+                <div id="palace-label-5" class="palace-label"></div>
+                <img id="palace-image-5" class="palace-image" src="" alt="">
+                <div id="palace-info-5" class="palace-info"></div>
 
-                    <div class="palace-items">
-                        <span id="palace-item-13" class="palace-item"></span>
-                        <span id="palace-item-14" class="palace-item"></span>
-                        <span id="palace-item-15" class="palace-item"></span>
-                    </div>
-                    <div id="palace-phrase-5" class="palace-phrase"></div>
-                </td>
-            </tr>
+                <div class="palace-items">
+                    <span id="palace-item-13" class="palace-item"></span>
+                    <span id="palace-item-14" class="palace-item"></span>
+                    <span id="palace-item-15" class="palace-item"></span>
+                </div>
+                <div id="palace-phrase-5" class="palace-phrase"></div>
+            </div>
 
-            <tr id="palace-loci-6" class="palace-loci">
-                <td>
-                    <div id="palace-label-6" class="palace-label"></div>
-                    <img id="palace-image-6" class="palace-image" src="" alt="">
-                    <div id="palace-info-6" class="palace-info"></div>
+            <div id="palace-loci-6" class="palace-loci">
+                <div id="palace-label-6" class="palace-label"></div>
+                <img id="palace-image-6" class="palace-image" src="" alt="">
+                <div id="palace-info-6" class="palace-info"></div>
 
-                    <div class="palace-items">
-                        <span id="palace-item-16" class="palace-item"></span>
-                        <span id="palace-item-17" class="palace-item"></span>
-                        <span id="palace-item-18" class="palace-item"></span>
-                    </div>
-                    <div id="palace-phrase-6" class="palace-phrase"></div>
-                </td>
-            </tr>
+                <div class="palace-items">
+                    <span id="palace-item-16" class="palace-item"></span>
+                    <span id="palace-item-17" class="palace-item"></span>
+                    <span id="palace-item-18" class="palace-item"></span>
+                </div>
+                <div id="palace-phrase-6" class="palace-phrase"></div>
+            </div>
 
-            <tr id="palace-loci-7" class="palace-loci">
-                <td>
-                    <div id="palace-label-7" class="palace-label"></div>
-                    <img id="palace-image-7" class="palace-image" src="" alt="">
-                    <div id="palace-info-7" class="palace-info"></div>
+            <div id="palace-loci-7" class="palace-loci">
+                <div id="palace-label-7" class="palace-label"></div>
+                <img id="palace-image-7" class="palace-image" src="" alt="">
+                <div id="palace-info-7" class="palace-info"></div>
 
-                    <div class="palace-items">
-                        <span id="palace-item-19" class="palace-item"></span>
-                        <span id="palace-item-20" class="palace-item"></span>
-                        <span id="palace-item-21" class="palace-item"></span>
-                    </div>
-                    <div id="palace-phrase-7" class="palace-phrase"></div>
-                </td>
-            </tr>
+                <div class="palace-items">
+                    <span id="palace-item-19" class="palace-item"></span>
+                    <span id="palace-item-20" class="palace-item"></span>
+                    <span id="palace-item-21" class="palace-item"></span>
+                </div>
+                <div id="palace-phrase-7" class="palace-phrase"></div>
+            </div>
 
-            <tr id="palace-loci-8" class="palace-loci">
-                <td>
-                    <div id="palace-label-8" class="palace-label"></div>
-                    <img id="palace-image-8" class="palace-image" src="" alt="">
-                    <div id="palace-info-8" class="palace-info"></div>
+            <div id="palace-loci-8" class="palace-loci">
+                <div id="palace-label-8" class="palace-label"></div>
+                <img id="palace-image-8" class="palace-image" src="" alt="">
+                <div id="palace-info-8" class="palace-info"></div>
 
-                    <div class="palace-items">
-                        <span id="palace-item-22" class="palace-item"></span>
-                        <span id="palace-item-23" class="palace-item"></span>
-                        <span id="palace-item-24" class="palace-item"></span>
-                    </div>
-                    <div id="palace-phrase-8" class="palace-phrase"></div>
-                </td>
-            </tr>
+                <div class="palace-items">
+                    <span id="palace-item-22" class="palace-item"></span>
+                    <span id="palace-item-23" class="palace-item"></span>
+                    <span id="palace-item-24" class="palace-item"></span>
+                </div>
+                <div id="palace-phrase-8" class="palace-phrase"></div>
+            </div>
 
-            <tr id="palace-loci-9" class="palace-loci">
-                <td>
-                    <div id="palace-label-9" class="palace-label"></div>
-                    <img id="palace-image-9" class="palace-image" src="" alt="">
-                    <div id="palace-info-9" class="palace-info"></div>
+            <div id="palace-loci-9" class="palace-loci">
+                <div id="palace-label-9" class="palace-label"></div>
+                <img id="palace-image-9" class="palace-image" src="" alt="">
+                <div id="palace-info-9" class="palace-info"></div>
 
-                    <div class="palace-items">
-                        <span id="palace-item-25" class="palace-item"></span>
-                        <span id="palace-item-26" class="palace-item"></span>
-                        <span id="palace-item-27" class="palace-item"></span>
-                    </div>
-                    <div id="palace-phrase-9" class="palace-phrase"></div>
-                </td>
-            </tr>
+                <div class="palace-items">
+                    <span id="palace-item-25" class="palace-item"></span>
+                    <span id="palace-item-26" class="palace-item"></span>
+                    <span id="palace-item-27" class="palace-item"></span>
+                </div>
+                <div id="palace-phrase-9" class="palace-phrase"></div>
+            </div>
 
-            <tr id="palace-loci-10" class="palace-loci">
-                <td>
-                    <div id="palace-label-10" class="palace-label"></div>
-                    <img id="palace-image-10" class="palace-image" src="" alt="">
-                    <div id="palace-info-10" class="palace-info"></div>
+            <div id="palace-loci-10" class="palace-loci">
+                <div id="palace-label-10" class="palace-label"></div>
+                <img id="palace-image-10" class="palace-image" src="" alt="">
+                <div id="palace-info-10" class="palace-info"></div>
 
-                    <div class="palace-items">
-                        <span id="palace-item-28" class="palace-item"></span>
-                        <span id="palace-item-29" class="palace-item"></span>
-                        <span id="palace-item-30" class="palace-item"></span>
-                    </div>
-                    <div id="palace-phrase-10" class="palace-phrase"></div>
-                </td>
-            </tr>
+                <div class="palace-items">
+                    <span id="palace-item-28" class="palace-item"></span>
+                    <span id="palace-item-29" class="palace-item"></span>
+                    <span id="palace-item-30" class="palace-item"></span>
+                </div>
+                <div id="palace-phrase-10" class="palace-phrase"></div>
+            </div>
 
-            <tr id="palace-loci-11" class="palace-loci">
-                <td>
-                    <div id="palace-label-11" class="palace-label"></div>
-                    <img id="palace-image-11" class="palace-image" src="" alt="">
-                    <div id="palace-info-11" class="palace-info"></div>
+            <div id="palace-loci-11" class="palace-loci">
+                <div id="palace-label-11" class="palace-label"></div>
+                <img id="palace-image-11" class="palace-image" src="" alt="">
+                <div id="palace-info-11" class="palace-info"></div>
 
-                    <div class="palace-items">
-                        <span id="palace-item-31" class="palace-item"></span>
-                        <span id="palace-item-32" class="palace-item"></span>
-                        <span id="palace-item-33" class="palace-item"></span>
-                    </div>
-                    <div id="palace-phrase-11" class="palace-phrase"></div>
-                </td>
-            </tr>
+                <div class="palace-items">
+                    <span id="palace-item-31" class="palace-item"></span>
+                    <span id="palace-item-32" class="palace-item"></span>
+                    <span id="palace-item-33" class="palace-item"></span>
+                </div>
+                <div id="palace-phrase-11" class="palace-phrase"></div>
+            </div>
 
-            <tr id="palace-loci-12" class="palace-loci">
-                <td>
-                    <div id="palace-label-12" class="palace-label"></div>
-                    <img id="palace-image-12" class="palace-image" src="" alt="">
-                    <div id="palace-info-12" class="palace-info"></div>
+            <div id="palace-loci-12" class="palace-loci">
+                <div id="palace-label-12" class="palace-label"></div>
+                <img id="palace-image-12" class="palace-image" src="" alt="">
+                <div id="palace-info-12" class="palace-info"></div>
 
-                    <div class="palace-items">
-                        <span id="palace-item-34" class="palace-item"></span>
-                        <span id="palace-item-35" class="palace-item"></span>
-                        <span id="palace-item-36" class="palace-item"></span>
-                    </div>
-                    <div id="palace-phrase-12" class="palace-phrase"></div>
-                </td>
-            </tr>
+                <div class="palace-items">
+                    <span id="palace-item-34" class="palace-item"></span>
+                    <span id="palace-item-35" class="palace-item"></span>
+                    <span id="palace-item-36" class="palace-item"></span>
+                </div>
+                <div id="palace-phrase-12" class="palace-phrase"></div>
+            </div>
 
-            <tr id="palace-loci-13" class="palace-loci">
-                <td>
-                    <div id="palace-label-13" class="palace-label"></div>
-                    <img id="palace-image-13" class="palace-image" src="" alt="">
-                    <div id="palace-info-13" class="palace-info"></div>
+            <div id="palace-loci-13" class="palace-loci">
+                <div id="palace-label-13" class="palace-label"></div>
+                <img id="palace-image-13" class="palace-image" src="" alt="">
+                <div id="palace-info-13" class="palace-info"></div>
 
-                    <div class="palace-items">
-                        <span id="palace-item-37" class="palace-item"></span>
-                        <span id="palace-item-38" class="palace-item"></span>
-                        <span id="palace-item-39" class="palace-item"></span>
-                    </div>
-                    <div id="palace-phrase-13" class="palace-phrase"></div>
-                </td>
-            </tr>
+                <div class="palace-items">
+                    <span id="palace-item-37" class="palace-item"></span>
+                    <span id="palace-item-38" class="palace-item"></span>
+                    <span id="palace-item-39" class="palace-item"></span>
+                </div>
+                <div id="palace-phrase-13" class="palace-phrase"></div>
+            </div>
 
-            <tr id="palace-loci-14" class="palace-loci">
-                <td>
-                    <div id="palace-label-14" class="palace-label"></div>
-                    <img id="palace-image-14" class="palace-image" src="" alt="">
-                    <div id="palace-info-14" class="palace-info"></div>
+            <div id="palace-loci-14" class="palace-loci">
+                <div id="palace-label-14" class="palace-label"></div>
+                <img id="palace-image-14" class="palace-image" src="" alt="">
+                <div id="palace-info-14" class="palace-info"></div>
 
-                    <div class="palace-items">
-                        <span id="palace-item-40" class="palace-item"></span>
-                        <span id="palace-item-41" class="palace-item"></span>
-                        <span id="palace-item-42" class="palace-item"></span>
-                    </div>
-                    <div id="palace-phrase-14" class="palace-phrase"></div>
-                </td>
-            </tr>
+                <div class="palace-items">
+                    <span id="palace-item-40" class="palace-item"></span>
+                    <span id="palace-item-41" class="palace-item"></span>
+                    <span id="palace-item-42" class="palace-item"></span>
+                </div>
+                <div id="palace-phrase-14" class="palace-phrase"></div>
+            </div>
 
-            <tr id="palace-loci-15" class="palace-loci">
-                <td>
-                    <div id="palace-label-15" class="palace-label"></div>
-                    <img id="palace-image-15" class="palace-image" src="" alt="">
-                    <div id="palace-info-15" class="palace-info"></div>
+            <div id="palace-loci-15" class="palace-loci">
+                <div id="palace-label-15" class="palace-label"></div>
+                <img id="palace-image-15" class="palace-image" src="" alt="">
+                <div id="palace-info-15" class="palace-info"></div>
 
-                    <div class="palace-items">
-                        <span id="palace-item-43" class="palace-item"></span>
-                        <span id="palace-item-44" class="palace-item"></span>
-                        <span id="palace-item-45" class="palace-item"></span>
-                    </div>
-                    <div id="palace-phrase-15" class="palace-phrase"></div>
-                </td>
-            </tr>
+                <div class="palace-items">
+                    <span id="palace-item-43" class="palace-item"></span>
+                    <span id="palace-item-44" class="palace-item"></span>
+                    <span id="palace-item-45" class="palace-item"></span>
+                </div>
+                <div id="palace-phrase-15" class="palace-phrase"></div>
+            </div>
 
-            <tr id="palace-loci-16" class="palace-loci">
-                <td>
-                    <div id="palace-label-16" class="palace-label"></div>
-                    <img id="palace-image-16" class="palace-image" src="" alt="">
-                    <div id="palace-info-16" class="palace-info"></div>
+            <div id="palace-loci-16" class="palace-loci">
+                <div id="palace-label-16" class="palace-label"></div>
+                <img id="palace-image-16" class="palace-image" src="" alt="">
+                <div id="palace-info-16" class="palace-info"></div>
 
-                    <div class="palace-items">
-                        <span id="palace-item-46" class="palace-item"></span>
-                        <span id="palace-item-47" class="palace-item"></span>
-                        <span id="palace-item-48" class="palace-item"></span>
-                    </div>
-                    <div id="palace-phrase-16" class="palace-phrase"></div>
-                </td>
-            </tr>
+                <div class="palace-items">
+                    <span id="palace-item-46" class="palace-item"></span>
+                    <span id="palace-item-47" class="palace-item"></span>
+                    <span id="palace-item-48" class="palace-item"></span>
+                </div>
+                <div id="palace-phrase-16" class="palace-phrase"></div>
+            </div>
 
-            <tr id="palace-loci-17" class="palace-loci">
-                <td>
-                    <div id="palace-label-17" class="palace-label"></div>
-                    <img id="palace-image-17" class="palace-image" src="" alt="">
-                    <div id="palace-info-17" class="palace-info"></div>
+            <div id="palace-loci-17" class="palace-loci">
+                <div id="palace-label-17" class="palace-label"></div>
+                <img id="palace-image-17" class="palace-image" src="" alt="">
+                <div id="palace-info-17" class="palace-info"></div>
 
-                    <div class="palace-items">
-                        <span id="palace-item-49" class="palace-item"></span>
-                        <span id="palace-item-50" class="palace-item"></span>
-                        <span id="palace-item-51" class="palace-item"></span>
-                    </div>
-                    <div id="palace-phrase-17" class="palace-phrase"></div>
-                </td>
-            </tr>
+                <div class="palace-items">
+                    <span id="palace-item-49" class="palace-item"></span>
+                    <span id="palace-item-50" class="palace-item"></span>
+                    <span id="palace-item-51" class="palace-item"></span>
+                </div>
+                <div id="palace-phrase-17" class="palace-phrase"></div>
+            </div>
 
-            <tr id="palace-loci-18" class="palace-loci">
-                <td>
-                    <div id="palace-label-18" class="palace-label"></div>
-                    <img id="palace-image-18" class="palace-image" src="" alt="">
-                    <div id="palace-info-18" class="palace-info"></div>
+            <div id="palace-loci-18" class="palace-loci">
+                <div id="palace-label-18" class="palace-label"></div>
+                <img id="palace-image-18" class="palace-image" src="" alt="">
+                <div id="palace-info-18" class="palace-info"></div>
 
-                    <div class="palace-items">
-                        <span id="palace-item-52" class="palace-item"></span>
-                    </div>
-                    <div id="palace-phrase-18" class="palace-phrase"></div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <button id="btn-reveal-loci-cards" class="btn btn-danger btn-sm">Reveal Cards</button>
-                </td>
-            </tr>
-        </table>
+                <div class="palace-items">
+                    <span id="palace-item-52" class="palace-item"></span>
+                </div>
+                <div id="palace-phrase-18" class="palace-phrase"></div>
+            </div>
+            <div>
+                <button id="btn-reveal-loci-cards" class="btn btn-danger btn-sm">Reveal Cards</button>
+            </div>
+        </div>
     </div>
 </div>
 
