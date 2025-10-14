@@ -699,7 +699,8 @@ export class Quiz {
             if (i > 0 && (i + 1) % 3 === 0) {
                 const id = (i + 1) / 3;
                 const quizPerson = this.quizCards[i - 2].pao.person;
-                const quizAction = this.quizCards[i - 1].pao.action.toLowerCase();
+                const action = this.quizCards[i - 1].pao.action;
+                const quizAction = action.charAt(0).toUpperCase() + action.slice(1)
                 const quizObject = this.quizCards[i].pao.object;
 
                 // Set a 3 colored phrase.
