@@ -56,33 +56,35 @@ Each location defines a weird memorable sentence, from its three cards, that you
 - action value of the second card = star-jumps on<br>
 - object value of the third card = suicide bomber<br>
 
-<p>So the sentence = "Steve Jobs - star-jumps on - suicide bomber" represents 9&hearts; - Q&hearts; - 3&clubs;</p>
+<p>So the sentence = "Steve Jobs - star-jumps on - suicide bomber" represents 9 of Hearts - Queen of Hearts - 3 of Clubs.</p>
 
 ### Reversing the thought process
 Imagine you're done going through all the cards and recall the first location sentence, like the one above "Victoria Beckham - Breaks nail on - Cigarette".
 
 #### First card (Steve Jobs):
 - A powerful person = matrix columns (9, 10). He is a male = odd number = 9.
-- In the lovable group / suit = HEARTS = &hearts;.
-- Card = 9 of &hearts;
+- In the lovable group / suit = Hearts.
+- Card = 9 of Hearts.
 
 #### Second card (star-jumps on):
 - You remember Michelle Obama does the star-jumping. She's female celebrity.
 - A celebrity = matrix columns (12, 13). She is female = even number = 12.
-- In the lovable category = HEARTS = &hearts;.
-- Card = Queen of &hearts;
+- In the lovable category / suit = Hearts.
+- Card = Queen of Hearts.
 
 #### Third card (suicide bomber):
 - You remember the controversial Bin Laden doing a video of a suicide bomber.
 - A controversial = matrix columns (5, 6). He is male = odd number = 5.
-- In the weird category = CLUBS = &clubs;.
-- Card = 3 of &clubs;
+- In the weird category / suit = Clubs.
+- Card = 3 of Clubs.
 
 ## More Information
 To get more in-depth understanding of how this memory technique works, check this out: [Introduction to the PAO Matrix technique](https://learningisliving.dk/2018/03/25/remember-carddeck/).
 
 ## Technologies
-This web app is build with Spring Boot, Java, JavaScript, HTML, CSS, Bootstrap, JSON...
+This web app is build with
+- Backend: Spring Boot, Java, serving JSON data...
+- Frontend: JavaScript, HTML, CSS, Bootstrap, JSON...
 
 ## License
 Free code use under the open-source software MIT license. Enjoy.
