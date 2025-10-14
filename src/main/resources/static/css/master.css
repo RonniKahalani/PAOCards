@@ -613,6 +613,7 @@ header {
 
 .section {
     background-color: black;
+    border-bottom: #222222 1px solid;
 }
 
 .section-title {
