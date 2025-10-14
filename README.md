@@ -39,7 +39,7 @@ It consists of the following main components:
 ## Quiz
 <p>The Quiz interface helps you train your PAO Matrix memory speed and correctness, by prompting you to recall the Person, Action & Object values for a given card.</p>
 <img style="width:100%" src="src/main/resources/doc/quiz.png" alt="Quiz">
-<p>The random card is represented by a visual image of the person behind the card. This helps you cards associated PAO values.</p>
+<p>The random card represents a visual image of the person behind the card. This should help you recall the PAO values.</p>
 <p>So the correct answers, in this case, are</p>
 
 - Person = Victoria Beckham
@@ -51,7 +51,7 @@ It consists of the following main components:
 <p>The Memory Palace interface helps you train and navigate your memory palace, which holds 52 cards, in 17 locations, each holding the next 3 cards, with one last card left.</p>
 <img style="width:100%" src="src/main/resources/doc/memory-palace.png" alt="Memory Palace">
 
-Each location defines a weird memorable sentence, from its three cards, that you should take a second and visualize in your mind, by combining the:<br>
+Each memory palace location (loci) defines a weird memorable sentence, from its three cards, that you should visualize in your mind, by combining the:<br>
 - Card 1: Person value = Steve Jobs<br>
 - Card 2: Action value = star-jumps on<br>
 - Card 3: Object value = suicide bomber<br>
