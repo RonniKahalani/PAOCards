@@ -52,31 +52,31 @@ It consists of the following main components:
 <img style="width:100%" src="src/main/resources/doc/memory-palace.png" alt="Memory Palace">
 
 Each location defines a weird memorable sentence, from its three cards, that you should take a second and visualize in your mind, by combining:<br>
-- the person value of the first card = Victoria Beckham<br>
-- the action value of the second card = Breaks nail on<br>
-- the object value of the third card = Cigarette<br>
+- the person value of the first card = Steve Jobs<br>
+- the action value of the second card = star-jumps on<br>
+- the object value of the third card = suicide bomber<br>
 
-<p>So the sentence = "Victoria Beckham - Breaks nail on - Cigarette" represents Q&clubs; - 2&hearts; - 3&diams;</p>
+<p>So the sentence = "Steve Jobs - star-jumps on - suicide bomber" represents Q&clubs; - 2&hearts; - 3&diams;</p>
 
 ### Reversing the thought process
 Imagine you're done going through all the cards and recall the first location sentence, like the one above "Victoria Beckham - Breaks nail on - Cigarette".
 
-#### First card (Victoria Beckham):
-- A celebrity = matrix columns (12, 13). She is a female = even number = 12 = "Queen".
-- In the COOL, SERIOUS, CRAZY category = CLUBS = &clubs;.
-- Card = Q&clubs;
+#### First card (Steve Jobs):
+- A powerful person = matrix columns (9, 10). He is a male = odd number = 9.
+- In the lovable group / suit = HEARTS = &hearts;.
+- Card = Queen of &hearts;
 
-#### Second card (Breaks nail on):
-- You remember Flojo is a female olympic athlete runner with long colorful nails.
-- An athlete = matrix columns (1, 2). She is female = even number = 2.
-- In the LOVABLE, GREAT, GOOD category = HEARTS = &hearts;.
-- Card = 2&hearts;
+#### Second card (star-jumps on):
+- You remember Michelle Obama does the star-jumping. She's female celebrity.
+- A celebrity = matrix columns (12, 13). She is female = even number = 12.
+- In the lovable category = HEARTS = &hearts;.
+- Card = Queen of &hearts;
 
-#### Third card (Cigarette):
-- You remember George Clooney, the movie star, smokes a cigarette.
-- A movie star = matrix columns (3, 4). He is male = odd number = 3.
-- In the RICH, STYLISH, BLING category = DIAMONDS = &diams;.
-- Card = 3&diams;
+#### Third card (suicide bomber):
+- You remember the controversial Bin Laden doing a video of a suicide bomber.
+- A controversial = matrix columns (5, 6). He is male = odd number = 5.
+- In the weird category = CLUBS = &clubs;.
+- Card = 3 of &clubs;
 
 ## More Information
 To get more in-depth understanding of how this memory technique works, check this out: [Introduction to the PAO Matrix technique](https://learningisliving.dk/2018/03/25/remember-carddeck/).
