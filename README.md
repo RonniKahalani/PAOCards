@@ -36,7 +36,7 @@ It consists of the following main components:
 <p>If you're "normal", you can master this skill in a few weeks, but you have to be disciplined, persistent and focus on memorizing the PAO Matrix.</p>
 <a href="src/main/resources/doc/matrix.jpg" target="_blank"><img style="width:100%" src="src/main/resources/doc/matrix.jpg" alt="PAO Matrix"></a><sup>Click image to enlarge.</sup>
 
-## PAO Quiz
+## Quiz
 <p>The Quiz interface helps you train your PAO Matrix memory speed and correctness, by prompting you to recall the Person, Action & Object values for a given card.</p>
 <img style="width:100%" src="src/main/resources/doc/quiz.png" alt="Quiz">
 <p>The random card is represented by a visual image of the person behind the card. This helps you cards associated PAO values.</p>
@@ -47,7 +47,7 @@ It consists of the following main components:
 - Object = Mirror
 - Card = Queen of Clubs = Q&clubs;
 
-## PAO Memory Palace
+## Memory Palace
 <p>The Memory Palace interface helps you train and navigate your memory palace, which holds 52 cards, in 17 locations, each holding the next 3 cards, with one last card left.</p>
 <img style="width:100%" src="src/main/resources/doc/memory-palace.png" alt="Memory Palace">
 
