@@ -602,13 +602,16 @@ header {
 .chat-messages {
     height: 100vh;
     margin: 20px;
+    padding-top: 135px;
 }
 
 .palace-navigation {
-    position: relative;
+    position: absolute;
     z-index: 200;
     text-align: center;
-    top:400px;
+    width:100%;
+    margin: auto;
+    padding-top: 400px;
 }
 
 .section {
