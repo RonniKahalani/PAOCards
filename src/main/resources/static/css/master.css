@@ -643,10 +643,10 @@ header {
 }
 
 .section-row {
-    margin: 20px;
-    padding: 30px;
-    vertical-align: center;
-    width: 80%;
+    margin-bottom: 20px;
+    padding: 50px;
+    text-align: center;
+    width: 100%;
     background-color: #2f363c;
     opacity: 50;
     border-radius: 5%;
