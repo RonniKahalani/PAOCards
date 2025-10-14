@@ -584,6 +584,7 @@ header {
     box-shadow: #2f363c 5px 5px 5px;
 }
 
+.section-row,
 .pao-info-image,
 .pao-info-card,
 .pao-image,
@@ -652,6 +653,7 @@ header {
     text-align: center;
     width: 100%;
     background-color: #2f363c;
-    opacity: 50;
+    opacity: 95%;
     border-radius: 5%;
+    box-shadow: #2b2b2b 2px 2px 5px;
 }
