@@ -9,7 +9,6 @@ This web app helps train this memory technique and will expand your capacity to 
 You might think, "Why would I want to spend my precious time on trying to memorize a random deck of playing cards, chronologically?"
 
 Because memorizing playing cards...
-
 - is the best memory exercise ever.
 - will improve your overall memory functions.
 - makes you good at memorizing long lists, via memory palaces.
