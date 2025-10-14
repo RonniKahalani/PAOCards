@@ -64,7 +64,7 @@ Imagine you're done going through all the cards and recall the first location se
 #### First card (Steve Jobs):
 - A powerful person = matrix columns (9, 10). He is a male = odd number = 9.
 - In the lovable group / suit = HEARTS = &hearts;.
-- Card = Queen of &hearts;
+- Card = 9 of &hearts;
 
 #### Second card (star-jumps on):
 - You remember Michelle Obama does the star-jumping. She's female celebrity.
