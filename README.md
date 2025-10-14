@@ -52,9 +52,9 @@ It consists of the following main components:
 <img style="width:100%" src="src/main/resources/doc/memory-palace.png" alt="Memory Palace">
 
 Each location defines a weird memorable sentence, from its three cards, that you should take a second and visualize in your mind, by combining the:<br>
-- person value of the first card = Steve Jobs<br>
-- action value of the second card = star-jumps on<br>
-- object value of the third card = suicide bomber<br>
+- Card 1: Person value = Steve Jobs<br>
+- Card 2: Action value = star-jumps on<br>
+- Card 3: Object value = suicide bomber<br>
 
 ### Reversing the thought process
 Imagine you're done going through all the cards and recall the first location sentence, like the one above
@@ -67,14 +67,16 @@ Imagine you're done going through all the cards and recall the first location se
 - Card = 9 of Hearts.
 
 #### Second card (star-jumps on):
-- You remember Michelle Obama does the star-jumping. She's female celebrity.
-- A celebrity = matrix columns (12, 13). She is female = even number = 12 (Queen).
+- You recall celebrity Michelle Obama is the one doing star-jumps.
+- A celebrity = matrix columns (12, 13).
+- She is female = even number = 12 (Queen).
 - In the lovable category / suit = Hearts.
 - Card = Queen of Hearts.
 
 #### Third card (suicide bomber):
-- You remember the controversial Bin Laden doing a video of a suicide bomber.
-- A controversial = matrix columns (5, 6). He is male = odd number = 5.
+- You recall the controversial Bin Laden recording a video of a suicide bomber.
+- A controversial = matrix columns (5, 6).
+- He is male = odd number = 5.
 - In the weird category / suit = Clubs.
 - Card = 5 of Clubs.
 
