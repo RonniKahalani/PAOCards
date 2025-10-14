@@ -118,8 +118,9 @@
     <div id="pao-quiz">
 
         <div id="quiz-content">
-            <div id="quiz-left">
 
+            <div id="quiz-left">
+                <!-- Intentionally left blank for future content or styling -->
             </div>
 
             <div id="quiz-center">
@@ -219,11 +220,12 @@
             </div>
 
             <div id="quiz-right">
-
+                <!-- Intentionally left blank for future content or styling -->
             </div>
         </div>
     </div>
 
+    <!-- Instructions -->
     <div id="pao-instructions">
 
         <div class="container">
@@ -315,6 +317,8 @@
             </div>
         </div>
     </div>
+
+    <!-- PAO Matrix -->
     <div id="pao-matrix">
         <div style="text-align: center">
             <div class="matrix-deck">
@@ -895,66 +899,9 @@
         </div>
     </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="tipModal" tabindex="-1" aria-labelledby="tipModalLabel"
-         aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="tipModalLabel">Tips</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <ul>
-                        <li>Every odd card is a male.</li>
-                        <li>Every even card is a female.</li>
-                        <li>Card 1 (Ace) and 2 are sport athletes.</li>
-                        <li>Card 3 and 4 are movie stars.</li>
-                        <li>Card 5 and 6 are controversial.</li>
-                        <li>Card 7 and 8 are brains (male) and beauty (female).</li>
-                        <li>Card 9 and 10 are powerful.</li>
-                        <li>Card 11 (Jack) is religious.</li>
-                        <li>Card 12 (Queen) and 13 (King) are celebrities.</li>
-                        <li>Hearts are LOVABLE, GREAT, GOOD - People who are likable.</li>
-                        <li>Spades are HUMOROUS, ABSURD - People who makes you smile or wrinkle your
-                            nose.
-                        </li>
-                        <li>Diamonds are RICH, STYLISH, BLING - People who like to shine.</li>
-                        <li>Clubs are COOL, SERIOUS, CRAZY - People with an itch in the body or brain.</li>
-                    </ul>
-                    Shortcut Keys
-                    <ul>
-                        <li>Select Person List (Alt+P)</li>
-                        <li>Select Action List (Alt+A)</li>
-                        <li>Select Object List (Alt+O)</li>
-                        <li>Select Card List (Alt+C)</li>
-                        <li>Reveal All (Alt+R)</li>
-                        <li>Next Card (Alt+N)</li>
-                        <li>Start Over (Alt+S)</li>
-                        <li>Memory Palace (Alt+M)</li>
-                    </ul>
-                    <div>
-                        STEP 1<br>
-                        To get the next card, click Next.<br>
-                        Match the PAO properties, below the image.
-                    </div>
-                    <br>
-                    <div>
-                        STEP 2<br>
-                        To see the answers, click Reveal All.<br>
-                        Use the instant reveal, to auto reveal values.
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
+    <!-- Memory Palace -->
     <div id="pao-palace">
+
         <div class="palace-navigation">
             <button id="btn-prev-loci" class="btn btn-primary" title="Previous"><i
                     class="bi bi-chevron-double-left"></i></button>
@@ -964,19 +911,19 @@
         </div>
 
         <table id="palace-table">
+
             <tr id="palace-loci-1" class="palace-loci">
                 <td>
                     <div id="palace-label-1" class="palace-label"></div>
                     <img id="palace-image-1" class="palace-image" src="" alt="">
+                    <div id="palace-info-1" class="palace-info"></div>
+
                     <div class="palace-items">
                         <span id="palace-item-1" class="palace-item"></span>
                         <span id="palace-item-2" class="palace-item"></span>
                         <span id="palace-item-3" class="palace-item"></span>
                     </div>
-                    <div id="palace-info-1" class="palace-info"></div>
                     <div id="palace-phrase-1" class="palace-phrase"></div>
-
-
                 </td>
             </tr>
 
@@ -1282,6 +1229,7 @@
     </div>
 </div>
 
+<!-- Card Info Dialog -->
 <div id="card-info">
 
     <h2 class="pao-info-person text-center"></h2>

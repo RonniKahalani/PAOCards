@@ -82,7 +82,9 @@ header {
 
 .palace-label {
     font-size: 15pt;
-    margin: 5px;
+    margin-top: 0;
+    margin-bottom: 5px;
+    background-color: rgba(0, 0, 0, 0.85);
 }
 
 .palace-phrase {
@@ -364,10 +366,6 @@ header {
 }
 
 #quiz-input {
-    border: 1px solid #2f363c;
-    padding: 10px;
-    border-radius: 5%;
-    background-color: #1f262c;
 }
 
 #quiz-question {
@@ -611,5 +609,5 @@ header {
     position: relative;
     z-index: 200;
     text-align: center;
-    top:430px;
+    top:400px;
 }
