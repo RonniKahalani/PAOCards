@@ -56,7 +56,7 @@ Each location defines a weird memorable sentence, from its three cards, that you
 - the action value of the second card = star-jumps on<br>
 - the object value of the third card = suicide bomber<br>
 
-<p>So the sentence = "Steve Jobs - star-jumps on - suicide bomber" represents Q&clubs; - 2&hearts; - 3&diams;</p>
+<p>So the sentence = "Steve Jobs - star-jumps on - suicide bomber" represents 9&hearts; - Q&hearts; - 3&clubs;</p>
 
 ### Reversing the thought process
 Imagine you're done going through all the cards and recall the first location sentence, like the one above "Victoria Beckham - Breaks nail on - Cigarette".
