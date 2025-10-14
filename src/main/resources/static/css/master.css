@@ -112,8 +112,10 @@ header {
 
 #panel {
     width: 100%;
+    height:70px;
     margin: 0;
     background-color: black;
+    border-bottom: #2f363c;
 }
 
 #panel-title {
@@ -122,10 +124,12 @@ header {
 }
 
 #panel-left {
+    margin-top: 15px;
 }
 
 #panel-center {
     text-align: center;
+    margin-top: 10px;
 }
 
 #panel-right {
@@ -177,11 +181,20 @@ header {
 }
 
 .quiz-select {
-
+    width:250px;
+    height: 40px;
+    border: 3px solid black;
 }
 
 .quiz-check {
     margin: 5px;
+    width: 30px;
+    height: 40px;
+}
+
+.form-check-input:checked {
+    background-color: green;
+    border: 1px solid white;
 }
 
 #quiz-content {
@@ -590,7 +603,7 @@ header {
 #quiz-image,
 #home-message-x,
 #home-message-y,
-.border-default{
+.border-default {
     border-top: 1px solid #2f363c;
     border-left: 1px solid #2f363c;
     border-bottom: 1px solid gray;
@@ -608,7 +621,7 @@ header {
     position: absolute;
     z-index: 200;
     text-align: center;
-    width:100%;
+    width: 100%;
     margin: auto;
     padding-top: 390px;
 }

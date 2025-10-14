@@ -65,7 +65,7 @@ export class Matrix {
         elem.onclick = () => elem.style.display = 'none';
         elem.getElementsByClassName("pao-info-person")[0].innerHTML = card.person;
         elem.getElementsByClassName("pao-info-action")[0].innerHTML = card.action;
-        elem.getElementsByClassName("pao-info-object")[0].innerHTML = card.object.charAt(0).toUpperCase() + card.object.slice(1)
+        elem.getElementsByClassName("pao-info-object")[0].innerHTML = card.object
         elem.getElementsByClassName("pao-info-card")[0].src = this.cardUtil.getSVGCardImageUrl(card)
         elem.getElementsByClassName("pao-info-image")[0].src = card.image;
         elem.getElementsByClassName("pao-info-description")[0].innerHTML = card.description;
