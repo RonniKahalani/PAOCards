@@ -78,6 +78,7 @@ header {
 
 .palace-label {
     font-size: 15pt;
+    color: #0d6efd;
     margin-top: 0;
     margin-bottom: 5px;
     background-color: rgba(0, 0, 0, 0.85);
@@ -134,7 +135,8 @@ header {
 }
 
 #card-counter-content {
-    font-size: 14pt;
+    font-size: 15pt;
+    color: #0d6efd;
 }
 
 #card-counter {
