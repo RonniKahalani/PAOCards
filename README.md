@@ -45,7 +45,7 @@ It consists of the following main components:
 - Person = Victoria Beckham
 - Action = Applies makeup in front of
 - Object = Mirror
-- Card = Queen of Clubs = Q&clubs;
+- Card = Queen of Clubs.
 
 ## Memory Palace
 <p>The Memory Palace interface helps you train and navigate your memory palace, which holds 52 cards, in 17 locations, each holding the next 3 cards, with one last card left.</p>
@@ -56,7 +56,7 @@ Each location defines a weird memorable sentence, from its three cards, that you
 - action value of the second card = star-jumps on<br>
 - object value of the third card = suicide bomber<br>
 
-<p>So the sentence = "Steve Jobs - star-jumps on - suicide bomber" represents 9 of Hearts - Queen of Hearts - 5 of Clubs.</p>
+<p>So the sentence "Steve Jobs star-jumps on suicide bomber" = 9 of Hearts, Queen of Hearts and 5 of Clubs.</p>
 
 ### Reversing the thought process
 Imagine you're done going through all the cards and recall the first location sentence, like the one above "Victoria Beckham - Breaks nail on - Cigarette".
