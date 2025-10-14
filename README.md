@@ -34,11 +34,11 @@ It consists of the following main components:
 
 ## PAO Matrix
 <p>If you're "normal", you can master this skill in a few weeks, but you have to be disciplined, persistent and focus on memorizing the PAO Matrix.</p>
-<a href="src/main/resources/doc/matrix.jpg" target="_blank"><img style="width:100%" src="src/main/resources/doc/matrix.jpg" alt="PAO Matrix"></a><sup>Click image to enlarge.</sup>
+<a href="src/main/resources/static/img/home/matrix.jpg" target="_blank"><img style="width:100%" src="src/main/resources/static/img/home/matrix.jpg" alt="PAO Matrix"></a><sup>Click image to enlarge.</sup>
 
 ## Quiz
 <p>The Quiz interface helps you train your PAO Matrix memory speed and correctness, by prompting you to recall the Person, Action & Object values for a given card.</p>
-<img style="width:100%" src="src/main/resources/doc/quiz.png" alt="Quiz">
+<img style="width:100%" src="src/main/resources/static/img/home/quiz.png" alt="Quiz">
 <p>The random card represents a visual image of the person behind the card. This should help you recall the PAO values.</p>
 <p>So the correct answers, in this case, are</p>
 
@@ -49,7 +49,7 @@ It consists of the following main components:
 
 ## Memory Palace
 <p>The Memory Palace interface helps you train and navigate your memory palace, which holds 52 cards, in 17 locations, each holding the next 3 cards, with one last card left.</p>
-<img style="width:100%" src="src/main/resources/doc/memory-palace.png" alt="Memory Palace">
+<img style="width:100%" src="src/main/resources/static/img/home/memory-palace.png" alt="Memory Palace">
 
 Each memory palace location (loci) defines a weird memorable sentence, from its three cards, that you should visualize in your mind.
 
