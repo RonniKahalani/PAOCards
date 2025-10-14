@@ -700,7 +700,7 @@ export class Quiz {
                 const id = (i + 1) / 3;
                 const quizPerson = this.quizCards[i - 2].pao.person;
                 const action = this.quizCards[i - 1].pao.action;
-                const quizAction = action.charAt(0).toUpperCase() + action.slice(1)
+                const quizAction = action.charAt(0).toLowerCase() + action.slice(1)
                 const quizObject = this.quizCards[i].pao.object;
 
                 // Set a 3 colored phrase.
