@@ -56,10 +56,10 @@ Each location defines a weird memorable sentence, from its three cards, that you
 - action value of the second card = star-jumps on<br>
 - object value of the third card = suicide bomber<br>
 
-<p>So the sentence "Steve Jobs star-jumps on suicide bomber" = 9 of Hearts, Queen of Hearts and 5 of Clubs.</p>
+<p>So the sentence "Steve Jobs - star-jumps on - suicide bomber" = 9 of Hearts, Queen of Hearts and 5 of Clubs.</p>
 
 ### Reversing the thought process
-Imagine you're done going through all the cards and recall the first location sentence, like the one above "Victoria Beckham - Breaks nail on - Cigarette".
+Imagine you're done going through all the cards and recall the first location sentence, like the one above "Steve Jobs - star-jumps on - suicide bomber".
 
 #### First card (Steve Jobs):
 - A powerful person = matrix columns (9, 10). He is a male = odd number = 9.
