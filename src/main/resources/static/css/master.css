@@ -196,8 +196,15 @@ header {
 
 .form-check-input:checked {
     background-color: green;
-    border: 1px solid white;
+    border: 3px solid black;
+
 }
+
+.form-check-input {
+    background-color: white;
+    border: 3px solid black;
+}
+
 
 #quiz-content {
     display: flex;
