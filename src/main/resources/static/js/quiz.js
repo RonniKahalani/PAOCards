@@ -115,13 +115,18 @@ export class Quiz {
         this.timer = new Timer();
     }
 
+    /**
+     * Handles focus changes on quiz elements.
+     * @param elem
+     */
     quizFocusChange(elem) {
         if(elem === document.activeElement) {
             elem.style.border = "3px solid #00FF00";
         } else {
-            elem.style.border = "0";
+            elem.style.border = "3px solid black";
         }
     }
+
     /**
      * Loads and initializes the quiz.
      * @returns {Promise<void>}
@@ -690,7 +695,7 @@ export class Quiz {
 
             try {
                 document.getElementById("palace-label-" + index).innerHTML = `${currentPalaceEntry.label} (${index} of 17)`;
-                document.getElementById("palace-image-" + index).src = currentPalaceEntry.image;
+                document.getElementById("palace-image-" + index).style.backgroundImage = `url('${currentPalaceEntry.image}')`;
                 document.getElementById("palace-info-" + index).innerHTML = currentPalaceEntry.info;
             } catch (e) {
                 // HACK! console.log("Weird things happened after the 6th item");
@@ -762,7 +767,7 @@ export class Quiz {
      * Toggles the visibility of the current loci cards.
      */
     revealLociCards() {
-        const elem = document.getElementById("palace-loci-" + this.currentLociIndex);
+        const elem = document.getElementById("palace-image-" + this.currentLociIndex);
         const items = elem.getElementsByClassName("palace-items")[0];
         items.style.display = (items.style.display === "block") ? "none" : "block";
     }
