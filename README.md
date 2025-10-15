@@ -66,6 +66,7 @@ Imagine you're done going through all the cards and recall the first location se
 "Steve Jobs - star-jumps on - suicide bomber".
 
 #### First card (Steve Jobs):
+- You recall the powerful and charismatic entrepreneur. 
 - A powerful person = matrix columns (9, 10). 
 - A male = odd number = 9.
 - In the lovable group / suit = Hearts.
