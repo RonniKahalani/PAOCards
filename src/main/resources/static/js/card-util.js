@@ -60,6 +60,15 @@ export class CardUtil {
         return str.charAt(0).toUpperCase() + str.slice(1);
     }
 
+    /**
+     * Lower cases the first letter of a string.
+     * @param str
+     * @returns {string}
+     */
+    lowerCaseFirstLetter(str) {
+        return str.charAt(0).toLowerCase() + str.slice(1);
+    }
+
     properCase(str) {
         const capitalLetters = this.countCapitalLetters(str);
         if(str.charAt(1) === str.charAt(1).toUpperCase() && capitalLetters > 0) {
