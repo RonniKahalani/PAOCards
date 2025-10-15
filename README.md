@@ -66,22 +66,23 @@ Imagine you're done going through all the cards and recall the first location se
 "Steve Jobs - star-jumps on - suicide bomber".
 
 #### First card (Steve Jobs):
-- A powerful person = matrix columns (9, 10). He is a male = odd number = 9.
+- A powerful person = matrix columns (9, 10). 
+- A male = odd number = 9.
 - In the lovable group / suit = Hearts.
 - Card = 9 of Hearts.
 
 #### Second card (star-jumps on):
 - You recall celebrity Michelle Obama is the one doing star-jumps.
 - A celebrity = matrix columns (12, 13).
-- She is female = even number = 12 (Queen).
+- A female = even number = 12 (Queen).
 - In the lovable category / suit = Hearts.
 - Card = Queen of Hearts.
 
 #### Third card (suicide bomber):
 - You recall the controversial Bin Laden recording a video of a suicide bomber.
 - A controversial = matrix columns (5, 6).
-- He is male = odd number = 5.
-- In the weird category / suit = Clubs.
+- A male = odd number = 5.
+- In the crazy category / suit = Clubs.
 - Card = 5 of Clubs.
 
 <p>So the result = (9 of Hearts), (Queen of Hearts) and (5 of Clubs).</p>
