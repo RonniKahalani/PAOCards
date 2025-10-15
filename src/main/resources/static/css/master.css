@@ -441,6 +441,8 @@ header {
     align-items: center;
     font-size: 10pt;
     text-transform: uppercase;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 #card-info {
@@ -667,7 +669,8 @@ header {
 .suit-spade-big,
 .suit-heart-big {
     font-size: 30pt;
-    padding-top: 66px;
+    padding-top: 80px;
     text-align: center;
     background-color: white;
+    border-bottom: black 1px solid;
 }
