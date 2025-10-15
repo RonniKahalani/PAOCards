@@ -110,14 +110,6 @@ Imagine you're done going through all the cards and recall the first location se
 
 <p>So the result = (9 of Hearts), (Queen of Hearts) and (5 of Clubs).</p>
 
-<table style="border:none;border-collapse: collapse;">
-<tr>
-<td style="border:0"><img style="display:inline" width="100" src="src/main/resources/static/svg/cards/9_of_hearts.svg" alt="9 of Hearts"></td>
-<td><img style="display:inline" width="100" src="src/main/resources/static/svg/cards/queen_of_hearts.svg" alt="Queen of Hearts"></td>
-<td><img style="display:inline" width="100" src="src/main/resources/static/svg/cards/5_of_clubs.svg" alt="5 of Clubs"></td>
-</tr>
-</table>
-
 ## More Information
 
 To get more in-depth understanding of how this memory technique works, check this
