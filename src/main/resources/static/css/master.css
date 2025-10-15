@@ -608,11 +608,20 @@ header {
     padding: 50px;
 }
 
-#section-neurons {
-    background-image: url("../img/home/neurons.png");
-    background-size: cover;
-    background-repeat: no-repeat;
+#section-matrix {
 }
+
+
+#section-do-it {
+
+}
+#section-quiz {
+
+}
+#section-memory-palace {
+
+}
+
 
 .section-subtitle {
     font-size: 30pt;
@@ -644,13 +653,13 @@ header {
 }
 
 .suit-spade-big {
-    color: white;
+    color: black;
 }
 .suit-diamond-big {
     color: #DF0000;
 }
 .suit-club-big {
-    color: white;
+    color: black;
 }
 
 .suit-club-big,
@@ -659,4 +668,6 @@ header {
 .suit-heart-big {
     font-size: 30pt;
     padding-top: 66px;
+    text-align: center;
+    background-color: white;
 }
