@@ -234,63 +234,64 @@
                             </div>
                         </div>
 
-                        <div id="quiz-question">Select the matching PAO values and card.</div>
-                        <div class="quiz-select-div">
-                            <label for="quiz-select-person" class="quiz-label">Person</label>
-                            <select id="quiz-select-person" class="quiz-select form-select" accesskey="p">
-                                <option value="">Select Person (Alt+P)</option>
-                            </select>
-                            <input id="quiz-reveal-person" class="form-check-input quiz-check" type="checkbox"
-                                   title="Auto reveal">
+                        <div class="text-center">
+                            <div class="quiz-select-div row">
+                                <label for="quiz-select-person" class="quiz-label col-1" hidden>Person</label>
+                                <select id="quiz-select-person" class="quiz-select form-select" accesskey="p">
+                                    <option value="">Select Person (Alt+P)</option>
+                                </select>
+                                <input id="quiz-reveal-person" class="form-check-input quiz-check col-1" type="checkbox"
+                                       title="Auto reveal">
+                            </div>
+                            <div class="quiz-select-div row">
+                                <label for="quiz-select-action" class="quiz-label col-1" hidden>Action</label>
+                                <select id="quiz-select-action" class="quiz-select form-select" accesskey="a">
+                                    <option value="">Select Action (Alt+A)</option>
+                                </select>
+                                <input id="quiz-reveal-action" class="form-check-input quiz-check col-1" type="checkbox"
+                                       title="Auto reveal">
+                            </div>
+
+                            <div class="quiz-select-div row">
+                                <label for="quiz-select-object" class="quiz-label col-1" hidden>Object</label>
+                                <select id="quiz-select-object" class="quiz-select form-select" accesskey="o">
+                                    <option value="">Select Object (Alt+O)</option>
+                                </select>
+                                <input id="quiz-reveal-object" class="form-check-input quiz-check col-1" type="checkbox"
+                                       title="Auto reveal">
+                            </div>
+
+                            <div class="quiz-select-div row">
+                                <label for="quiz-select-card" class="quiz-label col-1" hidden>Card</label>
+                                <select id="quiz-select-card" class="quiz-select form-select" accesskey="c">
+                                    <option value="">Select Card (Alt+C)</option>
+                                </select>
+                                <input id="quiz-reveal-card" class="form-check-input quiz-check col-1" type="checkbox"
+                                       title="Auto reveal">
+                            </div>
                         </div>
 
-                        <div class="quiz-select-div">
-                            <label for="quiz-select-action" class="quiz-label">Action</label>
-                            <select id="quiz-select-action" class="quiz-select form-select" accesskey="a">
-                                <option value="">Select Action (Alt+A)</option>
-                            </select>
-                            <input id="quiz-reveal-action" class="form-check-input quiz-check" type="checkbox"
-                                   title="Auto reveal">
-                        </div>
-
-                        <div class="quiz-select-div">
-                            <label for="quiz-select-object" class="quiz-label">Object</label>
-                            <select id="quiz-select-object" class="quiz-select form-select" accesskey="o">
-                                <option value="">Select Object (Alt+O)</option>
-                            </select>
-                            <input id="quiz-reveal-object" class="form-check-input quiz-check" type="checkbox"
-                                   title="Auto reveal">
-                        </div>
-
-                        <div class="quiz-select-div">
-                            <label for="quiz-select-card" class="quiz-label">Card</label>
-                            <select id="quiz-select-card" class="quiz-select form-select" accesskey="c">
-                                <option value="">Select Card (Alt+C)</option>
-                            </select>
-                            <input id="quiz-reveal-card" class="form-check-input quiz-check" type="checkbox"
-                                   title="Auto reveal">
-                        </div>
-                        <div style="text-align: right"><label id="label-quiz-reveal-all" for="quiz-reveal-all">Auto
-                            reveal all</label>
-                            <input id="quiz-reveal-all" class="form-check-input quiz-check" type="checkbox"
-                                   title="Auto reveal all">
-                        </div>
-                        <br>
-                        <div id="quiz-button-group">
+                        <div class="quiz-button-group">
                             <button id="btn-quiz-restart" class="btn btn-primary btn-sm" accesskey="s"
                                     title="Start Over (Alt-S)">
                                 Start
                                 Over
                             </button>
                             <button id="btn-quiz-shuffle-deck" class="btn btn-primary btn-sm" accesskey="d"
-                                    title="New Deck">
-                                New Deck (Alt+D)
+                                    title="New Deck (Alt+D)">
+                                New Deck
                             </button>
-                            <button id="btn-quiz-reveal" class="btn btn-danger btn-sm" accesskey="r"
-                                    title="Reveal All (Alt-R)">
-                                Reveal
-                                All
+
+                            <label for="quiz-reveal-all" class="quiz-label" hidden>Reveal All</label>
+                            <input id="quiz-reveal-all" class="form-check-input quiz-check" style="display:none"
+                                   type="checkbox" hidden>
+
+                            <button id="btn-quiz-reveal-all" class="btn btn-primary btn-sm"
+                                    title="Reveal All (Alt-R)" accesskey="r"
+                                    onclick="document.getElementById('quiz-reveal-all').click()">Reveal All
                             </button>
+                            <!-- Hidden, currently not used!!! -->
+                            <button id="btn-quiz-reveal" hidden>...</button>
                         </div>
                     </div>
 
