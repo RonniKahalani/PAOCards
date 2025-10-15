@@ -706,7 +706,7 @@ export class Quiz {
                 const quizObject = this.quizCards[i].pao.object;
 
                 // Set a 3 colored phrase.
-                document.getElementById(`palace-phrase-${id}`).innerHTML = `<span class="phrase-color1">${quizPerson}</<span> <span class="phrase-color2">${quizAction}</span> <span class="phrase-color3">${quizObject}</span>`;
+                document.getElementById(`palace-phrase-${id}`).innerHTML = `<span class="phrase-color1">${quizPerson}</span> <span class="phrase-color2">${quizAction}</span> <span class="phrase-color3">${quizObject}</span>`;
             }
 
             if (i === 51) {
