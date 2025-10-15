@@ -40,4 +40,31 @@ export class CardUtil {
         const suit = card.id.split("-")[0]; // hearts, diamonds, clubs, spades
         return "svg/cards/" + cardId.toLowerCase() + "_of_" + suit.toLowerCase() + ".svg";
     }
+
+    /**
+     * Counts capital letters in a string using regex.
+     * @param str
+     * @returns {number}
+     */
+    countCapitalLetters(str) {
+        const matches = str.match(/[A-Z]/g); // 'g' flag for global match
+        return matches ? matches.length : 0;
+    }
+
+    /**
+     * Upper cases the first letter of a string.
+     * @param str
+     * @returns {string}
+     */
+    upperCaseFirstLetter(str) {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
+    properCase(str) {
+        const capitalLetters = this.countCapitalLetters(str);
+        if(str.charAt(1) === str.charAt(1).toUpperCase() && capitalLetters > 0) {
+            return str; // Already proper cased
+        }
+        return this.upperCaseFirstLetter(str);
+    }
 }

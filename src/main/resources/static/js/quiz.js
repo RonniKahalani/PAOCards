@@ -139,8 +139,9 @@ export class Quiz {
      * @returns {Promise<any>}
      */
     async loadQuiz() {
+        const endpoint = `${this.BASE_ENDPOINT}quiz`;
         try {
-            const response = await fetch(`${this.BASE_ENDPOINT}quiz`);
+            const response = await fetch(endpoint);
             if (response.ok) {
                 return await response.json();
             }
@@ -155,8 +156,9 @@ export class Quiz {
      * @returns {Promise<any>}
      */
     async loadPalace(name) {
+        const endpoint = `${this.BASE_ENDPOINT}palace/${name}`
         try {
-            const response = await fetch(`${this.BASE_ENDPOINT}palace/${name}`);
+            const response = await fetch(endpoint);
             if (response.ok) {
                 return await response.json();
             }
@@ -178,8 +180,8 @@ export class Quiz {
         }
 
         let persons = this.quizCards.map(x => x.pao.person).sort();
-        let actions = this.quizCards.map(x => x.pao.action).sort();
-        let objects = this.quizCards.map(x => x.pao.object).sort();
+        let actions = this.quizCards.map(x => this.cardUtil.properCase(x.pao.action)).sort();
+        let objects = this.quizCards.map(x => this.cardUtil.properCase(x.pao.object)).sort();
         let cards = this.quizCards.map(x => `${x.value} (${x.name}) of ${x.suit}`).sort(this.cardNameSorter);
 
         this.setQuizSelectOptions(this.quizPerson, persons);
@@ -247,7 +249,7 @@ export class Quiz {
         let selectValue = select.options[select.selectedIndex].value;
         let correctValue = this.quizCards[this.currentQuizIndex].pao.person;
 
-        this.setSelectColor(select, selectValue === correctValue);
+        this.setSelectColor(select, selectValue.toLowerCase() === correctValue.toLowerCase());
         this.updateAnswerValues();
     }
 
@@ -259,7 +261,7 @@ export class Quiz {
         let selectValue = select.options[select.selectedIndex].value;
         let correctValue = this.quizCards[this.currentQuizIndex].pao.action;
 
-        this.setSelectColor(select, selectValue === correctValue);
+        this.setSelectColor(select, selectValue.toLowerCase() === correctValue.toLowerCase());
         this.updateAnswerValues();
     }
 
@@ -271,7 +273,7 @@ export class Quiz {
         let selectValue = select.options[select.selectedIndex].value;
         let correctValue = this.quizCards[this.currentQuizIndex].pao.object;
 
-        this.setSelectColor(select, selectValue === correctValue);
+        this.setSelectColor(select, selectValue.toLowerCase() === correctValue.toLowerCase());
         this.updateAnswerValues();
     }
 
@@ -285,7 +287,7 @@ export class Quiz {
         const correctCard = this.quizCards[this.currentQuizIndex];
         let correctValue = `${correctCard.value} (${correctCard.name}) of ${correctCard.suit}`;
 
-        this.setSelectColor(select, selectValue === correctValue);
+        this.setSelectColor(select, selectValue.toLowerCase() === correctValue.toLowerCase());
         this.updateAnswerValues();
     }
 
@@ -551,7 +553,7 @@ export class Quiz {
         let card = target.quizCards[target.currentQuizIndex];
         let correctValue = card.pao.person;
         for (let index = 1; index < target.quizPerson.options.length; index++) {
-            if (target.quizPerson.options[index].value === correctValue) {
+            if (target.quizPerson.options[index].value.toLowerCase() === correctValue.toLowerCase()) {
                 target.quizPerson.selectedIndex = index;
                 target.setSelectColor(target.quizPerson, true);
                 break;
@@ -569,7 +571,7 @@ export class Quiz {
         let card = target.quizCards[target.currentQuizIndex];
         let correctValue = card.pao.action;
         for (let index = 1; index < target.quizPerson.options.length; index++) {
-            if (target.quizAction.options[index].value === correctValue) {
+            if (target.quizAction.options[index].value.toLowerCase() === correctValue.toLowerCase()) {
                 target.quizAction.selectedIndex = index;
                 target.setSelectColor(target.quizAction, true);
                 break;
@@ -587,7 +589,7 @@ export class Quiz {
         let card = target.quizCards[target.currentQuizIndex];
         let correctValue = card.pao.object;
         for (let index = 1; index < target.quizPerson.options.length; index++) {
-            if (target.quizObject.options[index].value === correctValue) {
+            if (target.quizObject.options[index].value.toLowerCase() === correctValue.toLowerCase()) {
                 target.quizObject.selectedIndex = index;
                 target.setSelectColor(target.quizObject, true);
                 break;
@@ -605,7 +607,7 @@ export class Quiz {
         let card = target.quizCards[target.currentQuizIndex];
         let correctValue = `${card.value} (${card.name}) of ${card.suit}`;
         for (let index = 1; index < target.quizCard.options.length; index++) {
-            if (target.quizCard.options[index].value === correctValue) {
+            if (target.quizCard.options[index].value.toLowerCase() === correctValue.toLowerCase()) {
                 target.quizCard.selectedIndex = index;
                 target.setSelectColor(target.quizCard, true);
                 break;
@@ -699,8 +701,7 @@ export class Quiz {
             if (i > 0 && (i + 1) % 3 === 0) {
                 const id = (i + 1) / 3;
                 const quizPerson = this.quizCards[i - 2].pao.person;
-                const action = this.quizCards[i - 1].pao.action;
-                const quizAction = action.charAt(0).toLowerCase() + action.slice(1)
+                const quizAction = this.quizCards[i - 1].pao.action;;
                 const quizObject = this.quizCards[i].pao.object;
 
                 // Set a 3 colored phrase.
