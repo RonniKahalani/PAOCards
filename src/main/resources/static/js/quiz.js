@@ -241,7 +241,7 @@ export class Quiz {
         for (let i = 0; i < 52; i++) {
             let opt = document.createElement('option');
             opt.value = values[i];
-            opt.innerHTML = values[i];
+            this.setInnerHTML(opt, values[i]);
             elem.appendChild(opt);
         }
     }
@@ -678,6 +678,18 @@ export class Quiz {
         }
     }
 
+    setBackgroundImage(id, imageUrl) {
+        document.getElementById(id).style.backgroundImage = `url('${imageUrl}')`;
+    }
+    /**
+     * Sets inner HTML of an element by its id.
+     * @param id
+     * @param html
+     */
+    setInnerHTML(id, html) {
+        document.getElementById(id).innerHTML = html;
+    }
+
     /**
      * Renders the palace interface.
      * @param palace
@@ -694,14 +706,15 @@ export class Quiz {
             let currentPalaceEntry = palace[i];
 
             try {
-                document.getElementById("palace-label-" + index).innerHTML = `${currentPalaceEntry.label} (${index} of 17)`;
-                document.getElementById("palace-image-" + index).style.backgroundImage = `url('${currentPalaceEntry.image}')`;
-                document.getElementById("palace-info-" + index).innerHTML = currentPalaceEntry.info;
+                this.setInnerHTML(`palace-label-${index}`, `${currentPalaceEntry.label} (${index} of 17)`);
+                this.setBackgroundImage(`palace-image-${index}`, currentPalaceEntry.image);
+                this.setInnerHTML(`palace-info-${index}`, currentPalaceEntry.info);
             } catch (e) {
                 // HACK! console.log("Weird things happened after the 6th item");
             }
 
-            document.getElementById("palace-item-" + index).innerHTML = `<img src="${this.cardUtil.getSVGCardImageUrl(this.quizCards[i].pao)}" class="card" alt="">`;
+            const svgUrl = this.cardUtil.getSVGCardImageUrl(this.quizCards[i].pao);
+            this.setInnerHTML(`palace-item-${index}`,`<img src="${ svgUrl}" class="card" alt="">`);
 
             if (i > 0 && (i + 1) % 3 === 0) {
                 const id = (i + 1) / 3;
@@ -711,11 +724,11 @@ export class Quiz {
                 const quizObject = this.quizCards[i].pao.object;
 
                 // Set a 3 colored phrase.
-                document.getElementById(`palace-phrase-${id}`).innerHTML = `<span class="phrase-color1">${quizPerson}</span> <span class="phrase-color2">${quizAction}</span> <span class="phrase-color3">${quizObject}</span>`;
+                this.setInnerHTML(`palace-phrase-${id}`, `<span class="phrase-color1">${quizPerson}</span> <span class="phrase-color2">${quizAction}</span> <span class="phrase-color3">${quizObject}</span>`);
             }
 
             if (i === 51) {
-                document.getElementById("palace-phrase-18").innerHTML = this.quizCards[i].pao.person;
+                this.setInnerHTML("palace-phrase-18", this.quizCards[i].pao.person);
             }
         }
     }
