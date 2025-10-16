@@ -5,6 +5,11 @@ body {
     background-color: black;
 }
 
+select,
+input {
+    cursor: pointer;
+}
+
 header {
     position: sticky;
     top: 0;
@@ -123,13 +128,12 @@ header {
 }
 
 #panel-left {
-    margin-top: 15px;
+
 }
 
 #panel-center {
     text-align: center;
     margin-top: 10px;
-    z-index: 5000;
 }
 
 #panel-right {
@@ -204,6 +208,10 @@ header {
     border: 3px solid black;
 }
 
+.form-check-select-neutral {
+    background-color: white;
+    border: 3px solid black;
+}
 
 #quiz-content {
     display: flex;
@@ -501,7 +509,6 @@ header {
     text-align: center;
     margin: 10px auto;
     padding: 5px;
-    min-height: 70px;
 }
 
 .suit-heart {
@@ -591,7 +598,7 @@ header {
 .palace-navigation {
     text-align: center;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .section {
