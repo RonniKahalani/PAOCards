@@ -55,10 +55,10 @@ It consists of the following main components:
 <p>The random card represents a visual image of the person behind the card. This should help you recall the PAO values.</p>
 <p>So the correct answers, in this case, are</p>
 
-- Person = Victoria Beckham
-- Action = Applies makeup in front of
-- Object = Mirror
-- Card = Queen of Clubs.
+- Person = Mohammad Ali
+- Action = Knocks out
+- Object = Butterfly
+- Card = Ace of Spades.
 
 ## Memory Palace
 
@@ -70,45 +70,46 @@ in your mind.
 
 The location sentence is created by combining the different PAO values from its three cards:<br>
 
-- Card 1: Person value = Steve Jobs<br>
-- Card 2: Action value = star-jumps on<br>
-- Card 3: Object value = suicide bomber<br>
+Example:<br>
+- Card 1: Person value = Lady Gaga<br>
+- Card 2: Action value = karate kicks<br>
+- Card 3: Object value = child<br>
 
-Giving the sentence: "Steve Jobs star-jumps on suicide bomber".
+Giving the sentence: "Lady Gaga karate kicks child".
 
 ### Reversing the thought process
 
 Imagine you're done going through all the cards and recall the first location sentence like the one above:
 
 <div style="font-size: 20pt">
-<span style="color:#5A5A5A;">Steve Jobs</span> <span style="color:#FFC107">star-jumps on</span> <span style="color:#0052CC">suicide bomber</span>
+<span style="color:#5A5A5A;">Lady Gaga</span> <span style="color:#FFC107">karate kicks</span> <span style="color:#0052CC">child</span>
 </div>
 
 #### First card (Steve Jobs):
 
-- You recall the powerful and charismatic entrepreneur.
-- A powerful person = matrix columns (9, 10).
-- A male = odd number = 9.
-- In the lovable group / suit = Hearts.
-- Card = 9 of Hearts.
+- You recall Lady Gaga as being a controversial personality.
+- A controversial person = matrix columns (5, 6).
+- A female = even number = 6.
+- In the crazy group / suit = Clubs.
+- Card = 6 of Clubs.
 
-#### Second card (star-jumps on):
+#### Second card (karate kicks):
 
-- You recall celebrity Michelle Obama is the one doing star-jumps.
-- A celebrity = matrix columns (12, 13).
-- A female = even number = 12 (Queen).
+- You recall movie star character Lara Croft karate kicking an ancient tomb.
+- A movie star = matrix columns (3, 4).
+- A female = even number = 4.
+- In the weird category / suit = Spades.
+- Card = 4 of Spades.
+
+#### Third card (child):
+
+- You recall the beauty Pamela Anderson who saves a drowning child.
+- A brain/beauty = matrix columns (7, 8).
+- A female = even number = 8.
 - In the lovable category / suit = Hearts.
-- Card = Queen of Hearts.
+- Card = 8 of Hearts.
 
-#### Third card (suicide bomber):
-
-- You recall the controversial Bin Laden recording a video of a suicide bomber.
-- A controversial = matrix columns (5, 6).
-- A male = odd number = 5.
-- In the crazy category / suit = Clubs.
-- Card = 5 of Clubs.
-
-<p>So the result = (9 of Hearts), (Queen of Hearts) and (5 of Clubs).</p>
+<p>So the result = (9 of Clubs), (4 of Spades) and (8 of Hearts).</p>
 
 ## More Information
 
