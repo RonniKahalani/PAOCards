@@ -218,9 +218,12 @@ export class Quiz {
 
     /**
      * Comparator function used for sorting cards.
+     * Ex.
+     * a = "5 (Five) of Spades"
+     * b = "13 (King) of Hearts"
      * @param a
      * @param b
-     * @returns {number|number}
+     * @returns if (a < b) = -1, (a > b) = 1 else (a === b) = 0
      */
     cardNameSorter(a, b) {
         let as = a.split(" ");
@@ -241,7 +244,7 @@ export class Quiz {
         for (let i = 0; i < 52; i++) {
             let opt = document.createElement('option');
             opt.value = values[i];
-            this.setInnerHTML(opt, values[i]);
+            opt.innerHTML = opt.value;
             elem.appendChild(opt);
         }
     }
