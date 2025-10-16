@@ -602,7 +602,13 @@ header {
 
 .section {
     background-color: black;
-    border-bottom: #222222 1px solid;
+}
+
+.section hr {
+    color: #0d6efd;
+    text-align: center;
+    margin: auto;
+    padding-bottom: 20px;
 }
 
 .section-markup-blue {
