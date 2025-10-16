@@ -678,9 +678,15 @@ export class Quiz {
         }
     }
 
+    /**
+     * Sets background image of an element by its id.
+     * @param id
+     * @param imageUrl
+     */
     setBackgroundImage(id, imageUrl) {
         document.getElementById(id).style.backgroundImage = `url('${imageUrl}')`;
     }
+
     /**
      * Sets inner HTML of an element by its id.
      * @param id
