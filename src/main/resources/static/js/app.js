@@ -76,26 +76,13 @@ function setupEvents() {
  * Sets up the tab events.
  */
 function setupTabEvents() {
-    document.getElementById("btn-home").addEventListener('click', () => {
-        tabHandler.showTab("pao-home");
-    });
+    const tabNames = ["home", "matrix", "quiz", "palace", "instructions"];
 
-    document.getElementById("btn-matrix").addEventListener('click', () => {
-        tabHandler.showTab("pao-matrix");
-    });
-
-    document.getElementById("btn-quiz").addEventListener('click', () => {
-        tabHandler.showTab("pao-quiz");
-    });
-
-    document.getElementById("btn-palace").addEventListener('click', () => {
-        tabHandler.showTab("pao-palace");
-    });
-
-    document.getElementById("btn-instructions").addEventListener('click', () => {
-        tabHandler.showTab("pao-instructions");
+    tabNames.forEach(name => {
+        document.getElementById(`btn-${name}`).onclick = () => tabHandler.showTab(`pao-${name}`);
     });
 }
+
 /**
  * Toggles fullscreen mode.
  */
