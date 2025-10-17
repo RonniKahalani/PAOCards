@@ -48,11 +48,10 @@ export class Matrix {
 
     /**
      * Loads and renders the matrix.
-     * @param id
-     * @returns {Promise<void>}
+     * @param json
      */
-    async load(id) {
-        this.currentMatrix = await this.loadMatrix(id);
+    load(json) {
+        this.currentMatrix = json;
         this.renderMatrix();
     }
 

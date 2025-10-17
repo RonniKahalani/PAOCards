@@ -42,17 +42,21 @@ btnFullscreen.onclick = () => toggleFullscreenMode();
  * Starts the app.
  * @returns {Promise<void>}
  */
-async function start() {
+function start() {
 
-    const matrix = new Matrix();
-    try {
-        await matrix.load("default");
-        const quiz = new Quiz(matrix.currentMatrix);
-        await quiz.load();
-        setupEvents();
-    } catch (e) {
-        showError("An error occurred.", e);
-    }
+    $.getJSON("../data/pao/default.json", function (json) {
+        console.log(json); // this will show the info it in firebug console
+
+        const matrix = new Matrix();
+        try {
+            matrix.load(json);
+            const quiz = new Quiz(matrix.currentMatrix);
+            quiz.load();
+            setupEvents();
+        } catch (e) {
+            showError("An error occurred.", e);
+        }
+    });
 }
 
 /**
@@ -87,7 +91,7 @@ function setupTabEvents() {
  * Toggles fullscreen mode.
  */
 function toggleFullscreenMode() {
-    if(!document.fullscreenElement) {
+    if (!document.fullscreenElement) {
         document.documentElement.requestFullscreen().catch((err) => {
             alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
         });

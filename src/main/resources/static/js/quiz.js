@@ -120,7 +120,7 @@ export class Quiz {
      * @param elem
      */
     quizFocusChange(elem) {
-        if(elem === document.activeElement) {
+        if (elem === document.activeElement) {
             elem.style.border = "3px solid #00FF00";
         } else {
             elem.style.border = "3px solid black";
@@ -131,19 +131,34 @@ export class Quiz {
      * Loads and initializes the quiz.
      * @returns {Promise<void>}
      */
-    async load() {
-        this.currentQuiz = await this.loadQuiz();
-        this.quizCards = this.currentQuiz["cards"];
-        this.currentPalace = await this.loadPalace("default");
-        this.renderQuiz();
-        this.renderPalace(this.currentPalace);
+    load() {
+        const ref = this;
+        $.getJSON("../data/palace/default.json", function (json) {
+            console.log(json); // this will show the info it in firebug console
+
+            ref.currentQuiz = ref.loadQuiz();
+            ref.currentPalace = json;
+            ref.renderQuiz();
+            ref.renderPalace(ref.currentPalace);
+        });
     }
 
     /**
      * Load the quiz from its REST endpoint.
-     * @returns {Promise<any>}
+     * @returns {*[]}
      */
-    async loadQuiz() {
+    loadQuiz() {
+        this.quizCards = [];
+        let index = 0;
+        ["hearts", "spades", "diamonds", "clubs"].forEach(suit => {
+            const cards = this.matrix[suit].forEach(card => {
+                console.log(suit);
+                this.quizCards[index++] = {suit: suit, name: card.name, value: card.value};
+            })
+        });
+
+        return this.quizCards;
+        /*
         const endpoint = `${this.BASE_ENDPOINT}quiz`;
         try {
             const response = await fetch(endpoint);
@@ -153,6 +168,8 @@ export class Quiz {
         } catch (e) {
             throw new Error("Failed to fetch quiz data.");
         }
+
+         */
     }
 
     /**
@@ -723,7 +740,7 @@ export class Quiz {
             }
 
             const svgUrl = this.cardUtil.getSVGCardImageUrl(this.quizCards[i].pao);
-            this.setInnerHTML(`palace-item-${index}`,`<img src="${ svgUrl}" class="card" alt="">`);
+            this.setInnerHTML(`palace-item-${index}`, `<img src="${svgUrl}" class="card" alt="">`);
 
             if (i > 0 && (i + 1) % 3 === 0) {
                 const id = (i + 1) / 3;
