@@ -1,6 +1,6 @@
 # PAO Cards
 # THIS PROJECT REPO HAS BEEN MIGRATED TO A PURE HTML/JAVASCRIPT VERSION (NO BACKEND APP SERVER ANYMORE)
-<a target="_blank" href="https://github.com/RonniKahalani/CardMemoryTrainer">Checkout the new pure frontend version here:</a>
+<a target="_blank" href="https://github.com/RonniKahalani/CardMemoryTrainer">Checkout the new pure frontend Card Memory Trainer version here:</a>
 <hr>
 <a href="https://www.youtube.com/watch?v=OApSOU7NIAw" target="_blank"><img src="src/main/resources/static/img/home/paocards-front-page.png" alt="Click to view YouTube of Memory Championship"></a><sup>
 Click image to view YouTube of this Memory Championship.</sup>
