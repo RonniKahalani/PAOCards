@@ -1,4 +1,4 @@
-# PAO Matrix Trainer 
+# PAO Cards
 # THIS PROJECT REPO HAS BEEN MIGRATED TO A PURE HTML/JAVASCRIPT VERSION (NO BACKEND APP SERVER ANYMORE)
 <a target="_blank" href="https://github.com/RonniKahalani/CardMemoryTrainer">Checkout the new pure frontend version here:</a>
 <hr>
